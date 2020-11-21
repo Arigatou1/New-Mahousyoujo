@@ -21,4 +21,5 @@ private:
 	int m_time;
 	int enemyAmo;
 	//int e_num;//“G‚ÌŒÂ‘Ì–¼
+	bool m_key_flag;
 };

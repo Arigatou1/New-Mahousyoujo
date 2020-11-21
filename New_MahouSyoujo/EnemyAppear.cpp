@@ -6,6 +6,7 @@
 #include "EnemyAppear.h"
 #include "GameL\UserData.h"
 #include "GameL\DrawFont.h"
+#include "GameL/WinInputs.h"
 
 
 //使用するネームベース
@@ -25,26 +26,27 @@ void EnemyAppear::Init()
 	case 1:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 21;
+		break;
 	}
 	case 2:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 39;
+		break;
 	}
 	default:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 99;
+		break;
 	}
 	}
+
+	m_key_flag = false;
 }
 
 //アクション
 void EnemyAppear::Action()
 {
 	//時間経過
-	//代入し続ける?させない方法はある？
-	StageID = ((UserData*)Save::GetData())->Stage + 1;
-
-
 	m_time++;
 	switch (StageID)
 	{
@@ -713,162 +715,56 @@ void EnemyAppear::Action()
 				
 				default:
 				{
-
-
-					if (m_time == 100)
+					
+					if (Input::GetVKey('1') == true)
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-						//e_num++;
-
+						if (m_key_flag == true)
+						{
+							CObjEnemy* obj = new CObjEnemy(0, 0);
+							Objs::InsertObj(obj, OBJ_ENEMY, 49);
+							m_key_flag = false;
+						}
 					}
-
-					else if (m_time == 200)
+					else if (Input::GetVKey('2') == true)
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-						//e_num++;
+						if (m_key_flag == true)
+						{
+							CObjEnemy2* obj = new CObjEnemy2(0, 0);
+							Objs::InsertObj(obj, OBJ_ENEMY2, 49);
+							m_key_flag = false;
+						}
 					}
-					else if (m_time == 350)
+					else if (Input::GetVKey('3') == true)
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
+						if (m_key_flag == true)
+						{
+							CObjEnemy3* obj = new CObjEnemy3(0, 0);
+							Objs::InsertObj(obj, OBJ_ENEMY3, 49);
+							m_key_flag = false;
+						}
 					}
-					else if (m_time == 400)
+					else if (Input::GetVKey('4') == true)
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
+						if (m_key_flag == true)
+						{
+							CObjEnemy4* obj = new CObjEnemy4(0, 0);
+							Objs::InsertObj(obj, OBJ_ENEMY4, 49);
+							m_key_flag = false;
+						}
 					}
-
-					else if (m_time == 500)
+					else if (Input::GetVKey('5') == true)
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
+						if (m_key_flag == true)
+						{
+							CObjSmallSlim* obj = new CObjSmallSlim(0, 0);
+							Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+							m_key_flag = false;
+						}
 					}
-					else if (m_time == 600)
+					else
 					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 194);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
+						m_key_flag = true;
 					}
-
-					else if (m_time == 650)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-
-					else if (m_time == 750)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-						obj = new CObjEnemy(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 800)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-
-					}
-					else if (m_time == 850)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 950)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-
-					else if (m_time == 1050)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-
-					else if (m_time == 1100)
-					{
-
-						CObjEnemy2* obj = new CObjEnemy2(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY2, 49);
-
-					}
-
-					else if (m_time == 1200)
-					{
-
-						CObjEnemy2* obj = new CObjEnemy2(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY2, 49);
-
-					}
-					else if (m_time == 1300)
-					{
-
-						CObjEnemy2* obj = new CObjEnemy2(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY2, 49);
-
-					}
-
-					else if (m_time == 1600)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 1650)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 1700)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 190);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 1750)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-					else if (m_time == 2100)
-					{
-
-						CObjEnemy* obj = new CObjEnemy(799, 480);
-						Objs::InsertObj(obj, OBJ_ENEMY, 49);
-
-					}
-
 					break;
 				}
 	}

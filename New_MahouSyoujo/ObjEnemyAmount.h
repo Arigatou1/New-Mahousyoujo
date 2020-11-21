@@ -15,4 +15,5 @@ public:
 	void Draw();
 private:
 	int EnemyAmount;
+	
 };
