@@ -315,14 +315,14 @@ void CObjHero::Action()
 		}
 
 		//テスト用
-		if (Input::GetVKey('1')==true)
+		if (Input::GetVKey('O')==true)
 		{
 		
 			Scene::SetScene(new CSceneGameClear());
 		}
 
 		//テスト用
-		if (Input::GetVKey('2') == true)
+		if (Input::GetVKey('P') == true)
 		{
 
 			Scene::SetScene(new CSceneMain());

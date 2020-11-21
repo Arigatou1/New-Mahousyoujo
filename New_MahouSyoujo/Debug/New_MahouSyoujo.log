@@ -1,2 +1,4 @@
-﻿  EnemyAppear.cpp
+﻿  ObjEnemy3.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(71,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(111,8): warning C4552: '<=': 式の結果が使用されていません
   New_MahouSyoujo.vcxproj -> C:\Users\rimin\source\repos\New-Mahousyoujo\Debug\New_MahouSyoujo.exe
