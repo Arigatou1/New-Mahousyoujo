@@ -8,11 +8,11 @@ using namespace GameL;
 class CObjBackGround : public CObj
 {
 public:
-	CObjBackGround() {};
+	CObjBackGround(int id=1) ;
 	~CObjBackGround() {};
 	void Init();
 	void Action();
 	void Draw();
 private:
-
+	int BackGroundID;
 };

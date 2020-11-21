@@ -9,6 +9,10 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjBackGround::CObjBackGround(int id)
+{
+	BackGroundID = id;
+}
 //イニシャライズ
 void CObjBackGround::Init()
 {
@@ -45,5 +49,5 @@ void CObjBackGround::Draw()
 
 
 	//描画
-	Draw::Draw(51, &src, &dst, c, 0.0f);
+	Draw::Draw(50 + BackGroundID, &src, &dst, c, 0.0f);
 }

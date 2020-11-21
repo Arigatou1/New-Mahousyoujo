@@ -118,9 +118,7 @@ void CSceneMain::InitScene()
 	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
 	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
 	
-	//背景オブジェクト作成
-	CObjBackGround* obj_bg = new CObjBackGround();
-	Objs::InsertObj(obj_bg, OBJ_BG, 1);
+	
 
 	//敵の数オブジェクト作成
 	CObjEnemyAmount* obj_eneamo = new CObjEnemyAmount();

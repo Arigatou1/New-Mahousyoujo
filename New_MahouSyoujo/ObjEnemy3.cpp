@@ -68,7 +68,7 @@ void CObjEnemy3::Action()
 	}
 
 	//Ž©—R—Ž‰º‰^“®
-	m_ey += 9.8 / (16.0f);
+	m_vy += 9.8 / (16.0f);
 
 	
 	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
