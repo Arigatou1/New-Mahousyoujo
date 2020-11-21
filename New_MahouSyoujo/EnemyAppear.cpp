@@ -38,7 +38,7 @@ void EnemyAppear::Init()
 		CObjBackGround* obj_bg = new CObjBackGround(2);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
-		((UserData*)Save::GetData())->enemyRemain = 39;
+		((UserData*)Save::GetData())->enemyRemain = 38;
 		break;
 	}
 	default:
