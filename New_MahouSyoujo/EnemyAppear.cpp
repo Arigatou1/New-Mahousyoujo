@@ -25,14 +25,17 @@ void EnemyAppear::Init()
 	case 1:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 21;
+		break;
 	}
 	case 2:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 39;
+		break;
 	}
 	default:
 	{
 		((UserData*)Save::GetData())->enemyRemain = 99;
+		break;
 	}
 	}
 }
@@ -41,10 +44,6 @@ void EnemyAppear::Init()
 void EnemyAppear::Action()
 {
 	//ŽžŠÔŒo‰ß
-	//‘ã“ü‚µ‘±‚¯‚é?‚³‚¹‚È‚¢•û–@‚Í‚ ‚éH
-	StageID = ((UserData*)Save::GetData())->Stage + 1;
-
-
 	m_time++;
 	switch (StageID)
 	{
