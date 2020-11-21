@@ -25,16 +25,28 @@ void EnemyAppear::Init()
 	{
 	case 1:
 	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(1);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
 		((UserData*)Save::GetData())->enemyRemain = 21;
 		break;
 	}
 	case 2:
 	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(2);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
 		((UserData*)Save::GetData())->enemyRemain = 39;
 		break;
 	}
 	default:
 	{
+
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(3);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 		((UserData*)Save::GetData())->enemyRemain = 99;
 		break;
 	}
