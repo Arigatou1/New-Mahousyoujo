@@ -131,11 +131,18 @@ void CObjEnemy3::Action()
 		e_damege = obj_all->GetZ_ATK();
 	}
 
-	//Œ•‚É“–‚½‚ê‚ÎÁ–Å
+	//Œ•‚É“–‚½‚ê‚ÎŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{
 		CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
 		e_hp -= obj_sword->GetAttackPower();
+	}
+
+	//’e‚É“–‚½‚ê‚ÎHPŒ¸‚ç‚·
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
+		e_hp -= obj_bullet->GetAttackPower();
 	}
 
 	//hp‚ª0‚É‚È‚é‚ÆÁ–Å

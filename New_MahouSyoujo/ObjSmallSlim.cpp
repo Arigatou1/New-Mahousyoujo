@@ -4,6 +4,7 @@
 #include "GameL\HitBoxManager.h"
 
 #include "ObjSmallSlim.h"
+#include "GameL\UserData.h"
 
 
 //使用するネームベース
@@ -110,11 +111,14 @@ void CObjSmallSlim::Action()
 		//Amount++;
 	}
 
+	//剣に当たれば減らす
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{
 		CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
 		e_hp -= obj_sword->GetAttackPower();
 	}
+
+	//弾に当たればHP減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
@@ -122,11 +126,12 @@ void CObjSmallSlim::Action()
 	}
 
 
-	
+	//HP０になったとき
 	if (e_hp <= 0)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		((UserData*)Save::GetData())->enemyRemain -= 1;
 	}
 }
 
