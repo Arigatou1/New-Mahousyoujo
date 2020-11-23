@@ -35,18 +35,69 @@ void EnemyAppear::Init()
 	case 2:
 	{
 		//背景オブジェクト作成
-		CObjBackGround* obj_bg = new CObjBackGround(2);
+		CObjBackGround* obj_bg = new CObjBackGround(3);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 		((UserData*)Save::GetData())->enemyRemain = 38;
 		break;
 	}
-	default:
+	case 3:
 	{
-
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(3);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 32;
+		break;
+	}
+	case 4:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(2);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 99;
+		break;
+	}
+	case 5:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(5);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 36;
+		break;
+	}
+	case 6:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(5);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 45;
+		break;
+	}
+	case 7:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(8);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 49;
+		break;
+	}
+	case 8:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(9);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 99;
+		break;
+	}
+	default:
+	{
+
 		((UserData*)Save::GetData())->enemyRemain = 99;
 		break;
 	}
@@ -1534,6 +1585,16 @@ void EnemyAppear::Action()
 
  }
 		break;
+	}
+	case 8:
+	{
+		if (m_time == 770)
+		{
+
+			CObjDragon* obj = new CObjDragon(576, 192);
+			Objs::InsertObj(obj, OBJ_DRAGON, 49);
+
+		}
 	}
 				default:
 				{

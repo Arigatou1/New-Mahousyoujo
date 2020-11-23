@@ -43,6 +43,9 @@
     <Filter Include="ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連">
       <UniqueIdentifier>{beb76083-0ba2-4765-a4ec-cadfe307ba3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\03.シーンメイン\敵オブジェクトBoss">
+      <UniqueIdentifier>{f0eda782-b505-489b-a4f4-1fbe096ab89b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilityModule.cpp">
@@ -88,9 +91,6 @@
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjBarrier.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBoss1.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjCustomize.cpp">
@@ -189,9 +189,6 @@
     <ClCompile Include="ObjEnemyAmount.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
-    <ClCompile Include="ObjSlimeBall.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
-    </ClCompile>
     <ClCompile Include="ObjSmallSlim.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
@@ -203,6 +200,18 @@
     </ClCompile>
     <ClCompile Include="ObjSword.cpp">
       <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBoss1.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDragon.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSlimeBall.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFireBall.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -249,9 +258,6 @@
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="Objbarrier.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBoss1.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjCustomize.h">
@@ -350,9 +356,6 @@
     <ClInclude Include="ObjEnemyAmount.h">
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSlimeBall.h">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
-    </ClInclude>
     <ClInclude Include="ObjSmallSlim.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
@@ -364,6 +367,18 @@
     </ClInclude>
     <ClInclude Include="ObjSword.h">
       <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBoss1.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDragon.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSlimeBall.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFireBall.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
