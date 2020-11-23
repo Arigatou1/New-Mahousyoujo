@@ -111,19 +111,22 @@ void CObjEnemy::Action()
 			m_ex = m_ex + 5.0f;
 			m_ey = m_ey - 60.0f;
 		}
-	}
 
-	//バリアの情報
-	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
-	if (obj_barrier != nullptr)
-	{
-		b_mx = obj_barrier->GetBX();
 
-		if (m_ex == b_mx - 48.0f || m_ex == b_mx + 128.0f)
+		//バリアの情報
+		CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+		if (obj_barrier != nullptr)
 		{
-			m_vx = 0;
-			m_vy = 0;
+			b_mx = obj_barrier->GetBX();
+
+			if (m_ex == b_mx - 50.0f || m_ex == b_mx + 128.0f)
+			{
+				m_vx = 0;
+				m_vy = 0;
+			}
+
 		}
+
 
 	}
 

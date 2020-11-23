@@ -90,7 +90,7 @@ void CObjSmallSlim::Action()
 		{
 			m_vx = 0;
 		}
-		else if (m_ex == b_mx + 160.0f)
+		else if (m_ex == b_mx + 128.0f)
 		{
 			m_vx = 0;
 		}
