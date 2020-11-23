@@ -1,5 +1,2 @@
-﻿  ObjEnemy2.cpp
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(125,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(165,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(173,40): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+﻿  EnemyAppear.cpp
   New_MahouSyoujo.vcxproj -> C:\Users\User\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe

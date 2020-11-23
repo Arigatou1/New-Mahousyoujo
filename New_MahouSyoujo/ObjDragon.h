@@ -5,34 +5,24 @@
 using namespace GameL;
 
 //オブジェクト敵機
-class CObjSmallSlim : public CObj
+class CObjDragon : public CObj
 {
 public:
-	CObjSmallSlim(float x, float y);
-	~CObjSmallSlim() {};
+	CObjDragon(float x, float y);
+	~CObjDragon() {};
 	void Init();
 	void Action();
 	void Draw();
-	//	int EneAmo();
+	int GetMAXHP();
+	int GetHP();
+
+
 private:
 	float m_ex;
 	float m_ey;
 	float m_vx;
 	float m_vy;
-	
-	int e_damege;//ダメージ量
-	int ss_anime;//アニメーション変更用
 
-	float b_mx;//バリアのx位置
-	float b_my;//バリアのy位置
-
-	float m_mx;//マナのX位置
-	float m_my;//マナのY位置
-	//int Amount;
-
-	int e_jkn;//
-	int e_time;//
-	bool e_mtk;
 
 	//blockとの衝突状態確認用
 	bool e1_hit_up;
@@ -40,10 +30,11 @@ private:
 	bool e1_hit_left;
 	bool e1_hit_right;
 
-	bool ss_t;//マナの位置にいるかどうか判別
-
 	float e1_xsize;
 	float e1_ysize;
+
+	int a_time;
+
 	float e_hp;
-	float damage;
+	float maxhp;
 };

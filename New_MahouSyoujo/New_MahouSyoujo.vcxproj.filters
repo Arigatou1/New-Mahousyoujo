@@ -32,22 +32,19 @@
       <UniqueIdentifier>{badbc2c4-1efb-41f1-8e95-4758de5e98d6}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\03.シーンメイン\敵オブジェクト">
-      <UniqueIdentifier>{675d8a2c-09e5-430f-a227-e1f88d34c857}</UniqueIdentifier>
+      <UniqueIdentifier>{d58673b2-2a5e-42eb-8cb2-3f68ba4d851d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連">
-      <UniqueIdentifier>{d517ffb5-f2ee-4ed7-832c-0e9c15cf1027}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連">
+      <UniqueIdentifier>{79956e90-426d-4ead-b6ed-1838a1dd0713}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\03.シーンメイン\ゲージ表示関連">
-      <UniqueIdentifier>{b5c6cd36-85ea-4540-a226-420ac4b06c72}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連">
+      <UniqueIdentifier>{9b25f1ec-8281-44e3-9cc6-69f68759a8ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\03.シーンメイン\主人公プレイヤー関連">
-      <UniqueIdentifier>{67c88f43-f9e7-4d0b-9e13-1fd1d1e0321c}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連">
+      <UniqueIdentifier>{beb76083-0ba2-4765-a4ec-cadfe307ba3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\03.シーンメイン\敵オブジェクトボス">
-      <UniqueIdentifier>{47ea8d7d-92c9-4323-8983-64c456f6088e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\03.シーンメイン\魔法少女関連">
-      <UniqueIdentifier>{74a7744e-86d9-4029-b66a-7eb7d516865b}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\03.シーンメイン\敵オブジェクトBoss">
+      <UniqueIdentifier>{f0eda782-b505-489b-a4f4-1fbe096ab89b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,20 +81,29 @@
     <ClCompile Include="GameL\MultiThread.cpp">
       <Filter>GameL</Filter>
     </ClCompile>
+    <ClCompile Include="CObjHomingBullet.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClCompile>
     <ClCompile Include="EnemyAppear.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAllBullet.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBarrier.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjCustomize.cpp">
       <Filter>ソース ファイル\02.シーンメニュー</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjEnemyAmount.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjGameClear.cpp">
       <Filter>ソース ファイル\04.シーンゲームクリア</Filter>
     </ClCompile>
     <ClCompile Include="ObjGameOver.cpp">
       <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMagicalGirl.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjMana.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
@@ -150,65 +156,62 @@
     <ClCompile Include="ObjEnemy4.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
-    <ClCompile Include="ObjSlimeBall.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
+    <ClCompile Include="ObjGaugeBase.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeBaseBoss.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeBaseMana.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeBoss.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeHP.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeMana.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGaugeMP.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackGround.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnemyAmount.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
     <ClCompile Include="ObjSmallSlim.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBackGround.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjPauseMenu.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeBase.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeBaseBoss.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeBaseMana.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeBoss.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeHP.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeMana.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeMP.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjHero.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSword.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
     <ClCompile Include="ObjBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSword.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
     </ClCompile>
     <ClCompile Include="ObjBoss1.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトボス</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMagicalGirl.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClCompile Include="ObjDragon.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
-    <ClCompile Include="ObjAllBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClCompile Include="ObjSlimeBall.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBarrier.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjHomingBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClCompile Include="ObjFireBall.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,20 +248,29 @@
     <ClInclude Include="GameL\MultiThread.h">
       <Filter>GameL</Filter>
     </ClInclude>
+    <ClInclude Include="CObjHomingBullet.h">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClInclude>
     <ClInclude Include="EnemyAppear.h">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAllBullet.h">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClInclude>
+    <ClInclude Include="Objbarrier.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjCustomize.h">
       <Filter>ソース ファイル\02.シーンメニュー</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEnemyAmount.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjGameClear.h">
       <Filter>ソース ファイル\04.シーンゲームクリア</Filter>
     </ClInclude>
     <ClInclude Include="ObjGameOver.h">
       <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMagicalGirl.h">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjMana.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
@@ -311,65 +323,62 @@
     <ClInclude Include="ObjEnemy4.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSlimeBall.h">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
+    <ClInclude Include="ObjGaugeBase.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeBaseBoss.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeBaseMana.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeBoss.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeHP.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeMana.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGaugeMP.h">
+      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackGround.h">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBlock.h">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnemyAmount.h">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjSmallSlim.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
-    <ClInclude Include="ObjBackGround.h">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBlock.h">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClInclude>
     <ClInclude Include="ObjPauseMenu.h">
-      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾オブジェクト関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeBase.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeBaseBoss.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeBaseMana.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeBoss.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeHP.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeMana.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeMP.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージ表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSword.h">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤー関連</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSword.h">
+      <Filter>ソース ファイル\03.シーンメイン\主人公プレイヤーオブジェクト関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjBoss1.h">
-      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトボス</Filter>
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMagicalGirl.h">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClInclude Include="ObjDragon.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClInclude>
-    <ClInclude Include="ObjAllBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClInclude Include="ObjSlimeBall.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClInclude>
-    <ClInclude Include="Objbarrier.h">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjHomingBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    <ClInclude Include="ObjFireBall.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

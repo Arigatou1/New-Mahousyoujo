@@ -41,6 +41,8 @@ enum OBJ_NAME
 	OBJ_BOSS_ENEMY,
 	OBJ_GAUGEBASEBOSS,
 	OBJ_GAUGEBOSS,
+	OBJ_FIREBALL,
+	OBJ_DRAGON,
 };
 //------------------------------------------------
 
@@ -137,6 +139,8 @@ struct UserData
 #include "EnemyAppear.h"
 #include "ObjGaugeBaseBoss.h"
 #include "ObjGaugeBoss.h"
+#include "ObjFireBall.h"
+#include "ObjDragon.h"
 
 //------------------------------------------------
 
