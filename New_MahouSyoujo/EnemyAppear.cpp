@@ -1435,6 +1435,104 @@ void EnemyAppear::Action()
 		Objs::InsertObj(obj, OBJ_ENEMY4, 49);
 		
 		}
+		else if (m_time == 1600)
+		{
+		CObjEnemy* obj = new CObjEnemy(799, 300);
+		Objs::InsertObj(obj, OBJ_ENEMY, 49);
+
+		}
+		else if (m_time == 1700)
+		{
+		CObjEnemy4* obj = new CObjEnemy4(-63, 300);
+		Objs::InsertObj(obj, OBJ_ENEMY4, 49);
+
+		}
+		else if (m_time == 1800)
+		{
+		CObjEnemy* obj = new CObjEnemy(799, 300);
+		Objs::InsertObj(obj, OBJ_ENEMY, 49);
+
+		}
+		else if (m_time == 1850)
+		{
+		CObjEnemy* obj = new CObjEnemy(799, 300);
+		Objs::InsertObj(obj, OBJ_ENEMY, 49);
+
+		}
+
+		else if (m_time == 1950)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 1975)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2000)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2025)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2075)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(799, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		CObjEnemy4* obj2 = new CObjEnemy4(799, 300);
+		Objs::InsertObj(obj2, OBJ_ENEMY4, 49);
+
+
+		}
+		else if (m_time == 2100)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(799, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2125)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(799, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2175)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(799, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2200)
+		{
+		CObjSmallSlim* obj = new CObjSmallSlim(799, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+		obj = new CObjSmallSlim(-63, 300);
+		Objs::InsertObj(obj, OBJ_SMALLSLIM, 49);
+
+		}
+		else if (m_time == 2300)
+		{
+		CObjEnemy4* obj = new CObjEnemy4(-63, 300);
+		Objs::InsertObj(obj, OBJ_ENEMY4, 49);
+
+ }
 		break;
 	}
 				default:
