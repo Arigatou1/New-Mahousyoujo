@@ -60,7 +60,7 @@ void CObjEnemy::Action()
 
 			if (m_mx + 65.0f <= m_ex)
 				m_vx = -1.5f;
-			else if (m_mx - 65.0f >= m_ex)
+			else if (m_mx - 52.0f >= m_ex)
 				m_vx = 1.5f;
 			else
 			{
@@ -74,9 +74,9 @@ void CObjEnemy::Action()
 				//120ごとに攻撃する(マナより右側)
 		if (m_mx <= m_ex && e1_t ==false)
 		{
-			if (e1_time % 120 == 0)
+			if (e1_time % 120 >= 0 && e1_time % 120 <= 5)
 			{
-				m_ex = m_ex - 10.0f;
+				m_ex = m_ex - 5.0f;
 				e1_anime = 3;
 			}
 			else
@@ -88,14 +88,14 @@ void CObjEnemy::Action()
 		//120ごとに攻撃する(マナより左側)
 		else if (m_mx >= m_ex && e1_t ==false)
 		{
-			if (e1_time % 120 == 0)
+			if (e1_time % 120 >= 0 && e1_time % 120 <= 5)
 			{
-				m_ex = m_ex + 10.0f;
+				m_ex = m_ex + 5.0f;
 				e1_anime = 3;
 			}
 			else
 			{
-				m_ex = m_mx - 66.0f;
+				m_ex = m_mx - 52.0f;
 				e1_anime = 1;
 			}
 		}
