@@ -21,6 +21,7 @@ private:
 	float m_vy;
 	
 	int e_damege;//ダメージ量
+	int ss_anime;//アニメーション変更用
 
 	float b_mx;//バリアのx位置
 	float b_my;//バリアのy位置
@@ -38,6 +39,8 @@ private:
 	bool e1_hit_down;
 	bool e1_hit_left;
 	bool e1_hit_right;
+
+	bool ss_t;//マナの位置にいるかどうか判別
 
 	float e1_xsize;
 	float e1_ysize;
