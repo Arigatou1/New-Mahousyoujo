@@ -36,8 +36,8 @@ void CObjFireBall::Init()
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_FIREBALL, 10);
 
-	m_vx = -14.0f;
-	m_vy = 20.0f;
+	m_vx = -3.5f;
+	m_vy = 5.0f;
 
 	hitGround = false;
 	hitTime = 100.0f;
@@ -48,9 +48,7 @@ void CObjFireBall::Action()
 {
 
 
-	m_ex += m_vx;
-	m_ey += m_vy;
-
+	
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ex, m_ey);
@@ -72,9 +70,9 @@ void CObjFireBall::Action()
 
 	if (hitGround == true)
 	{
-		hitTime -= 1.0f;
-		m_vx = -14.0f;
-		m_vy = -2.0f;
+		hitTime -= 3.0f;
+		m_vx = -3.5f;
+		m_vy = -0.5f;
 	}
 	//hitTimeが0に
 	if (hitTime <= 0)
@@ -85,13 +83,17 @@ void CObjFireBall::Action()
 
 	//移動ベクトルの正規化
 	UnitVec(&m_vx, &m_vy);
+
+	m_ex += m_vx*2.0f;
+	m_ey += m_vy*2.0f;
+
 }
 
 //ドロー
 void CObjFireBall::Draw()
 {
 	//描画カラー情報
-	float c[4] = { 1.0f,1.0f,1.0f,hitTime / 100.0f};
+	float c[4] = { 1.0f,0.0f,0.0f,hitTime / 100.0f};
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
