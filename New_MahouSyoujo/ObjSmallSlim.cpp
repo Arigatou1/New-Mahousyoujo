@@ -24,8 +24,8 @@ void CObjSmallSlim::Init()
 	
 	e_hp = 1;
 
-	e_jkn = 100;
-	e_time = e_jkn;
+	//e_jkn = 100;
+	e_time = 0;
 	e_mtk = false;
 
 	//blockとの衝突状態確認用
@@ -40,6 +40,9 @@ void CObjSmallSlim::Init()
 	e1_ysize = 32+12;
 
 	e_damege = 0;
+
+	ss_t = true;
+	ss_anime = 1;
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 32, 32, ELEMENT_ENEMY, OBJ_SMALLSLIM, 10);
 
@@ -48,10 +51,92 @@ void CObjSmallSlim::Init()
 //アクション
 void CObjSmallSlim::Action()
 {
+	//敵4の時間
+	e_time++;
+
+	//マナの位置で停止
+	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
+	if (obj != nullptr)
+	{
+		float m_mx = obj->GetX();
+
+		if (m_mx + 50.0f <= m_ex)
+			m_vx = -2.0f;
+		else if (m_mx - 52.0f >= m_ex)
+			m_vx = 2.0f;
+		else
+		{
+			m_vx = 0;
+			ss_t = false;
+		}
+
+		//マナの手前に停止して攻撃する間隔
+				//120ごとに攻撃する(マナより右側)
+		if (m_mx <= m_ex && ss_t == false)
+		{
+			if (e_time % 120 >= 0 && e_time % 120 <= 5)
+			{
+				m_ex = m_ex - 5.0f;
+				ss_anime = 3;
+			}
+			else
+			{
+				m_ex = m_mx + 50.0f;
+				ss_anime = 1;
+			}
+		}
+		//120ごとに攻撃する(マナより左側)
+		else if (m_mx >= m_ex && ss_t == false)
+		{
+			if (e_time % 120 >= 0 && e_time % 120 <= 5)
+			{
+				m_ex = m_ex + 5.0f;
+				ss_anime = 3;
+			}
+			else
+			{
+				m_ex = m_mx - 52.0f;
+				ss_anime = 1;
+			}
+		}
+
+		//ジョンプ
+		if (e1_hit_right == true)
+		{
+			m_ex = m_ex - 5.0f;
+			m_ey = m_ey - 60.0f;
+		}
+		else if (e1_hit_left == true)
+		{
+			m_ex = m_ex + 5.0f;
+			m_ey = m_ey - 60.0f;
+		}
+
+		//バリア出てる時だけ止まる
+		CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+		if (obj_barrier != nullptr)
+		{
+			b_mx = obj_barrier->GetBX();
+
+			if (m_ex == b_mx - 48.0f)
+			{
+				m_vx = 0;
+			}
+			else if (m_ex == b_mx + 128.0f)
+			{
+				m_vx = 0;
+			}
+
+		}
+	}
+
 	//m_vxの速度で移動
 	m_ex += m_vx;
 	m_ey += m_vy;
 
+	//HitBOxの内容を変更
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_ex + 16.0f, m_ey + 32.0f);
 
 	CObjBlock* obj_block1 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	obj_block1->BlockHit(&m_ex, &m_ey,
@@ -61,41 +146,6 @@ void CObjSmallSlim::Action()
 	//重力
 	m_vy += 9.8 / (16.0f);
 
-
-	//HitBOxの内容を変更
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex, m_ey);
-
-
-	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
-	if (obj != nullptr)
-	{
-		float m_mx = obj->GetX();
-
-		if (m_mx <= m_ex)
-			m_vx = -2.0f;
-		else if (m_mx >= m_ex)
-			m_vx = 2.0f;
-		else
-			m_vx = 0;
-	}
-
-	//バリア出てる時だけ止まる
-	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
-	if (obj_barrier != nullptr)
-	{
-		b_mx = obj_barrier->GetBX();
-
-		if (m_ex == b_mx - 48.0f)
-		{
-			m_vx = 0;
-		}
-		else if (m_ex == b_mx + 128.0f)
-		{
-			m_vx = 0;
-		}
-
-	}
 
 	//弾が当たれば消滅
 	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
@@ -146,14 +196,14 @@ void CObjSmallSlim::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 320.0f;
-	src.m_left = 0.0f;
-	src.m_right = 64.0f;
+	src.m_left = ss_anime * 64.0f - 64.0f;
+	src.m_right = ss_anime * 64.0f;
 	src.m_bottom = 384.0f;
 	//表示位置の設定
-	dst.m_top = m_ey;
-	dst.m_left = m_ex;
-	dst.m_right = m_ex + 32.0f;
-	dst.m_bottom = m_ey + 32.0f;
+	dst.m_top    = m_ey + 32.0f;
+	dst.m_left   = m_ex + 16.0f;
+	dst.m_right  = m_ex + 48.0f;
+	dst.m_bottom = m_ey + 64.0f;
 
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
