@@ -28,8 +28,9 @@ CSceneGameOver::~CSceneGameOver()
 void CSceneGameOver::InitScene()
 {
 	//出力させる文字のグラフィックを作成
-	Font::SetStrTex(L"YOU LOSE");
-	Font::SetStrTex(L"GAME OVER");
+
+	Draw::LoadImageW(L"Graphics/GameOver.png", 0, TEX_SIZE_512);
+
 
 	//ゲームオーバーオブジェクト作成
 	CObjGameOver* obj = new CObjGameOver();
