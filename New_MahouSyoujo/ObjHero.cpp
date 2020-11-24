@@ -288,7 +288,7 @@ void CObjHero::Action()
 		{
 			if (m_hp < max_hp)
 			{
-				if (Input::GetVKey('H') == true && h_t == true && m_Skill == 1)
+				if (Input::GetVKey('D') == true && h_t == true && m_Skill == 1)
 				{
 					h_t = false;
 					m_hp += 3.0f;
@@ -298,7 +298,7 @@ void CObjHero::Action()
 						m_hp = max_hp;
 					}
 				}
-				else if (Input::GetVKey('H') == false)
+				else if (Input::GetVKey('D') == false)
 				{
 					h_t = true;
 				}

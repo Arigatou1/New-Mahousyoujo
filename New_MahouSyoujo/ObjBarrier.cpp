@@ -32,12 +32,12 @@ void CObjBarrier::Action()
 
 	}
 
-	if (Input::GetVKey('H') == true && b_t == true && b_skill == 2)
+	if (Input::GetVKey('D') == true && b_t == true && b_skill == 2)
 	{
 		b_time = 0;
 		b_t = false;
 	}
-	else if (Input::GetVKey('H') == false && b_time > 200)
+	else if (Input::GetVKey('D') == false && b_time > 200)
 	{
 		b_t = true;
 	}
