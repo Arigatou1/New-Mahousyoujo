@@ -175,7 +175,7 @@ void CObjMagicalGirl::Action()
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
 			}
 		}
-		else if (Input::GetVKey('D') == false && m_btime > 200)
+		else if (Input::GetVKey('D') == false && m_btime > 300)
 		{
 			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			b_t = true;
