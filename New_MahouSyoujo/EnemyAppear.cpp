@@ -1583,18 +1583,19 @@ void EnemyAppear::Action()
 		CObjEnemy4* obj = new CObjEnemy4(-63, 300);
 		Objs::InsertObj(obj, OBJ_ENEMY4, 49);
 
- }
+		}
 		break;
 	}
 	case 8:
 	{
-		if (m_time == 770)
+		if (m_time == 100)
 		{
 
-			CObjDragon* obj = new CObjDragon(576, 192);
+			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
 
 		}
+		break;
 	}
 				default:
 				{

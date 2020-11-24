@@ -30,12 +30,9 @@ void CObjBoss1::Init()
 	e1_hit_left = false;
 	e1_hit_right = false;
 
-	e1_xsize = 250.0f;
-	e1_ysize = 250.0f;
-
 	a_time = 0;
 
-	maxhp = 400;
+	maxhp = 800;
 	e_hp = maxhp;
 	
 	//“–‚½‚è”»’è—p‚ÌHITBOX‚ðì¬
@@ -121,7 +118,7 @@ void CObjBoss1::Action()
 	
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-
+		Scene::SetScene(new CSceneGameClear());
 		//Amount++;
 	}
 }

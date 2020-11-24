@@ -30,9 +30,6 @@ private:
 	bool e1_hit_left;
 	bool e1_hit_right;
 
-	float e1_xsize;
-	float e1_ysize;
-
 	int a_time;
 
 	float e_hp;
