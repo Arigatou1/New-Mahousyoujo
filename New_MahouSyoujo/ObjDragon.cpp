@@ -28,7 +28,7 @@ void CObjDragon::Init()
 
 	a_time = 0;
 
-	maxhp = 1200;
+	maxhp = 1800;
 	e_hp = maxhp;
 
 	//“–‚½‚è”»’è—p‚ÌHITBOX‚ðì¬

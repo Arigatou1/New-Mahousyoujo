@@ -20,7 +20,7 @@ void CObjStageSelect::Init()
 	cursor_y = 64;
 	 
 	PageID = ((UserData*)Save::GetData())->Stage / 4;
-	MaxPage = 4;
+	MaxPage = 1;
 
 	((UserData*)Save::GetData())->ManaHP = 0;
 	((UserData*)Save::GetData())->HeroHP = 0;

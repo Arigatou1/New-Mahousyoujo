@@ -1,2 +1,4 @@
-﻿  EnemyAppear.cpp
+﻿  ObjStageSelect.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(39,65): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(170,37): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
