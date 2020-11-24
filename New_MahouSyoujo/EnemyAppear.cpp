@@ -1660,7 +1660,9 @@ void EnemyAppear::Draw()
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
 	
-	swprintf_s(str, L"タイム:%d", m_time);//整数を文字列か
+	//swprintf_s(str, L"タイム:%d", m_time);//整数を文字列か
+	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法 H少女攻撃");//整数を文字列か
+
 
 	Font::StrDraw(str, 2, 120, 24, c);
 }

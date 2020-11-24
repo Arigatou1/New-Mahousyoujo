@@ -21,7 +21,7 @@ void CObjEnemy3::Init()
 
 	m_vx = 1.0f;
 	m_vy = 0.0f;
-	e_hp = 10;
+	e_hp = 20;
 	e_damege = 0;
 
 	e3_hit_up = false;
@@ -88,7 +88,7 @@ void CObjEnemy3::Action()
 	}
 	//ƒoƒŠƒAo‚Ä‚éŽž‚¾‚¯Ž~‚Ü‚é
 	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
-	/*if (obj_barrier != nullptr)
+	if (obj_barrier != nullptr)
 	{
 		b_mx = obj_barrier->GetBX();
 
@@ -101,7 +101,7 @@ void CObjEnemy3::Action()
 			m_vx = 0;
 		}
 
-	}*/
+	}
 
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
