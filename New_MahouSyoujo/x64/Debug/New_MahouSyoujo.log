@@ -1,5 +1,2 @@
-﻿  ObjEnemy3.cpp
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(68,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(127,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(135,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\Arigatou1\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
+﻿  EnemyAppear.cpp
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe

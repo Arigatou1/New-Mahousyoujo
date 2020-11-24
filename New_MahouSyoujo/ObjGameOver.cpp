@@ -47,9 +47,22 @@ void CObjGameOver::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
 
-	Font::StrDraw(L"GAME OVER", 230, 240, 72, c);
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 960.0f;
+	src.m_bottom = 600.0f;
+	//表示位置の設定
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 500.0f;
+	//描画
+	Draw::Draw(0, &src, &dst, c, 0.0f);
 
-	Font::StrDraw(L"[Esc]:タイトルへ", 236, 368, 32, c);
-	Font::StrDraw(L"[Enter]:リトライ", 236, 468, 32, c);
+	Font::StrDraw(L"[Esc]:タイトルへ", 236, 384, 32, c);
+	Font::StrDraw(L"[Enter]:リトライ", 236, 484, 32, c);
 }
