@@ -1,17 +1,8 @@
-﻿  ObjBarrier.cpp
-  ObjDragon.cpp
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(90,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(169,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(174,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjMagicalGirl.cpp
-  ObjModeSelect.cpp
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjModeSelect.cpp(186,70): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
-  ObjSetting.cpp
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(29,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(135,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(134,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
-  ObjStageSelect.cpp
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(39,65): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(170,37): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+﻿  CObjHomingBullet.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\CObjHomingBullet.cpp(129,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEnemy3.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(68,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(127,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(135,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
   コードを生成中...
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\Arigatou1\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe

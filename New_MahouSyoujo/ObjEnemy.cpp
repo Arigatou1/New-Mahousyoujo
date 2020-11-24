@@ -149,19 +149,10 @@ void CObjEnemy::Action()
 
 	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
 	{
-		e_hp -= 3;
+		//e_hp -= 3;
 		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e1_damege = obj_homing->GetM_ATK();
+		e_hp -= obj_homing->GetM_ATK();
 
-		if (e_hp <= 0) 
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			
-			//ƒ‚ƒ“ƒXƒ^[‚ª“|‚³‚ê‚½‚ÌŒø‰Ê‰¹
-			Audio::Start(2);
-		}
-		
 		//Amount++;
 	}
 
