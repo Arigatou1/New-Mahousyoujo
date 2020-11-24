@@ -82,7 +82,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Gauge.png", 1, TEX_SIZE_512);
 	Draw::LoadImageW(L"BackGround.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
-	Draw::LoadImageW(L"Dragon.png", 4, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
 	for (int i = 1; i <= 10; i++)
 	{

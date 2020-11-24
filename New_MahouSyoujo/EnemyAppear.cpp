@@ -1591,7 +1591,7 @@ void EnemyAppear::Action()
 		if (m_time == 100)
 		{
 
-			CObjDragon* obj = new CObjDragon(576, 192);
+			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
 
 		}
