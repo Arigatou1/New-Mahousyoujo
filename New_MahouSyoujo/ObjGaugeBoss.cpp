@@ -6,6 +6,7 @@
 #include "ObjGaugeBoss.h"
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
+#include "GameL\UserData.h"
 
 
 //使用するネームスペース
@@ -23,21 +24,40 @@ void CObjGaugeBoss::Init()
 //アクション
 void CObjGaugeBoss::Action()
 {
-
-	CObjBoss1* obj = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
-	if (obj != nullptr)
+	if (((UserData*)Save::GetData())->Stage + 1 == 4)
 	{
+		CObjBoss1* obj = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
+
+		if (obj != nullptr)
+		{
 
 
-		HP = obj->GetHP();
-		MAXHP = obj->GetMAXHP();
+			HP = obj->GetHP();
+			MAXHP = obj->GetMAXHP();
 
-		//MAXHPが100%とする
+			//MAXHPが100%とする
 
-		GaugePercent = (HP / MAXHP) * 292;
+			GaugePercent = (HP / MAXHP) * 292;
 
+		}
 	}
+	else if (((UserData*)Save::GetData())->Stage + 1 == 8)
+	{
+		CObjDragon* obj = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
 
+		if (obj != nullptr)
+		{
+
+
+			HP = obj->GetHP();
+			MAXHP = obj->GetMAXHP();
+
+			//MAXHPが100%とする
+
+			GaugePercent = (HP / MAXHP) * 292;
+
+		}
+	}
 
 }
 //ドロー

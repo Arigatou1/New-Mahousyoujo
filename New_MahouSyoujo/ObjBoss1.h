@@ -30,9 +30,9 @@ private:
 	bool e1_hit_left;
 	bool e1_hit_right;
 
-	float e1_xsize;
-	float e1_ysize;
-	
+	//‘S‘ÌUŒ‚‚É“–‚½‚Á‚½‚©Šm”F
+	bool allbullet_hit;
+
 	int a_time ;
 
 	float e_hp;

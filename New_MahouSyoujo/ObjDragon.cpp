@@ -28,9 +28,6 @@ void CObjDragon::Init()
 	e1_hit_left = false;
 	e1_hit_right = false;
 
-	e1_xsize = 250.0f;
-	e1_ysize = 250.0f;
-
 	a_time = 0;
 
 	maxhp = 400;
