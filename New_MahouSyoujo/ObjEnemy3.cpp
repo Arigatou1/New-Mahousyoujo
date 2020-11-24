@@ -21,7 +21,7 @@ void CObjEnemy3::Init()
 
 	m_vx = 1.0f;
 	m_vy = 0.0f;
-	e_hp = 10;
+	e_hp = 20;
 	e_damege = 0;
 
 	e3_hit_up = false;

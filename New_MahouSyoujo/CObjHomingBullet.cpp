@@ -20,7 +20,7 @@ void CObjHomingBullet::Init()
 {
 	m_vx = 0.0f;
 	//UŒ‚—Í
-	m_atk = 1;
+	m_atk = 10;
 
 	//“–‚½‚è”»’è—p‚ÌHITBOX‚ğì¬
 	Hits::SetHitBox(this, m_bx, m_by, 50, 50, ELEMENT_PLAYER, OBJ_HOMINGBULLET, 10);
