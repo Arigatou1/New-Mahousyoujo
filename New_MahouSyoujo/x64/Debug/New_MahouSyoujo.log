@@ -1,5 +1,36 @@
 ﻿  ObjDragon.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(55,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(134,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(139,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjDragon.cpp(55,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjDragon.cpp(134,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjDragon.cpp(139,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjGameClear.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjGameClear.cpp(46,54): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjGameOver.cpp
+  ObjHero.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(56,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(85,24): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(95,15): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(103,15): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(116,16): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(153,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(166,50): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(374,39): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(374,39): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(396,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(401,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjTitle.cpp
+  SceneGameClear.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneGameClear.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneGameClear.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+  SceneGameOver.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneGameOver.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneGameOver.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+  SceneTitle.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneTitle.cpp(3): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+  コードを生成中...
+  LINK : 前回のインクリメンタル リンクで C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe
