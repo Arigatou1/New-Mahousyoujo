@@ -265,6 +265,35 @@ void CObjHero::Action()
 				m_hp -= 0.5f + damage;
 				AllDamage += 0.5f + damage;//“G‚ÌUŒ‚—Í
 			}
+
+
+			if (hit->CheckObjNameHit(OBJ_FIREBALL))
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.0f + damage;
+				AllDamage += 1.0f + damage;//“G‚ÌUŒ‚—Í
+			}
+
+			if (hit->CheckObjNameHit(OBJ_BOSS1) != nullptr)
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.0f + damage;//“G‚ÌUŒ‚—Í
+				AllDamage += 1.0f + damage;
+			}
+
+			if (hit->CheckObjNameHit(OBJ_DRAGON) != nullptr)
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.5f + damage;//“G‚ÌUŒ‚—Í
+				AllDamage += 1.5f + damage;
+			}
+
 		}
 		//–³“G‚ªtrue‚É‚È‚Á‚½
 		if (m_mtk == true)

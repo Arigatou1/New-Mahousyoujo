@@ -67,7 +67,7 @@ void CObjDragon::Action()
 	hit->SetPos(m_ex, m_ey);
 
 	a_time++;
-	if (a_time >= 100)
+	if (a_time >= 300)
 	{
 		if (a_time % 10 == 0)
 		{
@@ -77,7 +77,7 @@ void CObjDragon::Action()
 		}
 	}
 
-	if (a_time == 200)
+	if (a_time == 400)
 	{
 		a_time = 0;
 	}

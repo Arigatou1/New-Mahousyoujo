@@ -35,7 +35,7 @@ void CObjGameClear::Action()
 	//’Ç‹L
 	//‚¤‚Ü‚­‚¢‚Á‚½‚©‚à‚µ‚ê‚È‚¢B
 
-    Score =	(30-((UserData*)Save::GetData())->HeroHP)*40 + ((UserData*)Save::GetData())->ManaHP*60;
+    Score =	(40-((UserData*)Save::GetData())->HeroHP)*100 + ((UserData*)Save::GetData())->ManaHP*60;
 
 
 
