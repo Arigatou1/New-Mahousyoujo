@@ -226,7 +226,7 @@ void CObjHero::Action()
 				//ƒ_ƒ[ƒW
 				Audio::Start(4);
 				m_mtk = true;
-				m_hp -= 1.4f + damage;//“G‚ÌUŒ‚—Í
+				m_hp -= 1.2f + damage;//“G‚ÌUŒ‚—Í
 				AllDamage += 1.4f + damage;
 
 			}
@@ -245,7 +245,7 @@ void CObjHero::Action()
 				//ƒ_ƒ[ƒW
 				Audio::Start(4);
 				m_mtk = true;
-				m_hp -= 2.5f+damage;//“G‚ÌUŒ‚—Í
+				m_hp -= 2.3f+damage;//“G‚ÌUŒ‚—Í
 				AllDamage += 2.5f + damage;
 			}
 

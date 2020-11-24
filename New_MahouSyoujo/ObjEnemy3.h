@@ -20,7 +20,8 @@ private:
 	float m_vx;		//移動ベクトル
 	float m_vy;
 
-	
+	int e_hp;
+	int e3_time;
 	int e_damege;
 
 	float b_mx;//バリアの位置
@@ -38,9 +39,7 @@ private:
 	bool e3_hit_right;
 	bool e3_hit_left;
 
-	float e3_xsize;
-	float e3_ysize;
+	bool e3_t;
 
-	float e_hp;
 	float damage;
 };
