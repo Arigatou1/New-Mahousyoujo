@@ -161,7 +161,7 @@ void CSceneMain::Scene()
 	else
 		m_key_flag = true;
 
-
+	//Žc‚è“G‚Ì”‚ª0‚É‚È‚Á‚½‚Æ‚«
 	if(((UserData*)Save::GetData())->enemyRemain == 0)
 		Scene::SetScene(new CSceneGameClear());
 }
