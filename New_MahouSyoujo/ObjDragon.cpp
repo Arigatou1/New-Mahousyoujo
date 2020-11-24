@@ -30,11 +30,11 @@ void CObjDragon::Init()
 
 	a_time = 0;
 
-	maxhp = 400;
+	maxhp = 1200;
 	e_hp = maxhp;
 
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ex, m_ey, 250, 250, ELEMENT_ENEMY, OBJ_DRAGON, 10);
+	Hits::SetHitBox(this, m_ex, m_ey, 256, 256, ELEMENT_ENEMY, OBJ_DRAGON, 10);
 
 
 	//ゲージオブジェクト作成
@@ -67,7 +67,7 @@ void CObjDragon::Action()
 	hit->SetPos(m_ex, m_ey);
 
 	a_time++;
-	if (a_time >= 100)
+	if (a_time >= 300)
 	{
 		if (a_time % 10 == 0)
 		{
@@ -77,7 +77,7 @@ void CObjDragon::Action()
 		}
 	}
 
-	if (a_time == 200)
+	if (a_time == 400)
 	{
 		a_time = 0;
 	}
@@ -100,7 +100,7 @@ void CObjDragon::Action()
 
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-
+		Scene::SetScene(new CSceneGameClear());
 		//Amount++;
 	}
 }
@@ -115,18 +115,18 @@ void CObjDragon::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 320.0f;
-	src.m_left = 64.0f;
-	src.m_right = 0.0f;
-	src.m_bottom = 384.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 128.0f;
+	src.m_bottom = 128.0f;
 	//表示位置の設定
-	dst.m_top = m_ey;
-	dst.m_left = m_ex;
-	dst.m_right = m_ex + 250.0f;
-	dst.m_bottom = m_ey + 250.0f;
+	dst.m_top = m_ey-128;
+	dst.m_left = m_ex-96;
+	dst.m_right = dst.m_left + 512.0f;
+	dst.m_bottom = dst.m_top + 512.0f;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(4, &src, &dst, c, 0.0f);
 }
 
 int CObjDragon::GetHP()
