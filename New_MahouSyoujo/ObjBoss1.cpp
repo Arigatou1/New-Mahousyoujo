@@ -21,6 +21,8 @@ void CObjBoss1::Init()
 	m_vx = 0;
 	m_vy = 0;
 
+	//全体攻撃一回だけダメージ与える　　与えない＝false   与える＝true
+	allbullet_hit = true;
 
 	//blockとの衝突状態確認用
 	e1_hit_up = false;
@@ -101,6 +103,14 @@ void CObjBoss1::Action()
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr && allbullet_hit == true)
+	{
+		CObjAllBullet* obj_allbullet = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_allbullet->GetZ_ATK();
+		allbullet_hit = false;
+	}
+	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
+		allbullet_hit = true;
 
 	//hpが0になると消滅
 	if (e_hp <= 0)
