@@ -46,7 +46,7 @@ void CObjSetting::Action()
 	else if (Input::GetVKey(VK_UP) == true)
 	{
 		//‘I‘ð
-		Audio::Start(4);
+	//	Audio::Start(4);
 		
 		if (m_key_flag == true)
 		{
