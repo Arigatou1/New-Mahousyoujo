@@ -100,7 +100,11 @@ void CObjMana::Action()
 	{
 		Mana_HP -= 0.10 + mana_damege * 0.10;
 	}
-
+	//ドラゴンの炎に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
+	{
+		Mana_HP -= 0.10 + mana_damege * 0.10;
+	}
 	//マナのHPが無くなった時、消滅させる
 	if (Mana_HP <= 0)
 	{

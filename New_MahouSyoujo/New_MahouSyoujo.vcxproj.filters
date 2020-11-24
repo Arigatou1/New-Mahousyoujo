@@ -213,6 +213,9 @@
     <ClCompile Include="ObjFireBall.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
     </ClCompile>
+    <ClCompile Include="ObjShockWave.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -379,6 +382,9 @@
     </ClInclude>
     <ClInclude Include="ObjFireBall.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクトBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjShockWave.h">
+      <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

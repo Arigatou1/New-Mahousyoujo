@@ -183,6 +183,7 @@
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
     <ClCompile Include="ObjSetting.cpp" />
+    <ClCompile Include="ObjShockWave.cpp" />
     <ClCompile Include="ObjSlimeBall.cpp" />
     <ClCompile Include="ObjSmallSlim.cpp" />
     <ClCompile Include="ObjStageSelect.cpp" />
@@ -240,6 +241,7 @@
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
     <ClInclude Include="ObjSetting.h" />
+    <ClInclude Include="ObjShockWave.h" />
     <ClInclude Include="ObjSlimeBall.h" />
     <ClInclude Include="ObjSmallSlim.h" />
     <ClInclude Include="ObjStageSelect.h" />
