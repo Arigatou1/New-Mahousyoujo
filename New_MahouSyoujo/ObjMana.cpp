@@ -65,13 +65,13 @@ void CObjMana::Action()
 
 	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
 	{
-		Mana_HP -= 0.10 + mana_damege * 0.05;
+		Mana_HP -= 0.40 + mana_damege * 0.20;
 	}
 
 	//“G2‚É“–‚½‚é‚ÆHP‚ªŒ¸‚é
 	if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
 	{
-		Mana_HP -= 0.20 + mana_damege * 0.05;
+		Mana_HP -= 0.80 + mana_damege * 0.20;
 	}
 
 	//“G3‚É“–‚½‚é‚ÆHP‚ªŒ¸‚é
@@ -91,7 +91,7 @@ void CObjMana::Action()
 	//¬‚³‚¢ƒXƒ‰ƒCƒ€‚É“–‚½‚é‚ÆHP‚ªŒ¸‚é
 	if (hit->CheckObjNameHit(OBJ_SMALLSLIM) != nullptr)
 	{
-		Mana_HP -= 0.05 + mana_damege * 0.05;
+		Mana_HP -= 0.20 + mana_damege * 0.20;
 
 	}
 
