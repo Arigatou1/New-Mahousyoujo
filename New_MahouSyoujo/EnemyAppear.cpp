@@ -56,7 +56,7 @@ void EnemyAppear::Init()
 		CObjBackGround* obj_bg = new CObjBackGround(2);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
-		((UserData*)Save::GetData())->enemyRemain = 99;
+		((UserData*)Save::GetData())->enemyRemain = -1;
 		break;
 	}
 	case 5:
@@ -92,7 +92,7 @@ void EnemyAppear::Init()
 		CObjBackGround* obj_bg = new CObjBackGround(9);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
-		((UserData*)Save::GetData())->enemyRemain = 99;
+		((UserData*)Save::GetData())->enemyRemain = -1;
 		break;
 	}
 	default:
