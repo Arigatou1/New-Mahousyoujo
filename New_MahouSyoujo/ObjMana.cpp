@@ -114,7 +114,7 @@ void CObjMana::Action()
 		Scene::SetScene(new CSceneGameOver());
 	}
 
-	((UserData*)Save::GetData())->ManaHP = Mana_HP;
+	((UserData*)Save::GetData())->ManaHP = 100.0f - Mana_HP;
 }
 //ƒhƒ[
 void CObjMana::Draw()
