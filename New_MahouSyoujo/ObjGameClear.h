@@ -17,6 +17,6 @@ private:
 	float Score;
 	bool m_key_flag;//キーフラグ
 	int StageID;
-	int HeroDamage;
-	int ManaDamage;
+	float HeroDamage;
+	float ManaDamage;
 };
