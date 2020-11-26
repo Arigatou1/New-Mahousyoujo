@@ -1,8 +1,13 @@
 ﻿  CObjHomingBullet.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\CObjHomingBullet.cpp(129,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\CObjHomingBullet.cpp(129,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  EnemyAppear.cpp
+  ObjEnemy.cpp
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(133,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(170,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(175,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
   ObjEnemy3.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(68,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(127,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(135,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(68,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(127,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\Arigatou1\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(135,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
   コードを生成中...
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\Arigatou1\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
