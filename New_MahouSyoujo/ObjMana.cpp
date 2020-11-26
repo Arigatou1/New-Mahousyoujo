@@ -100,7 +100,11 @@ void CObjMana::Action()
 	{
 		Mana_HP -= 0.10 + mana_damege * 0.10;
 	}
-
+	//ドラゴンの炎に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
+	{
+		Mana_HP -= 2.0 + mana_damege * 0.10;
+	}
 	//マナのHPが無くなった時、消滅させる
 	if (Mana_HP <= 0)
 	{
@@ -110,7 +114,7 @@ void CObjMana::Action()
 		Scene::SetScene(new CSceneGameOver());
 	}
 
-	((UserData*)Save::GetData())->ManaHP = Mana_HP;
+	((UserData*)Save::GetData())->ManaHP = 100.0f - Mana_HP;
 }
 //ドロー
 void CObjMana::Draw()

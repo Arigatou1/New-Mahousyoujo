@@ -37,7 +37,7 @@ void CObjBarrier::Action()
 		b_time = 0;
 		b_t = false;
 	}
-	else if (Input::GetVKey('D') == false && b_time > 300)
+	else if (Input::GetVKey('D') == false && b_time > 200)
 	{
 		b_t = true;
 	}

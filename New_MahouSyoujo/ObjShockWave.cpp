@@ -3,7 +3,7 @@
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
 
-#include "ObjSlimeBall.h"
+#include "ObjShockWave.h"
 #include "GameL\UserData.h"
 #include "UtilityModule.h"
 
@@ -11,7 +11,7 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjSlimeBall::CObjSlimeBall(float x, float y, float vx, float vy)
+CObjShockWave::CObjShockWave(float x, float y, float vx, float vy)
 {
 	m_ex = x;
 	m_ey = y;
@@ -19,7 +19,7 @@ CObjSlimeBall::CObjSlimeBall(float x, float y, float vx, float vy)
 	m_vy = vy;
 }
 //イニシャライズ
-void CObjSlimeBall::Init()
+void CObjShockWave::Init()
 {
 
 	//blockとの衝突状態確認用
@@ -28,18 +28,15 @@ void CObjSlimeBall::Init()
 	e1_hit_left = false;
 	e1_hit_right = false;
 
-	e1_xsize = 64.0f;
-	e1_ysize = 64.0f;
-
 	e1_t = true;
 
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_SLIMEBALL, 10);
+	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_SHOCKWAVE, 10);
 
 
 	//主人公機で角度をとる
 
-	CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
 	float x = obj->GetX() - m_ex;
 	float y = obj->GetY() - m_ey;
 	float ar = atan2(-y, x) * 180.0f / 3.14f;
@@ -52,12 +49,14 @@ void CObjSlimeBall::Init()
 	m_vx = cos(3.14 / 180 * ar);
 
 	m_vy = -sin(3.14 / 180 * ar);
+
+
 }
 
 //アクション
-void CObjSlimeBall::Action()
+void CObjShockWave::Action()
 {
-	
+
 
 	m_ex += m_vx;
 	m_ey += m_vy;
@@ -67,43 +66,28 @@ void CObjSlimeBall::Action()
 	hit->SetPos(m_ex, m_ey);
 
 
-
-
-	CObjBlock* obj_block1 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	obj_block1->BlockHit(&m_ex, &m_ey,
-		&e1_hit_up, &e1_hit_down, &e1_hit_left, &e1_hit_right,
-		&m_vx, &m_vy);
-
-	
-	//質問
-	///スライムボールの動きってどんなのがいいかなあ？
-	/// プレイヤーの方向に打ち、方向転換はなし。
-	/// プレイヤーに当たった場合だけ消滅する。
-	/// 武器が効かない。
-	/// 
-	/// こんな感じですか？
-	
-	if (e1_hit_up == true || e1_hit_down == true || e1_hit_left == true || e1_hit_up == true ||hit->CheckElementHit(ELEMENT_PLAYER)== true)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-
 	//領域外に出たら削除する
 
-	bool check = CheckWindow(m_ex, m_ey, -64.0f, -64.0f, 800.0f, 600.0f);
+	bool check = CheckWindow(m_ex,m_ey, -64.0f, -64.0f, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
+	
 	//移動ベクトルの正規化
 	UnitVec(&m_vx, &m_vy);
+
+	//マナに当たると削除
+	if (hit->CheckObjNameHit(OBJ_MANA) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 
 //ドロー
-void CObjSlimeBall::Draw()
+void CObjShockWave::Draw()
 {
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

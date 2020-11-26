@@ -88,7 +88,9 @@ void CObjMagicalGirl::Action()
 		s_t = true;
 	}
 
+	
 	//–‚–@­—‚Ì’ÊíUŒ‚
+	/*
 	if (m_mp >= 5)
 	{
 		if (Input::GetVKey('H') == true && m_t == true)
@@ -132,7 +134,7 @@ void CObjMagicalGirl::Action()
 			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			m_t = true;
 		}
-	}
+	}*/
 
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
 	if (m_mp >= 20)
@@ -175,7 +177,7 @@ void CObjMagicalGirl::Action()
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
 			}
 		}
-		else if (Input::GetVKey('D') == false && m_btime > 300)
+		else if (Input::GetVKey('D') == false && m_btime > 200)
 		{
 			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			b_t = true;
