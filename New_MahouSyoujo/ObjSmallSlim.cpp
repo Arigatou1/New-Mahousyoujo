@@ -148,15 +148,11 @@ void CObjSmallSlim::Action()
 
 
 	//’e‚ª“–‚½‚ê‚ÎÁ–Å
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
 
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_damege = obj_homing->GetM_ATK();
-
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-
+		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_all->GetZ_ATK();
 
 		//Amount++;
 	}
