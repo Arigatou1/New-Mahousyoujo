@@ -18,8 +18,6 @@ CObjDragon::CObjDragon(float x, float y)
 //イニシャライズ
 void CObjDragon::Init()
 {
-	m_vx = 0;
-	m_vy = 0;
 
 
 	//blockとの衝突状態確認用
@@ -30,7 +28,7 @@ void CObjDragon::Init()
 
 	a_time = 0;
 
-	maxhp = 1200;
+	maxhp = 1800;
 	e_hp = maxhp;
 
 	//当たり判定用のHITBOXを作成
@@ -51,6 +49,43 @@ void CObjDragon::Init()
 //アクション
 void CObjDragon::Action()
 {
+	//timeが500になったとき上昇する
+	if (a_time >= 500 && a_time <= 600)
+	{
+		m_ey -= 2;
+	}
+
+
+//Y座標が100になるまで上昇する
+	if (a_time >= 600 && a_time <= 650)
+	{
+		m_ey += 1;
+	}
+	if (a_time >= 650 && a_time <= 700)
+	{
+		m_ey -= 1;
+	}
+	if (a_time >= 700 && a_time <= 750)
+	{
+		m_ey += 1;
+	}
+	if (a_time >= 750 && a_time <= 800)
+	{
+		m_ey -= 1;
+	}
+	if (a_time >= 800 && a_time <= 900)
+	{
+		m_ey += 2;
+	}
+
+
+	//100に到達したら、100->200->100をしばらく繰り返す
+
+
+	//また下げる
+
+
+
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -67,7 +102,7 @@ void CObjDragon::Action()
 	hit->SetPos(m_ex, m_ey);
 
 	a_time++;
-	if (a_time >= 300)
+	if (a_time >= 600 && a_time<=800)
 	{
 		if (a_time % 10 == 0)
 		{
@@ -77,7 +112,7 @@ void CObjDragon::Action()
 		}
 	}
 
-	if (a_time == 400)
+	if (a_time >= 900)
 	{
 		a_time = 0;
 	}

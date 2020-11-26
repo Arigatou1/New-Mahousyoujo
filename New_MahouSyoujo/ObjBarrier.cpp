@@ -42,7 +42,7 @@ void CObjBarrier::Action()
 		b_t = true;
 	}
 
-	if (b_time >= 200)
+	if (b_time >= 300)
 	{
 		this->SetStatus(false);
 	}

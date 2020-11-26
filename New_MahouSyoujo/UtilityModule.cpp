@@ -130,3 +130,4 @@ bool CheckWindow(float pos_x, float pos_y, float window_x, float window_y, float
 
 	return true;
 }
+
