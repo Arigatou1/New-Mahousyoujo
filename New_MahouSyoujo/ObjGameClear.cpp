@@ -17,6 +17,8 @@ void CObjGameClear::Init()
 	((UserData*)Save::GetData())->Clear_Flag[StageID+1] = true;
 
 	Score = 0;
+	HeroDamage = 0;
+	ManaDamage = 0;
 }
 
 //アクション
@@ -30,12 +32,19 @@ void CObjGameClear::Action()
 	/// なぜだろうか？
 	//((UserData*)Save::GetData())->Score =
 	//	(((UserData*)Save::GetData())->HeroHP * 40 + ((UserData*)Save::GetData())->ManaHP * 60);
-
+	ManaDamage = ((UserData*)Save::GetData())->ManaHP;
 
 	//追記
 	//うまくいったかもしれない。
 
-    Score =	(40-((UserData*)Save::GetData())->HeroHP)*100 + ((UserData*)Save::GetData())->ManaHP*60;
+    Score =	(4000-((UserData*)Save::GetData())->HeroHP*80) + (6000-((UserData*)Save::GetData())->ManaHP*60);
+
+
+
+
+
+
+
 
 
 
@@ -86,6 +95,10 @@ void CObjGameClear::Draw()
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 	wchar_t str[128];
+	swprintf_s(str, L"プレイヤーが受けたダメージ:%d", 0);//整数を文字列か
+	Font::StrDraw(str, 150, 408, 36, c);
+	swprintf_s(str, L"マナが受けたダメージ:%d", ManaDamage);//整数を文字列か
+	Font::StrDraw(str, 150, 464, 36, c);
 	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
 	Font::StrDraw(str,300, 500,72, c);
 
