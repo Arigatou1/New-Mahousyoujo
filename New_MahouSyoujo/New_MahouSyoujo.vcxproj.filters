@@ -46,6 +46,9 @@
     <Filter Include="ソース ファイル\03.シーンメイン\敵オブジェクトBoss">
       <UniqueIdentifier>{f0eda782-b505-489b-a4f4-1fbe096ab89b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\03.シーンメイン\魔法少女関連">
+      <UniqueIdentifier>{4d626a3a-caee-4a2e-a4dd-0f3a49fdf1d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilityModule.cpp">
@@ -81,16 +84,7 @@
     <ClCompile Include="GameL\MultiThread.cpp">
       <Filter>GameL</Filter>
     </ClCompile>
-    <ClCompile Include="CObjHomingBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyAppear.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAllBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBarrier.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjCustomize.cpp">
@@ -101,9 +95,6 @@
     </ClCompile>
     <ClCompile Include="ObjGameOver.cpp">
       <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMagicalGirl.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjMana.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
@@ -174,9 +165,6 @@
     <ClCompile Include="ObjGaugeMana.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGaugeMP.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBackGround.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
@@ -216,6 +204,18 @@
     <ClCompile Include="ObjShockWave.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
+    <ClCompile Include="CObjHomingBullet.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAllBullet.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBarrier.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMagicalGirl.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -251,16 +251,7 @@
     <ClInclude Include="GameL\MultiThread.h">
       <Filter>GameL</Filter>
     </ClInclude>
-    <ClInclude Include="CObjHomingBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyAppear.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjAllBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClInclude>
-    <ClInclude Include="Objbarrier.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjCustomize.h">
@@ -271,9 +262,6 @@
     </ClInclude>
     <ClInclude Include="ObjGameOver.h">
       <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMagicalGirl.h">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjMana.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
@@ -344,9 +332,6 @@
     <ClInclude Include="ObjGaugeMana.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGaugeMP.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
     <ClInclude Include="ObjBackGround.h">
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClInclude>
@@ -385,6 +370,18 @@
     </ClInclude>
     <ClInclude Include="ObjShockWave.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjHomingBullet.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAllBullet.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="Objbarrier.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMagicalGirl.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

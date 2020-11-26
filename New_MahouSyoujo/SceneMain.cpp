@@ -117,8 +117,8 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(objb, OBJ_BLOCK, 11);
 
 	//MPゲージオブジェクト作成
-	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
-	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
+//	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
+//	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
 	
 	
 
