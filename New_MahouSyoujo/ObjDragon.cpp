@@ -35,9 +35,6 @@ void CObjDragon::Init()
 	Hits::SetHitBox(this, m_ex, m_ey, 256, 256, ELEMENT_ENEMY, OBJ_DRAGON, 10);
 
 
-	//ゲージオブジェクト作成
-	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
-	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
 
 	//ゲージオブジェクト作成
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();

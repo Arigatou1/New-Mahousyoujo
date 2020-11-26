@@ -118,7 +118,7 @@ struct UserData
 #include "ObjGaugeHP.h"
 #include "ObjGaugeMana.h"
 #include "ObjMana.h"
-#include "ObjGaugeBaseMana.h"
+//#include "ObjGaugeBaseMana.h"
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
 #include "ObjBackGround.h"
@@ -136,7 +136,7 @@ struct UserData
 #include "ObjSlimeBall.h"
 #include "ObjSword.h"
 #include "EnemyAppear.h"
-#include "ObjGaugeBaseBoss.h"
+
 #include "ObjGaugeBoss.h"
 #include "ObjFireBall.h"
 #include "ObjDragon.h"
