@@ -193,7 +193,7 @@ void CObjMagicalGirl::Action()
 			z_t = false;
 			m_mp -= 50;
 
-			for (int i = 0; i< 15; i++)
+			for (int i = 0; i< 15; )
 			{
 				z_x = 64.0f * i;
 				if (i % 2 == 0)
@@ -201,12 +201,14 @@ void CObjMagicalGirl::Action()
 					//魔法少女魔法玉作成
 					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y - 100);//ホーミング弾作成
 					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
 				}
 				else if(i % 2 == 1)
 				{
 					//魔法少女魔法玉作成
 					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
 					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
 				}
 
 				if (z_x >= 800)
