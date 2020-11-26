@@ -108,7 +108,7 @@ void CObjGameClear::Draw()
 
 	
 	swprintf_s(str, L"10000 - %.2f~80 - %.2f~60 =", HeroDamage,ManaDamage);//®”‚ğ•¶š—ñ‚©
-	Font::StrDraw(str, 50, 468, 36, c);
+	Font::StrDraw(str, 50, 480, 18, c);
 	
 	
 }

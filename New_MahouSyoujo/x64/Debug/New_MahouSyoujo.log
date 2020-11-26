@@ -1,6 +1,6 @@
-﻿  ObjGaugeHP.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(29,18): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(30,24): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(43,30): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(44,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+﻿  ObjGaugeMana.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeMana.cpp(47,31): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  UtilityModule.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\UtilityModule.cpp(31,10): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  コードを生成中...
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\source\repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe

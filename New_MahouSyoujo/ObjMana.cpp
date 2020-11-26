@@ -34,8 +34,8 @@ void CObjMana::Init()
 
 
 	//MANAゲージベースオブジェクト作成
-	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
-	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
+//	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
+//	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
 
 	//MANAゲージオブジェクト作成
 	CObjGaugeMANAHP* obj_manahp = new CObjGaugeMANAHP(Mana_x, Mana_y);
