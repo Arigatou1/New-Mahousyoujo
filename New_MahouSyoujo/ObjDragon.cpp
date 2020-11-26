@@ -128,6 +128,11 @@ void CObjDragon::Action()
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
+	{
+		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_all->GetZ_ATK();
+	}
 
 	//hp‚ª0‚É‚È‚é‚ÆÁ–Å
 	if (e_hp <= 0)

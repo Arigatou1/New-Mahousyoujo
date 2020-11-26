@@ -116,7 +116,6 @@ struct UserData
 #include "ObjGaugeBase.h"
 #include "ObjBlock.h"
 #include "ObjGaugeHP.h"
-#include "ObjGaugeMP.h"
 #include "ObjGaugeMana.h"
 #include "ObjMana.h"
 #include "ObjGaugeBaseMana.h"

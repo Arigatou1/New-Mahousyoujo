@@ -54,12 +54,6 @@ void CObjAllBullet::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
-	if (m_ay < -25.0f)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
 }
 
 //ƒhƒ[

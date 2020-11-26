@@ -19,8 +19,9 @@ public:
 private:
 	float HP;
 	float MAXHP;
-	float GaugePercent;
-	
+	float GaugePercent[2];
+	float MP;
+	float MaxMP;
 
 };
 
