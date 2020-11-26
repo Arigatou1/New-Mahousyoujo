@@ -171,12 +171,9 @@
     <ClCompile Include="ObjGameClear.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="ObjGaugeBase.cpp" />
-    <ClCompile Include="ObjGaugeBaseBoss.cpp" />
-    <ClCompile Include="ObjGaugeBaseMana.cpp" />
     <ClCompile Include="ObjGaugeBoss.cpp" />
     <ClCompile Include="ObjGaugeHP.cpp" />
     <ClCompile Include="ObjGaugeMana.cpp" />
-    <ClCompile Include="ObjGaugeMP.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
@@ -229,12 +226,9 @@
     <ClInclude Include="ObjGameClear.h" />
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="ObjGaugeBase.h" />
-    <ClInclude Include="ObjGaugeBaseBoss.h" />
-    <ClInclude Include="ObjGaugeBaseMana.h" />
     <ClInclude Include="ObjGaugeBoss.h" />
     <ClInclude Include="ObjGaugeHP.h" />
     <ClInclude Include="ObjGaugeMana.h" />
-    <ClInclude Include="ObjGaugeMP.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />

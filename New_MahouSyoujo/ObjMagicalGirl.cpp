@@ -193,13 +193,23 @@ void CObjMagicalGirl::Action()
 			z_t = false;
 			m_mp -= 50;
 
-			for (int i = 0; i < 15; i++)
+			for (int i = 0; i< 15; )
 			{
 				z_x = 64.0f * i;
-
-				//魔法少女魔法玉作成
-				CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
-				Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+				if (i % 2 == 0)
+				{
+					//魔法少女魔法玉作成
+					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y - 100);//ホーミング弾作成
+					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
+				}
+				else if(i % 2 == 1)
+				{
+					//魔法少女魔法玉作成
+					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
+					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
+				}
 
 				if (z_x >= 800)
 				{
@@ -273,3 +283,24 @@ int CObjMagicalGirl::GetSkill()
 {
 	return m_skill;
 }
+
+/*
+int j_time = 0;
+j_time++;
+for(int i = 0; i <= 10;)
+{
+	if (j_time % 50 == 0)
+	{
+		//iをランダム化
+		k = k % 13;
+
+		z_x = 64.0f * k;
+
+		//魔法少女魔法玉作成
+		CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
+		Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+
+		i++;
+	}
+}
+*/

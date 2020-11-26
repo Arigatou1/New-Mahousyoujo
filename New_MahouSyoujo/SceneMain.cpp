@@ -116,11 +116,7 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 11);
 
-	//MPゲージオブジェクト作成
-	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
-	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
-	
-	
+
 
 	//敵の数オブジェクト作成
 	CObjEnemyAmount* obj_eneamo = new CObjEnemyAmount();
