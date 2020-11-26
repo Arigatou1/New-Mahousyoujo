@@ -102,13 +102,13 @@ void CObjEnemy::Action()
 		//ƒWƒ‡ƒ“ƒv
 		if (e1_hit_right == true)
 		{
-			m_ex = m_ex - 5.0f;
-			m_ey = m_ey - 60.0f;
+			m_vx = -1.0f;
+			m_vy = -8.0f;
 		}
 		else if (e1_hit_left == true)
 		{
-			m_ex = m_ex + 5.0f;
-			m_ey = m_ey - 60.0f;
+			m_vx = +1.0f;
+			m_vy = -8.0f;
 		}
 
 

@@ -49,6 +49,8 @@ void CObjShockWave::Init()
 	m_vx = cos(3.14 / 180 * ar);
 
 	m_vy = -sin(3.14 / 180 * ar);
+
+
 }
 
 //アクション
@@ -64,11 +66,24 @@ void CObjShockWave::Action()
 	hit->SetPos(m_ex, m_ey);
 
 
+	//領域外に出たら削除する
 
-
+	bool check = CheckWindow(m_ex,m_ey, -64.0f, -64.0f, 800.0f, 600.0f);
+	if (check == false)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 	
 	//移動ベクトルの正規化
 	UnitVec(&m_vx, &m_vy);
+
+	//マナに当たると削除
+	if (hit->CheckObjNameHit(OBJ_MANA) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 
 //ドロー
