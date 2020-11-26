@@ -174,9 +174,6 @@
     <ClCompile Include="ObjGaugeMana.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGaugeMP.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBackGround.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
@@ -342,9 +339,6 @@
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjGaugeMana.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeMP.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjBackGround.h">

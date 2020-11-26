@@ -1,8 +1,6 @@
-﻿  ObjEnemy3.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(72,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(131,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(139,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjSmallSlim.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSmallSlim.cpp(147,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-  コードを生成中...
+﻿  ObjGaugeHP.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(29,18): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(30,24): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(43,30): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(44,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\source\repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
