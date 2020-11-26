@@ -56,13 +56,17 @@ void CObjEnemy3::Action()
 		&e3_hit_up, &e3_hit_down, &e3_hit_left, &e3_hit_right,
 		&m_vx, &m_vy);
 
-
-	//ジャンプ
-/*	if (obj_block3 != nullptr)
+	//ジョンプ
+	if (e3_hit_right == true)
 	{
-
-
-	}*/
+		m_vx = -1.0f;
+		m_vy = -8.0f;
+	}
+	else if (e3_hit_left == true)
+	{
+		m_vx = +1.0f;
+		m_vy = -8.0f;
+	}
 
 	//自由落下運動
 	m_vy += 9.8 / (16.0f);

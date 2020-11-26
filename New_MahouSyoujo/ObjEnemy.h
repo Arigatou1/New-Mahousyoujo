@@ -39,4 +39,7 @@ private:
 	bool e1_t;//“G‚ÌUŒ‚ŠÔŠu
 
 	float damage;//“G‚ªó‚¯‚éƒ_ƒ[ƒW
+
+	bool e_delete;//“G”š”­
+	int delete_time;
 };
