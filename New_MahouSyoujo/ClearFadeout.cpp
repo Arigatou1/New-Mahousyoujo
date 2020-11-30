@@ -31,6 +31,20 @@ void Fadeout::Action()
 		if (shootDownTime >= 400)
 			Scene::SetScene(new CSceneGameClear());
 	}
+
+	if (((UserData*)Save::GetData())->HPZeroCheck == true)
+	{
+		shootDownTime++;
+
+
+		if (shootDownTime >= 400)
+		{
+
+			
+				Scene::SetScene(new CSceneGameOver());
+			
+		}
+	}
 }
 
 //ƒhƒ[

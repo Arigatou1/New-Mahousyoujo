@@ -45,6 +45,7 @@ enum OBJ_NAME
 	OBJ_SHOCKWAVE,
 	OBJ_STAGEENDLESS,
 	FADEOUT,
+	OBJ_ENDLESSRESULT,
 };
 //------------------------------------------------
 
@@ -92,6 +93,7 @@ struct UserData
 	float ManaHP;
 	//écÇËìGÇÃêîÇÃï\é¶
 	int enemyRemain;
+	bool HPZeroCheck;
 };
 //------------------------------------------------
 
@@ -139,6 +141,7 @@ struct UserData
 #include "ObjSword.h"
 #include "EnemyAppear.h"
 #include "ObjMenuEndless.h"
+#include "ObjEndlessResult.h"
 
 #include "ObjGaugeBoss.h"
 #include "ObjFireBall.h"

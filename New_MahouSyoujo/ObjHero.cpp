@@ -55,6 +55,7 @@ void CObjHero::Init()
 	Weapon = ((UserData*)Save::GetData())->weapon;
 	damage = ((UserData*)Save::GetData())->Diffculty * 0.5;
 	AllDamage = 0;
+	((UserData*)Save::GetData())->HPZeroCheck = false;
 }
 
 //アクション
@@ -337,10 +338,12 @@ void CObjHero::Action()
 		//主人公のHPが無くなった時、消滅させる
 		if (m_hp <= 0)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+		//	this->SetStatus(false);
+		//	Hits::DeleteHitBox(this);
 
-			Scene::SetScene(new CSceneGameOver());
+			((UserData*)Save::GetData())->HPZeroCheck = true;
+
+		//	Scene::SetScene(new CSceneGameOver());
 		}
 
 		//テスト用
@@ -357,6 +360,7 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneMain());
 		}
 
+		if(((UserData*)Save::GetData())->Stage==16)
 
 		//クリアシーンにスコアを与える
 		((UserData*)Save::GetData())->HeroHP = AllDamage;

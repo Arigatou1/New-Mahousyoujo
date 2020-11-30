@@ -216,6 +216,9 @@
     <ClCompile Include="ClearFadeout.cpp">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
+    <ClCompile Include="ObjEndlessResult.cpp">
+      <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -382,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="ClearFadeout.h">
       <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEndlessResult.h">
+      <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
