@@ -34,10 +34,7 @@ void CObjBlock::Init()
 
 void CObjBlock::Action()
 {
-	//主人公の位置収得
-	CObjHero* hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
-	float hx = hero->GetX();
-	float hy = hero->GetY();
+	
 }
 //ドロー
 void CObjBlock::Draw()

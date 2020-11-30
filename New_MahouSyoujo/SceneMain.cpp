@@ -52,7 +52,7 @@ void CSceneMain::InitScene()
 	wchar_t s[128];
 
 	if (StageID >= 9)
-	swprintf_s(s, L"Stage/Stage1.csv", StageID);
+	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else
 		swprintf_s(s, L"Stage/Stage%d.csv", StageID);

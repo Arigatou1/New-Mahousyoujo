@@ -163,6 +163,7 @@
     <ClCompile Include="ObjBullet.cpp" />
     <ClCompile Include="ObjCustomize.cpp" />
     <ClCompile Include="ObjDragon.cpp" />
+    <ClCompile Include="ObjEndlessResult.cpp" />
     <ClCompile Include="ObjEnemy.cpp" />
     <ClCompile Include="ObjEnemy2.cpp" />
     <ClCompile Include="ObjEnemy3.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="ObjBullet.h" />
     <ClInclude Include="ObjCustomize.h" />
     <ClInclude Include="ObjDragon.h" />
+    <ClInclude Include="ObjEndlessResult.h" />
     <ClInclude Include="ObjEnemy.h" />
     <ClInclude Include="ObjEnemy2.h" />
     <ClInclude Include="ObjEnemy3.h" />
