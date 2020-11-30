@@ -138,7 +138,7 @@ void CObjDragon::Action()
 	if (e_hp <= 0)
 	{
 
-
+		//Œ‚”jŒã‚ÌŽžŠÔ
 
 		shootDownTime++;
 
