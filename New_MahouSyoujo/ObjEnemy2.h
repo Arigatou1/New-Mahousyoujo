@@ -22,6 +22,7 @@ private:
 	float m_ey;
 	float m_vx;
 	float m_vy;
+
 	int e2_hp;//敵２のHP
 	int e2_damege;//ダメージ量
 	int e2_anime; //敵2のアニメーション

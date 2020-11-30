@@ -56,6 +56,14 @@ void CObjModeSelect::Action()
 
 				break;
 			}
+			case 1:
+			{
+				//メニューオブジェクト作成
+				CObjMenuEndless* obj2 = new CObjMenuEndless();
+				Objs::InsertObj(obj2, OBJ_STAGEENDLESS, 0);
+
+				break;
+			}
 			case 2:
 			{
 				//っ設定
@@ -149,7 +157,7 @@ void CObjModeSelect::Action()
 	//カーソルが画面買い行かない処理
 	if (cursor_x > 440)
 	{
-		cursor_x = 440;
+		cursor_x = 40;
 	}
 	else if (cursor_x < 40)
 	{
@@ -178,11 +186,15 @@ void CObjModeSelect::Draw()
 	for (int i = 0; i < 2; i++)
 		MenuBlockDraw(40 + (i * 400), 96, 320, 256, 1, 0, 0, 1);
 
+
 	//設定ボタン
 	MenuBlockDraw(200, 450, 400, 72, 0.5f, 0, 1, 1);
 
-	//カーソル描画
+	//	MenuBlockDraw(40, 96,720, 256, 1, 0, 0, 1);
+
 	MenuBlockDraw(cursor_x, cursor_y, cursor_sx, cursor_sy, 1, 0.8, 0, 1);
+	//カーソル描画
+//	MenuBlockDraw(cursor_x, cursor_y, cursor_sx, cursor_sy, 1, 0.8, 0, 1);
 	
 	//Font::StrDraw(L"GAME ModeSelect", 2, 2, 32, c);
 

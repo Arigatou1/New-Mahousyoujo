@@ -17,6 +17,8 @@ void CObjGameClear::Init()
 	((UserData*)Save::GetData())->Clear_Flag[StageID+1] = true;
 
 	Score = 0;
+	HeroDamage = 0.0f;
+	ManaDamage = 0.0f;
 }
 
 //アクション
@@ -30,12 +32,20 @@ void CObjGameClear::Action()
 	/// なぜだろうか？
 	//((UserData*)Save::GetData())->Score =
 	//	(((UserData*)Save::GetData())->HeroHP * 40 + ((UserData*)Save::GetData())->ManaHP * 60);
-
+	ManaDamage = ((UserData*)Save::GetData())->ManaHP;
+	HeroDamage = ((UserData*)Save::GetData())->HeroHP;
 
 	//追記
 	//うまくいったかもしれない。
 
-    Score =	(30-((UserData*)Save::GetData())->HeroHP)*40 + ((UserData*)Save::GetData())->ManaHP*60;
+    Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
+
+
+
+
+
+
+
 
 
 
@@ -69,14 +79,36 @@ void CObjGameClear::Action()
 void CObjGameClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
 
-	Font::StrDraw(L"GAME CLEAR!", 200, 200, 96, c);
-
-
-	
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 960.0f;
+	src.m_bottom = 600.0f;
+	//表示位置の設定
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 500.0f;
+	//描画
+	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 	wchar_t str[128];
-	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
-	Font::StrDraw(str, 300, 2, 24, c);
+	
+	swprintf_s(str, L"プレイヤーが受けたダメージ:%.2f", HeroDamage);//整数を文字列か
+	Font::StrDraw(str, 150, 372, 36, c);
 
+	swprintf_s(str, L"マナが受けたダメージ:%.2f", ManaDamage);//整数を文字列か
+	Font::StrDraw(str, 150, 420, 36, c);
+	
+	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
+	Font::StrDraw(str, 300, 512, 72, c);
+
+	
+	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage,ManaDamage);//整数を文字列か
+	Font::StrDraw(str, 50, 480, 18, c);
+	
+	
 }

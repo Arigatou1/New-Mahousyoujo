@@ -6,6 +6,7 @@
 #include "ObjGaugeMana.h"
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
+#include "UtilityModule.h"
 
 
 //使用するネームスペース
@@ -57,9 +58,6 @@ void CObjGaugeMANAHP::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	wchar_t str[128];
-	swprintf_s(str, L"%.3lf", HP);//整数を文字列か
-	Font::StrDraw(str, 2, 48, 24, c);
 
 	//切り取り位置の設定
 	src.m_top = 144.0f;
@@ -76,6 +74,7 @@ void CObjGaugeMANAHP::Draw()
 	dst.m_right = dst.m_left+GaugePercent;
 	dst.m_bottom = gb_y + 120.0f;
 
+	DrawGaugeBase(gb_x - 113.0f, gb_y + 96,1);
 
 	//描画
 	Draw::Draw(1, &src, &dst, c, 0.0f);

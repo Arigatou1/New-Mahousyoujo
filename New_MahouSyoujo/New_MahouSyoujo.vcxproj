@@ -104,7 +104,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -132,13 +132,14 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClearFadeout.cpp" />
     <ClCompile Include="CObjHomingBullet.cpp" />
     <ClCompile Include="EnemyAppear.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
@@ -171,18 +172,17 @@
     <ClCompile Include="ObjGameClear.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="ObjGaugeBase.cpp" />
-    <ClCompile Include="ObjGaugeBaseBoss.cpp" />
-    <ClCompile Include="ObjGaugeBaseMana.cpp" />
     <ClCompile Include="ObjGaugeBoss.cpp" />
     <ClCompile Include="ObjGaugeHP.cpp" />
     <ClCompile Include="ObjGaugeMana.cpp" />
-    <ClCompile Include="ObjGaugeMP.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
+    <ClCompile Include="ObjMenuEndless.cpp" />
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
     <ClCompile Include="ObjSetting.cpp" />
+    <ClCompile Include="ObjShockWave.cpp" />
     <ClCompile Include="ObjSlimeBall.cpp" />
     <ClCompile Include="ObjSmallSlim.cpp" />
     <ClCompile Include="ObjStageSelect.cpp" />
@@ -196,6 +196,7 @@
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClearFadeout.h" />
     <ClInclude Include="CObjHomingBullet.h" />
     <ClInclude Include="EnemyAppear.h" />
     <ClInclude Include="GameHead.h" />
@@ -228,18 +229,17 @@
     <ClInclude Include="ObjGameClear.h" />
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="ObjGaugeBase.h" />
-    <ClInclude Include="ObjGaugeBaseBoss.h" />
-    <ClInclude Include="ObjGaugeBaseMana.h" />
     <ClInclude Include="ObjGaugeBoss.h" />
     <ClInclude Include="ObjGaugeHP.h" />
     <ClInclude Include="ObjGaugeMana.h" />
-    <ClInclude Include="ObjGaugeMP.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />
+    <ClInclude Include="ObjMenuEndless.h" />
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
     <ClInclude Include="ObjSetting.h" />
+    <ClInclude Include="ObjShockWave.h" />
     <ClInclude Include="ObjSlimeBall.h" />
     <ClInclude Include="ObjSmallSlim.h" />
     <ClInclude Include="ObjStageSelect.h" />

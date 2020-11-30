@@ -21,4 +21,5 @@ private:
 	int StageID;
 	int PageID;
 	int MaxPage;
+	bool nowLoading;
 };

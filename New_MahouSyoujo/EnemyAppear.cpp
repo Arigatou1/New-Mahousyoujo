@@ -56,7 +56,7 @@ void EnemyAppear::Init()
 		CObjBackGround* obj_bg = new CObjBackGround(2);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
-		((UserData*)Save::GetData())->enemyRemain = 99;
+		((UserData*)Save::GetData())->enemyRemain = -1;
 		break;
 	}
 	case 5:
@@ -92,7 +92,7 @@ void EnemyAppear::Init()
 		CObjBackGround* obj_bg = new CObjBackGround(9);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
-		((UserData*)Save::GetData())->enemyRemain = 99;
+		((UserData*)Save::GetData())->enemyRemain = -1;
 		break;
 	}
 	default:
@@ -1583,18 +1583,19 @@ void EnemyAppear::Action()
 		CObjEnemy4* obj = new CObjEnemy4(-63, 300);
 		Objs::InsertObj(obj, OBJ_ENEMY4, 49);
 
- }
+		}
 		break;
 	}
 	case 8:
 	{
-		if (m_time == 770)
+		if (m_time == 100)
 		{
 
-			CObjDragon* obj = new CObjDragon(576, 192);
+			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
 
 		}
+		break;
 	}
 				default:
 				{
@@ -1659,12 +1660,9 @@ void EnemyAppear::Draw()
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
 	
-	swprintf_s(str, L"タイム:%d", m_time);//整数を文字列か
+	//swprintf_s(str, L"タイム:%d", m_time);//整数を文字列か
+	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
+
 
 	Font::StrDraw(str, 2, 120, 24, c);
 }
-
-//int EnemyAppear::GetNUM()
-//{
-//	return e_num;
-//}

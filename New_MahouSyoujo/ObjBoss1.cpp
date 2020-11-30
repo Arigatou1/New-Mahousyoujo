@@ -21,6 +21,8 @@ void CObjBoss1::Init()
 	m_vx = 0;
 	m_vy = 0;
 
+	//全体攻撃一回だけダメージ与える　　与えない＝false   与える＝true
+	allbullet_hit = true;
 
 	//blockとの衝突状態確認用
 	e1_hit_up = false;
@@ -28,12 +30,9 @@ void CObjBoss1::Init()
 	e1_hit_left = false;
 	e1_hit_right = false;
 
-	e1_xsize = 250.0f;
-	e1_ysize = 250.0f;
-
 	a_time = 0;
 
-	maxhp = 400;
+	maxhp = 800;
 	e_hp = maxhp;
 	
 	//当たり判定用のHITBOXを作成
@@ -41,8 +40,8 @@ void CObjBoss1::Init()
 
 
 	//ゲージオブジェクト作成
-	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
-	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
+//	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
+//	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
 
 	//ゲージオブジェクト作成
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
@@ -104,6 +103,14 @@ void CObjBoss1::Action()
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr && allbullet_hit == true)
+	{
+		CObjAllBullet* obj_allbullet = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_allbullet->GetZ_ATK();
+		allbullet_hit = false;
+	}
+	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
+		allbullet_hit = true;
 
 	//hpが0になると消滅
 	if (e_hp <= 0)
@@ -111,7 +118,7 @@ void CObjBoss1::Action()
 	
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-
+		Scene::SetScene(new CSceneGameClear());
 		//Amount++;
 	}
 }
