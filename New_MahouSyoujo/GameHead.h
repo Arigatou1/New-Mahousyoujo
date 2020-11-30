@@ -106,7 +106,7 @@ struct UserData
 
 //------------------------------------------------
 
-//ゲームシーンオブジェクトヘッダ------------------
+//ゲームシーンオブジェクトヘッダ-----------------
 #include "ObjHero.h"
 #include "ObjMagicalGirl.h"
 #include "CObjHomingBullet.h"
