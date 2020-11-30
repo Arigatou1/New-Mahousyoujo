@@ -177,6 +177,7 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
+    <ClCompile Include="ObjMenuEndless.cpp" />
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
     <ClCompile Include="ObjSetting.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />
+    <ClInclude Include="ObjMenuEndless.h" />
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
     <ClInclude Include="ObjSetting.h" />

@@ -43,6 +43,7 @@ enum OBJ_NAME
 	OBJ_FIREBALL,
 	OBJ_DRAGON,
 	OBJ_SHOCKWAVE,
+	OBJ_STAGEENDLESS,
 };
 //------------------------------------------------
 
@@ -136,6 +137,7 @@ struct UserData
 #include "ObjSlimeBall.h"
 #include "ObjSword.h"
 #include "EnemyAppear.h"
+#include "ObjMenuEndless.h"
 
 #include "ObjGaugeBoss.h"
 #include "ObjFireBall.h"
