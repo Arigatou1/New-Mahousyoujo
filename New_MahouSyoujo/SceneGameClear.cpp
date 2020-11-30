@@ -30,6 +30,7 @@ void CSceneGameClear::InitScene()
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"GAME CLEAR");
 	
+	Draw::LoadImageW(L"Graphics/GameClear.png", 0, TEX_SIZE_512);
 
 	//ゲームオーバーオブジェクト作成
 	CObjGameClear* obj = new CObjGameClear();

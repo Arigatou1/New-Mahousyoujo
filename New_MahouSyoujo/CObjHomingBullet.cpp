@@ -20,7 +20,7 @@ void CObjHomingBullet::Init()
 {
 	m_vx = 0.0f;
 	//攻撃力
-	m_atk = 1;
+	m_atk = 10;
 
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_bx, m_by, 50, 50, ELEMENT_PLAYER, OBJ_HOMINGBULLET, 10);
@@ -31,12 +31,16 @@ void CObjHomingBullet::Action()
 {
 
 	//当たり判定を行うオブジェクト情報部
-	int database[4] =
+	int database[7] =
 	{
 		OBJ_ENEMY,
 		OBJ_ENEMY2,
 		OBJ_ENEMY3,
 		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_BOSS1,
+		OBJ_DRAGON,
+
 	};
 
 	//HitBOxの内容を変更
@@ -56,7 +60,8 @@ void CObjHomingBullet::Action()
 
 	m_bx += m_vx;
 
-	for (int i = 0; i < 4; i++)
+	//情報部にあるヒットボックスに当たると消滅
+	for (int i = 0; i < 7; i++)
 	{
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{

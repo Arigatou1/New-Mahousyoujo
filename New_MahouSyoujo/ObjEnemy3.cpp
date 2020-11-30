@@ -3,7 +3,6 @@
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL\UserData.h"
-
 #include"ObjEnemy3.h"
 
 //使用するネームスペース
@@ -22,7 +21,7 @@ void CObjEnemy3::Init()
 
 	m_vx = 1.0f;
 	m_vy = 0.0f;
-	e_hp = 5;
+	e_hp = 20;
 	e_damege = 0;
 
 	e3_hit_up = false;
@@ -30,14 +29,12 @@ void CObjEnemy3::Init()
 	e3_hit_left = false;
 	e3_hit_right = false;
 
-	jump = 0;
+	e3_t = true;
 
-	e3_xsize = 64;
-	e3_ysize = 64;
+
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY3, 1);
 
-	e_hp = 6.0f;
 
 }
 
@@ -49,42 +46,50 @@ void CObjEnemy3::Action()
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex , m_ey);
-	
+	hit->SetPos(m_ex, m_ey);
+
 	m_ex += m_vx;
 	m_ey += m_vy;
 
 	CObjBlock* obj_block3 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	obj_block3->BlockHit(&m_ex, &m_ey,
 		&e3_hit_up, &e3_hit_down, &e3_hit_left, &e3_hit_right,
-		& m_vx, &m_vy);
+		&m_vx, &m_vy);
 
-
-	//ジャンプ
-	if (obj_block3 != nullptr)
+	//ジョンプ
+	if (e3_hit_right == true)
 	{
-		
-		
+		m_vx = -1.0f;
+		m_vy = -8.0f;
+	}
+	else if (e3_hit_left == true)
+	{
+		m_vx = +1.0f;
+		m_vy = -8.0f;
 	}
 
 	//自由落下運動
 	m_vy += 9.8 / (16.0f);
 
-	
+
 	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
 	if (obj != nullptr)
 	{
 		float m_mx = obj->GetX();
 
-		if (m_mx <= m_ex)
+		if (m_mx <= m_ex) {
 			m_vx = -1.0f;
+		}
 		else if (m_mx >= m_ex)
+		{
 			m_vx = 1.0f;
+		}
+
 		else
+		{
 			m_vx = 0;
+		}
 	}
-
-
 	//バリア出てる時だけ止まる
 	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
 	if (obj_barrier != nullptr)
@@ -104,31 +109,19 @@ void CObjEnemy3::Action()
 
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
-		e_hp -= 1;
+		e_hp -= 10;
 		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
 		e_damege = obj_all->GetZ_ATK();
-
-		e_hp <= 0;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		//Amount++;
 	}
 
 	//弾に当たれば消滅
 	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
 	{
-		e_hp -= 1;
+		e_hp -= 4;
 		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
 		e_damege = obj_homing->GetM_ATK();
 
 		//Amount++;
-	}
-
-	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
-	{
-		e_hp -= 10;
-		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
-		e_damege = obj_all->GetZ_ATK();
 	}
 
 	//剣に当たれば減らす
@@ -141,6 +134,7 @@ void CObjEnemy3::Action()
 	//弾に当たればHP減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
+		e_hp -= 3;
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
@@ -153,8 +147,11 @@ void CObjEnemy3::Action()
 		((UserData*)Save::GetData())->enemyRemain -= 1;
 		//Amount++;
 	}
-
 }
+
+	
+
+
 
 //ドロー
 void CObjEnemy3::Draw()

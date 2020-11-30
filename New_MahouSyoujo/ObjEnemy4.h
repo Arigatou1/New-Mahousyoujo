@@ -32,4 +32,5 @@ private:
 	//int Amount;
 	float e_hp;
 	float damage;
+	int a_time;
 };

@@ -30,6 +30,9 @@ private:
 	bool e1_hit_left;
 	bool e1_hit_right;
 
+	//‘S‘ÌUŒ‚‚É“–‚½‚Á‚½‚©Šm”F
+	bool allbullet_hit;
+
 	float e1_xsize;
 	float e1_ysize;
 	

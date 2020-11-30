@@ -226,7 +226,7 @@ void CObjHero::Action()
 				//ƒ_ƒ[ƒW
 				Audio::Start(4);
 				m_mtk = true;
-				m_hp -= 1.4f + damage;//“G‚ÌUŒ‚—Í
+				m_hp -= 1.2f + damage;//“G‚ÌUŒ‚—Í
 				AllDamage += 1.4f + damage;
 
 			}
@@ -245,7 +245,7 @@ void CObjHero::Action()
 				//ƒ_ƒ[ƒW
 				Audio::Start(4);
 				m_mtk = true;
-				m_hp -= 2.5f+damage;//“G‚ÌUŒ‚—Í
+				m_hp -= 2.3f+damage;//“G‚ÌUŒ‚—Í
 				AllDamage += 2.5f + damage;
 			}
 
@@ -265,6 +265,35 @@ void CObjHero::Action()
 				m_hp -= 0.5f + damage;
 				AllDamage += 0.5f + damage;//“G‚ÌUŒ‚—Í
 			}
+
+
+			if (hit->CheckObjNameHit(OBJ_FIREBALL))
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.0f + damage;
+				AllDamage += 1.0f + damage;//“G‚ÌUŒ‚—Í
+			}
+
+			if (hit->CheckObjNameHit(OBJ_BOSS1) != nullptr)
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.0f + damage;//“G‚ÌUŒ‚—Í
+				AllDamage += 1.0f + damage;
+			}
+
+			if (hit->CheckObjNameHit(OBJ_DRAGON) != nullptr)
+			{
+				//ƒ_ƒ[ƒW
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= 1.5f + damage;//“G‚ÌUŒ‚—Í
+				AllDamage += 1.5f + damage;
+			}
+
 		}
 		//–³“G‚ªtrue‚É‚È‚Á‚½
 		if (m_mtk == true)
@@ -288,7 +317,7 @@ void CObjHero::Action()
 		{
 			if (m_hp < max_hp)
 			{
-				if (Input::GetVKey('H') == true && h_t == true && m_Skill == 1)
+				if (Input::GetVKey('D') == true && h_t == true && m_Skill == 1)
 				{
 					h_t = false;
 					m_hp += 3.0f;
@@ -298,7 +327,7 @@ void CObjHero::Action()
 						m_hp = max_hp;
 					}
 				}
-				else if (Input::GetVKey('H') == false)
+				else if (Input::GetVKey('D') == false)
 				{
 					h_t = true;
 				}

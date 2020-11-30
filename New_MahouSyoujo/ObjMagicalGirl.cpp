@@ -88,10 +88,12 @@ void CObjMagicalGirl::Action()
 		s_t = true;
 	}
 
+	
 	//魔法少女の通常攻撃
+	/*
 	if (m_mp >= 5)
 	{
-		if (Input::GetVKey('D') == true && m_t == true)
+		if (Input::GetVKey('H') == true && m_t == true)
 		{
 			m_atk_animation = 3;//杖持った姿になる
 
@@ -127,18 +129,20 @@ void CObjMagicalGirl::Action()
 				}
 			}
 		}
-		else if (Input::GetVKey('D') == false)
+		else if (Input::GetVKey('H') == false)
 		{
 			m_atk_animation = 0;//棒立ちの姿になる
 			m_t = true;
 		}
-	}
+	}*/
 
 	//魔法少女の回復魔法
 	if (m_mp >= 20)
 	{
-		if (Input::GetVKey('H') == true && h_t == true && m_skill == 1)
+		if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
 		{
+			m_atk_animation = 3;//杖持った姿になる
+
 			h_t = false;
 			CObjHero* obj_hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 			if (obj_hero != nullptr)
@@ -146,8 +150,9 @@ void CObjMagicalGirl::Action()
 				m_mp = obj_hero->GetMP();
 			}
 		}
-		else if (Input::GetVKey('H') == false)
+		else if (Input::GetVKey('D') == false)
 		{
+			m_atk_animation = 0;//棒立ちの姿になる
 			h_t = true;
 		}
 	}
@@ -155,8 +160,9 @@ void CObjMagicalGirl::Action()
 	//魔法少女のバリア
 	if (m_mp >= 30)
 	{
-		if (Input::GetVKey('H') == true && b_t == true && m_skill == 2)
+		if (Input::GetVKey('D') == true && b_t == true && m_skill == 2)
 		{
+			m_atk_animation = 3;//杖持った姿になる
 			m_btime = 0;
 			b_t = false;
 			m_mp -= 30;
@@ -171,8 +177,9 @@ void CObjMagicalGirl::Action()
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
 			}
 		}
-		else if (Input::GetVKey('H') == false && m_btime > 200)
+		else if (Input::GetVKey('D') == false && m_btime > 200)
 		{
+			m_atk_animation = 0;//棒立ちの姿になる
 			b_t = true;
 		}
 	}
@@ -180,19 +187,29 @@ void CObjMagicalGirl::Action()
 	//魔法少女の全体攻撃
 	if (m_mp >= 50)
 	{
-		if (Input::GetVKey('H') == true && z_t == true && m_skill == 3)
+		if (Input::GetVKey('D') == true && z_t == true && m_skill == 3)
 		{
 			m_atk_animation = 3;//杖持った姿になる
 			z_t = false;
 			m_mp -= 50;
 
-			for (int i = 0; i < 15; i++)
+			for (int i = 0; i< 15; )
 			{
 				z_x = 64.0f * i;
-
-				//魔法少女魔法玉作成
-				CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
-				Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+				if (i % 2 == 0)
+				{
+					//魔法少女魔法玉作成
+					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y - 100);//ホーミング弾作成
+					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
+				}
+				else if(i % 2 == 1)
+				{
+					//魔法少女魔法玉作成
+					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
+					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+					i++;
+				}
 
 				if (z_x >= 800)
 				{
@@ -200,7 +217,7 @@ void CObjMagicalGirl::Action()
 				}
 			}
 		}
-		else if (Input::GetVKey('H') == false)
+		else if (Input::GetVKey('D') == false)
 		{
 			m_atk_animation = 0;//棒立ちの姿になる
 			z_t = true;
@@ -266,3 +283,24 @@ int CObjMagicalGirl::GetSkill()
 {
 	return m_skill;
 }
+
+/*
+int j_time = 0;
+j_time++;
+for(int i = 0; i <= 10;)
+{
+	if (j_time % 50 == 0)
+	{
+		//iをランダム化
+		k = k % 13;
+
+		z_x = 64.0f * k;
+
+		//魔法少女魔法玉作成
+		CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
+		Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+
+		i++;
+	}
+}
+*/

@@ -1,3 +1,4 @@
+
 //使用するヘッダーファイル
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
@@ -74,6 +75,23 @@ void CObjFireBall::Action()
 		m_vx = -3.5f;
 		m_vy = -0.5f;
 	}
+
+	//バリアの情報
+	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+	if (obj_barrier != nullptr)
+	{
+		b_mx = obj_barrier->GetBX();
+
+		if (m_ex >= b_mx - 50.0f && m_ex <= b_mx + 128.0f)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
+
+	}
+
+
+
 	//hitTimeが0に
 	if (hitTime <= 0)
 	{
@@ -87,13 +105,14 @@ void CObjFireBall::Action()
 	m_ex += m_vx*2.0f;
 	m_ey += m_vy*2.0f;
 
+	
 }
 
 //ドロー
 void CObjFireBall::Draw()
 {
 	//描画カラー情報
-	float c[4] = { 1.0f,1.0f,1.0f,hitTime / 100.0f};
+	float c[4] = { 1.0f,0.8f,0.8f,hitTime / 100.0f};
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
