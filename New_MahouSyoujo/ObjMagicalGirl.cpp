@@ -155,7 +155,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			h_t = true;
 		}
 	}
@@ -182,7 +181,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false && m_btime > 200)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			b_t = true;
 		}
 	}
@@ -254,9 +252,13 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			z_t = true;
 		}
+	}
+
+	if (Input::GetVKey('D') == false)
+	{
+		m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 	}
 }
 
