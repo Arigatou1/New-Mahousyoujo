@@ -8,6 +8,8 @@
 #include "ObjMagicalGirl.h"
 #include "GameL/Audio.h"
 
+//#include <stdlib.h">
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -193,23 +195,57 @@ void CObjMagicalGirl::Action()
 			z_t = false;
 			m_mp -= 50;
 
-			for (int i = 0; i< 15; )
+			for (int i = 0; i< 10; )
 			{
-				z_x = 64.0f * i;
-				if (i % 2 == 0)
+				z_x = 0.0f;
+
+				switch (i)
 				{
-					//魔法少女魔法玉作成
-					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y - 100);//ホーミング弾作成
-					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
-					i++;
+				case 0:
+					z_x = 0.0f;
+					z_y = 0.0f;
+					break;
+				case 1:
+					z_x = 700.0f;
+					z_y = -64.0f;
+					break;
+				case 2:
+					z_x = 200.0f;
+					z_y = -128.0f;
+					break;
+				case 3:
+					z_x = 500.0f;
+					z_y = -192.0f;
+					break;
+				case 4:
+					z_x = 736.0f;
+					z_y = -256.0f;
+					break;
+				case 5:
+					z_x = 100.0f;
+					z_y = -320.0f;
+					break;
+				case 6:
+					z_x = 300.0f;
+					z_y = -384.0f;
+					break;
+				case 7:
+					z_x = 600.0f;
+					z_y = -448.0f;
+					break;
+				case 8:
+					z_x = 400.0f;
+					z_y = -512.0f;
+					break;
+				case 9:
+					z_x = 64.0f;
+					z_y = -576.0f;
+					break;
 				}
-				else if(i % 2 == 1)
-				{
-					//魔法少女魔法玉作成
-					CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
-					Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
-					i++;
-				}
+				//魔法少女魔法玉作成
+				CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
+				Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
+				i++;
 
 				if (z_x >= 800)
 				{
