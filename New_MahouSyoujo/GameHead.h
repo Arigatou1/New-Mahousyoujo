@@ -38,11 +38,11 @@ enum OBJ_NAME
 	OBJ_BOSS1,
 	OBJ_SLIMEBALL,
 	OBJ_APPEAR,
-	OBJ_BOSS_ENEMY,
 	OBJ_GAUGEBASEBOSS,
 	OBJ_GAUGEBOSS,
 	OBJ_FIREBALL,
 	OBJ_DRAGON,
+	OBJ_SHOCKWAVE,
 };
 //------------------------------------------------
 
@@ -116,10 +116,9 @@ struct UserData
 #include "ObjGaugeBase.h"
 #include "ObjBlock.h"
 #include "ObjGaugeHP.h"
-#include "ObjGaugeMP.h"
 #include "ObjGaugeMana.h"
 #include "ObjMana.h"
-#include "ObjGaugeBaseMana.h"
+//#include "ObjGaugeBaseMana.h"
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
 #include "ObjBackGround.h"
@@ -137,10 +136,11 @@ struct UserData
 #include "ObjSlimeBall.h"
 #include "ObjSword.h"
 #include "EnemyAppear.h"
-#include "ObjGaugeBaseBoss.h"
+
 #include "ObjGaugeBoss.h"
 #include "ObjFireBall.h"
 #include "ObjDragon.h"
+#include "ObjShockWave.h"
 
 //------------------------------------------------
 
