@@ -8,6 +8,8 @@
 #include "GameL\DrawFont.h"
 #include "GameL/WinInputs.h"
 
+#include <stdlib.h>
+#include <time.h>
 
 //使用するネームベース
 using namespace GameL;
@@ -93,6 +95,15 @@ void EnemyAppear::Init()
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 		((UserData*)Save::GetData())->enemyRemain = -1;
+		break;
+	}
+	case 17:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(8);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = 49;
 		break;
 	}
 	default:
@@ -1597,6 +1608,15 @@ void EnemyAppear::Action()
 			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
 
+		}
+		break;
+	}
+	//エンドレスモード値
+	case 17:
+	{
+		if (m_time == 100)
+		{
+			;
 		}
 		break;
 	}
