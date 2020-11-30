@@ -25,6 +25,7 @@ void CObjMagicalGirl::Init()
 	m_mtime = 1;
 	m_btime = 100;
 
+	z_x = 0.0f;
 	z_y = 0.0f;
 
 	m_skill = 1;//1なら回復 2ならバリア 3なら全体
@@ -197,8 +198,6 @@ void CObjMagicalGirl::Action()
 
 			for (int i = 0; i< 10; )
 			{
-				z_x = 0.0f;
-
 				switch (i)
 				{
 				case 0:
@@ -319,24 +318,3 @@ int CObjMagicalGirl::GetSkill()
 {
 	return m_skill;
 }
-
-/*
-int j_time = 0;
-j_time++;
-for(int i = 0; i <= 10;)
-{
-	if (j_time % 50 == 0)
-	{
-		//iをランダム化
-		k = k % 13;
-
-		z_x = 64.0f * k;
-
-		//魔法少女魔法玉作成
-		CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ホーミング弾作成
-		Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//オブジェクトマネーに登録
-
-		i++;
-	}
-}
-*/
