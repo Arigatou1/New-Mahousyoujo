@@ -109,16 +109,23 @@ void CObjEnemy2::Action()
 		m_vy = -8.0f;
 	}
 
-	//バリア出てる時だけ止まる
+	//バリアの情報
 	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
 	if (obj_barrier != nullptr)
 	{
 		b_mx = obj_barrier->GetBX();
 
-		if (m_ex == b_mx - 50.0f || m_ex == b_mx + 128.0f)
+		if (m_ex >= b_mx - 50.0f && m_ex <= b_mx)
 		{
 			m_vx = 0;
+			m_ex = b_mx - 50.0f;
 		}
+		else if (m_ex <= b_mx + 128.0f && m_ex >= b_mx)
+		{
+			m_vx = 0;
+			m_ex = b_mx + 128.0f;
+		}
+
 	}
 
 	//重力
