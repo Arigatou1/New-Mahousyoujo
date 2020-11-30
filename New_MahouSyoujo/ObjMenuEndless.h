@@ -16,9 +16,11 @@ public:
 	int GetStageID();
 private:
 	bool m_key_flag;//キーフラグ
+	bool nowLoading;
+	//カーそるポジション
 	float cursor_x;
 	float cursor_y;
-	int StageID;
-	int PageID;
-	int MaxPage;
+	//カーソルスケール
+	float cursor_sx;
+	float cursor_sy;
 };
