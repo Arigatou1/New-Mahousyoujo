@@ -205,7 +205,7 @@ void CObjHero::Action()
 
 		//“G‚É“–‚½‚Á‚½Žž‚És‚¤‚æ‚¤‚É‚·‚éB
 
-		//–³“GŽžŠÔ‚ª–³Œø‚É‚È‚Á‚½Žž
+		//–³“GŽžŠÔ‚ª–³Œø‚É‚È‚Á‚½Žž “G‚Æ‚Ì‚ ‚½‚è”»’è‚ðs‚¤
 		if (m_mtk == false)
 		{ 
 			//HitBox‚Ì“à—e‚ðŒ³‚É–ß‚·
@@ -227,7 +227,7 @@ void CObjHero::Action()
 				Audio::Start(4);
 				m_mtk = true;
 				m_hp -= 1.2f + damage;//“G‚ÌUŒ‚—Í
-				AllDamage += 1.4f + damage;
+				AllDamage += 1.2f + damage;
 
 			}
 
@@ -246,7 +246,7 @@ void CObjHero::Action()
 				Audio::Start(4);
 				m_mtk = true;
 				m_hp -= 2.3f+damage;//“G‚ÌUŒ‚—Í
-				AllDamage += 2.5f + damage;
+				AllDamage += 2.3f + damage;
 			}
 
 			if (hit->CheckObjNameHit(OBJ_SMALLSLIM))

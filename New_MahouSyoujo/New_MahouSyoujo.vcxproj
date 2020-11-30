@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClearFadeout.cpp" />
     <ClCompile Include="CObjHomingBullet.cpp" />
     <ClCompile Include="EnemyAppear.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClearFadeout.h" />
     <ClInclude Include="CObjHomingBullet.h" />
     <ClInclude Include="EnemyAppear.h" />
     <ClInclude Include="GameHead.h" />

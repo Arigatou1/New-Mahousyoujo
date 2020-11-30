@@ -44,6 +44,7 @@ enum OBJ_NAME
 	OBJ_DRAGON,
 	OBJ_SHOCKWAVE,
 	OBJ_STAGEENDLESS,
+	FADEOUT,
 };
 //------------------------------------------------
 
@@ -143,6 +144,7 @@ struct UserData
 #include "ObjFireBall.h"
 #include "ObjDragon.h"
 #include "ObjShockWave.h"
+#include "ClearFadeout.h"
 
 //------------------------------------------------
 

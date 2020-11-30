@@ -1666,8 +1666,3 @@ void EnemyAppear::Draw()
 
 	Font::StrDraw(str, 2, 120, 24, c);
 }
-
-//int EnemyAppear::GetNUM()
-//{
-//	return e_num;
-//}
