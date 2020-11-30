@@ -71,4 +71,7 @@ private:
 	int Weapon;//主人公の武器
 	float damage;//主人公が受けるダメージ
 	float AllDamage;//主人公が受けたダメージ
+
+//	int shootDownTime;
+	bool HPZeroCheck;
 };
