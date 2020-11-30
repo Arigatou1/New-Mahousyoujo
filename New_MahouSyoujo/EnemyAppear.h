@@ -19,7 +19,11 @@ private:
 	int EnemyAmount;
 	int StageID;
 	int m_time;
+	//エンドレスタイム
+	int e_time;
 	int enemyAmo;
 	//int e_num;//敵の個体名
 	bool m_key_flag;
+	int randomAppearTime;
+	float appearEnemyX;
 };
