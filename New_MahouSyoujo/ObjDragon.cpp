@@ -40,12 +40,15 @@ void CObjDragon::Init()
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
-
+	shootDownTime = 0;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjDragon::Action()
 {
+
+
+
 	//time‚ª500‚É‚È‚Á‚½‚Æ‚«ã¸‚·‚é
 	if (a_time >= 500 && a_time <= 600)
 	{
@@ -135,10 +138,18 @@ void CObjDragon::Action()
 	if (e_hp <= 0)
 	{
 
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneGameClear());
-		//Amount++;
+		//Œ‚”jŒã‚ÌŽžŠÔ
+
+		shootDownTime++;
+
+		if (shootDownTime >= 300)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+			Scene::SetScene(new CSceneGameClear());
+			//Amount++;
+		}
 	}
 }
 

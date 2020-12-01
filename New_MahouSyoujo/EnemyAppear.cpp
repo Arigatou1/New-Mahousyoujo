@@ -29,6 +29,10 @@ void EnemyAppear::Init()
 
 	randomAppearTime = 200;
 
+	srand(now);
+
+	randomAppearTime = 200;
+
 	switch (StageID)
 	{
 	case 1:
@@ -1676,6 +1680,81 @@ void EnemyAppear::Action()
 			}
 
 			else if (randomAppearTime > 80)
+			{
+				randomAppearTime -= 2;
+				e_time += 100;
+			}
+
+			else if (randomAppearTime > 20)
+			{
+				randomAppearTime -= 1;
+				e_time += 500;
+			}
+			else
+			{
+				e_time += 1000;
+			}
+				
+			m_time = 0;
+
+
+		}
+
+		((UserData*)Save::GetData())->HeroHP = e_time;
+		break;
+	}
+	//エンドレスモード値
+	case 17:
+	{
+		if (((UserData*)Save::GetData())->HPZeroCheck == false)
+		e_time++;
+
+		if (m_time >= randomAppearTime)
+		{
+			rand(); rand();
+			int EnemyType = rand()% 5;
+			appearEnemyX = rand() % 2 * 864 - 63;
+
+			switch (EnemyType)
+			{
+			case 1:
+			{
+				CObjEnemy* obj = new CObjEnemy(appearEnemyX, 350);
+				Objs::InsertObj(obj, OBJ_ENEMY, 49);
+				break;
+			}
+			case 2:
+			{
+				CObjEnemy2* obj2 = new CObjEnemy2(appearEnemyX, 350);
+				Objs::InsertObj(obj2, OBJ_ENEMY2, 49);
+				break;
+			}
+			case 3:
+			{
+				CObjEnemy3* obj3 = new CObjEnemy3(appearEnemyX, 350);
+				Objs::InsertObj(obj3, OBJ_ENEMY3, 49);
+				break;
+			}
+			case 4:
+			{
+				CObjEnemy4* obj4 = new CObjEnemy4(appearEnemyX, 350);
+				Objs::InsertObj(obj4, OBJ_ENEMY4, 49);
+				break;
+			}
+			case 0:
+			{
+				CObjSmallSlim* obj5 = new CObjSmallSlim(appearEnemyX, 350);
+				Objs::InsertObj(obj5, OBJ_SMALLSLIM, 49);
+				break;
+			}
+			}
+			if (randomAppearTime > 160)
+			{
+				randomAppearTime -= 3;
+				e_time += 50;
+			}
+
+			else if (randomAppearTime > 100)
 			{
 				randomAppearTime -= 2;
 				e_time += 100;

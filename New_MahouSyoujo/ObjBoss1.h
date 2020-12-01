@@ -33,6 +33,9 @@ private:
 	//‘S‘ÌUŒ‚‚É“–‚½‚Á‚½‚©Šm”F
 	bool allbullet_hit;
 
+	float e1_xsize;
+	float e1_ysize;
+	
 	int a_time ;
 
 	float e_hp;
