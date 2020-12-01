@@ -138,18 +138,8 @@ void CObjDragon::Action()
 	if (e_hp <= 0)
 	{
 
+		return;
 
-
-		shootDownTime++;
-
-		if (shootDownTime >= 300)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-
-			Scene::SetScene(new CSceneGameClear());
-			//Amount++;
-		}
 	}
 }
 

@@ -42,13 +42,6 @@ void CObjGameClear::Action()
 
 
 
-
-
-
-
-
-
-
 	//‚·‚±‚ ‚ð•Û‘¶
 	//‚±‚±‚Í–â‘è‚È‚³‚»‚¤B
 	if(((UserData*)Save::GetData())->ScoreData[StageID]<Score)
