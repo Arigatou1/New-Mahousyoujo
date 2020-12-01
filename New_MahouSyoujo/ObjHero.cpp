@@ -55,6 +55,7 @@ void CObjHero::Init()
 	Weapon = ((UserData*)Save::GetData())->weapon;
 	damage = ((UserData*)Save::GetData())->Diffculty * 0.5;
 	AllDamage = 0;
+	((UserData*)Save::GetData())->HPZeroCheck = false;
 }
 
 //アクション
@@ -205,7 +206,7 @@ void CObjHero::Action()
 
 		//敵に当たった時に行うようにする。
 
-		//無敵時間が無効になった時
+		//無敵時間が無効になった時 敵とのあたり判定を行う
 		if (m_mtk == false)
 		{ 
 			//HitBoxの内容を元に戻す
@@ -227,7 +228,7 @@ void CObjHero::Action()
 				Audio::Start(4);
 				m_mtk = true;
 				m_hp -= 1.2f + damage;//敵の攻撃力
-				AllDamage += 1.4f + damage;
+				AllDamage += 1.2f + damage;
 
 			}
 
@@ -246,7 +247,7 @@ void CObjHero::Action()
 				Audio::Start(4);
 				m_mtk = true;
 				m_hp -= 2.3f+damage;//敵の攻撃力
-				AllDamage += 2.5f + damage;
+				AllDamage += 2.3f + damage;
 			}
 
 			if (hit->CheckObjNameHit(OBJ_SMALLSLIM))
@@ -337,10 +338,12 @@ void CObjHero::Action()
 		//主人公のHPが無くなった時、消滅させる
 		if (m_hp <= 0)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+		//	this->SetStatus(false);
+		//	Hits::DeleteHitBox(this);
 
-			Scene::SetScene(new CSceneGameOver());
+			((UserData*)Save::GetData())->HPZeroCheck = true;
+
+		//	Scene::SetScene(new CSceneGameOver());
 		}
 
 		//テスト用
@@ -357,6 +360,7 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneMain());
 		}
 
+		if(((UserData*)Save::GetData())->Stage==16)
 
 		//クリアシーンにスコアを与える
 		((UserData*)Save::GetData())->HeroHP = AllDamage;

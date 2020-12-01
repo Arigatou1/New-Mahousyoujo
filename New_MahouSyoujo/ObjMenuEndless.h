@@ -5,21 +5,22 @@
 using namespace GameL;
 
 //オブジェクト：ゲームオーバー
-class CObjStageSelect : public CObj
+class CObjMenuEndless : public CObj
 {
 public:
-	CObjStageSelect() {};
-	~CObjStageSelect() {};
+	CObjMenuEndless() {};
+	~CObjMenuEndless() {};
 	void Init();
 	void Action();
 	void Draw();
 	int GetStageID();
 private:
 	bool m_key_flag;//キーフラグ
+	bool nowLoading;
+	//カーそるポジション
 	float cursor_x;
 	float cursor_y;
-	int StageID;
-	int PageID;
-	int MaxPage;
-	bool nowLoading;
+	//カーソルスケール
+	float cursor_sx;
+	float cursor_sy;
 };

@@ -56,6 +56,14 @@ void CObjModeSelect::Action()
 
 				break;
 			}
+			case 1:
+			{
+				//メニューオブジェクト作成
+				CObjMenuEndless* obj2 = new CObjMenuEndless();
+				Objs::InsertObj(obj2, OBJ_STAGEENDLESS, 0);
+
+				break;
+			}
 			case 2:
 			{
 				//っ設定
@@ -94,8 +102,8 @@ void CObjModeSelect::Action()
 		if (m_key_flag == true)
 		{
 			//どこにいてもエンドレスモードにカーソルを合わせる。
-			nowSelect=0;
-			cursor_x = 40;
+			nowSelect=1;
+			cursor_x = 440;
 			cursor_y = 96;
 		}
 		m_key_flag = false;
@@ -163,7 +171,7 @@ void CObjModeSelect::Action()
 	}
 	else
 	{
-		cursor_sx = 720;
+		cursor_sx = 320;
 		cursor_sy = 256;
 	}
 }
@@ -175,13 +183,14 @@ void CObjModeSelect::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//ステセレ・エンドレボタン
-//	for (int i = 0; i < 2; i++)
-//		MenuBlockDraw(40 + (i * 400), 96, 320, 256, 1, 0, 0, 1);
+	for (int i = 0; i < 2; i++)
+		MenuBlockDraw(40 + (i * 400), 96, 320, 256, 1, 0, 0, 1);
 
-	MenuBlockDraw(40, 96,720, 256, 1, 0, 0, 1);
 
 	//設定ボタン
 	MenuBlockDraw(200, 450, 400, 72, 0.5f, 0, 1, 1);
+
+	//	MenuBlockDraw(40, 96,720, 256, 1, 0, 0, 1);
 
 	MenuBlockDraw(cursor_x, cursor_y, cursor_sx, cursor_sy, 1, 0.8, 0, 1);
 	//カーソル描画
@@ -189,9 +198,9 @@ void CObjModeSelect::Draw()
 	
 	//Font::StrDraw(L"GAME ModeSelect", 2, 2, 32, c);
 
-	Font::StrDraw(L"ステージセレクト", 144, 200, 64, c);
+	Font::StrDraw(L"ステージセレクト", 72, 200, 32, c);
 
-//	Font::StrDraw(L"エンドレスモード", 472, 200, 32, c);
+	Font::StrDraw(L"エンドレスモード", 472, 200, 32, c);
 
 	Font::StrDraw(L"設定", 360, 460, 48, c);
 

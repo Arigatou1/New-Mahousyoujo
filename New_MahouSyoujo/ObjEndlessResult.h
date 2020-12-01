@@ -5,21 +5,16 @@
 using namespace GameL;
 
 //オブジェクト：ゲームオーバー
-class CObjStageSelect : public CObj
+class CObjEndlessResult : public CObj
 {
 public:
-	CObjStageSelect() {};
-	~CObjStageSelect() {};
+	CObjEndlessResult() {};
+	~CObjEndlessResult() {};
 	void Init();
 	void Action();
 	void Draw();
-	int GetStageID();
 private:
+	float Score;
 	bool m_key_flag;//キーフラグ
-	float cursor_x;
-	float cursor_y;
-	int StageID;
-	int PageID;
-	int MaxPage;
-	bool nowLoading;
+
 };

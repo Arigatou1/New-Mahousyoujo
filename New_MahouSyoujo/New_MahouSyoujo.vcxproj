@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClearFadeout.cpp" />
     <ClCompile Include="CObjHomingBullet.cpp" />
     <ClCompile Include="EnemyAppear.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="ObjBullet.cpp" />
     <ClCompile Include="ObjCustomize.cpp" />
     <ClCompile Include="ObjDragon.cpp" />
+    <ClCompile Include="ObjEndlessResult.cpp" />
     <ClCompile Include="ObjEnemy.cpp" />
     <ClCompile Include="ObjEnemy2.cpp" />
     <ClCompile Include="ObjEnemy3.cpp" />
@@ -177,6 +179,7 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
+    <ClCompile Include="ObjMenuEndless.cpp" />
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
     <ClCompile Include="ObjSetting.cpp" />
@@ -194,6 +197,7 @@
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClearFadeout.h" />
     <ClInclude Include="CObjHomingBullet.h" />
     <ClInclude Include="EnemyAppear.h" />
     <ClInclude Include="GameHead.h" />
@@ -217,6 +221,7 @@
     <ClInclude Include="ObjBullet.h" />
     <ClInclude Include="ObjCustomize.h" />
     <ClInclude Include="ObjDragon.h" />
+    <ClInclude Include="ObjEndlessResult.h" />
     <ClInclude Include="ObjEnemy.h" />
     <ClInclude Include="ObjEnemy2.h" />
     <ClInclude Include="ObjEnemy3.h" />
@@ -232,6 +237,7 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />
+    <ClInclude Include="ObjMenuEndless.h" />
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
     <ClInclude Include="ObjSetting.h" />

@@ -52,7 +52,7 @@ void CSceneMain::InitScene()
 	wchar_t s[128];
 
 	if (StageID >= 9)
-	swprintf_s(s, L"Stage/Stage1.csv", StageID);
+	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else
 		swprintf_s(s, L"Stage/Stage%d.csv", StageID);
@@ -131,11 +131,16 @@ void CSceneMain::InitScene()
 	//EnemyAppear
 	EnemyAppear* obj_appear = new EnemyAppear();
 	Objs::InsertObj(obj_appear, OBJ_APPEAR, 101);
+	//EnemyAppear
+	Fadeout* obj_Fadeout = new Fadeout();
+	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+
 
 	//タイム初期化
 	m_time = 0;
 
 	EnemyAmount = 0;
+	shootDownTime = 0;
 }
 
 //実行中メソッド
@@ -157,8 +162,6 @@ void CSceneMain::Scene()
 	else
 		m_key_flag = true;
 
-	//残り敵の数が0になったとき
-	if(((UserData*)Save::GetData())->enemyRemain == 0)
-		Scene::SetScene(new CSceneGameClear());
+
 }
 
