@@ -42,4 +42,6 @@ private:
 	bool e3_t;
 
 	float damage;
+	//UŒ‚ŠÔŠu—p•Ï”
+	int a_time;
 };

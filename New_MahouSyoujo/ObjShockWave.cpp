@@ -58,8 +58,8 @@ void CObjShockWave::Action()
 {
 
 
-	m_ex += m_vx;
-	m_ey += m_vy;
+	m_ex += m_vx*2;
+	m_ey += m_vy*2;
 
 	//HitBOx‚Ì“à—e‚ğ•ÏX
 	CHitBox* hit = Hits::GetHitBox(this);

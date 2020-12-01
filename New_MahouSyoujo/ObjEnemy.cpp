@@ -152,14 +152,6 @@ void CObjEnemy::Action()
 		&m_vx, &m_vy);
 
 
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		//e_hp -= 3;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_hp -= obj_homing->GetM_ATK();
-
-		//Amount++;
-	}
 
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
@@ -187,7 +179,7 @@ void CObjEnemy::Action()
 		Audio::Start(2);
 
 		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		hit->SetInvincibility(true);
 		((UserData*)Save::GetData())->enemyRemain -= 1;
 		//Amount++;
 	}
@@ -217,8 +209,3 @@ void CObjEnemy::Draw()
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
-
-//int CObjEnemy::EneAmo()
-//{
-//	return Amount;
-//}

@@ -137,19 +137,9 @@ void CObjDragon::Action()
 	//hpÇ™0Ç…Ç»ÇÈÇ∆è¡ñ≈
 	if (e_hp <= 0)
 	{
+		((UserData*)Save::GetData())->enemyRemain = 0;
+		return;
 
-		//åÇîjå„ÇÃéûä‘
-
-		shootDownTime++;
-
-		if (shootDownTime >= 300)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-
-			Scene::SetScene(new CSceneGameClear());
-			//Amount++;
-		}
 	}
 }
 

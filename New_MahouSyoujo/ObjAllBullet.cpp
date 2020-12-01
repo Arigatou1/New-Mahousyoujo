@@ -17,7 +17,7 @@ CObjAllBullet::CObjAllBullet(float x, float y)
 //イニシャライズ
 void CObjAllBullet::Init()
 {
-	m_avy = 5.0f;
+	m_avy = 10.0f;
 	//攻撃力
 	z_atk = 10;
 
@@ -78,7 +78,7 @@ void CObjAllBullet::Draw()
 	dst.m_bottom = 96.0f + m_ay;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 90.0f);
+	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
 
 int CObjAllBullet::GetZ_ATK()
