@@ -17,8 +17,8 @@ void CObjGameClear::Init()
 	((UserData*)Save::GetData())->Clear_Flag[StageID+1] = true;
 
 	Score = 0;
-	HeroDamage = 0;
-	ManaDamage = 0;
+	HeroDamage = 0.0f;
+	ManaDamage = 0.0f;
 }
 
 //アクション
@@ -38,14 +38,7 @@ void CObjGameClear::Action()
 	//追記
 	//うまくいったかもしれない。
 
-    Score =	(4000-HeroDamage*80) + (6000-ManaDamage*60);
-
-
-
-
-
-
-
+    Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
 
 
 

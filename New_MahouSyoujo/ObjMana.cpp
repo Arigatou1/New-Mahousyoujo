@@ -62,7 +62,6 @@ void CObjMana::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(Mana_x,Mana_y);
 
-
 	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
 	{
 		Mana_HP -= 0.40 + mana_damege * 0.20;
@@ -98,9 +97,9 @@ void CObjMana::Action()
 	//ドラゴンの炎に当たるとHPが減る
 	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
 	{
-		Mana_HP -= 0.10 + mana_damege * 0.10;
+	//	Mana_HP -= 0.10 + mana_damege * 0.10;
 	}
-	//ドラゴンの炎に当たるとHPが減る
+	//ショックウェーブに当たるとHPが減る
 	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
 	{
 		Mana_HP -= 2.0 + mana_damege * 0.10;
@@ -108,12 +107,13 @@ void CObjMana::Action()
 	//マナのHPが無くなった時、消滅させる
 	if (Mana_HP <= 0)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
 
-		Scene::SetScene(new CSceneGameOver());
+		((UserData*)Save::GetData())->HPZeroCheck = true;
+	//	Scene::SetScene(new CSceneGameOver());
 	}
-
+	
 	((UserData*)Save::GetData())->ManaHP = 100.0f - Mana_HP;
 }
 //ドロー
