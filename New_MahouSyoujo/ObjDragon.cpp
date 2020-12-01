@@ -137,7 +137,7 @@ void CObjDragon::Action()
 	//hp‚ª0‚É‚È‚é‚ÆÁ–Å
 	if (e_hp <= 0)
 	{
-
+		((UserData*)Save::GetData())->enemyRemain = 0;
 		return;
 
 	}

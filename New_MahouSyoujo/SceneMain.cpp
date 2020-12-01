@@ -51,7 +51,7 @@ void CSceneMain::InitScene()
 	//マップデータを読み込む。
 	wchar_t s[128];
 
-	if (StageID >= 9)
+	if (StageID >= 9 && StageID!=17)
 	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else

@@ -35,8 +35,8 @@ void CObjMenuEndless::Action()
 	{
 		if (m_key_flag == true)
 		{
-			if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
-			{
+		//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
+		//	{
 
 				if (cursor_y < 512)
 				{
@@ -51,7 +51,7 @@ void CObjMenuEndless::Action()
 					CObjCustomize* obj = new CObjCustomize();
 					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 0);
 				}
-			}
+		//	}
 			
 			m_key_flag = false;
 		}
@@ -118,7 +118,13 @@ void CObjMenuEndless::Draw()
 	
 		Font::StrDraw(L"カスタマイズ", 156, 512, 80, c);
 	
-		Font::StrDraw(L"エンドレスモード", 156, 320, 56, c);
+		Font::StrDraw(L"エンドレスモード", 156, 220, 56, c);
+
+		wchar_t Score[16];
+
+		//そのときのスコア表示
+		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
+		Font::StrDraw(Score, 2, 2, 48, c);
 	}
 	else
 	{

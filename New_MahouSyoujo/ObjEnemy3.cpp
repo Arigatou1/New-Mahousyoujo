@@ -35,12 +35,25 @@ void CObjEnemy3::Init()
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY3, 1);
 
-
+	a_time = 0;
 }
 
 //アクション
 void CObjEnemy3::Action()
 {
+	a_time++;
+
+
+	if (a_time % 100 == 0)
+	{
+
+		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey + 50.0);
+		Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
+
+
+
+	}
+
 	//摩擦
 	//m_vx += -(m_vx * 0.098);
 
@@ -77,10 +90,10 @@ void CObjEnemy3::Action()
 	{
 		float m_mx = obj->GetX();
 
-		if (m_mx <= m_ex) {
+		if (m_mx+64 < m_ex) {
 			m_vx = -1.0f;
 		}
-		else if (m_mx >= m_ex)
+		else if (m_mx-64 > m_ex)
 		{
 			m_vx = 1.0f;
 		}
