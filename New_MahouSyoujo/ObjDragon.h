@@ -34,4 +34,6 @@ private:
 
 	float e_hp;
 	float maxhp;
+
+	int shootDownTime;
 };

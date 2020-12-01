@@ -13,6 +13,7 @@ using namespace GameL;
 //使用ヘッダー
 #include "SceneGameOver.h"
 #include "GameHead.h"
+#include "GameL\UserData.h"
 
 //コンストラクタ
 CSceneGameOver::CSceneGameOver()
@@ -32,10 +33,17 @@ void CSceneGameOver::InitScene()
 	Draw::LoadImageW(L"Graphics/GameOver.png", 0, TEX_SIZE_512);
 
 
-	//ゲームオーバーオブジェクト作成
-	CObjGameOver* obj = new CObjGameOver();
-	Objs::InsertObj(obj, OBJ_GAME_OVER, 10);
-
+	if (((UserData*)Save::GetData())->Stage!=16)
+	{
+		//ゲームオーバーオブジェクト作成
+		CObjGameOver* obj = new CObjGameOver();
+		Objs::InsertObj(obj, OBJ_GAME_OVER, 10);
+	}
+	else
+	{
+		CObjEndlessResult* obj = new CObjEndlessResult();
+		Objs::InsertObj(obj, OBJ_ENDLESSRESULT, 10);
+	}
 
 }
 //実行中メソッド
