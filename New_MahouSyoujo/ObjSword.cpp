@@ -1,5 +1,6 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
+#include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL\WinInputs.h"
@@ -34,6 +35,18 @@ void CObjSword::Init()
 //アクション
 void CObjSword::Action()
 {
+	//当たり判定を行うオブジェクト情報部
+	int database[7] =
+	{
+		OBJ_ENEMY,
+		OBJ_ENEMY2,
+		OBJ_ENEMY3,
+		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_BOSS1,
+		OBJ_DRAGON,
+
+	};
 
 	//m_fから真偽を受け取る
 	if (a_f == false)
@@ -44,6 +57,20 @@ void CObjSword::Action()
 		hit->SetPos(a_px + (a_posture * 60), a_py);
 
 		atk_time++;
+
+		//情報部にあるヒットボックスに当たると消滅
+		//for (int i = 0; i < 7; i++)
+		//{
+		//	if (hit->CheckObjNameHit(database[i]) != nullptr)
+		//	{
+		//		float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+		//
+		//		wchar_t str[128];
+		//		swprintf_s(str, L"%.0lf", atk_power);//整数を文字列か
+		//		Font::StrDraw(str, 0, 500, 24, d);
+		//
+		//	}
+		//}
 	}
 
 	//if (atk_time>=2)
@@ -62,7 +89,7 @@ void CObjSword::Draw()
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
+	
 	//切り取り位置の設定
 	src.m_top =0.0f;
 	src.m_left =0.0f;
