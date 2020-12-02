@@ -15,8 +15,7 @@ public:
 	void Draw();
 	int GetMAXHP();
 	int GetHP();
-
-
+	void t‰Î‰Š•úŽË();
 private:
 	float m_ex;
 	float m_ey;

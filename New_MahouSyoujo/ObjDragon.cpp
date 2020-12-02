@@ -66,7 +66,7 @@ void CObjDragon::Action()
 	{
 		if (a_time == 240)
 		{
-			AttackPattern = rand() % 3;
+			AttackPattern = rand() % 4;
 			a_time = 0;
 			bUŒ‚’† = true;
 			
@@ -76,13 +76,7 @@ void CObjDragon::Action()
 	{
 		if (AttackPattern == 1)
 		{
-			if (a_time % 10 == 0)
-			{
-
-				CObjFireBall* obj = new CObjFireBall(m_ex + (256.0f -64.0f)* b_posture , m_ey + 50.0f, -3.5f+(b_posture*7.0f), 5.0f);
-				Objs::InsertObj(obj, OBJ_FIREBALL, 49);
-			}
-
+			t‰Î‰Š•úË();
 			if (a_time >= 200)
 			{
 				a_time = 0;
@@ -152,6 +146,46 @@ void CObjDragon::Action()
 
 		
 			if (a_time >= 360)
+			{
+				a_time = 0;
+				bUŒ‚’† = false;
+			}
+		}
+
+		else if (AttackPattern == 3)
+		{
+			if (a_time <= 120)
+			{
+				m_ey -= 2;
+			}
+			else if (a_time <= 180)
+			{
+				m_ey += 1;
+				t‰Î‰Š•úË();
+			}
+			else if (a_time <= 240)
+			{
+				m_ey -= 1;
+				t‰Î‰Š•úË();
+
+			}
+			else if (a_time <= 300)
+			{
+				m_ey += 1;
+					t‰Î‰Š•úË();
+				
+			}
+			else if (a_time <= 360)
+			{
+				m_ey -= 1;
+				t‰Î‰Š•úË();
+			}
+			else if (a_time <= 480)
+			{
+				m_ey += 2;
+			}
+
+			if (a_time >= 480)
 			{
 				a_time = 0;
 				bUŒ‚’† = false;
@@ -241,4 +275,12 @@ int CObjDragon::GetMAXHP()
 {
 	return maxhp;
 }
+void CObjDragon::t‰Î‰Š•úË()
+{
+	if (a_time % 10 == 0)
+	{
 
+		CObjFireBall* obj = new CObjFireBall(m_ex + (256.0f - 64.0f) * b_posture, m_ey + 50.0f, -3.5f + (b_posture * 7.0f), 5.0f);
+		Objs::InsertObj(obj, OBJ_FIREBALL, 49);
+	}
+}
