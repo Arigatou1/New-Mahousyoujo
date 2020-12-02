@@ -36,4 +36,10 @@ private:
 	float maxhp;
 
 	int shootDownTime;
+
+	int AttackPattern;
+
+	bool bUŒ‚’†;
+	int b_posture;
+
 };

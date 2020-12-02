@@ -6,6 +6,10 @@
 #include "ObjDragon.h"
 #include "GameL\UserData.h"
 
+
+#include <stdlib.h>
+#include <time.h>
+
 //使用するネームベース
 using namespace GameL;
 
@@ -14,11 +18,12 @@ CObjDragon::CObjDragon(float x, float y)
 {
 	m_ex = x;
 	m_ey = y;
+
 }
 //イニシャライズ
 void CObjDragon::Init()
 {
-
+	b_posture = 0;
 
 	//blockとの衝突状態確認用
 	e1_hit_up = false;
@@ -40,51 +45,119 @@ void CObjDragon::Init()
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
+	//ランダム
+	unsigned int now = (unsigned int)time(0);
+
+	srand(now);
+
 	shootDownTime = 0;
+
+	b攻撃中 = false;
 }
 
 //アクション
 void CObjDragon::Action()
 {
+	a_time++;
 
+	rand(); rand(); rand();
 
-
-	//timeが500になったとき上昇する
-	if (a_time >= 500 && a_time <= 600)
+	if (!b攻撃中)
 	{
-		m_ey -= 2;
+		if (a_time == 240)
+		{
+			AttackPattern = rand() % 3;
+			a_time = 0;
+			b攻撃中 = true;
+			
+		}
 	}
-
-
-//Y座標が100になるまで上昇する
-	if (a_time >= 600 && a_time <= 650)
+	else if (b攻撃中)
 	{
-		m_ey += 1;
+		if (AttackPattern == 1)
+		{
+			if (a_time % 10 == 0)
+			{
+
+				CObjFireBall* obj = new CObjFireBall(m_ex + (256.0f -64.0f)* b_posture , m_ey + 50.0f, -3.5f+(b_posture*7.0f), 5.0f);
+				Objs::InsertObj(obj, OBJ_FIREBALL, 49);
+			}
+
+			if (a_time >= 200)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+		else if (AttackPattern == 0)
+		{
+			if(a_time<=120)
+			{
+				m_ey -= 2;
+			}
+			else if (a_time <= 180)
+			{
+				m_ey += 1;
+			}
+			else if (a_time <= 240)
+			{
+				m_ey -= 1;
+			}
+			else if (a_time <= 300)
+			{
+				m_ey += 1;
+			}
+			else if (a_time <= 360)
+			{
+				m_ey -= 1;
+			}
+			else if (a_time <= 480)
+			{
+				m_ey += 2;
+			}
+
+			if (a_time >= 480)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+		else if (AttackPattern == 2)
+		{
+			if (a_time <= 120)
+			{
+				m_ey -=5;
+			}
+
+			else if (a_time == 240)
+			{
+				if (b_posture == 0)
+				{
+					b_posture = 1;
+					m_ex = -32;
+				}
+				else if (b_posture == 1)
+				{
+					b_posture = 0;
+					m_ex = 576;
+				}
+
+
+			}
+			else if (a_time >=240&&a_time <= 360)
+			{
+				m_ey += 5;
+			}
+
+
+		
+			if (a_time >= 360)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
 	}
-	if (a_time >= 650 && a_time <= 700)
-	{
-		m_ey -= 1;
-	}
-	if (a_time >= 700 && a_time <= 750)
-	{
-		m_ey += 1;
-	}
-	if (a_time >= 750 && a_time <= 800)
-	{
-		m_ey -= 1;
-	}
-	if (a_time >= 800 && a_time <= 900)
-	{
-		m_ey += 2;
-	}
-
-
-	//100に到達したら、100->200->100をしばらく繰り返す
-
-
-	//また下げる
-
-
 
 	//重力
 	m_vy += 9.8 / (16.0f);
@@ -101,18 +174,10 @@ void CObjDragon::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ex, m_ey);
 
-	a_time++;
-	if (a_time >= 600 && a_time<=800)
-	{
-		if (a_time % 10 == 0)
-		{
+	
 
-			CObjFireBall* obj = new CObjFireBall(m_ex, m_ey + 50.0f, -15.0f, 4.0f);
-			Objs::InsertObj(obj, OBJ_FIREBALL, 49);
-		}
-	}
 
-	if (a_time >= 900)
+	if (a_time >= 600)
 	{
 		a_time = 0;
 	}
@@ -158,10 +223,10 @@ void CObjDragon::Draw()
 	src.m_right = 128.0f;
 	src.m_bottom = 128.0f;
 	//表示位置の設定
-	dst.m_top = m_ey-128;
-	dst.m_left = m_ex-96;
-	dst.m_right = dst.m_left + 512.0f;
-	dst.m_bottom = dst.m_top + 512.0f;
+	dst.m_top = m_ey;
+	dst.m_left = m_ex+(256.0f*b_posture);
+	dst.m_right = dst.m_left + 256.0f-(256.0f*b_posture*2);
+	dst.m_bottom = dst.m_top + 256.0f;
 
 	//描画
 	Draw::Draw(4, &src, &dst, c, 0.0f);
