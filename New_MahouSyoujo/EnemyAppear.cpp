@@ -29,10 +29,6 @@ void EnemyAppear::Init()
 
 	randomAppearTime = 200;
 
-	srand(now);
-
-	randomAppearTime = 200;
-
 	switch (StageID)
 	{
 	case 1:
@@ -1750,11 +1746,16 @@ void EnemyAppear::Action()
 			}
 			if (randomAppearTime > 160)
 			{
+				randomAppearTime -= 4;
+				e_time += 10;
+			}
+			else if (randomAppearTime > 120)
+			{
 				randomAppearTime -= 3;
 				e_time += 50;
 			}
 
-			else if (randomAppearTime > 100)
+			else if (randomAppearTime > 80)
 			{
 				randomAppearTime -= 2;
 				e_time += 100;
