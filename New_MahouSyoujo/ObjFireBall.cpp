@@ -37,9 +37,6 @@ void CObjFireBall::Init()
 	//ìñÇΩÇËîªíËópÇÃHITBOXÇçÏê¨
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_FIREBALL, 10);
 
-	m_vx = -3.5f;
-	m_vy = 5.0f;
-
 	hitGround = false;
 	hitTime = 100.0f;
 }
@@ -72,8 +69,17 @@ void CObjFireBall::Action()
 	if (hitGround == true)
 	{
 		hitTime -= 3.0f;
-		m_vx = -3.5f;
+	
 		m_vy = -0.5f;
+
+		if(m_vx<=0)
+		{
+			m_vx = -3.5f;
+		}
+		else
+		{
+			m_vx = 3.5f;
+		}
 	}
 
 	//ÉoÉäÉAÇÃèÓïÒ

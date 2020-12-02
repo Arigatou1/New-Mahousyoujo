@@ -23,7 +23,7 @@ CObjDragon::CObjDragon(float x, float y)
 //イニシャライズ
 void CObjDragon::Init()
 {
-	b_posture = 1;
+	b_posture = 0;
 
 	//blockとの衝突状態確認用
 	e1_hit_up = false;
@@ -79,7 +79,7 @@ void CObjDragon::Action()
 			if (a_time % 10 == 0)
 			{
 
-				CObjFireBall* obj = new CObjFireBall(m_ex, m_ey + 50.0f, -15.0f, 4.0f);
+				CObjFireBall* obj = new CObjFireBall(m_ex + (256.0f -64.0f)* b_posture , m_ey + 50.0f, -3.5f+(b_posture*7.0f), 5.0f);
 				Objs::InsertObj(obj, OBJ_FIREBALL, 49);
 			}
 
@@ -103,12 +103,20 @@ void CObjDragon::Action()
 			{
 				m_ey -= 1;
 			}
+			else if (a_time <= 300)
+			{
+				m_ey += 1;
+			}
 			else if (a_time <= 360)
+			{
+				m_ey -= 1;
+			}
+			else if (a_time <= 480)
 			{
 				m_ey += 2;
 			}
 
-			if (a_time >= 360)
+			if (a_time >= 480)
 			{
 				a_time = 0;
 				b攻撃中 = false;
@@ -118,21 +126,31 @@ void CObjDragon::Action()
 		{
 			if (a_time <= 120)
 			{
-				m_ey -= 2;
-			}
-			else if (a_time <= 180)
-			{
-				m_ey += 1;
-			}
-			else if (a_time <= 240)
-			{
-				m_ey -= 1;
-			}
-			else if (a_time <= 360)
-			{
-				m_ey += 2;
+				m_ey -=5;
 			}
 
+			else if (a_time == 240)
+			{
+				if (b_posture == 0)
+				{
+					b_posture = 1;
+					m_ex = -32;
+				}
+				else if (b_posture == 1)
+				{
+					b_posture = 0;
+					m_ex = 576;
+				}
+
+
+			}
+			else if (a_time >=240&&a_time <= 360)
+			{
+				m_ey += 5;
+			}
+
+
+		
 			if (a_time >= 360)
 			{
 				a_time = 0;
@@ -205,10 +223,10 @@ void CObjDragon::Draw()
 	src.m_right = 128.0f;
 	src.m_bottom = 128.0f;
 	//表示位置の設定
-	dst.m_top = m_ey-128;
-	dst.m_left = m_ex-96+(512.0f*b_posture);
-	dst.m_right = dst.m_left + 512.0f-(512.0f*b_posture*2);
-	dst.m_bottom = dst.m_top + 512.0f;
+	dst.m_top = m_ey;
+	dst.m_left = m_ex+(256.0f*b_posture);
+	dst.m_right = dst.m_left + 256.0f-(256.0f*b_posture*2);
+	dst.m_bottom = dst.m_top + 256.0f;
 
 	//描画
 	Draw::Draw(4, &src, &dst, c, 0.0f);

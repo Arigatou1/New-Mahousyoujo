@@ -1,5 +1,7 @@
 ﻿  ObjDragon.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(145,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(219,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(224,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(163,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(237,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(242,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjFireBall.cpp
+  コードを生成中...
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
