@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="ClearFadeout.cpp" />
     <ClCompile Include="CObjHomingBullet.cpp" />
+    <ClCompile Include="ObjDamegeDisplay.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="EnemyAppear.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
     <ClCompile Include="GameL\DirectXDevice.cpp" />
@@ -199,6 +202,9 @@
   <ItemGroup>
     <ClInclude Include="ClearFadeout.h" />
     <ClInclude Include="CObjHomingBullet.h" />
+    <ClInclude Include="ObjDamegeDisplay.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="EnemyAppear.h" />
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
