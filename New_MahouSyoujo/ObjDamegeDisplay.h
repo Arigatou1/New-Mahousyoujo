@@ -1,0 +1,19 @@
+#pragma once
+//使用するヘッダーファイル
+#include "GameL\SceneObjManager.h"
+
+//使用するネームスペース
+using namespace GameL;
+
+class CObjDamegeDisplay : public CObj
+{
+public:
+	CObjDamegeDisplay() {};
+	~CObjDamegeDisplay() {};
+	void Init();
+	void Action();
+	void Draw();
+private:
+	float Sword_ATK;
+	int d_time;
+};

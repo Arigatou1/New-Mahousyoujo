@@ -1,6 +1,5 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
-#include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL\WinInputs.h"
@@ -59,18 +58,15 @@ void CObjSword::Action()
 		atk_time++;
 
 		//情報部にあるヒットボックスに当たると消滅
-		//for (int i = 0; i < 7; i++)
-		//{
-		//	if (hit->CheckObjNameHit(database[i]) != nullptr)
-		//	{
-		//		float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-		//
-		//		wchar_t str[128];
-		//		swprintf_s(str, L"%.0lf", atk_power);//整数を文字列か
-		//		Font::StrDraw(str, 0, 500, 24, d);
-		//
-		//	}
-		//}
+		for (int i = 0; i < 7; i++)
+		{
+			if (hit->CheckObjNameHit(database[i]) != nullptr)
+			{
+				//ダメージ表記作成
+				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay();
+				Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+			}
+		}
 	}
 
 	//if (atk_time>=2)
