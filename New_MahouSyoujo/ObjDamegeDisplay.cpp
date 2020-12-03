@@ -10,6 +10,8 @@ void CObjDamegeDisplay::Init()
 {
 	CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
 	Sword_ATK = obj_sword->GetAttackPower();
+	Sword_x = obj_sword->Geta_px();
+	Sword_y = obj_sword->Geta_py();
 	d_time = 0;
 }
 
@@ -22,6 +24,7 @@ void CObjDamegeDisplay::Action()
 		this->SetStatus(false);
 
 }
+
 //ƒhƒ[
 void CObjDamegeDisplay::Draw()
 {
@@ -31,5 +34,5 @@ void CObjDamegeDisplay::Draw()
 	//•`‰æ
 	wchar_t str[128];
 	swprintf_s(str, L"%.0lf", Sword_ATK);//®”‚ğ•¶š—ñ‚©
-	Font::StrDraw(str, 0, 500, 24, c);
+	Font::StrDraw(str, Sword_x, Sword_y, 24, c);
 }

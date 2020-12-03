@@ -15,5 +15,8 @@ public:
 	void Draw();
 private:
 	float Sword_ATK;
+	float Sword_x;
+	float Sword_y;
+
 	int d_time;
 };

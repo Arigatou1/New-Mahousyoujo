@@ -106,3 +106,13 @@ float CObjSword::GetAttackPower()
 {
 	return atk_power;
 }
+
+float CObjSword::Geta_px()
+{
+	return a_px;
+}
+
+float CObjSword::Geta_py()
+{
+	return a_py;
+}
