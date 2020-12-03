@@ -18,12 +18,15 @@ void CObjDamegeDisplay::Action()
 {
 	d_time++;
 
+	if (d_time == 60)
+		this->SetStatus(false);
+
 }
 //ドロー
 void CObjDamegeDisplay::Draw()
 {
 	//描画カラー情報
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 1.0f,0.0f,0.0f,1.0f };
 
 	//描画
 	wchar_t str[128];
