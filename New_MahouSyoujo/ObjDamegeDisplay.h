@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjDamegeDisplay : public CObj
 {
 public:
-	CObjDamegeDisplay() {};
+	CObjDamegeDisplay(float x, float y, int posture);
 	~CObjDamegeDisplay() {};
 	void Init();
 	void Action();
@@ -19,4 +19,5 @@ private:
 	float Sword_y;
 
 	int d_time;
+	int Sword_posture;
 };

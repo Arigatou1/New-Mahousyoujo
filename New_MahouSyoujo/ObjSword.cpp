@@ -63,7 +63,7 @@ void CObjSword::Action()
 			if (hit->CheckObjNameHit(database[i]) != nullptr)
 			{
 				//ダメージ表記作成
-				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay();
+				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(a_px,a_py,a_posture);
 				Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 			}
 		}
@@ -105,14 +105,4 @@ void CObjSword::Draw()
 float CObjSword::GetAttackPower()
 {
 	return atk_power;
-}
-
-float CObjSword::Geta_px()
-{
-	return a_px;
-}
-
-float CObjSword::Geta_py()
-{
-	return a_py;
 }

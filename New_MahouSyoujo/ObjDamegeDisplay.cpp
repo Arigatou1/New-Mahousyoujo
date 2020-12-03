@@ -5,13 +5,19 @@
 #include "GameHead.h"
 #include "ObjDamegeDisplay.h"
 
+//コンストラクタ
+CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture)
+{
+	Sword_x = x;
+	Sword_y = y;
+	Sword_posture = posture;
+}
+
 //イニシャライズ
 void CObjDamegeDisplay::Init()
 {
 	CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
 	Sword_ATK = obj_sword->GetAttackPower();
-	Sword_x = obj_sword->Geta_px();
-	Sword_y = obj_sword->Geta_py();
 	d_time = 0;
 }
 
@@ -20,7 +26,7 @@ void CObjDamegeDisplay::Action()
 {
 	d_time++;
 
-	if (d_time == 60)
+	if (d_time == 30)
 		this->SetStatus(false);
 
 }
@@ -34,5 +40,12 @@ void CObjDamegeDisplay::Draw()
 	//描画
 	wchar_t str[128];
 	swprintf_s(str, L"%.0lf", Sword_ATK);//整数を文字列か
-	Font::StrDraw(str, Sword_x, Sword_y, 24, c);
+	if (Sword_posture == -1)
+	{
+		Font::StrDraw(str, Sword_x - 20.0f, Sword_y, 24, c);
+	}
+	else if(Sword_posture == 1)
+	{
+		Font::StrDraw(str, Sword_x + 84.0f, Sword_y, 24, c);
+	}
 }
