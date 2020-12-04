@@ -1699,6 +1699,7 @@ void EnemyAppear::Action()
 		((UserData*)Save::GetData())->HeroHP = e_time;
 		break;
 	}
+	
 				default:
 				{
 					
