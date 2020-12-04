@@ -21,5 +21,10 @@ private:
 	int StageID;
 	int PageID;
 	int MaxPage;
+
 	bool nowLoading;
+	//メニューボタン全移動
+	float menuAllButtonX;
+
+	int waitTime;
 };
