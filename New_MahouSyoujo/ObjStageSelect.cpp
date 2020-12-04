@@ -146,14 +146,20 @@ void CObjStageSelect::Action()
 		
 		waitTime++;
 
-
-		if (waitTime > 30)
+		if (waitTime == 30)
 		{
-			menuAllButtonX += 24;
-
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout(8);
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+		else if (waitTime > 30)
+		{
+			menuAllButtonX += 16;
+			
 			if (menuAllButtonX > 800)
 			{
 				Scene::SetScene(new CSceneMain());
+			
 			}
 		}
 	}
