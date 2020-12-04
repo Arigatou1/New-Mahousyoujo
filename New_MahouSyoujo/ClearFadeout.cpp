@@ -16,44 +16,23 @@ using namespace GameL;
 //イニシャライズ
 void Fadeout::Init()
 {
-	shootDownTime = 0;
+	shootDownTime = 1;
 }
 
 //アクション
 void Fadeout::Action()
 {
-	//残り敵の数が0になったとき
-	if (((UserData*)Save::GetData())->enemyRemain == 0)
-	{
-
+	
 		shootDownTime++;
 
-		if (shootDownTime >= 400)
-			Scene::SetScene(new CSceneGameClear());
-	}
-
-	if (((UserData*)Save::GetData())->HPZeroCheck == true)
-	{
-		shootDownTime++;
-
-
-		if (shootDownTime >= 400)
-		{
-
-			
-				Scene::SetScene(new CSceneGameOver());
-			
-		}
-	}
 }
 
 //ドロー
 void Fadeout::Draw()
 {
-	if (shootDownTime >= 300)
-	{
+	
 		//描画カラー情報
-		float c[4] = { 0.0f,0.0f,0.0f,(shootDownTime - 300) / 100.0f };
+		float c[4] = { 0.0f,0.0f,0.0f,shootDownTime / 100.0f };
 
 		RECT_F src;//描画元切り取り位置
 		RECT_F dst;//描画先表示位置
@@ -71,5 +50,5 @@ void Fadeout::Draw()
 
 		//描画
 		Draw::Draw(0, &src, &dst, c, 0.0f);
-	}
+	
 }

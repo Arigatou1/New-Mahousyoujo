@@ -131,9 +131,6 @@ void CSceneMain::InitScene()
 	//EnemyAppear
 	EnemyAppear* obj_appear = new EnemyAppear();
 	Objs::InsertObj(obj_appear, OBJ_APPEAR, 101);
-	//EnemyAppear
-	Fadeout* obj_Fadeout = new Fadeout();
-	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
 
 	//ƒ^ƒCƒ€‰Šú‰»

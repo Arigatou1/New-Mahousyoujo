@@ -18,6 +18,8 @@ private:
 	bool m_key_flag;//キーフラグ
 	float cursor_x;
 	float cursor_y;
+	float cursor_sx,
+		cursor_sy;
 	int StageID;
 	int PageID;
 	int MaxPage;

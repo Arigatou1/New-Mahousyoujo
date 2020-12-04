@@ -145,6 +145,8 @@ void CObjStageSelect::Action()
 	{
 		
 		waitTime++;
+
+
 		if (waitTime > 30)
 		{
 			menuAllButtonX += 24;
@@ -154,9 +156,6 @@ void CObjStageSelect::Action()
 				Scene::SetScene(new CSceneMain());
 			}
 		}
-
-		
-
 	}
 	
 

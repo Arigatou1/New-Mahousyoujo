@@ -1,4 +1,2 @@
-﻿  ObjStageSelect.cpp
-C:\Users\GA1B\Documents\GitHub\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(44,65): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Documents\GitHub\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(193,60): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+﻿  ObjEnemyAmount.cpp
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Documents\GitHub\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe
