@@ -46,6 +46,7 @@ enum OBJ_NAME
 	OBJ_STAGEENDLESS,
 	FADEOUT,
 	OBJ_ENDLESSRESULT,
+	OBJ_DAMEGEDISPLAY,
 };
 //------------------------------------------------
 
@@ -148,6 +149,8 @@ struct UserData
 #include "ObjDragon.h"
 #include "ObjShockWave.h"
 #include "ClearFadeout.h"
+
+#include "ObjDamegeDisplay.h"
 
 //------------------------------------------------
 

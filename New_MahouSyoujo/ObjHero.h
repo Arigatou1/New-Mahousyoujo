@@ -74,4 +74,6 @@ private:
 
 	int shootDownTime;
 //	bool HPZeroCheck;
+
+	bool clear_check;
 };
