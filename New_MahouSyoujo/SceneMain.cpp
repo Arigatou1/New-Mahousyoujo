@@ -84,6 +84,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
+	//îwåiì«Ç›çûÇ›
 	for (int i = 1; i <= 10; i++)
 	{
 		wchar_t bgid[128];

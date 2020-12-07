@@ -15,7 +15,7 @@ public:
 	void Draw();
 	int GetMAXHP();
 	int GetHP();
-	void t‰Î‰Š•úË();
+	void FireBress();
 private:
 	float m_ex;
 	float m_ey;
@@ -38,7 +38,8 @@ private:
 
 	int AttackPattern;
 
-	bool bUŒ‚’†;
+	bool fireBressOn;
+	bool attack_now;
 	int b_posture;
 
 };

@@ -52,7 +52,9 @@ void CObjDragon::Init()
 
 	shootDownTime = 0;
 
-	bUŒ‚’† = false;
+	attack_now = false;
+
+	fireBressOn = false;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -62,25 +64,26 @@ void CObjDragon::Action()
 
 	rand(); rand(); rand();
 
-	if (!bUŒ‚’†)
+	if (!attack_now)
 	{
 		if (a_time == 240)
 		{
 			AttackPattern = rand() % 4;
 			a_time = 0;
-			bUŒ‚’† = true;
+			attack_now = true;
 			
 		}
 	}
-	else if (bUŒ‚’†)
+	else if (attack_now)
 	{
 		if (AttackPattern == 1)
 		{
-			t‰Î‰Š•úË();
+			fireBressOn = true;
 			if (a_time >= 200)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
+				fireBressOn = false;
 			}
 		}
 		else if (AttackPattern == 0)
@@ -113,7 +116,7 @@ void CObjDragon::Action()
 			if (a_time >= 480)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
 			}
 		}
 		else if (AttackPattern == 2)
@@ -148,7 +151,7 @@ void CObjDragon::Action()
 			if (a_time >= 360)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
 			}
 		}
 
@@ -161,24 +164,24 @@ void CObjDragon::Action()
 			else if (a_time <= 180)
 			{
 				m_ey += 1;
-				t‰Î‰Š•úË();
+				fireBressOn = true;
 			}
 			else if (a_time <= 240)
 			{
 				m_ey -= 1;
-				t‰Î‰Š•úË();
+			
 
 			}
 			else if (a_time <= 300)
 			{
 				m_ey += 1;
-					t‰Î‰Š•úË();
+				
 				
 			}
 			else if (a_time <= 360)
 			{
 				m_ey -= 1;
-				t‰Î‰Š•úË();
+				
 			}
 			else if (a_time <= 480)
 			{
@@ -188,7 +191,8 @@ void CObjDragon::Action()
 			if (a_time >= 480)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
+				fireBressOn = false;
 			}
 		}
 	}
@@ -240,6 +244,9 @@ void CObjDragon::Action()
 		return;
 
 	}
+
+	if (fireBressOn)
+		FireBress();
 }
 
 //ƒhƒ[
@@ -275,7 +282,7 @@ int CObjDragon::GetMAXHP()
 {
 	return maxhp;
 }
-void CObjDragon::t‰Î‰Š•úË()
+void CObjDragon::FireBress()
 {
 	if (a_time % 10 == 0)
 	{

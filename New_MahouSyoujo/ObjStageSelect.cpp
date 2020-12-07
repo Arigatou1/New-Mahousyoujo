@@ -194,7 +194,7 @@ void CObjStageSelect::Draw()
 		if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 			Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
 		else
-			Font::StrDraw(L"このステージは遊べません。", 400, 2, 24, c);
+			Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
 	}
 	else
 	{
