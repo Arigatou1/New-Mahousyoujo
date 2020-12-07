@@ -21,5 +21,6 @@ private:
 	int nowSelect;
 	float cursor_sx;
 	float cursor_sy;
+	//ステージクリア数をカウントするための変数
 	int countStage;
 };

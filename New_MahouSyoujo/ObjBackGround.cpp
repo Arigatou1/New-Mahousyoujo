@@ -9,9 +9,10 @@
 //使用するネームスペース
 using namespace GameL;
 
-CObjBackGround::CObjBackGround(int id)
+CObjBackGround::CObjBackGround(int id,float scale)
 {
 	BackGroundID = id;
+	bgScale = scale;
 }
 //イニシャライズ
 void CObjBackGround::Init()
@@ -39,8 +40,8 @@ void CObjBackGround::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 800.0f;
-	src.m_bottom = 600.0f;
+	src.m_right = 800.0f*bgScale;
+	src.m_bottom = 600.0f*bgScale;
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;

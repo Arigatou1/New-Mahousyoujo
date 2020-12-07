@@ -66,7 +66,7 @@ void CObjStageSelect::Action()
 				this->SetStatus(false);
 				//メニューオブジェクト作成
 				CObjCustomize* obj = new CObjCustomize();
-				Objs::InsertObj(obj, OBJ_CUSTOMIZE, 0);
+				Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 			}
 			m_key_flag = false;
 		}
@@ -121,7 +121,7 @@ void CObjStageSelect::Action()
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 		}
 		m_key_flag = false;
 
@@ -216,14 +216,7 @@ void CObjStageSelect::Draw()
 			Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
 		else
 			Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
-	}
-	else
-	{
 
-		Font::StrDraw(L"Now Loading...", 60, 256, 96, c);
-
-
-	}
 
 
 }
