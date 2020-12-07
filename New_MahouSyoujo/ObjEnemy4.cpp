@@ -9,7 +9,7 @@ CObjEnemy4::CObjEnemy4(float x, float y)
 {
 	m_ex = x;
 	m_ey = y;
-	e_hp = 5;
+	e_hp = 20;
 }
 
 //イニシャライズ
@@ -36,26 +36,10 @@ void CObjEnemy4::Action()
 	if (a_time % 100 == 0)
 	{
 
-		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey + 50.0);
+		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
 		Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
 
-
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	m_ex += 2*m_vx;
 
@@ -80,34 +64,20 @@ void CObjEnemy4::Action()
 
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
-		e_hp -= 1;
+		e_hp -= 10;
 		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
 		e4_damege = obj_all->GetZ_ATK();
 
-		e_hp <= 0;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		//Amount++;
 	}
 
 	//弾に当たれば消滅
 	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
 	{
-		e_hp -= 1;
+		e_hp -= 10;
 		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
 		e4_damege = obj_homing->GetM_ATK();
 
-		e_hp <= 0;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		//Amount++;
-	}
 
-	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
-	{
-		e_hp -= 1;
-		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
-		e4_damege = obj_all->GetZ_ATK();
 	}
 
 	//剣に当たれば減らす

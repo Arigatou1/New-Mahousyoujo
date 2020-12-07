@@ -14,14 +14,29 @@ using namespace GameL;
 void CObjEnemyAmount::Init()
 {
 	EnemyAmount = 0;
+	shootDownTime = 0;
 }
 
 //アクション
 void CObjEnemyAmount::Action()
 {
-//	CObjEnemy* obj1 = (CObjEnemy*)Objs::GetObj(OBJ_ENEMY);
-//	if(obj1!=nullptr)
-//	EnemyAmount = obj1->EneAmo();
+	if (((UserData*)Save::GetData())->enemyRemain==0)
+	{
+		//HPがゼロになったら、待機時間を増価させる。
+		shootDownTime++;
+
+		if (shootDownTime == 200)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime > 300)
+		{
+			Scene::SetScene(new CSceneGameClear());
+		}
+	}
 }
 
 
@@ -32,7 +47,7 @@ void CObjEnemyAmount::Draw()
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
 	swprintf_s(str, L"残り敵の数:%d", ((UserData*)Save::GetData())->enemyRemain);//整数を文字列か
-	//swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法攻撃");//整数を文字列か
+	//swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 H魔法攻撃");//整数を文字列か
 	
 	
 	//swprintf_s(str, L"スコア:%d", ((UserData*)Save::GetData())->Score);//整数を文字列か

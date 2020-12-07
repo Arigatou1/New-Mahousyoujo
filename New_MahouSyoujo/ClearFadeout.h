@@ -9,7 +9,7 @@ using namespace GameL;
 class Fadeout :public CObj
 {
 public:
-	Fadeout() {};
+	Fadeout(int speed = 1,bool fadeIn=false);
 	~Fadeout() {};
 	void Init();
 	void Action();
@@ -18,4 +18,6 @@ public:
 private:
 	//“GŸr–ÅŒãŽžŠÔ—p
 	int shootDownTime;
+	int fadeSpeed;
+	bool pfadeIn;
 };

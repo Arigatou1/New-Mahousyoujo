@@ -15,8 +15,7 @@ public:
 	void Draw();
 	int GetMAXHP();
 	int GetHP();
-
-
+	void FireBress();
 private:
 	float m_ex;
 	float m_ey;
@@ -36,4 +35,11 @@ private:
 	float maxhp;
 
 	int shootDownTime;
+
+	int AttackPattern;
+
+	bool fireBressOn;
+	bool attack_now;
+	int b_posture;
+
 };

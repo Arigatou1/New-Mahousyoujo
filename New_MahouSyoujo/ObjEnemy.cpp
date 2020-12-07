@@ -118,10 +118,15 @@ void CObjEnemy::Action()
 		{
 			b_mx = obj_barrier->GetBX();
 
-			if (m_ex == b_mx - 50.0f || m_ex == b_mx + 128.0f)
+			if (m_ex >= b_mx - 50.0f && m_ex <= b_mx) 
 			{
 				m_vx = 0;
-				m_vy = 0;
+				m_ex = b_mx - 50.0f;
+			}
+			else if (m_ex <= b_mx + 128.0f && m_ex >= b_mx)
+			{
+				m_vx = 0;
+				m_ex = b_mx + 128.0f;
 			}
 
 		}
@@ -147,14 +152,6 @@ void CObjEnemy::Action()
 		&m_vx, &m_vy);
 
 
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		//e_hp -= 3;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_hp -= obj_homing->GetM_ATK();
-
-		//Amount++;
-	}
 
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
@@ -212,8 +209,3 @@ void CObjEnemy::Draw()
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
-
-//int CObjEnemy::EneAmo()
-//{
-//	return Amount;
-//}

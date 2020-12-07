@@ -27,14 +27,6 @@ void CObjEndlessResult::Action()
 	Score = ((UserData*)Save::GetData())->HeroHP;
 
 
-
-
-
-
-
-
-
-
 	//‚·‚±‚ ‚ð•Û‘¶
 	//‚±‚±‚Í–â‘è‚È‚³‚»‚¤B
 	if (((UserData*)Save::GetData())->ScoreData[16] < Score)

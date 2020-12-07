@@ -12,48 +12,48 @@
 //使用するネームベース
 using namespace GameL;
 
+Fadeout::Fadeout(int speed,bool fadeIn)
+{
+	fadeSpeed = speed;
+	pfadeIn = fadeIn;
+}
 
 //イニシャライズ
 void Fadeout::Init()
 {
-	shootDownTime = 0;
+	if (pfadeIn)//フェードイン
+		shootDownTime = 100;
+	else//フェードアウト
+		shootDownTime = 1;
 }
 
 //アクション
 void Fadeout::Action()
 {
-	//残り敵の数が0になったとき
-	if (((UserData*)Save::GetData())->enemyRemain == 0)
+	if (pfadeIn)
 	{
-
-		shootDownTime++;
-
-		if (shootDownTime >= 400)
-			Scene::SetScene(new CSceneGameClear());
+		//フェードイン
+		shootDownTime -= fadeSpeed;
+	}
+	else
+	{
+		//フェードアウト
+		shootDownTime += fadeSpeed;
 	}
 
-	if (((UserData*)Save::GetData())->HPZeroCheck == true)
+	if (shootDownTime <= 0)
 	{
-		shootDownTime++;
-
-
-		if (shootDownTime >= 400)
-		{
-
-			
-				Scene::SetScene(new CSceneGameOver());
-			
-		}
+		//フェードインとき、0以下になると削除
+		this->SetStatus(false);
 	}
 }
 
 //ドロー
 void Fadeout::Draw()
 {
-	if (shootDownTime >= 300)
-	{
+	
 		//描画カラー情報
-		float c[4] = { 0.0f,0.0f,0.0f,(shootDownTime - 300) / 100.0f };
+		float c[4] = { 0.0f,0.0f,0.0f,shootDownTime / 100.0f };
 
 		RECT_F src;//描画元切り取り位置
 		RECT_F dst;//描画先表示位置
@@ -71,5 +71,5 @@ void Fadeout::Draw()
 
 		//描画
 		Draw::Draw(0, &src, &dst, c, 0.0f);
-	}
+	
 }

@@ -25,6 +25,7 @@ void CObjMagicalGirl::Init()
 	m_mtime = 1;
 	m_btime = 100;
 
+	z_x = 0.0f;
 	z_y = 0.0f;
 
 	m_skill = 1;//1‚È‚ç‰ñ•œ 2‚È‚çƒoƒŠƒA 3‚È‚ç‘S‘Ì
@@ -154,7 +155,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			h_t = true;
 		}
 	}
@@ -181,7 +181,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false && m_btime > 200)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			b_t = true;
 		}
 	}
@@ -197,8 +196,6 @@ void CObjMagicalGirl::Action()
 
 			for (int i = 0; i< 10; )
 			{
-				z_x = 0.0f;
-
 				switch (i)
 				{
 				case 0:
@@ -255,9 +252,13 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			z_t = true;
 		}
+	}
+
+	if (Input::GetVKey('D') == false)
+	{
+		m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 	}
 }
 
@@ -319,24 +320,3 @@ int CObjMagicalGirl::GetSkill()
 {
 	return m_skill;
 }
-
-/*
-int j_time = 0;
-j_time++;
-for(int i = 0; i <= 10;)
-{
-	if (j_time % 50 == 0)
-	{
-		//i‚ðƒ‰ƒ“ƒ_ƒ€‰»
-		k = k % 13;
-
-		z_x = 64.0f * k;
-
-		//–‚–@­—–‚–@‹Êì¬
-		CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ƒz[ƒ~ƒ“ƒO’eì¬
-		Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//ƒIƒuƒWƒFƒNƒgƒ}ƒl[‚É“o˜^
-
-		i++;
-	}
-}
-*/

@@ -15,9 +15,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneMenu::CSceneMenu()
+CSceneMenu::CSceneMenu(int mode)
 {
-
+	loadMode = mode;
 }
 //デストラクタ
 CSceneMenu::~CSceneMenu()
@@ -32,11 +32,44 @@ void CSceneMenu::InitScene()
 
 	//グラフィックの読み込み
 	Draw::LoadImageW(L"Menu.png", 0, TEX_SIZE_512);
+	//背景読み込み
+	for (int i = 0; i <= 10; i++)
+	{
+		wchar_t bgid[128];
 
+		swprintf_s(bgid, L"BackGrounds/bg_%02d.png", i);
+
+		Draw::LoadImageW(bgid, i + 50, TEX_SIZE_512);
+	}
 	
-	//モードセレクトオブジェクト作成
-	CObjModeSelect* obj = new CObjModeSelect();
-	Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+	switch (loadMode)
+	{
+	case 0:
+	{
+		//モードセレクトオブジェクト作成
+		CObjModeSelect* obj = new CObjModeSelect();
+		Objs::InsertObj(obj, OBJ_MODESELECT, 3);
+		break;
+	}
+	case 1:
+	{
+		//モードセレクトオブジェクト作成
+		CObjStageSelect* obj2 = new CObjStageSelect();
+		Objs::InsertObj(obj2, OBJ_STAGESELECT, 3);
+		break;
+	}
+	case 2:
+	{
+		//エンドレスメニューオブジェクト作成
+		CObjMenuEndless* obj2 = new CObjMenuEndless();
+		Objs::InsertObj(obj2, OBJ_STAGEENDLESS, 3);
+		break;
+	}
+
+	}
+	
+	CObjBackGround* obj_bg = new CObjBackGround(0,0.5);
+	Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 
 }

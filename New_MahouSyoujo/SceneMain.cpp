@@ -32,6 +32,8 @@ CSceneMain::~CSceneMain()
 //初期化メソッド
 void CSceneMain::InitScene()
 {
+	((UserData*)Save::GetData())->HPZeroCheck = false;
+
 	//音楽読み込み
 	Audio::LoadAudio(0, L"swordSE.wav", EFFECT);
 	Audio::LoadAudio(1, L"girlSE.wav", EFFECT);
@@ -51,7 +53,7 @@ void CSceneMain::InitScene()
 	//マップデータを読み込む。
 	wchar_t s[128];
 
-	if (StageID >= 9)
+	if (StageID >= 9 && StageID!=17)
 	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else
@@ -84,6 +86,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
+	//背景読み込み
 	for (int i = 1; i <= 10; i++)
 	{
 		wchar_t bgid[128];
@@ -131,8 +134,9 @@ void CSceneMain::InitScene()
 	//EnemyAppear
 	EnemyAppear* obj_appear = new EnemyAppear();
 	Objs::InsertObj(obj_appear, OBJ_APPEAR, 101);
-	//EnemyAppear
-	Fadeout* obj_Fadeout = new Fadeout();
+
+	//フェードイン
+	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
 

@@ -42,13 +42,6 @@ void CObjGameClear::Action()
 
 
 
-
-
-
-
-
-
-
 	//‚·‚±‚ ‚ð•Û‘¶
 	//‚±‚±‚Í–â‘è‚È‚³‚»‚¤B
 	if(((UserData*)Save::GetData())->ScoreData[StageID]<Score)
@@ -64,7 +57,7 @@ void CObjGameClear::Action()
 		{
 			if (m_key_flag == true)
 			{
-				Scene::SetScene(new CSceneMenu());
+				Scene::SetScene(new CSceneMenu(1));
 				m_key_flag = false;
 			}
 		}
