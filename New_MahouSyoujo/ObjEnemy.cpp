@@ -179,7 +179,7 @@ void CObjEnemy::Action()
 		Audio::Start(2);
 
 		this->SetStatus(false);
-		hit->SetInvincibility(true);
+		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;
 		//Amount++;
 	}

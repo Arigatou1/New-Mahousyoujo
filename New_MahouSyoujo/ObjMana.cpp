@@ -46,6 +46,8 @@ void CObjMana::Init()
 
 
 	mana_damege = ((UserData*)Save::GetData())->Diffculty * 0.5;
+
+	shootDownTime = 0;
 }
 
 //アクション
@@ -104,16 +106,33 @@ void CObjMana::Action()
 	{
 		Mana_HP -= 2.0 + mana_damege * 0.10;
 	}
-	//マナのHPが無くなった時、消滅させる
+
+	//HP0になったとき
 	if (Mana_HP <= 0)
 	{
-	//	this->SetStatus(false);
-	//	Hits::DeleteHitBox(this);
+		//0固定
+		Mana_HP = 0;
+		//HPがゼロになったら、待機時間を増価させる。
+		shootDownTime++;
 
-		((UserData*)Save::GetData())->HPZeroCheck = true;
-	//	Scene::SetScene(new CSceneGameOver());
+		if (shootDownTime == 200)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime > 300)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Scene::SetScene(new CSceneGameOver());
+		}
+
 	}
-	
+
+	//エンドレスモードではない場合
+	if(((UserData*)Save::GetData())->Stage!=16)
 	((UserData*)Save::GetData())->ManaHP = 100.0f - Mana_HP;
 }
 //ドロー

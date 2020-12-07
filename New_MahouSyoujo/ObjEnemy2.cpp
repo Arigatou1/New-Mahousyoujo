@@ -55,9 +55,9 @@ void CObjEnemy2::Action()
 		float m_mx = obj->GetX();
 		if (e2_hit_down == true)
 		{
-			if (m_mx + 64.0f <= m_ex)
+			if (m_mx + 65.0f <= m_ex)
 				m_vx = -1.5f;
-			else if (m_mx - 64.0f >= m_ex)
+			else if (m_mx - 52.0f >= m_ex)
 				m_vx = 1.5f;
 			else
 			{

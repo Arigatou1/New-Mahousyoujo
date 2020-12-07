@@ -14,14 +14,29 @@ using namespace GameL;
 void CObjEnemyAmount::Init()
 {
 	EnemyAmount = 0;
+	shootDownTime = 0;
 }
 
 //アクション
 void CObjEnemyAmount::Action()
 {
-//	CObjEnemy* obj1 = (CObjEnemy*)Objs::GetObj(OBJ_ENEMY);
-//	if(obj1!=nullptr)
-//	EnemyAmount = obj1->EneAmo();
+	if (((UserData*)Save::GetData())->enemyRemain==0)
+	{
+		//HPがゼロになったら、待機時間を増価させる。
+		shootDownTime++;
+
+		if (shootDownTime == 200)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime > 300)
+		{
+			Scene::SetScene(new CSceneGameClear());
+		}
+	}
 }
 
 

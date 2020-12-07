@@ -17,6 +17,10 @@ public:
 private:
 	bool m_key_flag;//キーフラグ
 	bool nowLoading;
+	//メニューボタン全移動
+	float menuAllButtonX;
+
+	int waitTime;
 	//カーそるポジション
 	float cursor_x;
 	float cursor_y;
