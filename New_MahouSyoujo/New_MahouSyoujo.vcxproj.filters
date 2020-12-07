@@ -150,12 +150,6 @@
     <ClCompile Include="ObjGaugeBase.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGaugeBaseBoss.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGaugeBaseMana.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjGaugeBoss.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
@@ -215,6 +209,18 @@
     </ClCompile>
     <ClCompile Include="ObjMagicalGirl.cpp">
       <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMenuEndless.cpp">
+      <Filter>ソース ファイル\02.シーンメニュー</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearFadeout.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEndlessResult.cpp">
+      <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDamegeDisplay.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -317,12 +323,6 @@
     <ClInclude Include="ObjGaugeBase.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGaugeBaseBoss.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGaugeBaseMana.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
     <ClInclude Include="ObjGaugeBoss.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
@@ -382,6 +382,18 @@
     </ClInclude>
     <ClInclude Include="ObjMagicalGirl.h">
       <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMenuEndless.h">
+      <Filter>ソース ファイル\02.シーンメニュー</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearFadeout.h">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEndlessResult.h">
+      <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDamegeDisplay.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

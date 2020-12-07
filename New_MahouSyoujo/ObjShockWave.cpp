@@ -58,13 +58,26 @@ void CObjShockWave::Action()
 {
 
 
-	m_ex += m_vx;
-	m_ey += m_vy;
+	m_ex += m_vx*2;
+	m_ey += m_vy*2;
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ex, m_ey);
 
+	//バリアの情報
+	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+	if (obj_barrier != nullptr)
+	{
+		b_mx = obj_barrier->GetBX();
+
+		if (m_ex >= b_mx - 50.0f && m_ex <= b_mx + 128.0f)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
+
+	}
 
 	//領域外に出たら削除する
 

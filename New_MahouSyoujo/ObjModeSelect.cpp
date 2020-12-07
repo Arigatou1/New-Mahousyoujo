@@ -52,7 +52,15 @@ void CObjModeSelect::Action()
 			{
 				//メニューオブジェクト作成
 				CObjStageSelect* obj = new CObjStageSelect();
-				Objs::InsertObj(obj, OBJ_STAGESELECT, 0);
+				Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
+
+				break;
+			}
+			case 1:
+			{
+				//エンドレスメニューオブジェクト作成
+				CObjMenuEndless* obj2 = new CObjMenuEndless();
+				Objs::InsertObj(obj2, OBJ_STAGEENDLESS, 2);
 
 				break;
 			}
@@ -60,7 +68,7 @@ void CObjModeSelect::Action()
 			{
 				//っ設定
 				CObjSetting* sett = new CObjSetting();
-				Objs::InsertObj(sett, OBJ_SETTING, 0);
+				Objs::InsertObj(sett, OBJ_SETTING, 2);
 
 				break;
 			}
@@ -68,7 +76,7 @@ void CObjModeSelect::Action()
 			{
 				//メニューオブジェクト作成
 				CObjStageSelect* obj = new CObjStageSelect();
-				Objs::InsertObj(obj, OBJ_STAGESELECT, 0);
+				Objs::InsertObj(obj, OBJ_STAGESELECT,2);
 				break;
 			}
 			}
@@ -94,8 +102,8 @@ void CObjModeSelect::Action()
 		if (m_key_flag == true)
 		{
 			//どこにいてもエンドレスモードにカーソルを合わせる。
-			nowSelect=0;
-			cursor_x = 40;
+			nowSelect=1;
+			cursor_x = 440;
 			cursor_y = 96;
 		}
 		m_key_flag = false;
@@ -163,7 +171,7 @@ void CObjModeSelect::Action()
 	}
 	else
 	{
-		cursor_sx = 720;
+		cursor_sx = 320;
 		cursor_sy = 256;
 	}
 }
@@ -175,23 +183,18 @@ void CObjModeSelect::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//ステセレ・エンドレボタン
-//	for (int i = 0; i < 2; i++)
-//		MenuBlockDraw(40 + (i * 400), 96, 320, 256, 1, 0, 0, 1);
+	for (int i = 0; i < 2; i++)
+		MenuBlockDraw(40 + (i * 400), 96, 320, 256, 1, 0, 0, 1);
 
-	MenuBlockDraw(40, 96,720, 256, 1, 0, 0, 1);
 
 	//設定ボタン
 	MenuBlockDraw(200, 450, 400, 72, 0.5f, 0, 1, 1);
 
 	MenuBlockDraw(cursor_x, cursor_y, cursor_sx, cursor_sy, 1, 0.8, 0, 1);
-	//カーソル描画
-//	MenuBlockDraw(cursor_x, cursor_y, cursor_sx, cursor_sy, 1, 0.8, 0, 1);
 	
-	//Font::StrDraw(L"GAME ModeSelect", 2, 2, 32, c);
+	Font::StrDraw(L"ステージセレクト", 72, 200, 32, c);
 
-	Font::StrDraw(L"ステージセレクト", 144, 200, 64, c);
-
-//	Font::StrDraw(L"エンドレスモード", 472, 200, 32, c);
+	Font::StrDraw(L"エンドレスモード", 472, 200, 32, c);
 
 	Font::StrDraw(L"設定", 360, 460, 48, c);
 
@@ -214,11 +217,18 @@ void CObjModeSelect::Draw()
 
 		break;
 	
-	case 2:
-	
+	case 1:
+		wchar_t Score[16];
+
+		//そのときのスコア表示
+		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
+		Font::StrDraw(Score, 2, 2, 32, c);
+
 		break;
 
 	default:
+
+		Font::StrDraw(L"ゲームに関する設定を変更します。", 2, 2, 32, c);
 	
 		break;
 

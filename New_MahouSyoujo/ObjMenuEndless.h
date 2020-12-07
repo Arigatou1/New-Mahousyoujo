@@ -5,28 +5,26 @@
 using namespace GameL;
 
 //オブジェクト：ゲームオーバー
-class CObjStageSelect : public CObj
+class CObjMenuEndless : public CObj
 {
 public:
-	CObjStageSelect() {};
-	~CObjStageSelect() {};
+	CObjMenuEndless() {};
+	~CObjMenuEndless() {};
 	void Init();
 	void Action();
 	void Draw();
 	int GetStageID();
 private:
 	bool m_key_flag;//キーフラグ
-	float cursor_x;
-	float cursor_y;
-	float cursor_sx,
-		cursor_sy;
-	int StageID;
-	int PageID;
-	int MaxPage;
-
 	bool nowLoading;
 	//メニューボタン全移動
 	float menuAllButtonX;
 
 	int waitTime;
+	//カーそるポジション
+	float cursor_x;
+	float cursor_y;
+	//カーソルスケール
+	float cursor_sx;
+	float cursor_sy;
 };

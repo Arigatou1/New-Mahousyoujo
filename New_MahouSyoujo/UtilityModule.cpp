@@ -2,6 +2,7 @@
 #include "GameL\SceneManager.h"
 #include "GameHead.h"
 #include <math.h>
+
 //MenuBlockDraw関数
 //表示位置dstの値を受け取って、描画だけできる。
 void MenuBlockDraw(float x, float y, float width, float height, float r, float g, float b, float a)
@@ -71,7 +72,33 @@ bool CheckWindow(float pos_x, float pos_y, float window_x, float window_y, float
 }
 
 //ゲージベースを描画できるようにします。
-void DrawGaugeBase(float x, float y)
+void DrawGaugeBase(float x, float y,int id)
 {
+	//描画カラー情報
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
+
+
+	switch (id)
+	{
+	case 1:
+
+		//切り取り位置の設定
+		src.m_top = 48.0f;
+		src.m_left = 26.0f;
+		src.m_right = 320.0f;
+		src.m_bottom = 72.0f;
+		//表示位置の設定
+		dst.m_top =y;
+		dst.m_left = x;
+		dst.m_right = dst.m_left + 294.0f;
+		dst.m_bottom = dst.m_top + 24;
+
+
+		//描画
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+		break;
+	}
 }

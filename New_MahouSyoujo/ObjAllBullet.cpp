@@ -17,12 +17,12 @@ CObjAllBullet::CObjAllBullet(float x, float y)
 //イニシャライズ
 void CObjAllBullet::Init()
 {
-	m_avy = 5.0f;
+	m_avy = 10.0f;
 	//攻撃力
 	z_atk = 10;
 
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ax, m_ay, 64, 64, ELEMENT_PLAYER, OBJ_ALLBULLET, 10);
+	Hits::SetHitBox(this, m_ax + 32.0f, m_ay, 64, 64, ELEMENT_PLAYER, OBJ_ALLBULLET, 10);
 }
 
 //アクション
@@ -31,7 +31,7 @@ void CObjAllBullet::Action()
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ax, m_ay);
+	hit->SetPos(m_ax + 32.0f, m_ay);
 
 	//下に動く
 	m_ay += m_avy;
@@ -72,13 +72,13 @@ void CObjAllBullet::Draw()
 	src.m_bottom = 256.0f;
 
 	//表示位置の設定
-	dst.m_top    = 0.0f + m_ay;
-	dst.m_left   = 0.0f + m_ax;
-	dst.m_right  = 64.0f + m_ax;
-	dst.m_bottom = 64.0f + m_ay;
+	dst.m_top    = -32.0f + m_ay;
+	dst.m_left   = 32.0f + m_ax;
+	dst.m_right  = 96.0f + m_ax;
+	dst.m_bottom = 96.0f + m_ay;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 90.0f);
+	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
 
 int CObjAllBullet::GetZ_ATK()

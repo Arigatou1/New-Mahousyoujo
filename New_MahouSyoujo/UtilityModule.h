@@ -10,5 +10,5 @@ bool UnitVec(float* vx, float* vy);
 bool CheckWindow(float pos_x, float pos_y, float window_x, float window_y, float window_w, float window_h);
 
 //ゲージベース描画
-void DrawGaugeBase(float x, float y);
+void DrawGaugeBase(float x, float y,int id);
 

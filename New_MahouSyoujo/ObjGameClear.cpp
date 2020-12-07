@@ -17,8 +17,8 @@ void CObjGameClear::Init()
 	((UserData*)Save::GetData())->Clear_Flag[StageID+1] = true;
 
 	Score = 0;
-	HeroDamage = 0;
-	ManaDamage = 0;
+	HeroDamage = 0.0f;
+	ManaDamage = 0.0f;
 }
 
 //アクション
@@ -38,14 +38,7 @@ void CObjGameClear::Action()
 	//追記
 	//うまくいったかもしれない。
 
-    Score =	(4000-HeroDamage*80) + (6000-ManaDamage*60);
-
-
-
-
-
-
-
+    Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
 
 
 
@@ -64,7 +57,7 @@ void CObjGameClear::Action()
 		{
 			if (m_key_flag == true)
 			{
-				Scene::SetScene(new CSceneMenu());
+				Scene::SetScene(new CSceneMenu(1));
 				m_key_flag = false;
 			}
 		}
@@ -108,7 +101,7 @@ void CObjGameClear::Draw()
 
 	
 	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage,ManaDamage);//整数を文字列か
-	Font::StrDraw(str, 50, 468, 36, c);
+	Font::StrDraw(str, 50, 480, 18, c);
 	
 	
 }
