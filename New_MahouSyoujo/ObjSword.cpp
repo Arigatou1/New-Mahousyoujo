@@ -87,18 +87,18 @@ void CObjSword::Draw()
 	RECT_F dst;//描画先表示位置
 	
 	//切り取り位置の設定
-	src.m_top =0.0f;
+	src.m_top =192.0f;
 	src.m_left =0.0f;
-	src.m_right = 0.0f;
-	src.m_bottom = 0.0f;
+	src.m_right = 64.0f;
+	src.m_bottom = 256.0f;
 	//表示位置の設定
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 0.0f;
-	dst.m_bottom = 0.0f;
+	dst.m_top = a_py+0.0f;
+	dst.m_left = a_px+0.0f;
+	dst.m_right = a_px+64.0f;
+	dst.m_bottom = a_py+64.0f;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 }
 
 //攻撃力を返す関数
