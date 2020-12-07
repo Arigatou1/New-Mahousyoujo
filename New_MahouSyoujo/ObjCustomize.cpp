@@ -33,7 +33,7 @@ void CObjCustomize::Action()
 
 
 
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (Input::GetVKey(VK_RETURN) == true||Input::GetVKey(VK_ESCAPE) == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -42,7 +42,7 @@ void CObjCustomize::Action()
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjStageSelect* obj = new CObjStageSelect();
-			Objs::InsertObj(obj, OBJ_STAGESELECT, 0);
+			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
 		}
 	}
 

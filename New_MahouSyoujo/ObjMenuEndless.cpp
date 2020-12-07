@@ -49,7 +49,7 @@ void CObjMenuEndless::Action()
 					this->SetStatus(false);
 					//メニューオブジェクト作成
 					CObjCustomize* obj = new CObjCustomize();
-					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 0);
+					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 				}
 		//	}
 			
@@ -85,7 +85,7 @@ void CObjMenuEndless::Action()
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 		}
 		m_key_flag = false;
 	}
