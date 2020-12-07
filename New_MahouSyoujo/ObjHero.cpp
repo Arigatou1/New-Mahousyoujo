@@ -343,6 +343,7 @@ void CObjHero::Action()
 		m_hp = 0;
 		//HP‚ªƒ[ƒ‚É‚È‚Á‚½‚çA‘Ò‹@ŽžŠÔ‚ð‘‰¿‚³‚¹‚éB
 		shootDownTime++;
+		((UserData*)Save::GetData())->HPZeroCheck = true;
 
 		if (shootDownTime == 200)
 		{

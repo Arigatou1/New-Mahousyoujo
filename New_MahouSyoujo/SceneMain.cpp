@@ -32,6 +32,8 @@ CSceneMain::~CSceneMain()
 //初期化メソッド
 void CSceneMain::InitScene()
 {
+	((UserData*)Save::GetData())->HPZeroCheck = false;
+
 	//音楽読み込み
 	Audio::LoadAudio(0, L"swordSE.wav", EFFECT);
 	Audio::LoadAudio(1, L"girlSE.wav", EFFECT);
