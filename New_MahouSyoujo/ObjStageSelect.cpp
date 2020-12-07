@@ -47,6 +47,8 @@ void CObjStageSelect::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
+
 			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 			{
 				if (cursor_y < 512)
@@ -67,6 +69,8 @@ void CObjStageSelect::Action()
 	
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
+
 			cursor_y -= 112;
 			m_key_flag = false;
 		}
@@ -76,6 +80,8 @@ void CObjStageSelect::Action()
 
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
+
 			cursor_y += 112;
 			m_key_flag = false;
 		}
@@ -86,6 +92,8 @@ void CObjStageSelect::Action()
 		
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
+
 			if (PageID > 0)
 				PageID -= 1;
 			m_key_flag = false;
@@ -98,6 +106,8 @@ void CObjStageSelect::Action()
 	
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
+
 			if (PageID < MaxPage )
 				PageID += 1;
 
@@ -109,6 +119,7 @@ void CObjStageSelect::Action()
 
 		if (m_key_flag == true)
 		{
+			Audio::Start(11);
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjModeSelect* obj = new CObjModeSelect();

@@ -159,6 +159,7 @@ void CSceneMain::Scene()
 	}
 
 	else
+
 		m_key_flag = true;
 
 	//c‚è“G‚Ì”‚ª0‚É‚È‚Á‚½‚Æ‚«

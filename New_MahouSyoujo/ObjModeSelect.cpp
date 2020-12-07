@@ -45,6 +45,8 @@ void CObjModeSelect::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
+
 			this->SetStatus(false);
 			switch (nowSelect)
 			{
@@ -81,6 +83,9 @@ void CObjModeSelect::Action()
 	
 		if (m_key_flag == true)
 		{
+
+			Audio::Start(10);
+
 			//どこにいてもステージセレクトにカーソルを合わせる。
 			nowSelect=0;
 			cursor_x = 40;
@@ -93,6 +98,7 @@ void CObjModeSelect::Action()
 		
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			//どこにいてもエンドレスモードにカーソルを合わせる。
 			nowSelect=0;
 			cursor_x = 40;
@@ -105,7 +111,8 @@ void CObjModeSelect::Action()
 	
 		if (m_key_flag == true)
 		{
-			
+
+			Audio::Start(10);
 			//どこにいても設定にカーソルを合わせる。
 			nowSelect = 2;
 			cursor_x = 200;
@@ -121,6 +128,7 @@ void CObjModeSelect::Action()
 		{
 			if (m_key_flag == true)
 			{
+				Audio::Start(10);
 				//下にいるときだけステージセレクトにカーソルを合わせる。
 				nowSelect = 0;
 				cursor_x = 40;
@@ -135,6 +143,7 @@ void CObjModeSelect::Action()
 
 			if (m_key_flag == true)
 			{
+				Audio::Start(11);
 				Scene::SetScene(new CSceneTitle());
 			}
 			m_key_flag = false;

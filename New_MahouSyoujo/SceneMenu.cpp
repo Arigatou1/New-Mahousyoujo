@@ -6,6 +6,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -37,6 +38,16 @@ void CSceneMenu::InitScene()
 	//モードセレクトオブジェクト作成
 	CObjModeSelect* obj = new CObjModeSelect();
 	Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(8, L"Sounds/menuBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(10, L"Sounds/sentakuSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
+
+	//バックミュージックスタート
+	float Volume = Audio::VolumeMaster(-0.05f);
+	Audio::Start(8);
 
 
 }

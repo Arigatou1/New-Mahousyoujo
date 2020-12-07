@@ -37,7 +37,7 @@ void CObjCustomize::Action()
 	{
 		if (m_key_flag == true)
 		{
-			
+			Audio::Start(9);
 
 			this->SetStatus(false);
 			//メニューオブジェクト作成
@@ -50,6 +50,7 @@ void CObjCustomize::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			cursor_y -= 112;
 			
 			m_key_flag = false;
@@ -61,6 +62,7 @@ void CObjCustomize::Action()
 		
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			cursor_y += 112;
 		
 			m_key_flag = false;
@@ -72,6 +74,7 @@ void CObjCustomize::Action()
 	
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			switch (nowSelect)
 			{
 			case 0:
@@ -97,7 +100,8 @@ void CObjCustomize::Action()
 		
 		if (m_key_flag == true)
 		{
-			
+
+			Audio::Start(10);
 
 			switch (nowSelect)
 			{

@@ -39,6 +39,7 @@ void CSceneTitle::InitScene()
 
     //音楽情報の読み込み
 	Audio::LoadAudio(7, L"Sounds/gametitleBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"Sounds/sentakuSE.wav", EFFECT);
 
     //バックミュージックスタート
 	float Volume = Audio::VolumeMaster(-0.05f);
