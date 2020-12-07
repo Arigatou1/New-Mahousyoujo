@@ -54,11 +54,6 @@ void CObjMana::Init()
 void CObjMana::Action()
 {
 
-	if (Mana_HP <= 0)
-	{
-		Mana_HP = 0;
-	}
-
 
 	//HitBoxの内容
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -114,6 +109,7 @@ void CObjMana::Action()
 		Mana_HP = 0;
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
+		((UserData*)Save::GetData())->HPZeroCheck = true;
 
 		if (shootDownTime == 200)
 		{
