@@ -34,8 +34,8 @@ void CObjMana::Init()
 
 
 	//MANAゲージベースオブジェクト作成
-	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
-	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
+//	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
+//	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
 
 	//MANAゲージオブジェクト作成
 	CObjGaugeMANAHP* obj_manahp = new CObjGaugeMANAHP(Mana_x, Mana_y);
@@ -46,6 +46,8 @@ void CObjMana::Init()
 
 
 	mana_damege = ((UserData*)Save::GetData())->Diffculty * 0.5;
+
+	shootDownTime = 0;
 }
 
 //アクション
@@ -62,7 +64,6 @@ void CObjMana::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(Mana_x,Mana_y);
 
-
 	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
 	{
 		Mana_HP -= 0.40 + mana_damege * 0.20;
@@ -77,14 +78,14 @@ void CObjMana::Action()
 	//敵3に当たるとHPが減る
 	if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
 	{
-		Mana_HP -= 0.05;
+		Mana_HP -= 0.5;
 
 	}
 	
 	//敵4に当たるとHPが減る
 	if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
 	{
-		Mana_HP -= 0.05;
+		Mana_HP -= 0.5;
 
 	}
 
@@ -98,19 +99,41 @@ void CObjMana::Action()
 	//ドラゴンの炎に当たるとHPが減る
 	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
 	{
-		Mana_HP -= 0.10 + mana_damege * 0.10;
+	//	Mana_HP -= 0.10 + mana_damege * 0.10;
+	}
+	//ショックウェーブに当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
+	{
+		Mana_HP -= 2.0 + mana_damege * 0.10;
 	}
 
-	//マナのHPが無くなった時、消滅させる
+	//HP0になったとき
 	if (Mana_HP <= 0)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		//0固定
+		Mana_HP = 0;
+		//HPがゼロになったら、待機時間を増価させる。
+		shootDownTime++;
 
-		Scene::SetScene(new CSceneGameOver());
+		if (shootDownTime == 200)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime > 300)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			Scene::SetScene(new CSceneGameOver());
+		}
+
 	}
 
-	((UserData*)Save::GetData())->ManaHP = Mana_HP;
+	//エンドレスモードではない場合
+	if(((UserData*)Save::GetData())->Stage!=16)
+	((UserData*)Save::GetData())->ManaHP = 100.0f - Mana_HP;
 }
 //ドロー
 void CObjMana::Draw()

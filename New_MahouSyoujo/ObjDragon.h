@@ -15,8 +15,7 @@ public:
 	void Draw();
 	int GetMAXHP();
 	int GetHP();
-
-
+	void t‰Î‰Š•úË();
 private:
 	float m_ex;
 	float m_ey;
@@ -34,4 +33,12 @@ private:
 
 	float e_hp;
 	float maxhp;
+
+	int shootDownTime;
+
+	int AttackPattern;
+
+	bool bUŒ‚’†;
+	int b_posture;
+
 };

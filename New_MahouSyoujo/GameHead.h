@@ -42,6 +42,11 @@ enum OBJ_NAME
 	OBJ_GAUGEBOSS,
 	OBJ_FIREBALL,
 	OBJ_DRAGON,
+	OBJ_SHOCKWAVE,
+	OBJ_STAGEENDLESS,
+	FADEOUT,
+	OBJ_ENDLESSRESULT,
+	OBJ_DAMEGEDISPLAY,
 };
 //------------------------------------------------
 
@@ -89,6 +94,7 @@ struct UserData
 	float ManaHP;
 	//残り敵の数の表示
 	int enemyRemain;
+	bool HPZeroCheck;
 };
 //------------------------------------------------
 
@@ -103,7 +109,7 @@ struct UserData
 
 //------------------------------------------------
 
-//ゲームシーンオブジェクトヘッダ------------------
+//ゲームシーンオブジェクトヘッダ-----------------
 #include "ObjHero.h"
 #include "ObjMagicalGirl.h"
 #include "CObjHomingBullet.h"
@@ -115,10 +121,9 @@ struct UserData
 #include "ObjGaugeBase.h"
 #include "ObjBlock.h"
 #include "ObjGaugeHP.h"
-#include "ObjGaugeMP.h"
 #include "ObjGaugeMana.h"
 #include "ObjMana.h"
-#include "ObjGaugeBaseMana.h"
+//#include "ObjGaugeBaseMana.h"
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
 #include "ObjBackGround.h"
@@ -136,10 +141,16 @@ struct UserData
 #include "ObjSlimeBall.h"
 #include "ObjSword.h"
 #include "EnemyAppear.h"
-#include "ObjGaugeBaseBoss.h"
+#include "ObjMenuEndless.h"
+#include "ObjEndlessResult.h"
+
 #include "ObjGaugeBoss.h"
 #include "ObjFireBall.h"
 #include "ObjDragon.h"
+#include "ObjShockWave.h"
+#include "ClearFadeout.h"
+
+#include "ObjDamegeDisplay.h"
 
 //------------------------------------------------
 

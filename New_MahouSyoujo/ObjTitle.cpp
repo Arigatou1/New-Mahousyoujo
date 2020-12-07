@@ -138,7 +138,7 @@ void CObjTitle::Draw()
 	{
 		Font::StrDraw(L"セーブデータを削除しました", 0, 0, 32, c);
 	}
-	if (Input::GetVKey('4') == true)
+	else if (Input::GetVKey('4') == true)
 	{
 		Font::StrDraw(L"全ステージ開放しました。", 0, 0, 32, c);
 	}

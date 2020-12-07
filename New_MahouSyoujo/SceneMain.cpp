@@ -51,8 +51,8 @@ void CSceneMain::InitScene()
 	//マップデータを読み込む。
 	wchar_t s[128];
 
-	if (StageID >= 9)
-	swprintf_s(s, L"Stage/Stage1.csv", StageID);
+	if (StageID >= 9 && StageID!=17)
+	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else
 		swprintf_s(s, L"Stage/Stage%d.csv", StageID);
@@ -116,11 +116,7 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 11);
 
-	//MPゲージオブジェクト作成
-	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
-	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
-	
-	
+
 
 	//敵の数オブジェクト作成
 	CObjEnemyAmount* obj_eneamo = new CObjEnemyAmount();
@@ -136,10 +132,12 @@ void CSceneMain::InitScene()
 	EnemyAppear* obj_appear = new EnemyAppear();
 	Objs::InsertObj(obj_appear, OBJ_APPEAR, 101);
 
+
 	//タイム初期化
 	m_time = 0;
 
 	EnemyAmount = 0;
+	shootDownTime = 0;
 }
 
 //実行中メソッド
@@ -161,8 +159,6 @@ void CSceneMain::Scene()
 	else
 		m_key_flag = true;
 
-	//残り敵の数が0になったとき
-	if(((UserData*)Save::GetData())->enemyRemain == 0)
-		Scene::SetScene(new CSceneGameClear());
+
 }
 

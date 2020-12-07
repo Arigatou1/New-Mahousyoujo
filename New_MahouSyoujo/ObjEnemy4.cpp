@@ -19,7 +19,7 @@ void CObjEnemy4::Init()
 	m_vy = 0.0f;
 	m_r = 0.0f;
 
-	
+	a_time = 0;
 
 	//ìñÇΩÇËîªíËHitBoxÇçÏê¨
 	Hits::SetHitBox(this, m_ex, m_ey, 64, 64, ELEMENT_ENEMY, OBJ_ENEMY4, 10);
@@ -30,6 +30,21 @@ void CObjEnemy4::Init()
 //ÉAÉNÉVÉáÉì
 void CObjEnemy4::Action()
 {
+	a_time++;
+
+
+	if (a_time % 100 == 0)
+	{
+
+		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
+		Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
+
+
+
+	}
+
+
+
 	m_ex += 2*m_vx;
 
 	//

@@ -89,6 +89,15 @@ void CObjSlimeBall::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	//領域外に出たら削除する
+
+	bool check = CheckWindow(m_ex, m_ey, -64.0f, -64.0f, 800.0f, 600.0f);
+	if (check == false)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 	//移動ベクトルの正規化
 	UnitVec(&m_vx, &m_vy);
 }

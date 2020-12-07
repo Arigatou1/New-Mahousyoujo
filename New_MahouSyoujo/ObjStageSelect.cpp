@@ -20,12 +20,17 @@ void CObjStageSelect::Init()
 	cursor_y = 64;
 	 
 	PageID = ((UserData*)Save::GetData())->Stage / 4;
-	MaxPage = 4;
+	if (PageID >= 2)
+		PageID = 0;
+	MaxPage = 1;
 
 	((UserData*)Save::GetData())->ManaHP = 0;
 	((UserData*)Save::GetData())->HeroHP = 0;
 
 	((UserData*)Save::GetData())->enemyRemain = 1;
+	nowLoading=false;
+	menuAllButtonX = 0.0f;
+	waitTime = 0;
 }
 
 //アクション
@@ -49,9 +54,13 @@ void CObjStageSelect::Action()
 		{
 			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 			{
+				
 				if (cursor_y < 512)
-					Scene::SetScene(new CSceneMain());
-		}
+				{
+				
+					nowLoading = true;
+				}
+			}
 			if (cursor_y >= 512)
 			{
 				this->SetStatus(false);
@@ -130,8 +139,30 @@ void CObjStageSelect::Action()
 	if (cursor_y > 512)
 		cursor_y = 64;
 
+	
 
+	if (nowLoading == true)
+	{
+		
+		waitTime++;
 
+		if (waitTime == 30)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout(8);
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+		else if (waitTime > 30)
+		{
+			menuAllButtonX += 16;
+			
+			if (menuAllButtonX > 800)
+			{
+				Scene::SetScene(new CSceneMain());
+			
+			}
+		}
+	}
 	
 
 }
@@ -141,51 +172,52 @@ void CObjStageSelect::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+		//ステージセレクト
+		for (int i = 0; i < 4; i++)
+		{
+			MenuBlockDraw(140+ menuAllButtonX, i * 112.0f + 64.0f, 512.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+
+		}
+
+		MenuBlockDraw(140 + menuAllButtonX, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
+		//if()
+
+		//カーソル描画
+		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
+
+		//矢印ボタン
+		for (int i = 0; i < 2; i++)
+			MenuBlockDraw(16 + i * 674.0f + menuAllButtonX, 200.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
+		Font::StrDraw(L"←", 40 + menuAllButtonX, 284, 48, c);
+
+		Font::StrDraw(L"→", 712 + menuAllButtonX, 284, 48, c);
 
 
-	
-	
-	//ステージセレクト
-	for (int i = 0; i < 4; i++)
-	{
-		MenuBlockDraw(140, i * 112.0f + 64.0f, 512.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+
+		for (int i = 0; i < 4; i++)
+		{
+			wchar_t str[128];
+			swprintf_s(str, L"ステージ%d", i + 1 + (PageID * 4));
+
+			Font::StrDraw(str, 196 + menuAllButtonX, 64 + (i * 112) + 8, 80, c);
+		}
+
 		
-	}
 
-	MenuBlockDraw(140, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
-	//if()
+		Font::StrDraw(L"カスタマイズ", 156 + menuAllButtonX, 512, 80, c);
+		wchar_t Score[16];
 
-	MenuBlockDraw(cursor_x, cursor_y, 512.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
+		//そのときのスコア表示
+		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[((UserData*)Save::GetData())->Stage]);
+		Font::StrDraw(Score, 2 + menuAllButtonX, 2, 48, c);
 
-
-	for (int i = 0; i < 2; i++)
-		MenuBlockDraw(16 + i * 674.0f, 200.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
+		//遊べるか遊べないかの表示
+		if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+			Font::StrDraw(L"このステージは遊ぶことができます。", 400 + menuAllButtonX, 2, 24, c);
+		else
+			Font::StrDraw(L"このステージはまだ遊べません。", 400 + menuAllButtonX, 2, 24, c);
 	
-	
-	for (int i = 0; i < 4; i++)
-	{
-		wchar_t str[128];
-		swprintf_s(str,L"ステージ%d",i+1+ (PageID * 4));
-		
-		Font::StrDraw(str, 196, 64+(i*112)+8, 80, c);
-	}
 
-	Font::StrDraw(L"←", 40, 284, 48, c);
-
-	Font::StrDraw(L"→", 712, 284, 48, c);
-
-	Font::StrDraw(L"カスタマイズ", 156, 512 , 80, c);
-	wchar_t Score[16];
-
-	//そのときのスコア表示
-	swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[((UserData*)Save::GetData())->Stage]);
-	Font::StrDraw(Score, 2,2, 48, c);
-
-	//遊べるか遊べないかの表示
-	if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
-	Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
-	else 
-		Font::StrDraw(L"このステージは遊べません。", 400, 2, 24, c);
 
 }
 

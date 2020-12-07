@@ -6,6 +6,10 @@
 #include "ObjDragon.h"
 #include "GameL\UserData.h"
 
+
+#include <stdlib.h>
+#include <time.h>
+
 //使用するネームベース
 using namespace GameL;
 
@@ -14,13 +18,12 @@ CObjDragon::CObjDragon(float x, float y)
 {
 	m_ex = x;
 	m_ey = y;
+
 }
 //イニシャライズ
 void CObjDragon::Init()
 {
-	m_vx = 0;
-	m_vy = 0;
-
+	b_posture = 0;
 
 	//blockとの衝突状態確認用
 	e1_hit_up = false;
@@ -30,27 +33,166 @@ void CObjDragon::Init()
 
 	a_time = 0;
 
-	maxhp = 1200;
+	maxhp = 1800;
 	e_hp = maxhp;
 
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 256, 256, ELEMENT_ENEMY, OBJ_DRAGON, 10);
 
 
-	//ゲージオブジェクト作成
-	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
-	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
 
 	//ゲージオブジェクト作成
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
+	//ランダム
+	unsigned int now = (unsigned int)time(0);
 
+	srand(now);
+
+	shootDownTime = 0;
+
+	b攻撃中 = false;
 }
 
 //アクション
 void CObjDragon::Action()
 {
+	a_time++;
+
+	rand(); rand(); rand();
+
+	if (!b攻撃中)
+	{
+		if (a_time == 240)
+		{
+			AttackPattern = rand() % 4;
+			a_time = 0;
+			b攻撃中 = true;
+			
+		}
+	}
+	else if (b攻撃中)
+	{
+		if (AttackPattern == 1)
+		{
+			t火炎放射();
+			if (a_time >= 200)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+		else if (AttackPattern == 0)
+		{
+			if(a_time<=120)
+			{
+				m_ey -= 2;
+			}
+			else if (a_time <= 180)
+			{
+				m_ey += 1;
+			}
+			else if (a_time <= 240)
+			{
+				m_ey -= 1;
+			}
+			else if (a_time <= 300)
+			{
+				m_ey += 1;
+			}
+			else if (a_time <= 360)
+			{
+				m_ey -= 1;
+			}
+			else if (a_time <= 480)
+			{
+				m_ey += 2;
+			}
+
+			if (a_time >= 480)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+		else if (AttackPattern == 2)
+		{
+			if (a_time <= 120)
+			{
+				m_ey -=5;
+			}
+
+			else if (a_time == 240)
+			{
+				if (b_posture == 0)
+				{
+					b_posture = 1;
+					m_ex = -32;
+				}
+				else if (b_posture == 1)
+				{
+					b_posture = 0;
+					m_ex = 576;
+				}
+
+
+			}
+			else if (a_time >=240&&a_time <= 360)
+			{
+				m_ey += 5;
+			}
+
+
+		
+			if (a_time >= 360)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+
+		else if (AttackPattern == 3)
+		{
+			if (a_time <= 120)
+			{
+				m_ey -= 2;
+			}
+			else if (a_time <= 180)
+			{
+				m_ey += 1;
+				t火炎放射();
+			}
+			else if (a_time <= 240)
+			{
+				m_ey -= 1;
+				t火炎放射();
+
+			}
+			else if (a_time <= 300)
+			{
+				m_ey += 1;
+					t火炎放射();
+				
+			}
+			else if (a_time <= 360)
+			{
+				m_ey -= 1;
+				t火炎放射();
+			}
+			else if (a_time <= 480)
+			{
+				m_ey += 2;
+			}
+
+			if (a_time >= 480)
+			{
+				a_time = 0;
+				b攻撃中 = false;
+			}
+		}
+	}
+
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -66,18 +208,10 @@ void CObjDragon::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_ex, m_ey);
 
-	a_time++;
-	if (a_time >= 300)
-	{
-		if (a_time % 10 == 0)
-		{
+	
 
-			CObjFireBall* obj = new CObjFireBall(m_ex, m_ey + 50.0f, -15.0f, 4.0f);
-			Objs::InsertObj(obj, OBJ_FIREBALL, 49);
-		}
-	}
 
-	if (a_time == 400)
+	if (a_time >= 600)
 	{
 		a_time = 0;
 	}
@@ -93,15 +227,18 @@ void CObjDragon::Action()
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
+	{
+		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_all->GetZ_ATK();
+	}
 
 	//hpが0になると消滅
 	if (e_hp <= 0)
 	{
+		((UserData*)Save::GetData())->enemyRemain = 0;
+		return;
 
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneGameClear());
-		//Amount++;
 	}
 }
 
@@ -120,10 +257,10 @@ void CObjDragon::Draw()
 	src.m_right = 128.0f;
 	src.m_bottom = 128.0f;
 	//表示位置の設定
-	dst.m_top = m_ey-128;
-	dst.m_left = m_ex-96;
-	dst.m_right = dst.m_left + 512.0f;
-	dst.m_bottom = dst.m_top + 512.0f;
+	dst.m_top = m_ey;
+	dst.m_left = m_ex+(256.0f*b_posture);
+	dst.m_right = dst.m_left + 256.0f-(256.0f*b_posture*2);
+	dst.m_bottom = dst.m_top + 256.0f;
 
 	//描画
 	Draw::Draw(4, &src, &dst, c, 0.0f);
@@ -138,4 +275,12 @@ int CObjDragon::GetMAXHP()
 {
 	return maxhp;
 }
+void CObjDragon::t火炎放射()
+{
+	if (a_time % 10 == 0)
+	{
 
+		CObjFireBall* obj = new CObjFireBall(m_ex + (256.0f - 64.0f) * b_posture, m_ey + 50.0f, -3.5f + (b_posture * 7.0f), 5.0f);
+		Objs::InsertObj(obj, OBJ_FIREBALL, 49);
+	}
+}

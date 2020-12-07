@@ -40,8 +40,8 @@ void CObjBoss1::Init()
 
 
 	//ゲージオブジェクト作成
-	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
-	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
+//	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
+//	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
 
 	//ゲージオブジェクト作成
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
@@ -53,6 +53,14 @@ void CObjBoss1::Init()
 //アクション
 void CObjBoss1::Action()
 {
+
+	//hpが0になると消滅
+	if (e_hp <= 0)
+	{
+		((UserData*)Save::GetData())->enemyRemain = 0;
+		return;
+	}
+
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -112,15 +120,7 @@ void CObjBoss1::Action()
 	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
 		allbullet_hit = true;
 
-	//hpが0になると消滅
-	if (e_hp <= 0)
-	{
 	
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneGameClear());
-		//Amount++;
-	}
 }
 
 //ドロー

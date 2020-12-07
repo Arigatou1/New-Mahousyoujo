@@ -103,13 +103,13 @@ void CObjSmallSlim::Action()
 		//ƒWƒ‡ƒ“ƒv
 		if (e1_hit_right == true)
 		{
-			m_ex = m_ex - 5.0f;
-			m_ey = m_ey - 60.0f;
+			m_vx = -1.0f;
+			m_vy = -8.0f;
 		}
 		else if (e1_hit_left == true)
 		{
-			m_ex = m_ex + 5.0f;
-			m_ey = m_ey - 60.0f;
+			m_vx = +1.0f;
+			m_vy = -8.0f;
 		}
 
 		//ƒoƒŠƒAo‚Ä‚éŽž‚¾‚¯Ž~‚Ü‚é
@@ -118,13 +118,15 @@ void CObjSmallSlim::Action()
 		{
 			b_mx = obj_barrier->GetBX();
 
-			if (m_ex == b_mx - 48.0f)
+			if (m_ex >= b_mx - 48.0f && m_ex <= b_mx)
 			{
 				m_vx = 0;
+				m_ex = b_mx - 48.0f;
 			}
-			else if (m_ex == b_mx + 128.0f)
+			else if (m_ex <= b_mx + 112.0f && m_ex >= b_mx)
 			{
 				m_vx = 0;
+				m_ex = b_mx + 112.0f;
 			}
 
 		}
@@ -148,15 +150,11 @@ void CObjSmallSlim::Action()
 
 
 	//’e‚ª“–‚½‚ê‚ÎÁ–Å
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{
 
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_damege = obj_homing->GetM_ATK();
-
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-
+		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
+		e_hp -= obj_all->GetZ_ATK();
 
 		//Amount++;
 	}
@@ -208,3 +206,4 @@ void CObjSmallSlim::Draw()
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
+

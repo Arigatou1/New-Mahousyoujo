@@ -21,6 +21,7 @@ private:
 	float Mana_HP;
 	float Mana_x;
 	float Mana_y;
+	int shootDownTime;
 
 	float mana_damege;//
 };

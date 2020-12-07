@@ -34,6 +34,18 @@ void CObjSword::Init()
 //アクション
 void CObjSword::Action()
 {
+	//当たり判定を行うオブジェクト情報部
+	int database[7] =
+	{
+		OBJ_ENEMY,
+		OBJ_ENEMY2,
+		OBJ_ENEMY3,
+		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_BOSS1,
+		OBJ_DRAGON,
+
+	};
 
 	//m_fから真偽を受け取る
 	if (a_f == false)
@@ -44,6 +56,17 @@ void CObjSword::Action()
 		hit->SetPos(a_px + (a_posture * 60), a_py);
 
 		atk_time++;
+
+		//情報部にあるヒットボックスに当たると消滅
+		for (int i = 0; i < 7; i++)
+		{
+			if (hit->CheckObjNameHit(database[i]) != nullptr)
+			{
+				//ダメージ表記作成
+				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(a_px,a_py,a_posture);
+				Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+			}
+		}
 	}
 
 	//if (atk_time>=2)
@@ -62,7 +85,7 @@ void CObjSword::Draw()
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
+	
 	//切り取り位置の設定
 	src.m_top =0.0f;
 	src.m_left =0.0f;

@@ -6,16 +6,17 @@
 using namespace GameL;
 
 //シーンメイン
-class CSceneMain :public CScene
+class Fadeout :public CObj
 {
 public:
-	CSceneMain();
-	~CSceneMain();
-	void InitScene();//初期化メソッド
-	void Scene();//実行中メソッド
+	Fadeout(int speed = 1);
+	~Fadeout() {};
+	void Init();
+	void Action();
+	void Draw();
+	//int GetNUM();
 private:
-	int m_time;
-	int EnemyAmount;
-	bool m_key_flag;
+	//敵殲滅後時間用
 	int shootDownTime;
+	int fadeSpeed;
 };

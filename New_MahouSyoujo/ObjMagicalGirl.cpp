@@ -8,6 +8,8 @@
 #include "ObjMagicalGirl.h"
 #include "GameL/Audio.h"
 
+//#include <stdlib.h">
+
 //Žg—p‚·‚éƒl[ƒ€ƒXƒy[ƒX
 using namespace GameL;
 
@@ -23,6 +25,7 @@ void CObjMagicalGirl::Init()
 	m_mtime = 1;
 	m_btime = 100;
 
+	z_x = 0.0f;
 	z_y = 0.0f;
 
 	m_skill = 1;//1‚È‚ç‰ñ•œ 2‚È‚çƒoƒŠƒA 3‚È‚ç‘S‘Ì
@@ -88,7 +91,9 @@ void CObjMagicalGirl::Action()
 		s_t = true;
 	}
 
+	
 	//–‚–@­—‚Ì’ÊíUŒ‚
+	/*
 	if (m_mp >= 5)
 	{
 		if (Input::GetVKey('H') == true && m_t == true)
@@ -132,7 +137,7 @@ void CObjMagicalGirl::Action()
 			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			m_t = true;
 		}
-	}
+	}*/
 
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
 	if (m_mp >= 20)
@@ -150,7 +155,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			h_t = true;
 		}
 	}
@@ -177,7 +181,6 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false && m_btime > 200)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			b_t = true;
 		}
 	}
@@ -191,13 +194,55 @@ void CObjMagicalGirl::Action()
 			z_t = false;
 			m_mp -= 50;
 
-			for (int i = 0; i < 15; i++)
+			for (int i = 0; i< 10; )
 			{
-				z_x = 64.0f * i;
-
+				switch (i)
+				{
+				case 0:
+					z_x = 0.0f;
+					z_y = 0.0f;
+					break;
+				case 1:
+					z_x = 700.0f;
+					z_y = -64.0f;
+					break;
+				case 2:
+					z_x = 200.0f;
+					z_y = -128.0f;
+					break;
+				case 3:
+					z_x = 500.0f;
+					z_y = -192.0f;
+					break;
+				case 4:
+					z_x = 736.0f;
+					z_y = -256.0f;
+					break;
+				case 5:
+					z_x = 100.0f;
+					z_y = -320.0f;
+					break;
+				case 6:
+					z_x = 300.0f;
+					z_y = -384.0f;
+					break;
+				case 7:
+					z_x = 600.0f;
+					z_y = -448.0f;
+					break;
+				case 8:
+					z_x = 400.0f;
+					z_y = -512.0f;
+					break;
+				case 9:
+					z_x = 64.0f;
+					z_y = -576.0f;
+					break;
+				}
 				//–‚–@­—–‚–@‹Êì¬
 				CObjAllBullet* obj_allbullet = new CObjAllBullet(z_x, z_y);//ƒz[ƒ~ƒ“ƒO’eì¬
 				Objs::InsertObj(obj_allbullet, OBJ_ALLBULLET, 60);//ƒIƒuƒWƒFƒNƒgƒ}ƒl[‚É“o˜^
+				i++;
 
 				if (z_x >= 800)
 				{
@@ -207,9 +252,13 @@ void CObjMagicalGirl::Action()
 		}
 		else if (Input::GetVKey('D') == false)
 		{
-			m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 			z_t = true;
 		}
+	}
+
+	if (Input::GetVKey('D') == false)
+	{
+		m_atk_animation = 0;//–_—§‚¿‚ÌŽp‚É‚È‚é
 	}
 }
 
