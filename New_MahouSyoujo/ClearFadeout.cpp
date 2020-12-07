@@ -12,23 +12,37 @@
 //使用するネームベース
 using namespace GameL;
 
-Fadeout::Fadeout(int speed)
+Fadeout::Fadeout(int speed,bool fadeIn)
 {
 	fadeSpeed = speed;
+	pfadeIn = fadeIn;
 }
 
 //イニシャライズ
 void Fadeout::Init()
 {
-	shootDownTime = 1;
+	if (pfadeIn)
+		shootDownTime = 100;
+	else
+		shootDownTime = 1;
 }
 
 //アクション
 void Fadeout::Action()
 {
-	
-		shootDownTime+= fadeSpeed;
+	if (pfadeIn)
+	{
+		shootDownTime -= fadeSpeed;
+	}
+	else
+	{
+		shootDownTime += fadeSpeed;
+	}
 
+	if (shootDownTime <= 0)
+	{
+		this->SetStatus(false);
+	}
 }
 
 //ドロー

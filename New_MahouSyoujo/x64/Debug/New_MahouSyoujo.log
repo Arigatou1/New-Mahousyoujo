@@ -1,20 +1,2 @@
-﻿  ObjHero.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(56,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(87,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(97,14): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(105,14): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(118,15): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(155,75): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(168,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(378,39): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(378,39): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(400,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(405,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjMana.cpp
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(48,56): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(64,39): warning C4244: '-=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(70,39): warning C4244: '-=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(90,39): warning C4244: '-=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(102,38): warning C4244: '-=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  コードを生成中...
+﻿  ClearFadeout.cpp
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe

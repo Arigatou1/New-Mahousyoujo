@@ -366,6 +366,8 @@ void CObjHero::Action()
 		//クリアシーンにスコアを与える
 		((UserData*)Save::GetData())->HeroHP = AllDamage;
 	}
+
+
 }
 //ドロー
 void CObjHero::Draw()

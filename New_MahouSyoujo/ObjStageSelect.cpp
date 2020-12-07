@@ -47,101 +47,103 @@ void CObjStageSelect::Action()
 	//カーソルの初期位置は16なので、
 	//96から16を引き、80を出し、80で割ることで1が出てくる。
 	//それに1を足す。
-
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (!nowLoading)
 	{
-		if (m_key_flag == true)
+
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+			if (m_key_flag == true)
 			{
-				
-				if (cursor_y < 512)
+				if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 				{
-				
-					nowLoading = true;
+
+					if (cursor_y < 512)
+					{
+
+						nowLoading = true;
+					}
 				}
+				if (cursor_y >= 512)
+				{
+					this->SetStatus(false);
+					//メニューオブジェクト作成
+					CObjCustomize* obj = new CObjCustomize();
+					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
+				}
+				m_key_flag = false;
 			}
-			if (cursor_y >= 512)
+		}
+		else if (Input::GetVKey(VK_UP) == true)
+		{
+
+			if (m_key_flag == true)
+			{
+				cursor_y -= 112;
+				m_key_flag = false;
+			}
+		}
+		else if (Input::GetVKey(VK_DOWN) == true)
+		{
+
+			if (m_key_flag == true)
+			{
+				cursor_y += 112;
+				m_key_flag = false;
+			}
+		}
+		else if (Input::GetVKey(VK_LEFT) == true)
+		{
+
+
+			if (m_key_flag == true)
+			{
+				if (PageID > 0)
+					PageID -= 1;
+				m_key_flag = false;
+			}
+		}
+
+		else if (Input::GetVKey(VK_RIGHT) == true)
+		{
+
+
+			if (m_key_flag == true)
+			{
+				if (PageID < MaxPage)
+					PageID += 1;
+
+				m_key_flag = false;
+			}
+		}
+		else if (Input::GetVKey(VK_ESCAPE) == true)
+		{
+
+			if (m_key_flag == true)
 			{
 				this->SetStatus(false);
 				//メニューオブジェクト作成
-				CObjCustomize* obj = new CObjCustomize();
-				Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
+				CObjModeSelect* obj = new CObjModeSelect();
+				Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 			}
 			m_key_flag = false;
+
+
 		}
-	}
-	else if (Input::GetVKey(VK_UP) == true)
-	{
-	
-		if (m_key_flag == true)
+		else
 		{
-			cursor_y -= 112;
-			m_key_flag = false;
+			m_key_flag = true;
 		}
-	}
-	else if (Input::GetVKey(VK_DOWN) == true )
-	{
 
-		if (m_key_flag == true)
-		{
-			cursor_y += 112;
-			m_key_flag = false;
-		}
-	}
-	else if (Input::GetVKey(VK_LEFT) == true)
-	{
-		
-		
-		if (m_key_flag == true)
-		{
-			if (PageID > 0)
-				PageID -= 1;
-			m_key_flag = false;
-		}
-	}
+		//カーソルが画面外いかない処理
+		if (cursor_y < 64)
+			cursor_y = 512;
 
-	else if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		
-	
-		if (m_key_flag == true)
-		{
-			if (PageID < MaxPage )
-				PageID += 1;
-
-			m_key_flag = false;
-		}
-	}
-	else if (Input::GetVKey(VK_ESCAPE) == true)
-	{
-
-		if (m_key_flag == true)
-		{
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
-		}
-		m_key_flag = false;
-
+		if (cursor_y > 512)
+			cursor_y = 64;
 
 	}
-	else
-	{
-		m_key_flag = true;
-	}
 
-	//カーソルが画面外いかない処理
-	if (cursor_y < 64)
-		cursor_y = 512;
-
-	if (cursor_y > 512)
-		cursor_y = 64;
-
-	
-
-	if (nowLoading == true)
+	else if (nowLoading == true)
 	{
 		
 		waitTime++;
