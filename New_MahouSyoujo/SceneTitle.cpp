@@ -35,6 +35,7 @@ void CSceneTitle::InitScene()
 	Objs::InsertObj(obj, OBJ_TITLE, 0);
 
 	Draw::LoadImageW(L"Graphics/logo.png", 0, TEX_SIZE_512);
+	
 }
 
 //ゲームメイン実行中メソッド
