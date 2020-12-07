@@ -29,7 +29,7 @@ void CObjSetting::Action()
 	nowSelect = (cursor_y - 64) / 112;
 
 
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (Input::GetVKey(VK_RETURN) == true || Input::GetVKey(VK_ESCAPE) == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -40,7 +40,7 @@ void CObjSetting::Action()
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 		}
 	}
 

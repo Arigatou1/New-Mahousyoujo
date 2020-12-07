@@ -118,13 +118,15 @@ void CObjSmallSlim::Action()
 		{
 			b_mx = obj_barrier->GetBX();
 
-			if (m_ex == b_mx - 48.0f)
+			if (m_ex >= b_mx - 48.0f && m_ex <= b_mx)
 			{
 				m_vx = 0;
+				m_ex = b_mx - 48.0f;
 			}
-			else if (m_ex == b_mx + 128.0f)
+			else if (m_ex <= b_mx + 112.0f && m_ex >= b_mx)
 			{
 				m_vx = 0;
+				m_ex = b_mx + 112.0f;
 			}
 
 		}

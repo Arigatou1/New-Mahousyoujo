@@ -38,11 +38,6 @@ void CObjBoss1::Init()
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 250, 250, ELEMENT_ENEMY, OBJ_BOSS1, 10);
 
-
-	//ゲージオブジェクト作成
-	CObjGaugeBaseBoss* obj_gbb = new CObjGaugeBaseBoss();
-	Objs::InsertObj(obj_gbb, OBJ_GAUGEBASEBOSS, 50);
-
 	//ゲージオブジェクト作成
 	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
@@ -53,6 +48,14 @@ void CObjBoss1::Init()
 //アクション
 void CObjBoss1::Action()
 {
+
+	//hpが0になると消滅
+	if (e_hp <= 0)
+	{
+		((UserData*)Save::GetData())->enemyRemain = 0;
+		return;
+	}
+
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -84,8 +87,7 @@ void CObjBoss1::Action()
 		//場所と発射速度を設定できるようにした。
 		CObjEnemy* obj = new CObjEnemy(m_ex,m_ey+50,-5,-10);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
-	//	obj = new CObjEnemy(m_ex, m_ey + 50, -7,0);
-	//	Objs::InsertObj(obj, OBJ_ENEMY, 49);
+
 		obj = new CObjEnemy(m_ex, m_ey + 50, -5,0);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
 
@@ -112,15 +114,7 @@ void CObjBoss1::Action()
 	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
 		allbullet_hit = true;
 
-	//hpが0になると消滅
-	if (e_hp <= 0)
-	{
 	
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneGameClear());
-		//Amount++;
-	}
 }
 
 //ドロー

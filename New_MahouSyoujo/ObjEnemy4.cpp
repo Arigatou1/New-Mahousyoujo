@@ -36,24 +36,12 @@ void CObjEnemy4::Action()
 	if (a_time % 100 == 0)
 	{
 
-		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey + 50.0);
+		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
 		Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
 
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

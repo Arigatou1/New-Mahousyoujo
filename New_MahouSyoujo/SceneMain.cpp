@@ -32,6 +32,8 @@ CSceneMain::~CSceneMain()
 //初期化メソッド
 void CSceneMain::InitScene()
 {
+	((UserData*)Save::GetData())->HPZeroCheck = false;
+
 	//音楽読み込み
 	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
 	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
@@ -51,8 +53,8 @@ void CSceneMain::InitScene()
 	//マップデータを読み込む。
 	wchar_t s[128];
 
-	if (StageID >= 9)
-	swprintf_s(s, L"Stage/Stage1.csv", StageID);
+	if (StageID >= 9 && StageID!=17)
+	swprintf_s(s, L"Stage/Stage8.csv", StageID);
 
 	else
 		swprintf_s(s, L"Stage/Stage%d.csv", StageID);
@@ -84,6 +86,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
+	//背景読み込み
 	for (int i = 1; i <= 10; i++)
 	{
 		wchar_t bgid[128];
@@ -116,11 +119,7 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 11);
 
-	//MPゲージオブジェクト作成
-	CObjGaugeMP* obj_gmp = new CObjGaugeMP();
-	Objs::InsertObj(obj_gmp, OBJ_GAUGEMP, 51);
-	
-	
+
 
 	//敵の数オブジェクト作成
 	CObjEnemyAmount* obj_eneamo = new CObjEnemyAmount();
@@ -136,10 +135,16 @@ void CSceneMain::InitScene()
 	EnemyAppear* obj_appear = new EnemyAppear();
 	Objs::InsertObj(obj_appear, OBJ_APPEAR, 101);
 
+	//フェードイン
+	Fadeout* obj_Fadeout = new Fadeout(3,true);
+	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+
+
 	//タイム初期化
 	m_time = 0;
 
 	EnemyAmount = 0;
+	shootDownTime = 0;
 }
 
 //実行中メソッド
@@ -162,8 +167,6 @@ void CSceneMain::Scene()
 
 		m_key_flag = true;
 
-	//残り敵の数が0になったとき
-	if(((UserData*)Save::GetData())->enemyRemain == 0)
-		Scene::SetScene(new CSceneGameClear());
+
 }
 

@@ -27,8 +27,6 @@ class CObjMagicalGirl : public CObj
 		int m_mp;//MP
 		int m_maxmp;//MAXMP
 		int m_atk_animation;//攻撃のモーション
-		//int h_maxhp;//主人公の最大HP
-		//int h_hp;//主人公の現HP
 
 		int m_skill;//スキル選択
 		

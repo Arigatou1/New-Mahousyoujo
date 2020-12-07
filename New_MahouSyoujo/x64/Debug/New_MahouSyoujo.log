@@ -1,5 +1,5 @@
-﻿  ObjSetting.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\ObjSetting.cpp(29,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\ObjSetting.cpp(147,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
-C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\ObjSetting.cpp(146,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (3)\x64\Debug\New_MahouSyoujo.exe
+﻿  ObjBoss1.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.cpp(60,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.cpp(146,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.cpp(151,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Debug\New_MahouSyoujo.exe

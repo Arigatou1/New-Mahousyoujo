@@ -8,6 +8,8 @@
 #include "GameL\DrawFont.h"
 #include "GameL/WinInputs.h"
 
+#include <stdlib.h>
+#include <time.h>
 
 //使用するネームベース
 using namespace GameL;
@@ -17,9 +19,15 @@ using namespace GameL;
 void EnemyAppear::Init()
 {
 	m_time = 0;
+	e_time = 0;
 	//e_num = 0;
 	StageID = ((UserData*)Save::GetData())->Stage + 1;
 	
+	unsigned int now = (unsigned int)time(0);
+
+	srand(now);
+
+	randomAppearTime = 200;
 
 	switch (StageID)
 	{
@@ -95,8 +103,20 @@ void EnemyAppear::Init()
 		((UserData*)Save::GetData())->enemyRemain = -1;
 		break;
 	}
+	case 17:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(8);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+		((UserData*)Save::GetData())->enemyRemain = -1;
+		break;
+	}
 	default:
 	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(9);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 		((UserData*)Save::GetData())->enemyRemain = 99;
 		break;
@@ -110,7 +130,9 @@ void EnemyAppear::Init()
 void EnemyAppear::Action()
 {
 	//時間経過
+	if (((UserData*)Save::GetData())->HPZeroCheck == false)
 	m_time++;
+	
 	switch (StageID)
 	{
 
@@ -1597,6 +1619,87 @@ void EnemyAppear::Action()
 		}
 		break;
 	}
+	//エンドレスモード値
+	case 17:
+	{
+		if (((UserData*)Save::GetData())->HPZeroCheck == false)
+		e_time++;
+
+		if (m_time >= randomAppearTime)
+		{
+			rand(); rand();
+			int EnemyType = rand()% 5;
+			appearEnemyX = rand() % 2 * 864 - 63;
+
+			switch (EnemyType)
+			{
+			case 1:
+			{
+				CObjEnemy* obj = new CObjEnemy(appearEnemyX, 350);
+				Objs::InsertObj(obj, OBJ_ENEMY, 49);
+				break;
+			}
+			case 2:
+			{
+				CObjEnemy2* obj2 = new CObjEnemy2(appearEnemyX, 350);
+				Objs::InsertObj(obj2, OBJ_ENEMY2, 49);
+				break;
+			}
+			case 3:
+			{
+				CObjEnemy3* obj3 = new CObjEnemy3(appearEnemyX, 350);
+				Objs::InsertObj(obj3, OBJ_ENEMY3, 49);
+				break;
+			}
+			case 4:
+			{
+				CObjEnemy4* obj4 = new CObjEnemy4(appearEnemyX, 350);
+				Objs::InsertObj(obj4, OBJ_ENEMY4, 49);
+				break;
+			}
+			case 0:
+			{
+				CObjSmallSlim* obj5 = new CObjSmallSlim(appearEnemyX, 350);
+				Objs::InsertObj(obj5, OBJ_SMALLSLIM, 49);
+				break;
+			}
+			}
+			if (randomAppearTime > 160)
+			{
+				randomAppearTime -= 4;
+				e_time += 10;
+			}
+			else if (randomAppearTime > 120)
+			{
+				randomAppearTime -= 3;
+				e_time += 50;
+			}
+
+			else if (randomAppearTime > 80)
+			{
+				randomAppearTime -= 2;
+				e_time += 100;
+			}
+
+			else if (randomAppearTime > 20)
+			{
+				randomAppearTime -= 1;
+				e_time += 500;
+			}
+			else
+			{
+				e_time += 1000;
+			}
+				
+			m_time = 0;
+
+
+		}
+
+		((UserData*)Save::GetData())->HeroHP = e_time;
+		break;
+	}
+	
 				default:
 				{
 					
@@ -1660,14 +1763,12 @@ void EnemyAppear::Draw()
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
 	
-	//swprintf_s(str, L"タイム:%d", m_time);//整数を文字列か
-	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
+	swprintf_s(str, L"　　　タイム:%d", m_time);//整数を文字列か
+	
+//	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
 
 
 	Font::StrDraw(str, 2, 120, 24, c);
+	swprintf_s(str, L"オールタイム:%d", e_time);//整数を文字列か
+	Font::StrDraw(str, 2, 144, 24, c);
 }
-
-//int EnemyAppear::GetNUM()
-//{
-//	return e_num;
-//}

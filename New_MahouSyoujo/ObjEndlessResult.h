@@ -1,20 +1,20 @@
 #pragma once
 //使用するヘッダー
 #include "GameL\SceneObjManager.h"
-
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクトソード
-class CObjGaugeBaseBoss :public CObj
+//オブジェクト：ゲームオーバー
+class CObjEndlessResult : public CObj
 {
 public:
-	CObjGaugeBaseBoss() {};
-	~CObjGaugeBaseBoss() {};
+	CObjEndlessResult() {};
+	~CObjEndlessResult() {};
 	void Init();
 	void Action();
 	void Draw();
 private:
+	float Score;
+	bool m_key_flag;//キーフラグ
 
 };
-
