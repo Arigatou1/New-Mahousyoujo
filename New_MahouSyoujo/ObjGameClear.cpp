@@ -91,17 +91,19 @@ void CObjGameClear::Draw()
 	wchar_t str[128];
 	
 	swprintf_s(str, L"プレイヤーが受けたダメージ:%.2f", HeroDamage);//整数を文字列か
-	Font::StrDraw(str, 150, 372, 36, c);
+	Font::StrDraw(str, 150, 336, 36, c);
 
 	swprintf_s(str, L"マナが受けたダメージ:%.2f", ManaDamage);//整数を文字列か
-	Font::StrDraw(str, 150, 420, 36, c);
+	Font::StrDraw(str, 150, 384, 36, c);
 	
+	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage, ManaDamage);//整数を文字列か
+	Font::StrDraw(str, 50, 444, 18, c);
+
 	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
-	Font::StrDraw(str, 300, 512, 72, c);
+	Font::StrDraw(str, 300, 476, 72, c);
 
 	
-	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage,ManaDamage);//整数を文字列か
-	Font::StrDraw(str, 50, 480, 18, c);
+	
 	
 	
 }
