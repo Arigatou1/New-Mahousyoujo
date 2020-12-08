@@ -47,8 +47,8 @@ void CObjDamegeDisplay::Action()
 void CObjDamegeDisplay::Draw()
 {
 	//•`‰æƒJƒ‰[î•ñ
-	float c[4] = { 1.0f,0.0f,0.0f,1.0f };
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float d[4] = { 1.0f,0.0f,0.0f,1.0f };
 
 	//•`‰æ
 	wchar_t str[128];

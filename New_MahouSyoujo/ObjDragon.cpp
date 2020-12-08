@@ -54,6 +54,8 @@ void CObjDragon::Init()
 
 	attack_now = false;
 
+	lastAttack = 1;
+
 	fireBressOn = false;
 }
 
@@ -66,13 +68,19 @@ void CObjDragon::Action()
 
 	if (!attack_now)
 	{
-		if (a_time == 240)
-		{
-			AttackPattern = rand() % 4;
-			a_time = 0;
-			attack_now = true;
-			
-		}
+		
+			if (a_time == 240)
+			{
+				do {
+				AttackPattern = rand() % 4;
+				a_time = 0;
+				attack_now = true;
+				} while (lastAttack == AttackPattern);//最後の攻撃と今の攻撃が一緒な場合、やり直す
+			}
+		
+			//最後のアタックは今のアタック
+		lastAttack = AttackPattern;
+
 	}
 	else if (attack_now)
 	{
