@@ -6,28 +6,28 @@
 #include "ObjDamegeDisplay.h"
 
 //コンストラクタ
-CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture)
+CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture,float atk)
 {
 	Damege_x = x;
 	Damege_y = y;
 	Sword_posture = posture;
+	m_Damege = atk;
 }
 
 //イニシャライズ
 void CObjDamegeDisplay::Init()
 {
 	CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
+	CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 	CObjMana* obj_mana = (CObjMana*)Objs::GetObj(OBJ_MANA);
 
-	if (obj_sword != nullptr)
+	if (obj_sword != nullptr || obj_bullet != nullptr)
 	{
-		Sword_ATK = obj_sword->GetAttackPower();
-		appear_type = 0;
+		display_type = 0;
 	}
     else if (obj_mana != nullptr)
 	{
-		Mana_Damege = obj_mana->GetDamege();
-		appear_type = 1;
+		display_type = 1;
 	}
 
 	d_time = 0;
@@ -52,9 +52,9 @@ void CObjDamegeDisplay::Draw()
 
 	//描画
 	wchar_t str[128];
-	if (appear_type == 0)
+	if (display_type == 0)
 	{
-		swprintf_s(str, L"%.0lf", Sword_ATK);//整数を文字列か
+		swprintf_s(str, L"%.0lf", m_Damege);//整数を文字列か
 		if (Sword_posture == -1)
 		{
 			Font::StrDraw(str, Damege_x - 20.0f, Damege_y, 24, c);
@@ -64,9 +64,9 @@ void CObjDamegeDisplay::Draw()
 			Font::StrDraw(str, Damege_x + 84.0f, Damege_y, 24, c);
 		}
 	}
-	else if (appear_type == 1)
+	else if (display_type == 1)
 	{
-		swprintf_s(str, L"%.1lf", Mana_Damege);//整数を文字列か
-		Font::StrDraw(str, Damege_x + 0.0f, Damege_y, 24, d);
+		swprintf_s(str, L"%.1lf", m_Damege);//整数を文字列か
+		Font::StrDraw(str, Damege_x, Damege_y - 5.0f, 24, d);
 	}
 }
