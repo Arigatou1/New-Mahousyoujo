@@ -21,13 +21,17 @@ void CObjDamegeDisplay::Init()
 	CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 	CObjMana* obj_mana = (CObjMana*)Objs::GetObj(OBJ_MANA);
 
-	if (obj_sword != nullptr || obj_bullet != nullptr)
+	if (obj_sword != nullptr)
 	{
 		display_type = 0;
 	}
-    else if (obj_mana != nullptr)
+	else if (obj_bullet != nullptr)
 	{
 		display_type = 1;
+	}
+    else if (obj_mana != nullptr)
+	{
+		display_type = 2;
 	}
 
 	d_time = 0;
@@ -65,6 +69,18 @@ void CObjDamegeDisplay::Draw()
 		}
 	}
 	else if (display_type == 1)
+	{
+		swprintf_s(str, L"%.0lf", m_Damege);//êÆêîÇï∂éöóÒÇ©
+		if (Sword_posture == -1)
+		{
+			Font::StrDraw(str, Damege_x + 32.0f, Damege_y, 24, c);
+		}
+		else if (Sword_posture == 1)
+		{
+			Font::StrDraw(str, Damege_x + 0.0f, Damege_y, 24, c);
+		}
+	}
+	else if (display_type == 2)
 	{
 		swprintf_s(str, L"%.1lf", m_Damege);//êÆêîÇï∂éöóÒÇ©
 		Font::StrDraw(str, Damege_x, Damege_y - 5.0f, 24, d);
