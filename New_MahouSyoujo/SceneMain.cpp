@@ -80,10 +80,10 @@ void CSceneMain::InitScene()
 
 
 	//グラフィックの読み込み
-	Draw::LoadImageW(L"image.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"Gauge.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"BackGround.png", 2, TEX_SIZE_512);
-	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/image.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Gauge.png", 1, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/BackGround.png", 2, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
 	//背景読み込み
