@@ -32,13 +32,15 @@ void CObjMenuEndless::Init()
 //アクション
 void CObjMenuEndless::Action()
 {
-
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (!nowLoading)
 	{
-		if (m_key_flag == true)
+
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-		//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
-		//	{
+			if (m_key_flag == true)
+			{
+				//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
+				//	{
 
 				if (cursor_y < 512)
 				{
@@ -51,51 +53,51 @@ void CObjMenuEndless::Action()
 					CObjCustomize* obj = new CObjCustomize();
 					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 				}
-		//	}
-			
+				//	}
+
+				m_key_flag = false;
+			}
+		}
+		else if (Input::GetVKey(VK_UP) == true)
+		{
+
+			if (m_key_flag == true)
+			{
+				cursor_y = 64;
+				cursor_sy = 384.0f;
+
+			}
 			m_key_flag = false;
 		}
-	}
-	else if (Input::GetVKey(VK_UP) == true)
-	{
-
-		if (m_key_flag == true)
+		else if (Input::GetVKey(VK_DOWN) == true)
 		{
-			cursor_y = 64;
-			cursor_sy = 384.0f;
-			
-		}
-		m_key_flag = false;
-	}
-	else if (Input::GetVKey(VK_DOWN) == true)
-	{
 
-		if (m_key_flag == true)
+			if (m_key_flag == true)
+			{
+				cursor_y = 512;
+				cursor_sy = 96.0f;
+			}
+			m_key_flag = false;
+		}
+		else if (Input::GetVKey(VK_ESCAPE) == true)
 		{
-			cursor_y = 512;
-			cursor_sy = 96.0f;
-		}
-		m_key_flag = false;
-	}
-	else if (Input::GetVKey(VK_ESCAPE) == true)
-	{
 
-		if (m_key_flag == true)
+			if (m_key_flag == true)
+			{
+				this->SetStatus(false);
+				//メニューオブジェクト作成
+				CObjModeSelect* obj = new CObjModeSelect();
+				Objs::InsertObj(obj, OBJ_MODESELECT, 2);
+			}
+			m_key_flag = false;
+		}
+		else
 		{
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
+			m_key_flag = true;
 		}
-		m_key_flag = false;
-	}
-	else
-	{
-		m_key_flag = true;
 	}
 
-
-	if (nowLoading == true)
+	else if (nowLoading == true)
 	{
 
 		waitTime++;

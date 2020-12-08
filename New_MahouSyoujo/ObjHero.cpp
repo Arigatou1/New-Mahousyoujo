@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\DrawFont.h"
 
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -57,6 +58,8 @@ void CObjHero::Init()
 	AllDamage = 0;
 	
 	shootDownTime = 0;
+
+	clear_check = false;
 }
 
 //アクション
@@ -165,8 +168,8 @@ void CObjHero::Action()
 			//剣を振る音
 			Audio::Start(0);
 
-			CObjSword* obj_b = new CObjSword(m_px, m_py, m_posture, m_f);
-			Objs::InsertObj(obj_b, OBJ_SWORD, 1);
+			CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
+			Objs::InsertObj(obj_b, OBJ_SWORD, 51);
 		}
 
 
@@ -366,6 +369,13 @@ void CObjHero::Action()
 		//クリアシーンにスコアを与える
 		((UserData*)Save::GetData())->HeroHP = AllDamage;
 	}
+
+	//クリア
+	if (((UserData*)Save::GetData())->enemyRemain == 0)
+	{
+		clear_check = true;
+		m_vx = 0.0f;
+	}
 }
 //ドロー
 void CObjHero::Draw()
@@ -380,19 +390,40 @@ void CObjHero::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	//切り取り位置の設定
-	src.m_top =(atk_anime*64)+0.0f;
-	src.m_left =(AniData[m_anime]*64)+0.0f;
-	src.m_right =(AniData[m_anime] *64)+64.0f;
-	src.m_bottom = (atk_anime * 64) + 64.0f;
-	//表示位置の設定
-	dst.m_top = 0.0f+m_py;
-	dst.m_left =(32.0f*m_posture)+m_px+32.0f;
-	dst.m_right = (-32.0f*m_posture )+ m_px+32.0f;
-	dst.m_bottom = 64.0f+m_py;
+	if (!clear_check)
+	{
+		//切り取り位置の設定
+		src.m_top = (atk_anime * 64) + 0.0f;
+		src.m_left = (AniData[m_anime] * 64) + 0.0f;
+		src.m_right = (AniData[m_anime] * 64) + 64.0f;
+		src.m_bottom = (atk_anime * 64) + 64.0f;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = (32.0f * m_posture) + m_px + 32.0f;
+		dst.m_right = (-32.0f * m_posture) + m_px + 32.0f;
+		dst.m_bottom = 64.0f + m_py;
 
-	//描画
-	Draw::Draw(3, &src, &dst, c, 0.0f);
+		//描画
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+	}
+	else
+	{
+		//切り取り位置の設定
+		src.m_top = 192.0f;
+		src.m_left =128.0f;
+		src.m_right = src.m_left + 64.0f;
+		src.m_bottom = src.m_top + 64.0f;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = m_px +0.0f;
+		dst.m_right = dst.m_left+64.0f;
+		dst.m_bottom = 64.0f + dst.m_top;
+
+		//描画
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+	}
+
+
 }
 
 int CObjHero::GetHP()
