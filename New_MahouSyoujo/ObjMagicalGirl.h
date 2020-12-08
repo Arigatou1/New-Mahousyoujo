@@ -15,14 +15,16 @@ class CObjMagicalGirl : public CObj
 		void Draw();   //ドロー
 		int GetMP();
 		int GetMaxMP();
-		int GetHP();
 		int GetSkill();
+		int GetHP();
 	private:
 		float m_gx;//位置
 		float m_gy;
 		float z_x;//all弾の位置x
 		float z_y;//all弾の位置y
 		float m_postrue;//姿勢
+
+		float h_hp;//主人公HP
 
 		int m_mp;//MP
 		int m_maxmp;//MAXMP
