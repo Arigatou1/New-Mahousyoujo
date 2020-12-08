@@ -43,6 +43,12 @@ void CObjMagicalGirl::Action()
 		m_gx = obj_mana->GetX();
 		m_gy = obj_mana->GetY();
 	}
+
+	CObjHero* obj_hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	if (obj_hero != nullptr)
+	{
+		h_hp = obj_hero->GetHP();
+	}
 	
 	//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
 	if (m_mp < 100)
@@ -138,24 +144,27 @@ void CObjMagicalGirl::Action()
 			m_t = true;
 		}
 	}*/
-
+	
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
-	if (m_mp >= 20)
+	if (h_hp < 20)
 	{
-		if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
+		if (m_mp >= 20)
 		{
-			m_atk_animation = 3;//ñŽ‚Á‚½Žp‚É‚È‚é
-
-			h_t = false;
-			CObjHero* obj_hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
-			if (obj_hero != nullptr)
+			if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
 			{
-				m_mp = obj_hero->GetMP();
+				m_atk_animation = 3;//ñŽ‚Á‚½Žp‚É‚È‚é
+
+				h_t = false;
+				m_mp -= 20;
+				//ŽålŒöHP‰ñ•œ
+				h_hp += 3;
+				if (h_hp > 20)
+					h_hp = 20;
 			}
-		}
-		else if (Input::GetVKey('D') == false)
-		{
-			h_t = true;
+			else if (Input::GetVKey('D') == false)
+			{
+				h_t = true;
+			}
 		}
 	}
 	
@@ -319,4 +328,9 @@ int CObjMagicalGirl::GetMaxMP()
 int CObjMagicalGirl::GetSkill()
 {
 	return m_skill;
+}
+
+int CObjMagicalGirl::GetHP()
+{
+	return h_hp;
 }
