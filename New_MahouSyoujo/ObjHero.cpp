@@ -335,7 +335,7 @@ void CObjHero::Action()
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
 
-		else if (shootDownTime > 300)
+		else if (shootDownTime == 300)
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
@@ -358,7 +358,7 @@ void CObjHero::Action()
 	}
 
 	//ƒNƒŠƒAŒã‚Ì“®‚«
-	if (((UserData*)Save::GetData())->enemyRemain == 0)
+	if (((UserData*)Save::GetData())->enemyRemain == 0 &&((UserData*)Save::GetData())->HPZeroCheck ==false )
 	{
 		clear_check = true;
 		m_vx = 0.0f;

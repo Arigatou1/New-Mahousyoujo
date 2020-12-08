@@ -32,7 +32,7 @@ void CSceneMenu::InitScene()
 	Font::SetStrTex(L"Game Menu");
 
 	//グラフィックの読み込み
-	Draw::LoadImageW(L"Menu.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Menu.png", 0, TEX_SIZE_512);
 	//背景読み込み
 	for (int i = 0; i <= 10; i++)
 	{
