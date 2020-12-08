@@ -52,6 +52,8 @@ void CObjEnemyAmount::Draw()
 	
 	//swprintf_s(str, L"スコア:%d", ((UserData*)Save::GetData())->Score);//整数を文字列か
 	
+	//-1以下の時以外表示する
+	if(((UserData*)Save::GetData())->enemyRemain>=0)
 	Font::StrDraw(str, 2, 96, 24, c);
 
 }
