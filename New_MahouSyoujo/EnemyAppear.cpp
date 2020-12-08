@@ -83,6 +83,9 @@ void EnemyAppear::Init()
 	}
 	case 5:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(17);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(5);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -92,6 +95,9 @@ void EnemyAppear::Init()
 	}
 	case 6:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(17);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(5);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -101,6 +107,9 @@ void EnemyAppear::Init()
 	}
 	case 7:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(18);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(8);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -110,6 +119,9 @@ void EnemyAppear::Init()
 	}
 	case 8:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(19);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(9);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
