@@ -35,13 +35,13 @@ void CSceneMain::InitScene()
 	((UserData*)Save::GetData())->HPZeroCheck = false;
 
 	//音楽読み込み
-	Audio::LoadAudio(0, L"swordSE.wav", EFFECT);
-	Audio::LoadAudio(1, L"girlSE.wav", EFFECT);
-	Audio::LoadAudio(2, L"bakuhatuSE.wav", EFFECT);
-	Audio::LoadAudio(3, L"menuSE.wav", EFFECT);
-	Audio::LoadAudio(4, L"herodamageSE2.wav", EFFECT);
-	Audio::LoadAudio(5, L"bulletSE.wav", EFFECT);
-	Audio::LoadAudio(6, L"herojumpSE.wav", EFFECT);
+	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
+	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
+	Audio::LoadAudio(2, L"Sounds/bakuhatuSE.wav", EFFECT);
+	Audio::LoadAudio(3, L"Sounds/menuSE.wav", EFFECT);
+	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
+	Audio::LoadAudio(5, L"Sounds/bulletSE.wav", EFFECT);
+	Audio::LoadAudio(6, L"Sounds/herojumpSE.wav", EFFECT);
 	
 	//外部データの読み込み
 
@@ -164,6 +164,7 @@ void CSceneMain::Scene()
 	}
 
 	else
+
 		m_key_flag = true;
 
 
