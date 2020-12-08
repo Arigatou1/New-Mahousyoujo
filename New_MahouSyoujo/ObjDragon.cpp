@@ -241,6 +241,10 @@ void CObjDragon::Action()
 	if (e_hp <= 0)
 	{
 		((UserData*)Save::GetData())->enemyRemain = 0;
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+
 		return;
 
 	}

@@ -15,4 +15,6 @@ public:
 	void Draw();
 private:
 	bool m_key_flag;//キー用フラッグ
+	int shootDownTime;
+	bool nowLoading;
 };

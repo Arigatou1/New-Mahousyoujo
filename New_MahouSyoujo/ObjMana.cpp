@@ -33,10 +33,6 @@ void CObjMana::Init()
 	Mana_HP = 100;
 
 
-	//MANAゲージベースオブジェクト作成
-//	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
-//	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
-
 	//MANAゲージオブジェクト作成
 	CObjGaugeMANAHP* obj_manahp = new CObjGaugeMANAHP(Mana_x, Mana_y);
 	Objs::InsertObj(obj_manahp, OBJ_MANA_HP, 51);

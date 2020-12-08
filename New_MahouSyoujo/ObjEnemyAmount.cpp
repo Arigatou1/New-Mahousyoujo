@@ -20,7 +20,7 @@ void CObjEnemyAmount::Init()
 //アクション
 void CObjEnemyAmount::Action()
 {
-	if (((UserData*)Save::GetData())->enemyRemain==0)
+	if (((UserData*)Save::GetData())->enemyRemain==0 && ((UserData*)Save::GetData())->HPZeroCheck==false)
 	{
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
@@ -32,7 +32,7 @@ void CObjEnemyAmount::Action()
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
 
-		else if (shootDownTime > 300)
+		else if (shootDownTime == 300)
 		{
 			Scene::SetScene(new CSceneGameClear());
 		}

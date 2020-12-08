@@ -35,13 +35,13 @@ void CSceneMain::InitScene()
 	((UserData*)Save::GetData())->HPZeroCheck = false;
 
 	//音楽読み込み
-	Audio::LoadAudio(0, L"swordSE.wav", EFFECT);
-	Audio::LoadAudio(1, L"girlSE.wav", EFFECT);
-	Audio::LoadAudio(2, L"bakuhatuSE.wav", EFFECT);
-	Audio::LoadAudio(3, L"menuSE.wav", EFFECT);
-	Audio::LoadAudio(4, L"herodamageSE2.wav", EFFECT);
-	Audio::LoadAudio(5, L"bulletSE.wav", EFFECT);
-	Audio::LoadAudio(6, L"herojumpSE.wav", EFFECT);
+	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
+	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
+	Audio::LoadAudio(2, L"Sounds/bakuhatuSE.wav", EFFECT);
+	Audio::LoadAudio(3, L"Sounds/menuSE.wav", EFFECT);
+	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
+	Audio::LoadAudio(5, L"Sounds/bulletSE.wav", EFFECT);
+	Audio::LoadAudio(6, L"Sounds/herojumpSE.wav", EFFECT);
 	
 	//外部データの読み込み
 
@@ -80,10 +80,10 @@ void CSceneMain::InitScene()
 
 
 	//グラフィックの読み込み
-	Draw::LoadImageW(L"image.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"Gauge.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"BackGround.png", 2, TEX_SIZE_512);
-	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/image.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Gauge.png", 1, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/BackGround.png", 2, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
 	//背景読み込み
@@ -164,6 +164,7 @@ void CSceneMain::Scene()
 	}
 
 	else
+
 		m_key_flag = true;
 
 
