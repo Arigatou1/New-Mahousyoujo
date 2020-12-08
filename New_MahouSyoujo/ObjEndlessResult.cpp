@@ -36,17 +36,24 @@ void CObjEndlessResult::Action()
 
 
 
-
-	//エンターキーを押してシーン:ゲームMenuに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
+	//Escキーを押してシーン:ゲームTitleに移行する
+	if (Input::GetVKey(VK_ESCAPE) == true)
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneMenu());
+			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
 	}
-
+	//Enterキーを押してリトライする
+	else if (Input::GetVKey(VK_RETURN) == true)
+	{
+		if (m_key_flag == true)
+		{
+			Scene::SetScene(new CSceneMain());
+			m_key_flag = false;
+		}
+	}
 	else
 	{
 		m_key_flag = true;
