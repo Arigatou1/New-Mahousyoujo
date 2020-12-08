@@ -55,25 +55,42 @@ void CObjTitle::Init()
 	{
 		Save::Seve();
 	}
+
+	//---------------------------
+
+	shootDownTime = 0;
+	nowLoading = false;
 }
 
 //アクション
 void CObjTitle::Action()
 {
-	
+	//----------------------------
+	//セーブデータ関連
 	//エンターキーを押してシーン:ゲームMenuに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
+	//キー操作
+	if (!nowLoading)
 	{
-		if (m_key_flag == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Audio::Start(9);
-
-			Scene::SetScene(new CSceneMenu());
-			m_key_flag = false;
+			if (m_key_flag == true)
+			{
+				Audio::Start(9);
+				nowLoading = true;
+				m_key_flag = false;
+			}
+		}
+		else
+		{
+			m_key_flag = true;
 		}
 	}
+
+	//----------------------------------
+	//デバッグ用の機能
+	
 	//デバッグ用 セーブデータ削除
-	else if (Input::GetVKey('3') == true)
+	if (Input::GetVKey('3') == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -109,8 +126,35 @@ void CObjTitle::Action()
 		m_key_flag = true;
 	}
 
+	//-----------------------------------------------
+
 	//0は絶対にtrueにする
 	((UserData*)Save::GetData())->Clear_Flag[0] = true;
+	//-----------------------------------------------
+
+	//メニュー行く
+	if (nowLoading)
+	{
+		shootDownTime++;
+
+		if (shootDownTime == 1)
+		{
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime == 100)
+		{
+			Scene::SetScene(new CSceneMenu());
+		}
+
+
+
+	}
+
+
+
+
 
 }
 
