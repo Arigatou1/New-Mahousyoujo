@@ -30,7 +30,7 @@ void CObjSword::Init()
 
 	atk_power = 10 - ((UserData*)Save::GetData())->Diffculty;
 
-	atk_anime = 0;
+	atk_ani = 0;
 }
 
 //アクション
@@ -77,7 +77,7 @@ void CObjSword::Action()
 		}
 		else if (atk_time == 5)
 		{
-			atk_anime++;
+			atk_ani++;
 		}
 		else if (atk_time == 7)
 		{
@@ -102,8 +102,8 @@ void CObjSword::Draw()
 	
 	//切り取り位置の設定
 	src.m_top =192.0f;
-	src.m_left =0.0f+ atk_anime*64.0f;
-	src.m_right = 64.0f + atk_anime * 64.0f;
+	src.m_left =0.0f+ atk_ani*64.0f;
+	src.m_right = 64.0f + atk_ani * 64.0f;
 	src.m_bottom = 256.0f;
 	//表示位置の設定
 	dst.m_top = a_py+0.0f;
