@@ -63,20 +63,21 @@ void CObjEndlessResult::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 960.0f;
+	src.m_right = 800.0f;
 	src.m_bottom = 600.0f;
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 500.0f;
+	dst.m_bottom = 600.0f;
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::LoadImageW(L"Graphics/GameOver11.png", 0, TEX_SIZE_512);
 
 	wchar_t str[128];
 
 	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
-	Font::StrDraw(str, 240, 412, 72, c);
+	Font::StrDraw(str, 130, 500,100, c);
 
 
 }
