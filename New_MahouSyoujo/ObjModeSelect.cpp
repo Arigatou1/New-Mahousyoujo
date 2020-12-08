@@ -223,7 +223,7 @@ void CObjModeSelect::Draw()
 		wchar_t str[128];
 		swprintf_s(str, L"現在のステージ到達数:%d", countStage - 1);
 		Font::StrDraw(str, 2, 2, 32, c);
-
+		
 		break;
 	
 	case 1:

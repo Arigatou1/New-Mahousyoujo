@@ -78,7 +78,7 @@ void CObjDragon::Action()
 				} while (lastAttack == AttackPattern);//最後の攻撃と今の攻撃が一緒な場合、やり直す
 			}
 		
-
+			//最後のアタックは今のアタック
 		lastAttack = AttackPattern;
 
 	}
