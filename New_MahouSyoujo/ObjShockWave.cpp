@@ -112,10 +112,10 @@ void CObjShockWave::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 192.0f;
-	src.m_left = 192.0f;
-	src.m_right = 256.0f;
-	src.m_bottom = 256.0f;
+	src.m_top = 448.0f;
+	src.m_left = 128.0f;
+	src.m_right = 192.0f;
+	src.m_bottom = 512.0f;
 	//表示位置の設定
 	dst.m_top = m_ey;
 	dst.m_left = m_ex;
