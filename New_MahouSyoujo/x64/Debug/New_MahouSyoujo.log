@@ -1,5 +1,8 @@
-﻿  ObjShockWave.cpp
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjShockWave.cpp(42,11): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjShockWave.cpp(49,12): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjShockWave.cpp(51,9): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  New_MahouSyoujo.vcxproj -> C:\Users\User\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe
+﻿  ObjMana.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(48,56): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(79,24): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(81,24): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(87,24): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(89,23): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMana.cpp(91,24): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe
