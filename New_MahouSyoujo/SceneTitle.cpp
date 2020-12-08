@@ -42,7 +42,7 @@ void CSceneTitle::InitScene()
 	Audio::LoadAudio(9, L"Sounds/sentakuSE.wav", EFFECT);
 
     //バックミュージックスタート
-	float Volume = Audio::VolumeMaster(-0.05f);
+	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(7);
 }
 

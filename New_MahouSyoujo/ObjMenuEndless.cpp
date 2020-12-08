@@ -39,6 +39,8 @@ void CObjMenuEndless::Action()
 		{
 			if (m_key_flag == true)
 			{
+
+				Audio::Start(9);
 				//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
 				//	{
 
@@ -60,9 +62,12 @@ void CObjMenuEndless::Action()
 		}
 		else if (Input::GetVKey(VK_UP) == true)
 		{
+		
+
 
 			if (m_key_flag == true)
 			{
+				Audio::Start(10);
 				cursor_y = 64;
 				cursor_sy = 384.0f;
 
@@ -71,9 +76,12 @@ void CObjMenuEndless::Action()
 		}
 		else if (Input::GetVKey(VK_DOWN) == true)
 		{
+		
+
 
 			if (m_key_flag == true)
 			{
+				Audio::Start(10);
 				cursor_y = 512;
 				cursor_sy = 96.0f;
 			}
@@ -84,6 +92,7 @@ void CObjMenuEndless::Action()
 
 			if (m_key_flag == true)
 			{
+				Audio::Start(11);
 				this->SetStatus(false);
 				//メニューオブジェクト作成
 				CObjModeSelect* obj = new CObjModeSelect();

@@ -79,7 +79,7 @@ void CSceneMenu::InitScene()
 	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
 
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(-0.05f);
+	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(8);
 
 
