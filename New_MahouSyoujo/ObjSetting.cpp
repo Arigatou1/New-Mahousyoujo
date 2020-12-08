@@ -29,13 +29,26 @@ void CObjSetting::Action()
 	nowSelect = (cursor_y - 64) / 112;
 
 
-	if (Input::GetVKey(VK_RETURN) == true || Input::GetVKey(VK_ESCAPE) == true)
+	if (Input::GetVKey(VK_RETURN) == true )
 	{
 		if (m_key_flag == true)
 		{
 			Audio::Start(9);
 
 			Save::Seve();
+
+			this->SetStatus(false);
+			//メニューオブジェクト作成
+			CObjModeSelect* obj = new CObjModeSelect();
+			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
+		}
+	}
+	else if (Input::GetVKey(VK_ESCAPE) == true)
+	{
+		if (m_key_flag == true)
+		{
+			Audio::Start(11);
+
 
 			this->SetStatus(false);
 			//メニューオブジェクト作成

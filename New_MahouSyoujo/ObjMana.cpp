@@ -50,52 +50,52 @@ void CObjMana::Init()
 void CObjMana::Action()
 {
 
-
 	//HitBoxの内容
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(Mana_x,Mana_y);
 
-	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+	//当たり判定を行うオブジェクト情報部
+	int database[7] =
 	{
-		Mana_HP -= 0.40 + mana_damege * 0.20;
-	}
+		OBJ_ENEMY,
+		OBJ_ENEMY2,
+		OBJ_ENEMY3,
+		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_SHOCKWAVE,
+		OBJ_FIREBALL,
+	};
 
-	//敵2に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
+	for (int i = 0; i < 7; i++)
 	{
-		Mana_HP -= 0.80 + mana_damege * 0.20;
-	}
 
-	//敵3に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
-	{
-		Mana_HP -= 0.5;
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			if (i == 0)
+				MANA_damege = 0.40 + mana_damege * 0.20;
+			else if (i == 1)
+				MANA_damege = 0.80 + mana_damege * 0.20;
+			else if (i == 2)
+				MANA_damege = 0.5;
+			else if (i == 3)
+				MANA_damege = 0.5;
+			else if (i == 4)
+				MANA_damege = 0.20 + mana_damege * 0.20;
+			else if (i == 5)
+				MANA_damege = 2.0 + mana_damege * 0.10;
+			else if (i == 6)
+				MANA_damege = 0.10 + mana_damege * 0.10;
 
-	}
-	
-	//敵4に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
-	{
-		Mana_HP -= 0.5;
+			Mana_HP -= MANA_damege;
 
-	}
+		}
 
-	//小さいスライムに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SMALLSLIM) != nullptr)
-	{
-		Mana_HP -= 0.20 + mana_damege * 0.20;
-
-	}
-
-	//ドラゴンの炎に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
-	{
-	//	Mana_HP -= 0.10 + mana_damege * 0.10;
-	}
-	//ショックウェーブに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
-	{
-		Mana_HP -= 2.0 + mana_damege * 0.10;
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			//ダメージ表記作成
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, 0);
+			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+		}
 	}
 
 	//HP0になったとき
@@ -168,3 +168,55 @@ float CObjMana::GetY()
 {
 	return Mana_y;
 }
+
+float CObjMana::GetDamege()
+{
+	return MANA_damege;
+}
+/*
+
+*/
+/*
+if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+	{
+		Mana_HP -= 0.40 + mana_damege * 0.20;
+	}
+
+	//敵2に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
+	{
+		Mana_HP -= 0.80 + mana_damege * 0.20;
+	}
+
+	//敵3に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
+	{
+		Mana_HP -= 0.5;
+
+	}
+
+	//敵4に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
+	{
+		Mana_HP -= 0.5;
+
+	}
+
+	//小さいスライムに当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_SMALLSLIM) != nullptr)
+	{
+		Mana_HP -= 0.20 + mana_damege * 0.20;
+
+	}
+
+	//ドラゴンの炎に当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
+	{
+	//	Mana_HP -= 0.10 + mana_damege * 0.10;
+	}
+	//ショックウェーブに当たるとHPが減る
+	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
+	{
+		Mana_HP -= 2.0 + mana_damege * 0.10;
+	}
+*/

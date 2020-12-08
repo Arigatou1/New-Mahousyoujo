@@ -37,6 +37,7 @@ private:
 	int shootDownTime;
 
 	int AttackPattern;
+	int lastAttack;
 
 	bool fireBressOn;
 	bool attack_now;

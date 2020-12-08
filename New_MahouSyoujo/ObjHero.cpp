@@ -65,16 +65,6 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-	
-
-
-	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
-	if (obj_magicalgirl != nullptr)
-	{
-		m_mp = obj_magicalgirl->GetMP();
-		m_Skill = obj_magicalgirl->GetSkill();
-	}
-
 
 	//ブロックヒット判定
 	CObjBlock* obj_block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -127,6 +117,15 @@ void CObjHero::Action()
 			m_anime = 1;
 			m_anitime = 0;
 			m_vx = m_vx * 0.9;
+		}
+		//回復
+		if (Input::GetVKey('D') == true)
+		{
+			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+			if (obj_magicalgirl != nullptr)
+			{
+				m_hp = obj_magicalgirl->GetHP();
+			}
 		}
 
 		//攻撃用

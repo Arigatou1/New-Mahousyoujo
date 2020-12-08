@@ -72,6 +72,10 @@ void CSceneMenu::InitScene()
 	CObjBackGround* obj_bg = new CObjBackGround(0,0.5);
 	Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
+	//フェードイン
+	Fadeout* obj_Fadeout = new Fadeout(3, true);
+	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+
 	//音楽情報の読み込み
 	Audio::LoadAudio(8, L"Sounds/menuBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);

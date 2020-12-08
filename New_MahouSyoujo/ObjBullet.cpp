@@ -25,15 +25,20 @@ void CObjBullet::Init()
 	Hits::SetHitBox(this, px, py+24, 64, 16, ELEMENT_PLAYER, OBJ_BULLET, 1);
 	
 	atk_power = 5 - ((UserData*)Save::GetData())->Diffculty;
+
+	hitCheck = false;
+
 }
 
 //アクション
 void CObjBullet::Action()
 {
+	
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(px, py+24);
+
 
 	if (b_posture == 1)
 		px += 36;
@@ -57,8 +62,8 @@ void CObjBullet::Action()
 
 		if (hit->CheckObjNameHit(database[i])!=nullptr)
 		{
-			this->SetStatus(false);
-				Hits::DeleteHitBox(this);
+			hitCheck = true;
+			hit->SetInvincibility(true);
 		}
 
 		//Amount++;
@@ -71,6 +76,12 @@ void CObjBullet::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+	}
+
+	if (hitCheck)
+	{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 	}
 }
 

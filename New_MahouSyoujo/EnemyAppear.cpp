@@ -7,6 +7,7 @@
 #include "GameL\UserData.h"
 #include "GameL\DrawFont.h"
 #include "GameL/WinInputs.h"
+#include "GameL/Audio.h"
 
 #include <stdlib.h>
 #include <time.h>
@@ -33,6 +34,10 @@ void EnemyAppear::Init()
 	{
 	case 1:
 	{
+		//バックミュージックスタート
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(14);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(1);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -42,6 +47,9 @@ void EnemyAppear::Init()
 	}
 	case 2:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(15);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(3);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -51,6 +59,9 @@ void EnemyAppear::Init()
 	}
 	case 3:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(15);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(3);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -60,6 +71,9 @@ void EnemyAppear::Init()
 	}
 	case 4:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(15);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(2);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -69,6 +83,9 @@ void EnemyAppear::Init()
 	}
 	case 5:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(17);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(5);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -78,6 +95,9 @@ void EnemyAppear::Init()
 	}
 	case 6:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(17);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(5);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -87,6 +107,9 @@ void EnemyAppear::Init()
 	}
 	case 7:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(18);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(8);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -96,6 +119,9 @@ void EnemyAppear::Init()
 	}
 	case 8:
 	{
+		float Volume = Audio::VolumeMaster(0);
+		Audio::Start(19);
+
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(9);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -752,6 +778,8 @@ void EnemyAppear::Action()
 		}
 				case 4:
 				{
+					
+
 					if (m_time == 100)
 					{
 
@@ -789,7 +817,8 @@ void EnemyAppear::Action()
 					}
 					else if (m_time == 770)
 					{
-
+						Audio::Stop(15);
+						Audio::Start(16);
 						CObjBoss1* obj = new CObjBoss1(576, 192);
 						Objs::InsertObj(obj, OBJ_BOSS1, 49);
 

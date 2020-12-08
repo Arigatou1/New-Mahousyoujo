@@ -15,11 +15,15 @@ using namespace GameL;
 //イニシャライズ
 void CObjTitle::Init()
 {
+
+	//----------------------------------------------------------
+	//セーブデータ関連
+
 	m_key_flag = false;//キーフラグ
 
 	//static グローバル変数ではないが、そのような記憶寿命を持つ
 	static bool init_stage = false;
-	if (init_stage == false)
+	if (!init_stage)
 	{
 		//プログラムを一回だけ実行する
 		((UserData*)Save::GetData())->Stage = 1;
@@ -51,12 +55,12 @@ void CObjTitle::Init()
 
 	}
 
-	if (init_stage == true)
+	if (init_stage)
 	{
 		Save::Seve();
 	}
 
-	//---------------------------
+	//-------------------------------------------
 
 	shootDownTime = 0;
 	nowLoading = false;
@@ -127,7 +131,6 @@ void CObjTitle::Action()
 	}
 
 	//-----------------------------------------------
-
 	//0は絶対にtrueにする
 	((UserData*)Save::GetData())->Clear_Flag[0] = true;
 	//-----------------------------------------------

@@ -17,13 +17,18 @@ CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture)
 void CObjDamegeDisplay::Init()
 {
 	CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
+	CObjMana* obj_mana = (CObjMana*)Objs::GetObj(OBJ_MANA);
+
 	if (obj_sword != nullptr)
 	{
 		Sword_ATK = obj_sword->GetAttackPower();
 		appear_type = 0;
 	}
-
-	Mana_Damege = 0.0f;
+    else if (obj_mana != nullptr)
+	{
+		Mana_Damege = obj_mana->GetDamege();
+		appear_type = 1;
+	}
 
 	d_time = 0;
 }
@@ -42,8 +47,8 @@ void CObjDamegeDisplay::Action()
 void CObjDamegeDisplay::Draw()
 {
 	//•`‰æƒJƒ‰[î•ñ
-	float c[4] = { 1.0f,0.0f,0.0f,1.0f };
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float d[4] = { 1.0f,0.0f,0.0f,1.0f };
 
 	//•`‰æ
 	wchar_t str[128];
@@ -61,7 +66,7 @@ void CObjDamegeDisplay::Draw()
 	}
 	else if (appear_type == 1)
 	{
-		swprintf_s(str, L"%.0lf", Mana_Damege);//®”‚ğ•¶š—ñ‚©
+		swprintf_s(str, L"%.1lf", Mana_Damege);//®”‚ğ•¶š—ñ‚©
 		Font::StrDraw(str, Damege_x + 0.0f, Damege_y, 24, d);
 	}
 }
