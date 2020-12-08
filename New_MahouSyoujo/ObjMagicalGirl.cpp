@@ -99,7 +99,7 @@ void CObjMagicalGirl::Action()
 
 	
 	//–‚–@­—‚Ì’ÊíUŒ‚
-	/*
+
 	if (m_mp >= 5)
 	{
 		if (Input::GetVKey('H') == true && m_t == true)
@@ -143,7 +143,7 @@ void CObjMagicalGirl::Action()
 			m_atk_animation = 0;//–_—§‚¿‚Ìp‚É‚È‚é
 			m_t = true;
 		}
-	}*/
+	}
 	
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
 	if (h_hp < 20)
