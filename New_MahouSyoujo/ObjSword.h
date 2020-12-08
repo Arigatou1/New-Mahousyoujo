@@ -22,5 +22,6 @@ private:
 	bool a_f;
 	int atk_time;
 	float atk_power;
+	int atk_ani;
 };
 

@@ -37,18 +37,7 @@ void CObjAllBullet::Action()
 	m_ay += m_avy;
 
 	//—ÌˆæŠO‚Éo‚½‚ç’eŠÛ‚ð”jŠü‚·‚é
-	if (m_ax > 775.0f)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-
-	if (m_ax < -25.0f)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-
+	
 	if (m_ay > 575.0f)
 	{
 		this->SetStatus(false);
