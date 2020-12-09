@@ -72,17 +72,12 @@ void CObjBullet::Action()
 	//領域外に出たら削除する
 
 	bool check = CheckWindow(px, py, -64.0f, -64.0f, 800.0f, 600.0f);
-	if (check == false)
+	if (check == false || hitCheck==true)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
 
-	if (hitCheck)
-	{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-	}
 }
 
 //ドロー
