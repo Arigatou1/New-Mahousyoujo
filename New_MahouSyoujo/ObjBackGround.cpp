@@ -9,6 +9,13 @@
 //使用するネームスペース
 using namespace GameL;
 
+/// <summary>
+/// ウィンドウの横幅、縦幅はそれぞれ800x600。
+/// 背景の画像サイズも基本800x600にしてほしいが、容量を抑えるために
+/// 400x300の画像を読み込むときなどにscaleを使う。
+/// </summary>
+/// <param name="id"></param>
+/// <param name="scale"></param>
 CObjBackGround::CObjBackGround(int id,float scale)
 {
 	BackGroundID = id;
