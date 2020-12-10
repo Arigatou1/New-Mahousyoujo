@@ -3,6 +3,7 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "ObjFireBall.h"
 #include "GameL\UserData.h"
@@ -63,6 +64,7 @@ void CObjFireBall::Action()
 
 	if (e1_hit_down == true)
 	{
+		Audio::Start(27);
 		hitGround = true;
 	}
 
