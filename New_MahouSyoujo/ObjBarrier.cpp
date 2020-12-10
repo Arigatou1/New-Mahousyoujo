@@ -17,30 +17,27 @@ CObjBarrier::CObjBarrier(float x, float y)
 //イニシャライズ
 void CObjBarrier::Init()
 {
-	b_time = 100;
+	b_t = true;
 }
 
 //アクション
 void CObjBarrier::Action()
 {
-	b_time++;
-
 	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 	if (obj_magicalgirl != nullptr)
 	{
 		b_skill = obj_magicalgirl->GetSkill();
 		b_mp = obj_magicalgirl->GetMP();
-
+		b_time = obj_magicalgirl->GetBTime();
 	}
 
 	if (b_mp >= 30)
 	{
 		if (Input::GetVKey('D') == true && b_t == true && b_skill == 2)
 		{
-			b_time = 0;
 			b_t = false;
 		}
-		else if (Input::GetVKey('D') == false && b_time > 200)
+		else if (Input::GetVKey('D') == false && b_time > 300)
 		{
 			b_t = true;
 		}
