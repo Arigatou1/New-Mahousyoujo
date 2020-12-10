@@ -72,6 +72,7 @@ void CObjMana::Action()
 		//“G‚ÌUŒ‚—Í
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
+			Audio::Start(25);
 			if (i == 0)
 				MANA_damege = 0.40 + mana_damege * 0.20;
 			else if (i == 1)
