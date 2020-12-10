@@ -1,7 +1,8 @@
 ﻿  ObjDamegeDisplay.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDamegeDisplay.cpp(14,13): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
-  0 of 1054 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 1054 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Release\New_MahouSyoujo.exe

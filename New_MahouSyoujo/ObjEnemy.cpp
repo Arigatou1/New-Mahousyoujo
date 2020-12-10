@@ -73,7 +73,7 @@ void CObjEnemy::Action()
 				//120‚²‚Æ‚ÉUŒ‚‚·‚é(ƒ}ƒi‚æ‚è‰E‘¤)
 		if (m_mx <= m_ex && e1_t ==false)
 		{
-			if (e1_time % 120 >= 0 && e1_time % 120 <= 5)
+			if (e1_time % 120 >= 0 && e1_time % 120 <= 0)
 			{
 				m_ex = m_ex - 5.0f;
 				e1_anime = 3;

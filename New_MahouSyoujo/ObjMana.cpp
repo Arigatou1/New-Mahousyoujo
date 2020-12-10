@@ -93,7 +93,7 @@ void CObjMana::Action()
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
 			//ダメージ表記作成
-			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, 0, MANA_damege);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, MANA_damege,1);
 			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 		}
 	}
