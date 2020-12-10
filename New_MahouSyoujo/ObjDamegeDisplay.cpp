@@ -6,25 +6,18 @@
 #include "ObjDamegeDisplay.h"
 
 //コンストラクタ
-CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture)
+
+CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int damage ,int color)
 {
 	Damege_x = x;
 	Damege_y = y;
-	Sword_posture = posture;
+	m_Damege = damage;
+	color_type = color;
 }
 
 //イニシャライズ
 void CObjDamegeDisplay::Init()
 {
-	CObjSword* obj_sword = (CObjSword*)Objs::GetObj(OBJ_SWORD);
-	if (obj_sword != nullptr)
-	{
-		Sword_ATK = obj_sword->GetAttackPower();
-		appear_type = 0;
-	}
-
-	Mana_Damege = 0.0f;
-
 	d_time = 0;
 }
 
@@ -42,26 +35,19 @@ void CObjDamegeDisplay::Action()
 void CObjDamegeDisplay::Draw()
 {
 	//描画カラー情報
-	float c[4] = { 1.0f,0.0f,0.0f,1.0f };
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 1.0f,1.0f,1.0f,(30.0f-d_time)/30.0f };
+
+	if (color_type == 1)
+	{
+		c[1] = 0.0f;
+		c[2] = 0.0f;
+	}
+
+
 
 	//描画
 	wchar_t str[128];
-	if (appear_type == 0)
-	{
-		swprintf_s(str, L"%.0lf", Sword_ATK);//整数を文字列か
-		if (Sword_posture == -1)
-		{
-			Font::StrDraw(str, Damege_x - 20.0f, Damege_y, 24, c);
-		}
-		else if (Sword_posture == 1)
-		{
-			Font::StrDraw(str, Damege_x + 84.0f, Damege_y, 24, c);
-		}
-	}
-	else if (appear_type == 1)
-	{
-		swprintf_s(str, L"%.0lf", Mana_Damege);//整数を文字列か
-		Font::StrDraw(str, Damege_x + 0.0f, Damege_y, 24, d);
-	}
+		swprintf_s(str, L"%.0lf", m_Damege);//整数を文字列か
+		Font::StrDraw(str, Damege_x - 20.0f, Damege_y - d_time, 24, c);
+
 }

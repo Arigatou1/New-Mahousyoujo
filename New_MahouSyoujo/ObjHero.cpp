@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\DrawFont.h"
 
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -57,66 +58,128 @@ void CObjHero::Init()
 	AllDamage = 0;
 	
 	shootDownTime = 0;
+
+	clear_check = false;
 }
 
 //アクション
 void CObjHero::Action()
 {
 
-	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
-	if (obj_magicalgirl != nullptr)
-	{
-		m_mp = obj_magicalgirl->GetMP();
-		m_Skill = obj_magicalgirl->GetSkill();
-	}
-
-	//Spaceキーを押すとジャンプする処理
-	if (Input::GetVKey(' ') == true && m_hit_down == true && isJump == true)
-	{
-		//jump
-		Audio::Start(6);
-		m_vy = -15;
-		isJump = false;
-	}
-	else if (Input::GetVKey(' ') == false)
-	{
-		isJump = true;
-	}
-
-	//自由落下運動
-	m_vy += 9.8 / (16.0f);
-
+	//ブロックヒット判定
 	CObjBlock* obj_block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	obj_block->BlockHit(&m_px, &m_py,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right,
 		&m_vx, &m_vy);
 
-	//キーを押すと移動
-	if (Input::GetVKey(VK_LEFT) == true)
+	//-------------------------------------
+	//キー入力
+
+	if (!clear_check)
 	{
-		m_vx -= 0.1;
-		m_posture = -1;
+		//Spaceキーを押すとジャンプする処理
+		if (Input::GetVKey(' ') == true && m_hit_down == true && isJump == true)
+		{
+			//jump
+			Audio::Start(6);
+			m_vy = -15;
+			isJump = false;
+		}
+		else if (Input::GetVKey(' ') == false)
+		{
+			isJump = true;
+		}
 
-		m_anitime += 1;
 
+
+		//キーを押すと移動
+		if (Input::GetVKey(VK_LEFT) == true)
+		{
+			m_vx -= 0.1;
+			m_posture = -1;
+
+			m_anitime += 1;
+
+		}
+		else if (Input::GetVKey(VK_RIGHT) == true)
+		{
+			m_vx += 0.1;
+			m_posture = 1;
+
+			m_anitime += 1;
+
+
+		}
+		//どちらも押していない場合は減速させる。
+		else
+		{
+
+			m_anime = 1;
+			m_anitime = 0;
+			m_vx = m_vx * 0.9;
+		}
+		//回復
+		if (Input::GetVKey('D') == true)
+		{
+			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+			if (obj_magicalgirl != nullptr)
+			{
+				m_hp = obj_magicalgirl->GetHP();
+			}
+		}
+
+		//攻撃用
+		if (Input::GetVKey('F') == true && m_f == true)
+		{
+
+
+			if (Weapon == 1)
+			{
+				m_f = false;
+				atk_anime = 2;
+				//銃声
+				Audio::Start(5);
+
+				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
+				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
+			}
+
+			else
+			{
+				m_f = false;
+				atk_anime = 1;
+
+
+				//剣を振る音
+				Audio::Start(0);
+
+				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
+			}
+
+
+		}
+
+		if (m_f == false)
+			atk_time++;
+
+		//攻撃してからしばらく、攻撃判定が作れないようにしている。
+		//一定時間たつと、作れるようにしている。
+		if (atk_time >= 8)
+		{
+			atk_anime = 0;
+			if (Input::GetVKey('F') == false)
+			{
+				m_f = true;
+				atk_time = 0;
+
+			}
+		}
 	}
-	else if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		m_vx += 0.1;
-		m_posture = 1;
+	//キー入力
+	//--------------------------------------------------
+	
 
-		m_anitime += 1;
-
-
-	}
-	//どちらも押していない場合は減速させる。
-	else
-	{
-
-		m_anime = 1;
-		m_anitime = 0;
-		m_vx = m_vx * 0.9;
-	}
 
 	//歩く時のアニメーション anitimeが10になったとき、コマを1つ進める
 	if (m_anitime >= 8)
@@ -129,68 +192,8 @@ void CObjHero::Action()
 	if (m_anime >= 4)
 		m_anime = 0;
 
-	//最高速度決定
-	if (m_vx >= 6)
-		m_vx = 6;
-	if (m_vx <= -6)
-		m_vx = -6;
 
-	//ベクトルから座標に変換
-	m_px += m_vx;
-	m_py += m_vy;
-
-
-	//攻撃用
-	if (Input::GetVKey('F') == true && m_f == true)
-	{
-
-
-		if (Weapon == 1)
-		{
-			m_f = false;
-			atk_anime = 2;
-			//銃声
-			Audio::Start(5);
-
-			CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
-			Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
-		}
-
-		else
-		{
-			m_f = false;
-			atk_anime = 1;
-
-
-			//剣を振る音
-			Audio::Start(0);
-
-			CObjSword* obj_b = new CObjSword(m_px, m_py, m_posture, m_f);
-			Objs::InsertObj(obj_b, OBJ_SWORD, 1);
-		}
-
-
-	}
-
-	if (m_f == false)
-		atk_time++;
-
-	//攻撃してからしばらく、攻撃判定が作れないようにしている。
-	//一定時間たつと、作れるようにしている。
-	if (atk_time >= 8)
-	{
-		atk_anime = 0;
-		if (Input::GetVKey('F') == false)
-		{
-			m_f = true;
-			atk_time = 0;
-
-		}
-	}
-
-
-
-
+	//---------------------------------------
 
 	//画面外に行かないように
 	if (m_px > 744)
@@ -202,10 +205,9 @@ void CObjHero::Action()
 	{
 		m_px = 0;
 		m_vx = 0;
+
 	}
-
-
-	//敵に当たった時に行うようにする。
+	//-------------------------------------
 
 	//無敵時間が無効になった時 敵とのあたり判定を行う
 	if (m_mtk == false)
@@ -314,45 +316,32 @@ void CObjHero::Action()
 
 	}
 
-	//魔法少女の回復魔法
-	if (m_mp >= 20)
-	{
-		if (m_hp < max_hp)
-		{
-			if (Input::GetVKey('D') == true && h_t == true && m_Skill == 1)
-			{
-				h_t = false;
-				m_hp += 3.0f;
-				m_mp -= 20;
-				if (m_hp > max_hp)
-				{
-					m_hp = max_hp;
-				}
-			}
-			else if (Input::GetVKey('D') == false)
-			{
-				h_t = true;
-			}
-		}
-	}
+	
 
 	//主人公のHPが無くなった時、消滅させる
 	if (m_hp <= 0)
 	{
+	
 		//0固定
 		m_hp = 0;
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
 		((UserData*)Save::GetData())->HPZeroCheck = true;
 
-		if (shootDownTime == 200)
+		if (shootDownTime == 50)
 		{
+			Audio::Start(20);
+		}
+
+		else if (shootDownTime == 200)
+		{
+
 			//EnemyAppear
 			Fadeout* obj_Fadeout = new Fadeout();
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
 
-		else if (shootDownTime > 300)
+		else if (shootDownTime == 300)
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
@@ -360,6 +349,13 @@ void CObjHero::Action()
 		}
 
 	}
+
+	
+
+	//--------------------------------
+	//スコア関連
+
+
 	//エンドレスモードではない場合
 	if (((UserData*)Save::GetData())->Stage != 16)
 	{
@@ -367,7 +363,30 @@ void CObjHero::Action()
 		((UserData*)Save::GetData())->HeroHP = AllDamage;
 	}
 
+	//クリア後の動き
+	if (((UserData*)Save::GetData())->enemyRemain == 0 &&((UserData*)Save::GetData())->HPZeroCheck ==false )
+	{
+		clear_check = true;
+		m_vx = 0.0f;
+	}
 
+	//--------------------------
+	//最終的な速度
+
+	//最高速度決定
+	if (m_vx >= 6)
+		m_vx = 6;
+	if (m_vx <= -6)
+		m_vx = -6;
+
+	//自由落下運動
+	m_vy += 9.8 / (16.0f);
+
+	//ベクトルから座標に変換
+	m_px += m_vx;
+	m_py += m_vy;
+
+	//----------------------------
 }
 //ドロー
 void CObjHero::Draw()
@@ -382,19 +401,40 @@ void CObjHero::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	//切り取り位置の設定
-	src.m_top =(atk_anime*64)+0.0f;
-	src.m_left =(AniData[m_anime]*64)+0.0f;
-	src.m_right =(AniData[m_anime] *64)+64.0f;
-	src.m_bottom = (atk_anime * 64) + 64.0f;
-	//表示位置の設定
-	dst.m_top = 0.0f+m_py;
-	dst.m_left =(32.0f*m_posture)+m_px+32.0f;
-	dst.m_right = (-32.0f*m_posture )+ m_px+32.0f;
-	dst.m_bottom = 64.0f+m_py;
+	if (!clear_check)
+	{
+		//切り取り位置の設定
+		src.m_top = (atk_anime * 64) + 0.0f;
+		src.m_left = (AniData[m_anime] * 64) + 0.0f;
+		src.m_right = (AniData[m_anime] * 64) + 64.0f;
+		src.m_bottom = (atk_anime * 64) + 64.0f;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = (32.0f * m_posture) + m_px + 32.0f;
+		dst.m_right = (-32.0f * m_posture) + m_px + 32.0f;
+		dst.m_bottom = 64.0f + m_py;
 
-	//描画
-	Draw::Draw(3, &src, &dst, c, 0.0f);
+		//描画
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+	}
+	else
+	{
+		//切り取り位置の設定
+		src.m_top = 192.0f;
+		src.m_left =128.0f;
+		src.m_right = src.m_left + 64.0f;
+		src.m_bottom = src.m_top + 64.0f;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = m_px +0.0f;
+		dst.m_right = dst.m_left+64.0f;
+		dst.m_bottom = 64.0f + dst.m_top;
+
+		//描画
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+	}
+
+
 }
 
 int CObjHero::GetHP()

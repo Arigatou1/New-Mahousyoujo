@@ -6,6 +6,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -30,7 +31,17 @@ void CSceneGameClear::InitScene()
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"GAME CLEAR");
 	
-	Draw::LoadImageW(L"Graphics/GameClear.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Stage Clear.png", 0, TEX_SIZE_512);
+
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
+
+	float Volume = Audio::VolumeMaster(0);
+	Audio::Start(13);
+
 
 	//ゲームオーバーオブジェクト作成
 	CObjGameClear* obj = new CObjGameClear();

@@ -6,6 +6,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -31,6 +32,16 @@ void CSceneGameOver::InitScene()
 	//出力させる文字のグラフィックを作成
 
 	Draw::LoadImageW(L"Graphics/GameOver.png", 0, TEX_SIZE_512);
+
+
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(12, L"Sounds/gameoverBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
+
+	float Volume = Audio::VolumeMaster(0);
+	Audio::Start(12);
 
 
 	if (((UserData*)Save::GetData())->Stage!=16)

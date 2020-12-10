@@ -33,6 +33,8 @@ void CObjSetting::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
+
 			Save::Seve();
 
 			this->SetStatus(false);
@@ -41,15 +43,16 @@ void CObjSetting::Action()
 			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 		}
 	}
-
-
+	
 	else if (Input::GetVKey(VK_UP) == true)
 	{
-		//選択
-	//	Audio::Start(4);
+		
 		
 		if (m_key_flag == true)
 		{
+
+			Audio::Start(10);
+
 			cursor_y -= 112;
 
 			m_key_flag = false;
@@ -61,6 +64,7 @@ void CObjSetting::Action()
 		
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 
 			cursor_y += 112;
 
@@ -74,6 +78,8 @@ void CObjSetting::Action()
 	
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
+
 			switch (nowSelect)
 			{
 			case 0:
@@ -98,6 +104,7 @@ void CObjSetting::Action()
 		if (m_key_flag == true)
 		{
 
+			Audio::Start(10);
 
 			switch (nowSelect)
 			{
@@ -117,6 +124,8 @@ void CObjSetting::Action()
 	}
 	else
 		m_key_flag = true;
+
+
 
 	//カーソルが画面が行かない処理(上)
 	if (cursor_y < 64)

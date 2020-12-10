@@ -25,4 +25,6 @@ private:
 	int b_posture;
 	bool b_f;
 	float atk_power;
+	bool hitCheck;
+	
 };

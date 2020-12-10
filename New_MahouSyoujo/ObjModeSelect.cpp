@@ -45,6 +45,8 @@ void CObjModeSelect::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
+
 			this->SetStatus(false);
 			switch (nowSelect)
 			{
@@ -89,6 +91,9 @@ void CObjModeSelect::Action()
 	
 		if (m_key_flag == true)
 		{
+
+			Audio::Start(10);
+
 			//どこにいてもステージセレクトにカーソルを合わせる。
 			nowSelect=0;
 			cursor_x = 40;
@@ -101,6 +106,7 @@ void CObjModeSelect::Action()
 		
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			//どこにいてもエンドレスモードにカーソルを合わせる。
 			nowSelect=1;
 			cursor_x = 440;
@@ -113,7 +119,8 @@ void CObjModeSelect::Action()
 	
 		if (m_key_flag == true)
 		{
-			
+
+			Audio::Start(10);
 			//どこにいても設定にカーソルを合わせる。
 			nowSelect = 2;
 			cursor_x = 200;
@@ -129,6 +136,7 @@ void CObjModeSelect::Action()
 		{
 			if (m_key_flag == true)
 			{
+				Audio::Start(10);
 				//下にいるときだけステージセレクトにカーソルを合わせる。
 				nowSelect = 0;
 				cursor_x = 40;
@@ -143,6 +151,7 @@ void CObjModeSelect::Action()
 
 			if (m_key_flag == true)
 			{
+				Audio::Start(11);
 				Scene::SetScene(new CSceneTitle());
 			}
 			m_key_flag = false;
@@ -214,7 +223,7 @@ void CObjModeSelect::Draw()
 		wchar_t str[128];
 		swprintf_s(str, L"現在のステージ到達数:%d", countStage - 1);
 		Font::StrDraw(str, 2, 2, 32, c);
-
+		
 		break;
 	
 	case 1:

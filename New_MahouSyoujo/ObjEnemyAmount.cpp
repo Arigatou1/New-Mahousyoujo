@@ -20,7 +20,7 @@ void CObjEnemyAmount::Init()
 //アクション
 void CObjEnemyAmount::Action()
 {
-	if (((UserData*)Save::GetData())->enemyRemain==0)
+	if (((UserData*)Save::GetData())->enemyRemain==0 && ((UserData*)Save::GetData())->HPZeroCheck==false)
 	{
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
@@ -32,7 +32,7 @@ void CObjEnemyAmount::Action()
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
 
-		else if (shootDownTime > 300)
+		else if (shootDownTime == 300)
 		{
 			Scene::SetScene(new CSceneGameClear());
 		}
@@ -52,6 +52,8 @@ void CObjEnemyAmount::Draw()
 	
 	//swprintf_s(str, L"スコア:%d", ((UserData*)Save::GetData())->Score);//整数を文字列か
 	
+	//-1以下の時以外表示する
+	if(((UserData*)Save::GetData())->enemyRemain>=0)
 	Font::StrDraw(str, 2, 96, 24, c);
 
 }

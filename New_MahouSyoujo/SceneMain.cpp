@@ -35,13 +35,24 @@ void CSceneMain::InitScene()
 	((UserData*)Save::GetData())->HPZeroCheck = false;
 
 	//音楽読み込み
-	Audio::LoadAudio(0, L"swordSE.wav", EFFECT);
-	Audio::LoadAudio(1, L"girlSE.wav", EFFECT);
-	Audio::LoadAudio(2, L"bakuhatuSE.wav", EFFECT);
-	Audio::LoadAudio(3, L"menuSE.wav", EFFECT);
-	Audio::LoadAudio(4, L"herodamageSE2.wav", EFFECT);
-	Audio::LoadAudio(5, L"bulletSE.wav", EFFECT);
-	Audio::LoadAudio(6, L"herojumpSE.wav", EFFECT);
+	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
+	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
+	Audio::LoadAudio(2, L"Sounds/bakuhatuSE.wav", EFFECT);
+	Audio::LoadAudio(3, L"Sounds/menuSE.wav", EFFECT);
+	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
+	Audio::LoadAudio(5, L"Sounds/bulletSE.wav", EFFECT);
+	Audio::LoadAudio(6, L"Sounds/herojumpSE.wav", EFFECT);
+	Audio::LoadAudio(14, L"Sounds/danjonBGM1.wav", BACK_MUSIC);
+	Audio::LoadAudio(15, L"Sounds/danjonBGM2.wav", BACK_MUSIC);
+	Audio::LoadAudio(16, L"Sounds/bossBGM1.wav", BACK_MUSIC);
+	Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
+	Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
+	Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
+	Audio::LoadAudio(20, L"Sounds/herodownSE.wav", EFFECT);
+	Audio::LoadAudio(21, L"Sounds/girlattackSE.wav", EFFECT);
+	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
+	Audio::LoadAudio(23, L"Sounds/bariaSE.wav", EFFECT);
+
 	
 	//外部データの読み込み
 
@@ -80,10 +91,10 @@ void CSceneMain::InitScene()
 
 
 	//グラフィックの読み込み
-	Draw::LoadImageW(L"image.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"Gauge.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"BackGround.png", 2, TEX_SIZE_512);
-	Draw::LoadImageW(L"Hero.png", 3, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/image.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Gauge.png", 1, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/BackGround.png", 2, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 
 	//背景読み込み
@@ -164,6 +175,7 @@ void CSceneMain::Scene()
 	}
 
 	else
+
 		m_key_flag = true;
 
 

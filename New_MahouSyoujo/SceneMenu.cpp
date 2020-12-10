@@ -6,6 +6,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -31,7 +32,7 @@ void CSceneMenu::InitScene()
 	Font::SetStrTex(L"Game Menu");
 
 	//グラフィックの読み込み
-	Draw::LoadImageW(L"Menu.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/Menu.png", 0, TEX_SIZE_512);
 	//背景読み込み
 	for (int i = 0; i <= 10; i++)
 	{
@@ -70,6 +71,20 @@ void CSceneMenu::InitScene()
 	
 	CObjBackGround* obj_bg = new CObjBackGround(0,0.5);
 	Objs::InsertObj(obj_bg, OBJ_BG, 1);
+
+	//フェードイン
+	Fadeout* obj_Fadeout = new Fadeout(3, true);
+	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(8, L"Sounds/menuBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(10, L"Sounds/sentakuSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
+
+	//バックミュージックスタート
+	float Volume = Audio::VolumeMaster(0);
+	Audio::Start(8);
 
 
 }

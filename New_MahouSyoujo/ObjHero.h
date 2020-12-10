@@ -54,8 +54,6 @@ private:
 	int mtk_max;//–³“GŠÔ—p•Ï”
 	bool m_mtk;//ålŒö‚Ì–³“G”»’è
 
-	bool h_t;//‰ñ•œŠÔŠu
-
 	bool m_f;		//UŒ‚‚ÌŠÔŠu
 	bool isJump;//ƒWƒƒƒ“ƒv‚Å‚«‚é‚©‚Å‚«‚È‚¢‚©‚ğ”»’f‚·‚é
 
@@ -74,4 +72,6 @@ private:
 
 	int shootDownTime;
 //	bool HPZeroCheck;
+
+	bool clear_check;
 };

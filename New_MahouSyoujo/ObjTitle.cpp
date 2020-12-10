@@ -2,6 +2,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjTitle.h"
@@ -14,11 +15,15 @@ using namespace GameL;
 //イニシャライズ
 void CObjTitle::Init()
 {
+
+	//----------------------------------------------------------
+	//セーブデータ関連
+
 	m_key_flag = false;//キーフラグ
 
 	//static グローバル変数ではないが、そのような記憶寿命を持つ
 	static bool init_stage = false;
-	if (init_stage == false)
+	if (!init_stage)
 	{
 		//プログラムを一回だけ実行する
 		((UserData*)Save::GetData())->Stage = 1;
@@ -50,27 +55,46 @@ void CObjTitle::Init()
 
 	}
 
-	if (init_stage == true)
+	if (init_stage)
 	{
 		Save::Seve();
 	}
+
+	//-------------------------------------------
+
+	shootDownTime = 0;
+	nowLoading = false;
 }
 
 //アクション
 void CObjTitle::Action()
 {
-	
+	//----------------------------
+	//セーブデータ関連
 	//エンターキーを押してシーン:ゲームMenuに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
+	//キー操作
+	if (!nowLoading)
 	{
-		if (m_key_flag == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Scene::SetScene(new CSceneMenu());
-			m_key_flag = false;
+			if (m_key_flag == true)
+			{
+				Audio::Start(9);
+				nowLoading = true;
+				m_key_flag = false;
+			}
+		}
+		else
+		{
+			m_key_flag = true;
 		}
 	}
+
+	//----------------------------------
+	//デバッグ用の機能
+	
 	//デバッグ用 セーブデータ削除
-	else if (Input::GetVKey('3') == true)
+	if (Input::GetVKey('3') == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -106,8 +130,34 @@ void CObjTitle::Action()
 		m_key_flag = true;
 	}
 
+	//-----------------------------------------------
 	//0は絶対にtrueにする
 	((UserData*)Save::GetData())->Clear_Flag[0] = true;
+	//-----------------------------------------------
+
+	//メニュー行く
+	if (nowLoading)
+	{
+		shootDownTime++;
+
+		if (shootDownTime == 1)
+		{
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+
+		else if (shootDownTime == 100)
+		{
+			Scene::SetScene(new CSceneMenu());
+		}
+
+
+
+	}
+
+
+
+
 
 }
 
@@ -128,7 +178,7 @@ void CObjTitle::Draw()
 	dst.m_left =0.0f;
 	dst.m_right =900.0f;
 	dst.m_bottom = 600.0f ;
-
+	
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 	
