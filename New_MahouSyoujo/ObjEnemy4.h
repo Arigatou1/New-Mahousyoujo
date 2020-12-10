@@ -29,6 +29,8 @@ private:
 
 	float m_hx;//heroのx位置
 	float m_hy;//heroのｙ位置
+
+	float b_mx;//バリアのx位置
 	//int Amount;
 	float e_hp;
 	float damage;
