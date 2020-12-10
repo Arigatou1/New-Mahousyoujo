@@ -65,7 +65,7 @@ void CObjSword::Action()
 			if (hit->CheckObjNameHit(database[i]) != nullptr)
 			{
 				//ダメージ表記作成
-				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(a_px, a_py, a_posture , atk_power);
+				CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(a_px+32+12+a_posture*48, a_py, atk_power);
 				Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 			}
 		}

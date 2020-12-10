@@ -64,7 +64,7 @@ void CObjBullet::Action()
 		if (hit->CheckObjNameHit(database[i])!=nullptr)
 		{
 			//ダメージ表記作成
-			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(px, py, b_posture , atk_power);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(px, py, atk_power);
 			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 			hitCheck = true;
 			hit->SetInvincibility(true);
@@ -76,17 +76,12 @@ void CObjBullet::Action()
 	//領域外に出たら削除する
 
 	bool check = CheckWindow(px, py, -64.0f, -64.0f, 800.0f, 600.0f);
-	if (check == false)
+	if (check == false || hitCheck==true)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
 
-	if (hitCheck)
-	{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-	}
 }
 
 //ドロー
