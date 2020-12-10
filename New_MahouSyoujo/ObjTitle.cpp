@@ -38,8 +38,10 @@ void CObjTitle::Init()
 		
 		//プログラムを一回だけ実行する
 		((UserData*)Save::GetData())->Diffculty = 1;
+		((UserData*)Save::GetData())->DamageDraw = true;
 
-		
+
+		//--------------------------------------------------------
 
 		//ロード
 		Save::Open();//同フォルダ[UserDataからデータ取得]
@@ -88,65 +90,66 @@ void CObjTitle::Action()
 		{
 			m_key_flag = true;
 		}
-	}
 
-	//----------------------------------
-	//デバッグ用の機能
-	
-	//デバッグ用 セーブデータ削除
-	if (Input::GetVKey('3') == true)
-	{
-		if (m_key_flag == true)
+
+
+
+
+		//----------------------------------
+		//デバッグ用の機能
+
+		//デバッグ用 セーブデータ削除
+		if (Input::GetVKey('3') == true)
 		{
-			for (int i = 0; i < 20; i++)
+			if (m_key_flag == true)
 			{
-				((UserData*)Save::GetData())->ScoreData[i] = 0;
-				((UserData*)Save::GetData())->Clear_Flag[i] = false;
+				for (int i = 0; i < 20; i++)
+				{
+					((UserData*)Save::GetData())->ScoreData[i] = 0;
+					((UserData*)Save::GetData())->Clear_Flag[i] = false;
 
+				}
+
+				((UserData*)Save::GetData())->Diffculty = 1;
+				((UserData*)Save::GetData())->DamageDraw = true;
+
+				Save::Seve();
+
+				m_key_flag = false;
 			}
-
-			((UserData*)Save::GetData())->Diffculty = 1;
-
-			Save::Seve();
-
-			m_key_flag = false;
 		}
-	}
-	//デバッグ用　全ステージ開放
-	else if (Input::GetVKey('4') == true)
-	{
-		if (m_key_flag == true)
+		//デバッグ用　全ステージ開放
+		else if (Input::GetVKey('4') == true)
 		{
-			for (int i = 0; i < 20; i++)
-				((UserData*)Save::GetData())->Clear_Flag[i] = true;
+			if (m_key_flag == true)
+			{
+				for (int i = 0; i < 20; i++)
+					((UserData*)Save::GetData())->Clear_Flag[i] = true;
 
-			Save::Seve();
+				Save::Seve();
 
-			m_key_flag = false;
+				m_key_flag = false;
+			}
+		}
+		else
+		{
+			m_key_flag = true;
 		}
 	}
-	else
-	{
-		m_key_flag = true;
-	}
 
-	//-----------------------------------------------
-	//0は絶対にtrueにする
-	((UserData*)Save::GetData())->Clear_Flag[0] = true;
-	//-----------------------------------------------
-
+	//----------------------------------------------------
 	//メニュー行く
-	if (nowLoading)
+	else if (nowLoading)
 	{
 		shootDownTime++;
 
 		if (shootDownTime == 1)
 		{
-			Fadeout* obj_Fadeout = new Fadeout();
+			Fadeout* obj_Fadeout = new Fadeout(2);
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
 
-		else if (shootDownTime == 100)
+		else if (shootDownTime == 50)
 		{
 			Scene::SetScene(new CSceneMenu());
 		}
@@ -155,6 +158,12 @@ void CObjTitle::Action()
 
 	}
 
+	//-----------------------------------------------
+	//0は絶対にtrueにする
+	((UserData*)Save::GetData())->Clear_Flag[0] = true;
+	//-----------------------------------------------
+
+	
 
 
 
