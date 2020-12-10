@@ -6,7 +6,7 @@
 #include "ObjDamegeDisplay.h"
 
 //コンストラクタ
-CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture,float atk)
+CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int posture,float atk,int damage)
 {
 	Damege_x = x;
 	Damege_y = y;
@@ -61,7 +61,7 @@ void CObjDamegeDisplay::Draw()
 		swprintf_s(str, L"%.0lf", m_Damege);//整数を文字列か
 		if (Sword_posture == -1)
 		{
-			Font::StrDraw(str, Damege_x - 20.0f, Damege_y, 24, c);
+			Font::StrDraw(str, Damege_x - 20.0f, Damege_y - d_time, 24, c);
 		}
 		else if (Sword_posture == 1)
 		{

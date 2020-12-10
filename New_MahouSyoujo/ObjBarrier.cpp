@@ -8,10 +8,9 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBarrier::CObjBarrier(float x, float y)
+CObjBarrier::CObjBarrier(float x)
 {
 	mb_x = x;
-	mb_y = y;
 }
 
 //イニシャライズ
@@ -64,10 +63,10 @@ void CObjBarrier::Draw()
 	src.m_bottom = 320.0f;
 
 	//表示位置の設定
-	dst.m_top    = mb_y - 384.0f;
+	dst.m_top    = -2.0f;
 	dst.m_left   = mb_x + 0.0f;
 	dst.m_right  = mb_x + 32.0f;
-	dst.m_bottom = mb_y + 224.0f;
+	dst.m_bottom = 602.0f;
 
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
