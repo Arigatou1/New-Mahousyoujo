@@ -36,6 +36,8 @@ void CSceneGameClear::InitScene()
 
 	//âπäyèÓïÒÇÃì«Ç›çûÇ›
 	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
 
 	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(13);

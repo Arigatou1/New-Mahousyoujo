@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "GameL\UserData.h"
@@ -57,6 +58,7 @@ void CObjGameClear::Action()
 		{
 			if (m_key_flag == true)
 			{
+				Audio::Start(9);
 				Scene::SetScene(new CSceneMenu(1));
 				m_key_flag = false;
 			}

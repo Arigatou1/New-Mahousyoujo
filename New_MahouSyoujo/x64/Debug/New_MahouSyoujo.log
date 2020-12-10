@@ -1,4 +1,12 @@
-﻿  ObjMagicalGirl.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMagicalGirl.cpp(50,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjMagicalGirl.cpp(335,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Debug\New_MahouSyoujo.exe
+﻿  SceneGameClear.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\SceneGameClear.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\SceneGameClear.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+  SceneGameOver.cpp
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\SceneGameOver.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\GA1B\Desktop\新しいフォルダー (3)\New_MahouSyoujo\SceneGameOver.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+  コードを生成中...
+  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (3)\x64\Debug\New_MahouSyoujo.exe
