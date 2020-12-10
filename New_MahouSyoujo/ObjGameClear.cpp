@@ -41,7 +41,11 @@ void CObjGameClear::Action()
 
     Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
 
-
+	if (Score < 0)
+	{
+		//スコアは0より小さくならない
+		Score = 0;
+	}
 
 	//すこあを保存
 	//ここは問題なさそう。

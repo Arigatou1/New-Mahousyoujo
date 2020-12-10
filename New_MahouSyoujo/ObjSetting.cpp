@@ -47,29 +47,14 @@ void CObjSetting::Action()
 	else if (Input::GetVKey(VK_UP) == true)
 	{
 		
-		
-		if (m_key_flag == true)
-		{
-
-			Audio::Start(10);
-
-			cursor_y -= 112;
-
-			m_key_flag = false;
-		}
+		cursorUp();
+	
 	}
 
 	else if (Input::GetVKey(VK_DOWN) == true)
 	{
 		
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-
-			cursor_y += 112;
-
-			m_key_flag = false;
-		}
+		cursorDown();
 	}
 
 	else if (Input::GetVKey(VK_LEFT) == true)
@@ -140,12 +125,8 @@ void CObjSetting::Action()
 
 
 
-	//カーソルが画面が行かない処理(上)
-	if (cursor_y < 64)
-		cursor_y = 64;
-
-	if (cursor_y > 176)
-		cursor_y = 176;
+	
+	
 }
 
 //ドロー
@@ -202,4 +183,39 @@ void CObjSetting::Draw()
 
 }
 
-//MenuBlockDraw関数
+void CObjSetting::cursorUp()
+{
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y -= 112;
+
+		m_key_flag = false;
+	}
+	
+	//カーソルが画面が行かない処理(上)
+	if (cursor_y < 64)
+		cursor_y = 64;
+
+}
+
+void CObjSetting::cursorDown()
+{
+	
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y += 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルの移動制限
+	if (cursor_y > 176)
+		cursor_y = 176;
+
+}
