@@ -82,10 +82,10 @@ void CObjEnemy3::Action()
 	{
 	float m_mx = obj->GetX();
 
-		if (m_mx+64 < m_ex) {
+		if (m_mx+96 < m_ex) {
 			m_vx = -2.0f;
 		}
-		else if (m_mx-64 > m_ex)
+		else if (m_mx-96 > m_ex)
 		{
 			m_vx = 2.0f;
 		}
