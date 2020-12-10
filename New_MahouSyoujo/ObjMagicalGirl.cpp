@@ -152,6 +152,7 @@ void CObjMagicalGirl::Action()
 		{
 			if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
 			{
+				Audio::Start(22);
 				m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 
 				h_t = false;
@@ -173,6 +174,7 @@ void CObjMagicalGirl::Action()
 	{
 		if (Input::GetVKey('D') == true && b_t == true && m_skill == 2)
 		{
+			Audio::Start(23);
 			m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 			m_btime = 0;
 			b_t = false;
@@ -199,6 +201,7 @@ void CObjMagicalGirl::Action()
 	{
 		if (Input::GetVKey('D') == true && z_t == true && m_skill == 3)
 		{
+			Audio::Start(21);
 			m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 			z_t = false;
 			m_mp -= 50;

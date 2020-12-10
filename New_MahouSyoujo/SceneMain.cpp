@@ -48,6 +48,10 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
 	Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
 	Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
+	Audio::LoadAudio(20, L"Sounds/herodownSE.wav", EFFECT);
+	Audio::LoadAudio(21, L"Sounds/girlattackSE.wav", EFFECT);
+	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
+	Audio::LoadAudio(23, L"Sounds/bariaSE.wav", EFFECT);
 
 	
 	//外部データの読み込み

@@ -5,6 +5,7 @@
 #include "ObjMana.h"
 #include "GameHead.h"
 #include "GameL\UserData.h"
+#include "GameL/Audio.h"
 //#include "ObjGaugeBaseMana.h"
 
 //テスト用
@@ -106,6 +107,11 @@ void CObjMana::Action()
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
 		((UserData*)Save::GetData())->HPZeroCheck = true;
+
+		if (shootDownTime == 50)
+		{
+			Audio::Start(20);
+		}
 
 		if (shootDownTime == 200)
 		{
