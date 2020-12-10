@@ -43,8 +43,7 @@ void CObjSetting::Action()
 			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 		}
 	}
-
-
+	
 	else if (Input::GetVKey(VK_UP) == true)
 	{
 		

@@ -25,15 +25,20 @@ void CObjBullet::Init()
 	Hits::SetHitBox(this, px, py+24, 64, 16, ELEMENT_PLAYER, OBJ_BULLET, 1);
 	
 	atk_power = 5 - ((UserData*)Save::GetData())->Diffculty;
+
+	hitCheck = false;
+
 }
 
 //アクション
 void CObjBullet::Action()
 {
+	
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(px, py+24);
+
 
 	if (b_posture == 1)
 		px += 36;
@@ -42,7 +47,7 @@ void CObjBullet::Action()
 	
 
 	//当たり判定を行うオブジェクト情報部
-	int database[6] =
+	int database[7] =
 	{
 		OBJ_ENEMY,
 		OBJ_ENEMY2,
@@ -50,15 +55,19 @@ void CObjBullet::Action()
 		OBJ_ENEMY4,
 		OBJ_SMALLSLIM,
 		OBJ_BOSS1,
+		OBJ_DRAGON,
 	};
 
-	for(int i=0;i<6;i++)
+	for(int i=0;i<7;i++)
 	{
 
 		if (hit->CheckObjNameHit(database[i])!=nullptr)
 		{
-			this->SetStatus(false);
-				Hits::DeleteHitBox(this);
+			//ダメージ表記作成
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(px, py, b_posture , atk_power);
+			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+			hitCheck = true;
+			hit->SetInvincibility(true);
 		}
 
 		//Amount++;
@@ -71,6 +80,12 @@ void CObjBullet::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+	}
+
+	if (hitCheck)
+	{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 	}
 }
 

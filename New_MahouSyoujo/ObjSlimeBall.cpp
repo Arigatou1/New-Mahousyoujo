@@ -83,6 +83,20 @@ void CObjSlimeBall::Action()
 	/// 
 	/// ‚±‚ñ‚ÈŠ´‚¶‚Å‚·‚©H
 	
+	//ƒoƒŠƒA‚Ìî•ñ
+	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+	if (obj_barrier != nullptr)
+	{
+		b_mx = obj_barrier->GetBX();
+
+		if (m_ex >= b_mx - 50.0f && m_ex <= b_mx + 128.0f)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
+
+	}
+
 	if (e1_hit_up == true || e1_hit_down == true || e1_hit_left == true || e1_hit_up == true ||hit->CheckElementHit(ELEMENT_PLAYER)== true)
 	{
 		this->SetStatus(false);

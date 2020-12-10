@@ -68,7 +68,7 @@ void CObjMana::Action()
 
 	for (int i = 0; i < 7; i++)
 	{
-
+		//敵の攻撃力
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
 			if (i == 0)
@@ -93,7 +93,7 @@ void CObjMana::Action()
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
 			//ダメージ表記作成
-			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, 0);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, 0, MANA_damege);
 			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 		}
 	}
@@ -168,55 +168,3 @@ float CObjMana::GetY()
 {
 	return Mana_y;
 }
-
-float CObjMana::GetDamege()
-{
-	return MANA_damege;
-}
-/*
-
-*/
-/*
-if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
-	{
-		Mana_HP -= 0.40 + mana_damege * 0.20;
-	}
-
-	//敵2に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
-	{
-		Mana_HP -= 0.80 + mana_damege * 0.20;
-	}
-
-	//敵3に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
-	{
-		Mana_HP -= 0.5;
-
-	}
-
-	//敵4に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
-	{
-		Mana_HP -= 0.5;
-
-	}
-
-	//小さいスライムに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SMALLSLIM) != nullptr)
-	{
-		Mana_HP -= 0.20 + mana_damege * 0.20;
-
-	}
-
-	//ドラゴンの炎に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
-	{
-	//	Mana_HP -= 0.10 + mana_damege * 0.10;
-	}
-	//ショックウェーブに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
-	{
-		Mana_HP -= 2.0 + mana_damege * 0.10;
-	}
-*/
