@@ -64,8 +64,8 @@ void CObjBullet::Action()
 		if (hit->CheckObjNameHit(database[i])!=nullptr)
 		{
 			//ダメージ表記作成
-		//	CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(px, py, b_posture , atk_power);
-		//	Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(px, py, atk_power);
+			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 			hitCheck = true;
 			hit->SetInvincibility(true);
 		}

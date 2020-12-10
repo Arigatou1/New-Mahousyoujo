@@ -20,4 +20,6 @@ private:
 	float cursor_y;
 	int nowSelect;
 
+	void cursorUp();
+	void cursorDown();
 };
