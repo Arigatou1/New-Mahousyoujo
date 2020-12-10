@@ -19,7 +19,7 @@ CObjEnemy3::CObjEnemy3(float x,float y)
 void CObjEnemy3::Init()
 {
 
-	m_vx = 1.0f;
+	m_vx = 2.0f;
 	m_vy = 0.0f;
 	e_hp = 20;
 	e_damege = 0;
@@ -43,16 +43,7 @@ void CObjEnemy3::Action()
 {
 	a_time++;
 
-
-	if (a_time % 100 == 0)
-	{
-
-		CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
-		Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
-
-
-
-	}
+	
 
 	//摩擦
 	//m_vx += -(m_vx * 0.098);
@@ -86,23 +77,43 @@ void CObjEnemy3::Action()
 
 
 	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
+
 	if (obj != nullptr)
 	{
-		float m_mx = obj->GetX();
+	float m_mx = obj->GetX();
 
 		if (m_mx+64 < m_ex) {
-			m_vx = -1.0f;
+			m_vx = -2.0f;
 		}
 		else if (m_mx-64 > m_ex)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 		}
 
 		else
 		{
 			m_vx = 0;
 		}
+
+		if (m_mx+192 > m_ex && m_mx-192 < m_ex )
+		{
+			if (a_time % 100 == 0)
+			{
+
+				CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
+				Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
+
+
+			}
+		}
+
 	}
+
+	
+	
+
+
+
 	//バリア出てる時だけ止まる
 	//バリアの情報
 	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);

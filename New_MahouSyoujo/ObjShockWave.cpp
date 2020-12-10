@@ -108,6 +108,8 @@ void CObjShockWave::Draw()
 	//•`‰æƒJƒ‰[î•ñ
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	float r = 0.0f;
+
 	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
 	RECT_F dst;//•`‰ææ•\¦ˆÊ’u
 
@@ -122,6 +124,17 @@ void CObjShockWave::Draw()
 	dst.m_right = m_ex + 64.0f;
 	dst.m_bottom = m_ey + 64.0f;
 
+	//ålŒö‹@‚ÅŠp“x‚ğ‚Æ‚é
+
+	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
+	float x = obj->GetX() - m_ex;
+	float y = obj->GetY() - m_ey;
+	r = atan2(-y, x) * 180.0f / 3.14f;
+
+	if (r < 0)
+		r = 360 - abs(r);
+
+
 	//•`‰æ
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(0, &src, &dst, c, r);
 }
