@@ -437,15 +437,7 @@ void CObjHero::Draw()
 
 }
 
-int CObjHero::GetHP()
-{
-	return m_hp;
-}
 
-int CObjHero::GetMAXHP()
-{
-	return max_hp;
-}
 
 int CObjHero::GetMP()
 {
