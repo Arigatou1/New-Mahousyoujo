@@ -321,14 +321,21 @@ void CObjHero::Action()
 	//主人公のHPが無くなった時、消滅させる
 	if (m_hp <= 0)
 	{
+	
 		//0固定
 		m_hp = 0;
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
 		((UserData*)Save::GetData())->HPZeroCheck = true;
 
-		if (shootDownTime == 200)
+		if (shootDownTime == 50)
 		{
+			Audio::Start(20);
+		}
+
+		else if (shootDownTime == 200)
+		{
+
 			//EnemyAppear
 			Fadeout* obj_Fadeout = new Fadeout();
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);

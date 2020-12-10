@@ -37,6 +37,8 @@ void CSceneGameOver::InitScene()
 
 	//âπäyèÓïÒÇÃì«Ç›çûÇ›
 	Audio::LoadAudio(12, L"Sounds/gameoverBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
 
 	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(12);
