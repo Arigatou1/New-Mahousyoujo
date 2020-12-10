@@ -57,6 +57,25 @@ void CObjEnemy4::Action()
 		else
 			m_vx = 0;
 	}
+	//バリア出てる時だけ止まる
+	//バリアの情報
+	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+	if (obj_barrier != nullptr)
+	{
+		b_mx = obj_barrier->GetBX();
+
+		if (m_ex >= b_mx - 64.0f && m_ex <= b_mx)
+		{
+			m_vx = 0;
+			m_ex = b_mx - 64.0f;
+		}
+		else if (m_ex <= b_mx + 128.0f && m_ex >= b_mx)
+		{
+			m_vx = 0;
+			m_ex = b_mx + 128.0f;
+		}
+
+	}
 
 	//HitBoxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);

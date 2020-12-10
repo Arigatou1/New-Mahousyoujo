@@ -110,10 +110,10 @@ void CObjEnemy3::Action()
 	{
 		b_mx = obj_barrier->GetBX();
 
-		if (m_ex >= b_mx - 50.0f && m_ex <= b_mx)
+		if (m_ex >= b_mx - 64.0f && m_ex <= b_mx)
 		{
 			m_vx = 0;
-			m_ex = b_mx - 50.0f;
+			m_ex = b_mx - 64.0f;
 		}
 		else if (m_ex <= b_mx + 128.0f && m_ex >= b_mx)
 		{
