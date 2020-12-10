@@ -86,6 +86,7 @@ void* CHitBox::CheckObjNameHit(int obj_name)
 {
 	for(int i=0;i<m_hit_count;i++)
 		if(m_hit_data[i].o!=nullptr)
+
 			if(m_hit_data[i].n==obj_name)
 				return m_hit_data[i].o;
 	return nullptr;
