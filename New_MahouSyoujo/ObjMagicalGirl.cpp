@@ -23,7 +23,7 @@ void CObjMagicalGirl::Init()
 	m_atk_animation = 0;//0=–_—§‚¿‚Ì‰æ‘œ
 
 	m_mtime = 1;
-	m_btime = 100;
+	m_btime = 0;
 
 	z_x = 0.0f;
 	z_y = 0.0f;
@@ -100,7 +100,7 @@ void CObjMagicalGirl::Action()
 	
 	//–‚–@­—‚Ì’ÊíUŒ‚
 
-	if (m_mp >= 5)
+	/*if (m_mp >= 5)
 	{
 		if (Input::GetVKey('H') == true && m_t == true)
 		{
@@ -143,10 +143,10 @@ void CObjMagicalGirl::Action()
 			m_atk_animation = 0;//–_—§‚¿‚Ìp‚É‚È‚é
 			m_t = true;
 		}
-	}
+	}*/
 	
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
-	if (h_hp < 20)
+	if (0 < h_hp && h_hp < 20)
 	{
 		if (m_mp >= 20)
 		{
@@ -188,7 +188,7 @@ void CObjMagicalGirl::Action()
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
 			}
 		}
-		else if (Input::GetVKey('D') == false && m_btime > 200)
+		else if (Input::GetVKey('D') == false && m_btime > 300)
 		{
 			b_t = true;
 		}
@@ -333,4 +333,9 @@ int CObjMagicalGirl::GetSkill()
 int CObjMagicalGirl::GetHP()
 {
 	return h_hp;
+}
+
+int CObjMagicalGirl::GetBTime()
+{
+	return m_btime;
 }
