@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjBarrier : public CObj
 {
 public:
-	CObjBarrier(float x, float y);
+	CObjBarrier(float x);
 	~CObjBarrier() {};
 	void Init();   //イニシャライズ
 	void Action(); //アクション
@@ -16,7 +16,6 @@ public:
 	float GetBX();//バリアのx座標
 private:
 	float mb_x;
-	float mb_y;
 	float b_time;//バリアの出てる時間
 
 	int b_skill;//魔法少女のスキル選択

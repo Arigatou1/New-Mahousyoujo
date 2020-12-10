@@ -178,7 +178,7 @@ void CObjTitle::Draw()
 	dst.m_left =0.0f;
 	dst.m_right =900.0f;
 	dst.m_bottom = 600.0f ;
-
+	
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 	

@@ -56,6 +56,37 @@ void CObjEnemy4::Action()
 			m_vx = 1.0f;
 		else
 			m_vx = 0;
+
+		if (m_mx + 192 > m_ex && m_mx - 192 < m_ex)
+		{
+			if (a_time % 100 == 0)
+			{
+
+				CObjShockWave* obj = new CObjShockWave(m_ex, m_ey);
+				Objs::InsertObj(obj, OBJ_SHOCKWAVE, 49);
+
+
+			}
+		}
+	}
+	//バリア出てる時だけ止まる
+	//バリアの情報
+	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
+	if (obj_barrier != nullptr)
+	{
+		b_mx = obj_barrier->GetBX();
+
+		if (m_ex >= b_mx - 64.0f && m_ex <= b_mx)
+		{
+			m_vx = 0;
+			m_ex = b_mx - 64.0f;
+		}
+		else if (m_ex <= b_mx + 128.0f && m_ex >= b_mx)
+		{
+			m_vx = 0;
+			m_ex = b_mx + 128.0f;
+		}
+
 	}
 
 	//HitBoxの内容を変更

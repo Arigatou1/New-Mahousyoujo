@@ -38,7 +38,7 @@ void CObjCustomize::Action()
 		if (m_key_flag == true)
 		{
 			Audio::Start(9);
-
+			Save::Seve();
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjStageSelect* obj = new CObjStageSelect();
@@ -164,8 +164,21 @@ void CObjCustomize::Draw()
 	MenuBlockDraw(cursor_x, cursor_y, 728.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
 
 	wchar_t str1[128];
+	wchar_t weap[16];
 
-	swprintf_s(str1, L"主人公の武器:%d", ((UserData*)Save::GetData())->weapon);
+	switch (((UserData*)Save::GetData())->weapon)
+	{
+	case 0:
+		swprintf_s(weap, L"剣");
+		break;
+
+	case 1:
+		swprintf_s(weap, L"拳銃");
+		break;
+
+	}
+
+	swprintf_s(str1, L"主人公の武器:%s", weap);
 	Font::StrDraw(str1, 32, 64, 64, c);
 
 
