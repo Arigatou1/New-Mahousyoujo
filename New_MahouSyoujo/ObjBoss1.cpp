@@ -141,13 +141,3 @@ void CObjBoss1::Draw()
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
 
-int CObjBoss1::GetHP()
-{
-	return e_hp;
-}
-
-int CObjBoss1::GetMAXHP()
-{
-	return maxhp;
-}
-
