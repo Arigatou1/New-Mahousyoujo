@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "GameL\UserData.h"
@@ -40,7 +41,11 @@ void CObjGameClear::Action()
 
     Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
 
-
+	if (Score < 0)
+	{
+		//スコアは0より小さくならない
+		Score = 0;
+	}
 
 	//すこあを保存
 	//ここは問題なさそう。
@@ -57,6 +62,7 @@ void CObjGameClear::Action()
 		{
 			if (m_key_flag == true)
 			{
+				Audio::Start(9);
 				Scene::SetScene(new CSceneMenu(1));
 				m_key_flag = false;
 			}

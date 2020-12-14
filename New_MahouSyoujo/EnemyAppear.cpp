@@ -161,11 +161,11 @@ void EnemyAppear::Action()
 	
 	switch (StageID)
 	{
-
+		
 
 	case 1:
 	{
-		
+
 
 		if (m_time == 100)
 		{

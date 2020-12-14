@@ -35,10 +35,12 @@ void CSceneGameClear::InitScene()
 
 
 	//音楽情報の読み込み
-	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(9, L"Sounds/kakuteiSE.wav", EFFECT);
+	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
+	Audio::LoadAudio(24, L"Sounds/fanfareSE.wav", EFFECT);
 
 	float Volume = Audio::VolumeMaster(0);
-	Audio::Start(13);
+	Audio::Start(24);
 
 
 	//ゲームオーバーオブジェクト作成

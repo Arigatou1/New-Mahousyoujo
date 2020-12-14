@@ -73,3 +73,4 @@ void Fadeout::Draw()
 		Draw::Draw(0, &src, &dst, c, 0.0f);
 	
 }
+

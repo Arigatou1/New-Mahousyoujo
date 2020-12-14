@@ -20,4 +20,5 @@ private:
 	int shootDownTime;
 	int fadeSpeed;
 	bool pfadeIn;
+
 };

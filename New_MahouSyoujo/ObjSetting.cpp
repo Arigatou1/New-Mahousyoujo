@@ -47,29 +47,14 @@ void CObjSetting::Action()
 	else if (Input::GetVKey(VK_UP) == true)
 	{
 		
-		
-		if (m_key_flag == true)
-		{
-
-			Audio::Start(10);
-
-			cursor_y -= 112;
-
-			m_key_flag = false;
-		}
+		cursorUp();
+	
 	}
 
 	else if (Input::GetVKey(VK_DOWN) == true)
 	{
 		
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-
-			cursor_y += 112;
-
-			m_key_flag = false;
-		}
+		cursorDown();
 	}
 
 	else if (Input::GetVKey(VK_LEFT) == true)
@@ -87,6 +72,12 @@ void CObjSetting::Action()
 				((UserData*)Save::GetData())->Diffculty--;
 				break;
 
+			case 1:
+				if (((UserData*)Save::GetData())->DamageDraw)
+					((UserData*)Save::GetData())->DamageDraw = false;
+				else
+					((UserData*)Save::GetData())->DamageDraw = true;
+				break;
 			default:
 
 				break;
@@ -113,6 +104,13 @@ void CObjSetting::Action()
 					((UserData*)Save::GetData())->Diffculty++;
 				break;
 
+			case 1:
+				if (((UserData*)Save::GetData())->DamageDraw)
+					((UserData*)Save::GetData())->DamageDraw = false;
+				else
+					((UserData*)Save::GetData())->DamageDraw = true;
+				break;
+
 			default:
 
 				break;
@@ -127,12 +125,8 @@ void CObjSetting::Action()
 
 
 
-	//カーソルが画面が行かない処理(上)
-	if (cursor_y < 64)
-		cursor_y = 64;
-
-	if (cursor_y > 176)
-		cursor_y = 176;
+	
+	
 }
 
 //ドロー
@@ -145,12 +139,16 @@ void CObjSetting::Draw()
 
 	Font::StrDraw(L"GAME Setting", 2, 2, 32, c);
 
-	MenuBlockDraw(32, 64.0f, 728.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+	for (int i = 0; i < 2; i++)
+	{
+		MenuBlockDraw(32, 64.0f+i*112.0f, 728.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+	}
 
 	MenuBlockDraw(cursor_x, cursor_y, 728.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
 
 	wchar_t str1[128];
 	wchar_t Diff[16];
+	wchar_t OnOff[4];
 
 	switch (((UserData*)Save::GetData())->Diffculty)
 	{
@@ -167,11 +165,57 @@ void CObjSetting::Draw()
 		break;
 	}
 
+	if (((UserData*)Save::GetData())->DamageDraw)
+		swprintf_s(OnOff, L"ON");
+	else
+		swprintf_s(OnOff, L"OFF");
+
+
+	
+	
 
 	swprintf_s(str1, L"難易度:%s",Diff);
-	Font::StrDraw(str1, 32, 64, 64, c);
+	Font::StrDraw(str1, 32, 64, 48, c);
+
+	swprintf_s(str1, L"ダメージ数値の表記:%s", OnOff);
+	Font::StrDraw(str1, 32, 64+112, 48, c);
 
 
 }
 
-//MenuBlockDraw関数
+void CObjSetting::cursorUp()
+{
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y -= 112;
+
+		m_key_flag = false;
+	}
+	
+	//カーソルが画面が行かない処理(上)
+	if (cursor_y < 64)
+		cursor_y = 64;
+
+}
+
+void CObjSetting::cursorDown()
+{
+	
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y += 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルの移動制限
+	if (cursor_y > 176)
+		cursor_y = 176;
+
+}

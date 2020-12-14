@@ -33,7 +33,7 @@ void CObjCustomize::Action()
 
 
 
-	if (Input::GetVKey(VK_RETURN) == true||Input::GetVKey(VK_ESCAPE) == true)
+	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)
 		{
@@ -45,28 +45,27 @@ void CObjCustomize::Action()
 			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
 		}
 	}
-
-	else if (Input::GetVKey(VK_UP) == true)
+	else if (Input::GetVKey(VK_ESCAPE) == true)
 	{
 		if (m_key_flag == true)
 		{
-			Audio::Start(10);
-			cursor_y -= 112;
-			
-			m_key_flag = false;
+			Audio::Start(11);
+
+			this->SetStatus(false);
+			//メニューオブジェクト作成
+			CObjStageSelect* obj = new CObjStageSelect();
+			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
 		}
+	}
+
+	else if (Input::GetVKey(VK_UP) == true)
+	{
+		cursorUp();
 	}
 
 	else if (Input::GetVKey(VK_DOWN) == true)
 	{
-		
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-			cursor_y += 112;
-		
-			m_key_flag = false;
-		}
+		cursorDown();
 	}
 
 	else if (Input::GetVKey(VK_LEFT) == true)
@@ -124,12 +123,6 @@ void CObjCustomize::Action()
 	else
 		m_key_flag = true;
 
-	//カーソルが画面が行かない処理(上)
-	if (cursor_y < 64)
-		cursor_y = 64;
-
-	if (cursor_y > 176)
-		cursor_y = 176;
 
 	//defaultセッティング
 	if(((UserData*)Save::GetData())->weapon >1 || ((UserData*)Save::GetData())->weapon < 0)
@@ -188,4 +181,40 @@ void CObjCustomize::Draw()
 	Draw::Draw(0, &src, &dst, c, i*90.0f);
 }
 
-//MenuBlockDraw関数
+
+void CObjCustomize::cursorUp()
+{
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y -= 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルが画面が行かない処理(上)
+	if (cursor_y < 64)
+		cursor_y = 64;
+
+}
+
+void CObjCustomize::cursorDown()
+{
+
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y += 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルの移動制限
+	if (cursor_y > 176)
+		cursor_y = 176;
+
+}

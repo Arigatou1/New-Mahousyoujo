@@ -230,7 +230,7 @@ void CObjModeSelect::Draw()
 		wchar_t Score[16];
 
 		//そのときのスコア表示
-		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
+		swprintf_s(Score, L"ハイスコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
 		Font::StrDraw(Score, 2, 2, 32, c);
 
 		break;
