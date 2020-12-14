@@ -1,14 +1,18 @@
-﻿  ObjSetting.cpp
+﻿  ObjEnemyAmount.cpp
 C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(31,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(157,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
-C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(156,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+  ObjMagicalGirl.cpp
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(50,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(338,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
   コード生成しています。
-  1 of 1061 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  2 of 1061 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Source\Repos\New-Mahousyoujo\x64\Release\New_MahouSyoujo.exe
