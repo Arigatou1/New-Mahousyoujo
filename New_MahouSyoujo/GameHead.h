@@ -102,6 +102,7 @@ struct UserData
 	int Diffculty;
 
 	bool DamageDraw;
+	float masterVolume;
 };
 //------------------------------------------------
 

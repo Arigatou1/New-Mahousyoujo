@@ -102,9 +102,6 @@ void CObjShockWave::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-	///ここをコメントアウトしたら例外が起こらなくなったので、
-	/// 近々書き直す必要があるかもしれません。
-	/// ReleaseMode 舟瀬 12/07
 
 	//バリアの情報
 	CObjBarrier* obj_barrier = (CObjBarrier*)Objs::GetObj(OBJ_BARRIER);
