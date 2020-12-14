@@ -22,8 +22,8 @@ public :
 	float SetY(float y) { return m_py=y; };
 	float SetVY(float vy) { return m_vy = vy; };
 	float SetVX(float vx) { return m_vx = vx; };
-	int GetHP();
-	int GetMAXHP();
+	int GetHP() { return m_hp; };
+	int GetMAXHP() { return max_hp; };
 	int GetMP();
 
 	void SetUp(bool b) { m_hit_up = b; }
