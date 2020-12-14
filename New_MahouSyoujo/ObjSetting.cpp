@@ -19,6 +19,8 @@ void CObjSetting::Init()
 	cursor_x = 32;
 	cursor_y = 64;
 	nowSelect = 0;
+
+	moveCursor = 112;
 }
 
 //アクション
@@ -78,7 +80,16 @@ void CObjSetting::Action()
 				else
 					((UserData*)Save::GetData())->DamageDraw = true;
 				break;
-			default:
+
+			case 2:
+				if (((UserData*)Save::GetData())->masterVolume > 0.0f)
+					((UserData*)Save::GetData())->masterVolume += 0.1f;
+				((UserData*)Save::GetData())->masterVolume-=0.1f;
+
+				
+
+				break;
+				default:
 
 				break;
 			}
@@ -111,6 +122,14 @@ void CObjSetting::Action()
 					((UserData*)Save::GetData())->DamageDraw = true;
 				break;
 
+			case 2:
+
+				if(((UserData*)Save::GetData())->masterVolume<10.0f)
+				((UserData*)Save::GetData())->masterVolume += 0.1f;
+
+				
+
+				break;
 			default:
 
 				break;
@@ -125,7 +144,7 @@ void CObjSetting::Action()
 
 
 
-	
+		Audio::VolumeMaster(((UserData*)Save::GetData())->masterVolume);
 	
 }
 
@@ -139,7 +158,7 @@ void CObjSetting::Draw()
 
 	Font::StrDraw(L"GAME Setting", 2, 2, 32, c);
 
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		MenuBlockDraw(32, 64.0f+i*112.0f, 728.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
 	}
@@ -179,6 +198,8 @@ void CObjSetting::Draw()
 
 	swprintf_s(str1, L"ダメージ数値の表記:%s", OnOff);
 	Font::StrDraw(str1, 32, 64+112, 48, c);
+	swprintf_s(str1, L"音量:%.02f", ((UserData*)Save::GetData())->masterVolume);
+	Font::StrDraw(str1, 32, 64 + 112*2, 48, c);
 
 
 }
@@ -190,7 +211,7 @@ void CObjSetting::cursorUp()
 		//音を再生する
 		Audio::Start(10);
 		//カーソル移動
-		cursor_y -= 112;
+		cursor_y -= moveCursor;
 
 		m_key_flag = false;
 	}
@@ -203,19 +224,22 @@ void CObjSetting::cursorUp()
 
 void CObjSetting::cursorDown()
 {
+	//初期化の際に、現在存在するボタンの数を入れる。
+	//その数ぶんカーソル移動する。
+	int count=3;
 	
 	if (m_key_flag == true)
 	{
 		//音を再生する
 		Audio::Start(10);
 		//カーソル移動
-		cursor_y += 112;
+		cursor_y += moveCursor;
 
 		m_key_flag = false;
 	}
 
 	//カーソルの移動制限
-	if (cursor_y > 176)
-		cursor_y = 176;
+	if (cursor_y > 64+((count-1)* moveCursor))
+		cursor_y = 64;
 
 }
