@@ -7,6 +7,7 @@
 #include "GameL\UserData.h"
 #include "GameL\DrawFont.h"
 #include "GameL/WinInputs.h"
+#include "GameL/Audio.h"
 
 
 //使用するネームベース
@@ -30,13 +31,17 @@ void Fadeout::Init()
 //アクション
 void Fadeout::Action()
 {
+
+
 	if (pfadeIn)
 	{
+
 		//フェードイン
 		shootDownTime -= fadeSpeed;
 	}
 	else
 	{
+	
 		//フェードアウト
 		shootDownTime += fadeSpeed;
 	}

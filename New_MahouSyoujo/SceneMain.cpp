@@ -56,6 +56,8 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(25, L"Sounds/manadamageSE.wav", EFFECT);
 	Audio::LoadAudio(26, L"Sounds/dragonjampSE.wav", EFFECT);
 	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
+	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
+	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
 	
 	//外部データの読み込み
 

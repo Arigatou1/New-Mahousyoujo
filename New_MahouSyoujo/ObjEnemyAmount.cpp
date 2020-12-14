@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjEnemyAmount.h"
@@ -24,10 +25,11 @@ void CObjEnemyAmount::Action()
 	{
 		//HP‚ªƒ[ƒ‚É‚È‚Á‚½‚çA‘Ò‹@ŠÔ‚ğ‘‰¿‚³‚¹‚éB
 		shootDownTime++;
-
+	
 		if (shootDownTime == 200)
 		{
-			//EnemyAppear
+			
+		//EnemyAppear
 			Fadeout* obj_Fadeout = new Fadeout();
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}

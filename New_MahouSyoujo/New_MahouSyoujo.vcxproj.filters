@@ -213,14 +213,14 @@
     <ClCompile Include="ObjMenuEndless.cpp">
       <Filter>ソース ファイル\02.シーンメニュー</Filter>
     </ClCompile>
-    <ClCompile Include="ClearFadeout.cpp">
-      <Filter>ソース ファイル\03.シーンメイン</Filter>
-    </ClCompile>
     <ClCompile Include="ObjEndlessResult.cpp">
       <Filter>ソース ファイル\05.シーンゲームオーバー</Filter>
     </ClCompile>
     <ClCompile Include="ObjDamegeDisplay.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearFadeout.cpp">
+      <Filter>ソース ファイル\03.シーンメイン</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
