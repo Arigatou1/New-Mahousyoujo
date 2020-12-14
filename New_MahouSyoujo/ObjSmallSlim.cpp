@@ -66,6 +66,10 @@ void CObjSmallSlim::Action()
 			m_vx = 2.0f;
 		else
 		{
+			if (e_time % 120 >= 100 || e_time % 120 <= 20)
+				ss_anime = 3;
+			else
+				ss_anime = 1;
 			m_vx = 0;
 			ss_t = false;
 		}
@@ -74,30 +78,18 @@ void CObjSmallSlim::Action()
 				//120ごとに攻撃する(マナより右側)
 		if (m_mx <= m_ex && ss_t == false)
 		{
-			if (e_time % 120 >= 0 && e_time % 120 <= 5)
-			{
+			if (e_time % 120 == 0)
 				m_ex = m_ex - 5.0f;
-				ss_anime = 3;
-			}
 			else
-			{
 				m_ex = m_mx + 50.0f;
-				ss_anime = 1;
-			}
 		}
 		//120ごとに攻撃する(マナより左側)
 		else if (m_mx >= m_ex && ss_t == false)
 		{
-			if (e_time % 120 >= 0 && e_time % 120 <= 5)
-			{
+			if (e_time % 120 == 0)
 				m_ex = m_ex + 5.0f;
-				ss_anime = 3;
-			}
 			else
-			{
 				m_ex = m_mx - 52.0f;
-				ss_anime = 1;
-			}
 		}
 
 		//ジョンプ

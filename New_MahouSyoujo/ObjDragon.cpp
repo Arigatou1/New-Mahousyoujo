@@ -2,6 +2,7 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "ObjDragon.h"
 #include "GameL\UserData.h"

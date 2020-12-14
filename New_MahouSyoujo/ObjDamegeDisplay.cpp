@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
-
+#include "GameL\UserData.h"
 #include "GameHead.h"
 #include "ObjDamegeDisplay.h"
 
@@ -19,16 +19,19 @@ CObjDamegeDisplay::CObjDamegeDisplay(float x, float y, int damage ,int color)
 void CObjDamegeDisplay::Init()
 {
 	d_time = 0;
+
+	if (!((UserData*)Save::GetData())->DamageDraw)
+		d_time = 30;
 }
 
 //アクション
 void CObjDamegeDisplay::Action()
 {
-	d_time++;
+	
 
 	if (d_time == 30)
 		this->SetStatus(false);
-
+	d_time++;
 }
 
 //ドロー

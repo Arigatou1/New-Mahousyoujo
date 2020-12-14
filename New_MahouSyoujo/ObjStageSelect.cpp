@@ -73,24 +73,11 @@ void CObjStageSelect::Action()
 	else if (Input::GetVKey(VK_UP) == true)
 	{
 	
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-
-			cursor_y -= 112;
-			m_key_flag = false;
-		}
+		cursorUp();
 	}
 	else if (Input::GetVKey(VK_DOWN) == true )
 	{
-
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-
-			cursor_y += 112;
-			m_key_flag = false;
-		}
+		cursorDown();
 	}
 	else if (Input::GetVKey(VK_LEFT) == true)
 	{
@@ -140,13 +127,6 @@ void CObjStageSelect::Action()
 			m_key_flag = true;
 		}
 
-		//カーソルが画面外いかない処理
-		if (cursor_y < 64)
-			cursor_y = 512;
-
-		if (cursor_y > 512)
-			cursor_y = 64;
-
 	}
 
 	else if (nowLoading == true)
@@ -188,7 +168,6 @@ void CObjStageSelect::Draw()
 		}
 
 		MenuBlockDraw(140 + menuAllButtonX, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
-		//if()
 
 		//カーソル描画
 		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
@@ -196,8 +175,9 @@ void CObjStageSelect::Draw()
 		//矢印ボタン
 		for (int i = 0; i < 2; i++)
 			MenuBlockDraw(16 + i * 674.0f + menuAllButtonX, 200.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-		Font::StrDraw(L"←", 40 + menuAllButtonX, 284, 48, c);
 
+
+		Font::StrDraw(L"←", 40 + menuAllButtonX, 284, 48, c);
 		Font::StrDraw(L"→", 712 + menuAllButtonX, 284, 48, c);
 
 
@@ -213,19 +193,60 @@ void CObjStageSelect::Draw()
 		
 
 		Font::StrDraw(L"カスタマイズ", 156 + menuAllButtonX, 512, 80, c);
-		wchar_t Score[16];
+		
 
-		//そのときのスコア表示
-		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[((UserData*)Save::GetData())->Stage]);
-		Font::StrDraw(Score, 2 + menuAllButtonX, 2, 48, c);
+		if (cursor_y < 512)
+		{
 
-		//遊べるか遊べないかの表示
-		if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
-			Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
-		else
-			Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
+			//そのときのスコア表示
+			wchar_t Score[16];
+			swprintf_s(Score, L"ハイスコア:%d", ((UserData*)Save::GetData())->ScoreData[((UserData*)Save::GetData())->Stage]);
+			Font::StrDraw(Score, 2 + menuAllButtonX, 2, 48, c);
 
+			//遊べるか遊べないかの表示
+			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+				Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
+			else
+				Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
 
+		}
 
 }
 
+
+void CObjStageSelect::cursorUp()
+{
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y -= 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルが画面が行かない処理(上)
+	if (cursor_y < 64)
+		cursor_y = 512;
+
+}
+
+void CObjStageSelect::cursorDown()
+{
+
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y += 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルの移動制限
+	if (cursor_y > 512)
+		cursor_y = 64;
+
+}
