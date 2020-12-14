@@ -1,7 +1,8 @@
-﻿  ObjBarrier.cpp
+﻿  EnemyAppear.cpp
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBarrier.cpp(30,37): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\EnemyAppear.cpp(1661,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\EnemyAppear.cpp(1728,42): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
   1 of 1061 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
