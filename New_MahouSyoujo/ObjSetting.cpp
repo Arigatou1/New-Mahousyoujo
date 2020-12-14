@@ -83,7 +83,6 @@ void CObjSetting::Action()
 
 			case 2:
 				if (((UserData*)Save::GetData())->masterVolume > 0.0f)
-					((UserData*)Save::GetData())->masterVolume += 0.1f;
 				((UserData*)Save::GetData())->masterVolume-=0.1f;
 
 				
