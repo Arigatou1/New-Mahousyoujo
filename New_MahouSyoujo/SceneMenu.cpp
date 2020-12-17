@@ -7,6 +7,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
 #include "GameL/Audio.h"
+#include "UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -86,10 +87,10 @@ void CSceneMenu::InitScene()
 	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(8);
 
-
+	
 }
 //実行中メソッド
 void CSceneMenu::Scene()
 {
-
+	
 }
