@@ -228,11 +228,12 @@ void CObjStageSelect::Draw()
 				Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
 
 
-		
+			
+
+			MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 1.0f);
 
 			Font::StrDraw(L"↑↓キー:移動", 540, 530, 26, c);
 			Font::StrDraw(L"Enter:決定  Esc:戻る", 540, 560, 26, c);
-
 
 }
 

@@ -201,6 +201,11 @@ void CObjSetting::Draw()
 	Font::StrDraw(str1, 32, 64 + 112*2, 48, c);
 
 
+	MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 1.0f);
+
+	Font::StrDraw(L"↑↓キー:移動", 540, 530, 26, c);
+	Font::StrDraw(L"Enter:決定  Esc:戻る", 540, 560, 26, c);
+
 }
 
 void CObjSetting::cursorUp()
@@ -240,5 +245,6 @@ void CObjSetting::cursorDown()
 	//カーソルの移動制限
 	if (cursor_y > 64+((count-1)* moveCursor))
 		cursor_y = 64;
+
 
 }
