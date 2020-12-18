@@ -22,8 +22,8 @@ public :
 	float SetY(float y) { return m_py=y; };
 	float SetVY(float vy) { return m_vy = vy; };
 	float SetVX(float vx) { return m_vx = vx; };
-	int GetHP();
-	int GetMAXHP();
+	int GetHP() { return m_hp; };
+	int GetMAXHP() { return max_hp; };
 	int GetMP();
 
 	void SetUp(bool b) { m_hit_up = b; }
@@ -54,8 +54,6 @@ private:
 	int mtk_max;//–³“GŠÔ—p•Ï”
 	bool m_mtk;//ålŒö‚Ì–³“G”»’è
 
-	bool h_t;//‰ñ•œŠÔŠu
-
 	bool m_f;		//UŒ‚‚ÌŠÔŠu
 	bool isJump;//ƒWƒƒƒ“ƒv‚Å‚«‚é‚©‚Å‚«‚È‚¢‚©‚ğ”»’f‚·‚é
 
@@ -74,4 +72,6 @@ private:
 
 	int shootDownTime;
 //	bool HPZeroCheck;
+
+	bool clear_check;
 };

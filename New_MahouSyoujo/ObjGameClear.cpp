@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "GameL\UserData.h"
@@ -40,7 +41,11 @@ void CObjGameClear::Action()
 
     Score =	(4000.0f-HeroDamage*80.0f) + (6000-ManaDamage*60.0f);
 
-
+	if (Score < 0)
+	{
+		//スコアは0より小さくならない
+		Score = 0;
+	}
 
 	//すこあを保存
 	//ここは問題なさそう。
@@ -57,7 +62,8 @@ void CObjGameClear::Action()
 		{
 			if (m_key_flag == true)
 			{
-				Scene::SetScene(new CSceneMenu());
+				Audio::Start(9);
+				Scene::SetScene(new CSceneMenu(1));
 				m_key_flag = false;
 			}
 		}
@@ -78,30 +84,32 @@ void CObjGameClear::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 960.0f;
+	src.m_right = 800.0f;
 	src.m_bottom = 600.0f;
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 500.0f;
+	dst.m_bottom = 600.0f;
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
 	wchar_t str[128];
 	
 	swprintf_s(str, L"プレイヤーが受けたダメージ:%.2f", HeroDamage);//整数を文字列か
-	Font::StrDraw(str, 150, 372, 36, c);
+	Font::StrDraw(str, 150, 336, 36, c);
 
 	swprintf_s(str, L"マナが受けたダメージ:%.2f", ManaDamage);//整数を文字列か
-	Font::StrDraw(str, 150, 420, 36, c);
+	Font::StrDraw(str, 150, 384, 36, c);
 	
+	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage, ManaDamage);//整数を文字列か
+	Font::StrDraw(str, 50, 444, 18, c);
+
 	swprintf_s(str, L"スコア:%.0f", Score);//整数を文字列か
-	Font::StrDraw(str, 300, 512, 72, c);
+	Font::StrDraw(str, 300, 476, 72, c);
 
 	
-	swprintf_s(str, L"10000 - %.2f×80 - %.2f×60 =", HeroDamage,ManaDamage);//整数を文字列か
-	Font::StrDraw(str, 50, 480, 18, c);
+	
 	
 	
 }

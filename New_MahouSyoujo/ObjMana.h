@@ -17,11 +17,14 @@ public:
 	float GetHP();
 	float GetX();
 	float GetY();
+	float GetDamege();
 private:
 	float Mana_HP;
 	float Mana_x;
 	float Mana_y;
 	int shootDownTime;
+
+	float MANA_damege;
 
 	float mana_damege;//
 };

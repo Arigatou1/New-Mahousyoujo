@@ -9,10 +9,10 @@ using namespace GameL;
 class CSceneMenu :public CScene
 {
 public:
-	CSceneMenu();
+	CSceneMenu(int mode=0);
 	~CSceneMenu();
 	void InitScene();//初期化メソッド
 	void Scene();	//実行中メソッド
 private:
-	
+	int loadMode;
 };

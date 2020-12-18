@@ -5,6 +5,7 @@
 #include "ObjMana.h"
 #include "GameHead.h"
 #include "GameL\UserData.h"
+#include "GameL/Audio.h"
 //#include "ObjGaugeBaseMana.h"
 
 //テスト用
@@ -33,10 +34,6 @@ void CObjMana::Init()
 	Mana_HP = 100;
 
 
-	//MANAゲージベースオブジェクト作成
-//	CObjGaugeMANABase* obj_managb = new CObjGaugeMANABase(Mana_x,Mana_y);
-//	Objs::InsertObj(obj_managb, OBJ_MANABASE, 50);
-
 	//MANAゲージオブジェクト作成
 	CObjGaugeMANAHP* obj_manahp = new CObjGaugeMANAHP(Mana_x, Mana_y);
 	Objs::InsertObj(obj_manahp, OBJ_MANA_HP, 51);
@@ -54,57 +51,56 @@ void CObjMana::Init()
 void CObjMana::Action()
 {
 
-	if (Mana_HP <= 0)
-	{
-		Mana_HP = 0;
-	}
-
-
 	//HitBoxの内容
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(Mana_x,Mana_y);
 
-	if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+	//当たり判定を行うオブジェクト情報部
+	int database[8] =
 	{
-		Mana_HP -= 0.40 + mana_damege * 0.20;
-	}
+		OBJ_ENEMY,
+		OBJ_ENEMY2,
+		OBJ_ENEMY3,
+		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_SHOCKWAVE,
+		OBJ_FIREBALL,
+		OBJ_SLIMEBALL,
+	};
 
-	//敵2に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
+	for (int i = 0; i < 8; i++)
 	{
-		Mana_HP -= 0.80 + mana_damege * 0.20;
-	}
+		//敵の攻撃力
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			Audio::Start(25);
+			if (i == 0)
+				MANA_damege = 2.0 + mana_damege * 0.20;
+			else if (i == 1)
+				MANA_damege = 4.0 + mana_damege * 0.20;
+			else if (i == 2)
+				MANA_damege = 0.5;
+			else if (i == 3)
+				MANA_damege = 0.5;
+			else if (i == 4)
+				MANA_damege = 1.0 + mana_damege * 0.20;
+			else if (i == 5)
+				MANA_damege = 2.0 + mana_damege * 0.10;
+			else if (i == 6)
+				MANA_damege = 0.1 + mana_damege * 0.10;
+			else if (i == 7)
+				MANA_damege = 4.0 + mana_damege * 0.20;
 
-	//敵3に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
-	{
-		Mana_HP -= 0.5;
+			Mana_HP -= MANA_damege;
 
-	}
-	
-	//敵4に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
-	{
-		Mana_HP -= 0.5;
+		}
 
-	}
-
-	//小さいスライムに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SMALLSLIM) != nullptr)
-	{
-		Mana_HP -= 0.20 + mana_damege * 0.20;
-
-	}
-
-	//ドラゴンの炎に当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_FIREBALL) != nullptr)
-	{
-	//	Mana_HP -= 0.10 + mana_damege * 0.10;
-	}
-	//ショックウェーブに当たるとHPが減る
-	if (hit->CheckObjNameHit(OBJ_SHOCKWAVE) != nullptr)
-	{
-		Mana_HP -= 2.0 + mana_damege * 0.10;
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			//ダメージ表記作成
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x+13+32, Mana_y-32, MANA_damege,1);
+			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
+		}
 	}
 
 	//HP0になったとき
@@ -114,6 +110,12 @@ void CObjMana::Action()
 		Mana_HP = 0;
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
+		((UserData*)Save::GetData())->HPZeroCheck = true;
+
+		if (shootDownTime == 50)
+		{
+			Audio::Start(20);
+		}
 
 		if (shootDownTime == 200)
 		{

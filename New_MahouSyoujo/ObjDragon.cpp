@@ -2,6 +2,7 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "ObjDragon.h"
 #include "GameL\UserData.h"
@@ -52,7 +53,11 @@ void CObjDragon::Init()
 
 	shootDownTime = 0;
 
-	bUŒ‚’† = false;
+	attack_now = false;
+
+	lastAttack = 1;
+
+	fireBressOn = false;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -62,25 +67,32 @@ void CObjDragon::Action()
 
 	rand(); rand(); rand();
 
-	if (!bUŒ‚’†)
+	if (!attack_now)
 	{
-		if (a_time == 240)
-		{
-			AttackPattern = rand() % 4;
-			a_time = 0;
-			bUŒ‚’† = true;
-			
-		}
+		
+			if (a_time == 240)
+			{
+				do {
+				AttackPattern = rand() % 4;
+				a_time = 0;
+				attack_now = true;
+				} while (lastAttack == AttackPattern);//ÅŒã‚ÌUŒ‚‚Æ¡‚ÌUŒ‚‚ªˆê‚Èê‡A‚â‚è’¼‚·
+			}
+		
+			//ÅŒã‚ÌƒAƒ^ƒbƒN‚Í¡‚ÌƒAƒ^ƒbƒN
+		lastAttack = AttackPattern;
+
 	}
-	else if (bUŒ‚’†)
+	else if (attack_now)
 	{
 		if (AttackPattern == 1)
 		{
-			t‰Î‰Š•úË();
+			fireBressOn = true;
 			if (a_time >= 200)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
+				fireBressOn = false;
 			}
 		}
 		else if (AttackPattern == 0)
@@ -113,7 +125,7 @@ void CObjDragon::Action()
 			if (a_time >= 480)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
 			}
 		}
 		else if (AttackPattern == 2)
@@ -148,7 +160,7 @@ void CObjDragon::Action()
 			if (a_time >= 360)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
 			}
 		}
 
@@ -161,24 +173,24 @@ void CObjDragon::Action()
 			else if (a_time <= 180)
 			{
 				m_ey += 1;
-				t‰Î‰Š•úË();
+				fireBressOn = true;
 			}
 			else if (a_time <= 240)
 			{
 				m_ey -= 1;
-				t‰Î‰Š•úË();
+			
 
 			}
 			else if (a_time <= 300)
 			{
 				m_ey += 1;
-					t‰Î‰Š•úË();
+				
 				
 			}
 			else if (a_time <= 360)
 			{
 				m_ey -= 1;
-				t‰Î‰Š•úË();
+				
 			}
 			else if (a_time <= 480)
 			{
@@ -188,7 +200,8 @@ void CObjDragon::Action()
 			if (a_time >= 480)
 			{
 				a_time = 0;
-				bUŒ‚’† = false;
+				attack_now = false;
+				fireBressOn = false;
 			}
 		}
 	}
@@ -237,9 +250,16 @@ void CObjDragon::Action()
 	if (e_hp <= 0)
 	{
 		((UserData*)Save::GetData())->enemyRemain = 0;
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+
 		return;
 
 	}
+
+	if (fireBressOn)
+		FireBress();
 }
 
 //ƒhƒ[
@@ -275,7 +295,7 @@ int CObjDragon::GetMAXHP()
 {
 	return maxhp;
 }
-void CObjDragon::t‰Î‰Š•úË()
+void CObjDragon::FireBress()
 {
 	if (a_time % 10 == 0)
 	{

@@ -13,8 +13,8 @@ public:
 	void Init();
 	void Action();
 	void Draw();
-	int GetMAXHP();
-	int GetHP();
+	int GetMAXHP() { return maxhp; };
+	int GetHP() {return e_hp;};
 
 	
 private:

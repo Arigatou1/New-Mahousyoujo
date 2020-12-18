@@ -37,34 +37,35 @@ void CObjCustomize::Action()
 	{
 		if (m_key_flag == true)
 		{
-			
+			Audio::Start(9);
+			Save::Seve();
+			this->SetStatus(false);
+			//メニューオブジェクト作成
+			CObjStageSelect* obj = new CObjStageSelect();
+			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
+		}
+	}
+	else if (Input::GetVKey(VK_ESCAPE) == true)
+	{
+		if (m_key_flag == true)
+		{
+			Audio::Start(11);
 
 			this->SetStatus(false);
 			//メニューオブジェクト作成
 			CObjStageSelect* obj = new CObjStageSelect();
-			Objs::InsertObj(obj, OBJ_STAGESELECT, 0);
+			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
 		}
 	}
 
 	else if (Input::GetVKey(VK_UP) == true)
 	{
-		if (m_key_flag == true)
-		{
-			cursor_y -= 112;
-			
-			m_key_flag = false;
-		}
+		cursorUp();
 	}
 
 	else if (Input::GetVKey(VK_DOWN) == true)
 	{
-		
-		if (m_key_flag == true)
-		{
-			cursor_y += 112;
-		
-			m_key_flag = false;
-		}
+		cursorDown();
 	}
 
 	else if (Input::GetVKey(VK_LEFT) == true)
@@ -72,6 +73,7 @@ void CObjCustomize::Action()
 	
 		if (m_key_flag == true)
 		{
+			Audio::Start(10);
 			switch (nowSelect)
 			{
 			case 0:
@@ -97,7 +99,8 @@ void CObjCustomize::Action()
 		
 		if (m_key_flag == true)
 		{
-			
+
+			Audio::Start(10);
 
 			switch (nowSelect)
 			{
@@ -120,12 +123,6 @@ void CObjCustomize::Action()
 	else
 		m_key_flag = true;
 
-	//カーソルが画面が行かない処理(上)
-	if (cursor_y < 64)
-		cursor_y = 64;
-
-	if (cursor_y > 176)
-		cursor_y = 176;
 
 	//defaultセッティング
 	if(((UserData*)Save::GetData())->weapon >1 || ((UserData*)Save::GetData())->weapon < 0)
@@ -148,8 +145,21 @@ void CObjCustomize::Draw()
 	MenuBlockDraw(cursor_x, cursor_y, 728.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
 
 	wchar_t str1[128];
+	wchar_t weap[16];
 
-	swprintf_s(str1, L"主人公の武器:%d", ((UserData*)Save::GetData())->weapon);
+	switch (((UserData*)Save::GetData())->weapon)
+	{
+	case 0:
+		swprintf_s(weap, L"剣");
+		break;
+
+	case 1:
+		swprintf_s(weap, L"拳銃");
+		break;
+
+	}
+
+	swprintf_s(str1, L"主人公の武器:%s", weap);
 	Font::StrDraw(str1, 32, 64, 64, c);
 
 
@@ -171,4 +181,40 @@ void CObjCustomize::Draw()
 	Draw::Draw(0, &src, &dst, c, i*90.0f);
 }
 
-//MenuBlockDraw関数
+
+void CObjCustomize::cursorUp()
+{
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y -= 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルが画面が行かない処理(上)
+	if (cursor_y < 64)
+		cursor_y = 64;
+
+}
+
+void CObjCustomize::cursorDown()
+{
+
+	if (m_key_flag == true)
+	{
+		//音を再生する
+		Audio::Start(10);
+		//カーソル移動
+		cursor_y += 112;
+
+		m_key_flag = false;
+	}
+
+	//カーソルの移動制限
+	if (cursor_y > 176)
+		cursor_y = 176;
+
+}

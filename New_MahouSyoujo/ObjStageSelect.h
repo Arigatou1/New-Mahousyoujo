@@ -29,4 +29,8 @@ private:
 	float menuAllButtonX;
 
 	int waitTime;
+
+
+	void cursorUp();
+	void cursorDown();
 };

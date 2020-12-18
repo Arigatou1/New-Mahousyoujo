@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjGameOver.h"
@@ -23,6 +24,7 @@ void CObjGameOver::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(11);
 			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
@@ -32,6 +34,7 @@ void CObjGameOver::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
 			Scene::SetScene(new CSceneMain());
 			m_key_flag = false;
 		}
@@ -53,16 +56,13 @@ void CObjGameOver::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 960.0f;
+	src.m_right = 800.0f;
 	src.m_bottom = 600.0f;
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 500.0f;
+	dst.m_bottom = 600.0f;
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-
-	Font::StrDraw(L"[Esc]:タイトルへ", 236, 384, 32, c);
-	Font::StrDraw(L"[Enter]:リトライ", 236, 484, 32, c);
 }

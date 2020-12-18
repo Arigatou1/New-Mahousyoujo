@@ -32,13 +32,17 @@ void CObjMenuEndless::Init()
 //アクション
 void CObjMenuEndless::Action()
 {
-
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (!nowLoading)
 	{
-		if (m_key_flag == true)
+
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-		//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
-		//	{
+			if (m_key_flag == true)
+			{
+
+				Audio::Start(9);
+				//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
+				//	{
 
 				if (cursor_y < 512)
 				{
@@ -49,53 +53,60 @@ void CObjMenuEndless::Action()
 					this->SetStatus(false);
 					//メニューオブジェクト作成
 					CObjCustomize* obj = new CObjCustomize();
-					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 0);
+					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 				}
-		//	}
-			
+				//	}
+
+				m_key_flag = false;
+			}
+		}
+		else if (Input::GetVKey(VK_UP) == true)
+		{
+		
+
+
+			if (m_key_flag == true)
+			{
+				Audio::Start(10);
+				cursor_y = 64;
+				cursor_sy = 384.0f;
+
+			}
 			m_key_flag = false;
 		}
-	}
-	else if (Input::GetVKey(VK_UP) == true)
-	{
-
-		if (m_key_flag == true)
+		else if (Input::GetVKey(VK_DOWN) == true)
 		{
-			cursor_y = 64;
-			cursor_sy = 384.0f;
-			
-		}
-		m_key_flag = false;
-	}
-	else if (Input::GetVKey(VK_DOWN) == true)
-	{
+		
 
-		if (m_key_flag == true)
+
+			if (m_key_flag == true)
+			{
+				Audio::Start(10);
+				cursor_y = 512;
+				cursor_sy = 96.0f;
+			}
+			m_key_flag = false;
+		}
+		else if (Input::GetVKey(VK_ESCAPE) == true)
 		{
-			cursor_y = 512;
-			cursor_sy = 96.0f;
-		}
-		m_key_flag = false;
-	}
-	else if (Input::GetVKey(VK_ESCAPE) == true)
-	{
 
-		if (m_key_flag == true)
+			if (m_key_flag == true)
+			{
+				Audio::Start(11);
+				this->SetStatus(false);
+				//メニューオブジェクト作成
+				CObjModeSelect* obj = new CObjModeSelect();
+				Objs::InsertObj(obj, OBJ_MODESELECT, 2);
+			}
+			m_key_flag = false;
+		}
+		else
 		{
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 0);
+			m_key_flag = true;
 		}
-		m_key_flag = false;
-	}
-	else
-	{
-		m_key_flag = true;
 	}
 
-
-	if (nowLoading == true)
+	else if (nowLoading == true)
 	{
 
 		waitTime++;
@@ -144,7 +155,7 @@ void CObjMenuEndless::Draw()
 		wchar_t Score[16];
 
 		//そのときのスコア表示
-		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
+		swprintf_s(Score, L"ハイスコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
 		Font::StrDraw(Score, 2 + menuAllButtonX, 2, 48, c);
 	
 
