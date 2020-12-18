@@ -202,12 +202,12 @@ void CObjSetting::Draw()
 	
 
 	swprintf_s(str1, L"難易度:%s",Diff);
-	Font::StrDraw(str1, 32, 64, 48, c);
+	Font::StrDraw(str1, 48, 80,64, c);
 
 	swprintf_s(str1, L"ダメージ数値の表記:%s", OnOff);
-	Font::StrDraw(str1, 32, 64+112, 48, c);
+	Font::StrDraw(str1, 48, 80+112, 64, c);
 	swprintf_s(str1, L"音量:%d%%", ((UserData*)Save::GetData())->masterVolume);
-	Font::StrDraw(str1, 32, 64 + 112*2, 48, c);
+	Font::StrDraw(str1, 48, 80 + 112*2, 64, c);
 
 
 }
