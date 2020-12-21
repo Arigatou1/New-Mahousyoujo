@@ -131,6 +131,7 @@ void EnemyAppear::Init()
 	}
 	case 17:
 	{
+		Audio::Start(30);
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(8);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
