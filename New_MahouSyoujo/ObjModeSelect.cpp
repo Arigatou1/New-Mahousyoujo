@@ -244,9 +244,8 @@ void CObjModeSelect::Draw()
 	}
 
 
-	MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 1.0f);
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
 
-	Font::StrDraw(L"↑↓キー:移動", 540, 530, 26, c);
-	Font::StrDraw(L"Enter:決定  Esc:戻る", 540, 560, 26, c);
+	Font::StrDraw(L"↑↓キー:移動  Enter:決定  Esc:戻る", 200, 566, 26, c);
 
 }
