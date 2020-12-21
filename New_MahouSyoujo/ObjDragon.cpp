@@ -97,16 +97,21 @@ void CObjDragon::Action()
 				attack_now = false;
 				fireBressOn = false;
 			}
+		
 		}
 		else if (AttackPattern == 0)
 		{
 			if(a_time<=120)
 			{
-				m_ey -= 2;
+
+					m_ey -= 2;
+				
 			}
 			else if (a_time <= 180)
 			{
+			
 				m_ey += 1;
+
 			}
 			else if (a_time <= 240)
 			{

@@ -7,6 +7,7 @@
 #include "GameL\UserData.h"
 #include "GameL\DrawFont.h"
 #include "GameL/WinInputs.h"
+#include "GameL/Audio.h"
 
 
 //使用するネームベース
@@ -21,6 +22,7 @@ Fadeout::Fadeout(int speed,bool fadeIn)
 //イニシャライズ
 void Fadeout::Init()
 {
+
 	if (pfadeIn)//フェードイン
 		shootDownTime = 100;
 	else//フェードアウト
@@ -30,19 +32,24 @@ void Fadeout::Init()
 //アクション
 void Fadeout::Action()
 {
+
+
 	if (pfadeIn)
 	{
+
 		//フェードイン
 		shootDownTime -= fadeSpeed;
 	}
 	else
 	{
+	
 		//フェードアウト
 		shootDownTime += fadeSpeed;
 	}
 
 	if (shootDownTime <= 0)
 	{
+	
 		//フェードインとき、0以下になると削除
 		this->SetStatus(false);
 	}
