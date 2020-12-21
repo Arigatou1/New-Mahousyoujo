@@ -22,6 +22,7 @@ Fadeout::Fadeout(int speed,bool fadeIn)
 //イニシャライズ
 void Fadeout::Init()
 {
+
 	if (pfadeIn)//フェードイン
 		shootDownTime = 100;
 	else//フェードアウト
@@ -48,6 +49,7 @@ void Fadeout::Action()
 
 	if (shootDownTime <= 0)
 	{
+	
 		//フェードインとき、0以下になると削除
 		this->SetStatus(false);
 	}
