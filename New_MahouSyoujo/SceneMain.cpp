@@ -58,6 +58,7 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
 	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
 	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
+	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
 	
 	//外部データの読み込み
 
