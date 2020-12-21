@@ -230,7 +230,7 @@ void CObjStageSelect::Draw()
 
 			
 
-			MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 1.0f);
+			MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 0.7f);
 
 			Font::StrDraw(L"ª«ƒL[:ˆÚ“®", 540, 530, 26, c);
 			Font::StrDraw(L"Enter:Œˆ’è  Esc:–ß‚é", 540, 560, 26, c);
