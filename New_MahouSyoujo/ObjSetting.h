@@ -19,5 +19,8 @@ private:
 	float cursor_x;
 	float cursor_y;
 	int nowSelect;
+	float moveCursor;
 
+	void cursorUp();
+	void cursorDown();
 };

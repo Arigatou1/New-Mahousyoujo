@@ -230,7 +230,7 @@ void CObjModeSelect::Draw()
 		wchar_t Score[16];
 
 		//そのときのスコア表示
-		swprintf_s(Score, L"スコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
+		swprintf_s(Score, L"ハイスコア:%d", ((UserData*)Save::GetData())->ScoreData[16]);
 		Font::StrDraw(Score, 2, 2, 32, c);
 
 		break;
@@ -243,5 +243,9 @@ void CObjModeSelect::Draw()
 
 	}
 
-	
+
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
+
+	Font::StrDraw(L"↑↓キー:移動  Enter:決定  Esc:戻る", 200, 566, 26, c);
+
 }

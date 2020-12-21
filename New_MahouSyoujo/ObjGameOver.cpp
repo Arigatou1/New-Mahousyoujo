@@ -2,6 +2,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
+#include "GameL/Audio.h"
 
 #include "GameHead.h"
 #include "ObjGameOver.h"
@@ -23,6 +24,7 @@ void CObjGameOver::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(11);
 			Scene::SetScene(new CSceneTitle());
 			m_key_flag = false;
 		}
@@ -32,6 +34,7 @@ void CObjGameOver::Action()
 	{
 		if (m_key_flag == true)
 		{
+			Audio::Start(9);
 			Scene::SetScene(new CSceneMain());
 			m_key_flag = false;
 		}
@@ -58,7 +61,7 @@ void CObjGameOver::Draw()
 	//ï\é¶à íuÇÃê›íË
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 820.0f;
+	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 	//ï`âÊ
 	Draw::Draw(0, &src, &dst, c, 0.0f);

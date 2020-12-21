@@ -208,6 +208,75 @@ void CObjHero::Action()
 
 	}
 	//-------------------------------------
+	//当たり判定を行うオブジェクト情報部
+	int database[] =
+	{
+		OBJ_ENEMY,
+		OBJ_ENEMY2,
+		OBJ_ENEMY3,
+		OBJ_ENEMY4,
+		OBJ_SMALLSLIM,
+		OBJ_SHOCKWAVE,
+		OBJ_FIREBALL,
+		OBJ_SLIMEBALL,
+		OBJ_BOSS1,
+		OBJ_DRAGON,
+	};
+
+	/*for (int i = 0; i < 8; i++)
+	{
+		//敵の攻撃力
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			Audio::Start(25);
+			if (i == 0)
+			{
+				MANA_damege = 2.0 + mana_damege * 0.20;
+			}
+
+			else if (i == 1)
+			{
+				MANA_damege = 4.0 + mana_damege * 0.20;
+			}
+			else if (i == 2)
+			{
+				MANA_damege = 0.5;
+			}
+			else if (i == 3)
+			{
+				MANA_damege = 0.5;
+			}
+			else if (i == 4)
+			{
+				MANA_damege = 1.0 + mana_damege * 0.20;
+			}
+			else if (i == 5)
+			{
+				MANA_damege = 2.0 + mana_damege * 0.10;
+
+			}
+			else if (i == 6)
+			{
+				MANA_damege = 0.1 + mana_damege * 0.10;
+			}
+			else if (i == 7)
+			{
+				MANA_damege = 0.1 + mana_damege * 0.20;
+			}
+			Mana_HP -= MANA_damege;
+
+		}
+
+		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		{
+			
+			//ダメージ
+			Audio::Start(4);
+
+			m_mtk = true;
+			m_hp -= 1.0f + damage;//敵の攻撃力
+		}
+	}*/
 
 	//無敵時間が無効になった時 敵とのあたり判定を行う
 	if (m_mtk == false)
@@ -220,8 +289,10 @@ void CObjHero::Action()
 		{
 			//ダメージ
 			Audio::Start(4);
+
 			m_mtk = true;
 			m_hp -= 1.0f + damage;//敵の攻撃力
+			
 			AllDamage += 1.0f + damage;
 		}
 
@@ -321,14 +392,21 @@ void CObjHero::Action()
 	//主人公のHPが無くなった時、消滅させる
 	if (m_hp <= 0)
 	{
+	
 		//0固定
 		m_hp = 0;
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
 		((UserData*)Save::GetData())->HPZeroCheck = true;
 
-		if (shootDownTime == 200)
+		if (shootDownTime == 50)
 		{
+			Audio::Start(20);
+		}
+
+		else if (shootDownTime == 200)
+		{
+
 			//EnemyAppear
 			Fadeout* obj_Fadeout = new Fadeout();
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
@@ -430,15 +508,7 @@ void CObjHero::Draw()
 
 }
 
-int CObjHero::GetHP()
-{
-	return m_hp;
-}
 
-int CObjHero::GetMAXHP()
-{
-	return max_hp;
-}
 
 int CObjHero::GetMP()
 {

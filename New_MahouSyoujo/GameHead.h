@@ -47,6 +47,7 @@ enum OBJ_NAME
 	FADEOUT,
 	OBJ_ENDLESSRESULT,
 	OBJ_DAMEGEDISPLAY,
+	OBJ_CAUTION,
 };
 //------------------------------------------------
 
@@ -78,8 +79,6 @@ struct UserData
 	int Stage;
 
 
-	//主人公の武器。剣 0 銃 1
-	int weapon;
 	//ステージのスコアデータ
 	int ScoreData[20];
 	//最大ステージ数は20だが、２０のクリア判定をつけるため
@@ -87,14 +86,24 @@ struct UserData
 	//ポーズメニュー用変数
 	bool PauseMenu;
 	
-	//難易度
-	int Diffculty;
+	
 	//スコアの計算するためのもの
 	float HeroHP;
 	float ManaHP;
 	//残り敵の数の表示
 	int enemyRemain;
 	bool HPZeroCheck;
+
+	//---------------------------------------------
+	//設定で変更できるデータ
+
+	//主人公の武器。剣 0 銃 1
+	int weapon;
+	//難易度
+	int Diffculty;
+
+	bool DamageDraw;
+	int masterVolume;
 };
 //------------------------------------------------
 
@@ -149,6 +158,7 @@ struct UserData
 #include "ObjDragon.h"
 #include "ObjShockWave.h"
 #include "ClearFadeout.h"
+#include "ObjCaution.h"
 
 #include "ObjDamegeDisplay.h"
 

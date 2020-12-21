@@ -42,13 +42,23 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
 	Audio::LoadAudio(5, L"Sounds/bulletSE.wav", EFFECT);
 	Audio::LoadAudio(6, L"Sounds/herojumpSE.wav", EFFECT);
+	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", SOUND_TYPE::EFFECT);
 	Audio::LoadAudio(14, L"Sounds/danjonBGM1.wav", BACK_MUSIC);
 	Audio::LoadAudio(15, L"Sounds/danjonBGM2.wav", BACK_MUSIC);
 	Audio::LoadAudio(16, L"Sounds/bossBGM1.wav", BACK_MUSIC);
 	Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
 	Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
 	Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
-
+	Audio::LoadAudio(20, L"Sounds/herodownSE.wav", EFFECT);
+	Audio::LoadAudio(21, L"Sounds/girlattackSE.wav", EFFECT);
+	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
+	Audio::LoadAudio(23, L"Sounds/bariaSE.wav", EFFECT);
+	Audio::LoadAudio(25, L"Sounds/manadamageSE.wav", EFFECT);
+	Audio::LoadAudio(26, L"Sounds/dragonjampSE.wav", EFFECT);
+	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
+	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
+	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
+	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
 	
 	//外部データの読み込み
 
@@ -92,6 +102,8 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/BackGround.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
 
 	//背景読み込み
 	for (int i = 1; i <= 10; i++)
@@ -146,6 +158,7 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
+	
 
 	//タイム初期化
 	m_time = 0;

@@ -2,6 +2,7 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "ObjBoss1.h"
 #include "GameL\UserData.h"
@@ -74,7 +75,8 @@ void CObjBoss1::Action()
 	a_time++;	
 	if (a_time % 100 == 0)
 	{
-		
+		Audio::Start(28);
+
 		CObjSlimeBall* obj = new CObjSlimeBall(m_ex, m_ey + 50.0f,-15.0f,4.0f);
 		Objs::InsertObj(obj, OBJ_SLIMEBALL, 49);
 		
@@ -84,6 +86,7 @@ void CObjBoss1::Action()
 
 	if (a_time % 500 == 0)
 	{
+		Audio::Start(29);
 		//èÍèäÇ∆î≠éÀë¨ìxÇê›íËÇ≈Ç´ÇÈÇÊÇ§Ç…ÇµÇΩÅB
 		CObjEnemy* obj = new CObjEnemy(m_ex,m_ey+50,-5,-10);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
@@ -139,15 +142,5 @@ void CObjBoss1::Draw()
 
 	//ï`âÊ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-}
-
-int CObjBoss1::GetHP()
-{
-	return e_hp;
-}
-
-int CObjBoss1::GetMAXHP()
-{
-	return maxhp;
 }
 

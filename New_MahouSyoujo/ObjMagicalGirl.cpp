@@ -23,7 +23,7 @@ void CObjMagicalGirl::Init()
 	m_atk_animation = 0;//0=–_—§‚¿‚Ì‰æ‘œ
 
 	m_mtime = 1;
-	m_btime = 100;
+	m_btime = 0;
 
 	z_x = 0.0f;
 	z_y = 0.0f;
@@ -100,7 +100,7 @@ void CObjMagicalGirl::Action()
 	
 	//–‚–@­—‚Ì’ÊíUŒ‚
 
-	if (m_mp >= 5)
+	/*if (m_mp >= 5)
 	{
 		if (Input::GetVKey('H') == true && m_t == true)
 		{
@@ -143,15 +143,16 @@ void CObjMagicalGirl::Action()
 			m_atk_animation = 0;//–_—§‚¿‚Ìp‚É‚È‚é
 			m_t = true;
 		}
-	}
+	}*/
 	
 	//–‚–@­—‚Ì‰ñ•œ–‚–@
-	if (h_hp < 20)
+	if (0 < h_hp && h_hp < 20)
 	{
 		if (m_mp >= 20)
 		{
 			if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
 			{
+				Audio::Start(22);
 				m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 
 				h_t = false;
@@ -173,6 +174,7 @@ void CObjMagicalGirl::Action()
 	{
 		if (Input::GetVKey('D') == true && b_t == true && m_skill == 2)
 		{
+			Audio::Start(23);
 			m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 			m_btime = 0;
 			b_t = false;
@@ -182,13 +184,13 @@ void CObjMagicalGirl::Action()
 			{
 				//BarrierƒIƒuƒWƒFƒNƒg
 				CObjBarrier* objbarrier;
-				objbarrier = new CObjBarrier(m_gx + 64.0f, m_gy);
+				objbarrier = new CObjBarrier(m_gx + 64.0f);
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
-				objbarrier = new CObjBarrier(m_gx - 32.0f, m_gy);
+				objbarrier = new CObjBarrier(m_gx - 32.0f);
 				Objs::InsertObj(objbarrier, OBJ_BARRIER, 48);
 			}
 		}
-		else if (Input::GetVKey('D') == false && m_btime > 200)
+		else if (Input::GetVKey('D') == false && m_btime > 300)
 		{
 			b_t = true;
 		}
@@ -199,6 +201,7 @@ void CObjMagicalGirl::Action()
 	{
 		if (Input::GetVKey('D') == true && z_t == true && m_skill == 3)
 		{
+			Audio::Start(21);
 			m_atk_animation = 3;//ñ‚Á‚½p‚É‚È‚é
 			z_t = false;
 			m_mp -= 50;
@@ -333,4 +336,9 @@ int CObjMagicalGirl::GetSkill()
 int CObjMagicalGirl::GetHP()
 {
 	return h_hp;
+}
+
+int CObjMagicalGirl::GetBTime()
+{
+	return m_btime;
 }

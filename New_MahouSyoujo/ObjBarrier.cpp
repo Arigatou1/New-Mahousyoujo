@@ -8,39 +8,35 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBarrier::CObjBarrier(float x, float y)
+CObjBarrier::CObjBarrier(float x)
 {
 	mb_x = x;
-	mb_y = y;
 }
 
 //イニシャライズ
 void CObjBarrier::Init()
 {
-	b_time = 100;
+	b_t = true;
 }
 
 //アクション
 void CObjBarrier::Action()
 {
-	b_time++;
-
 	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 	if (obj_magicalgirl != nullptr)
 	{
 		b_skill = obj_magicalgirl->GetSkill();
 		b_mp = obj_magicalgirl->GetMP();
-
+		b_time = obj_magicalgirl->GetBTime();
 	}
 
 	if (b_mp >= 30)
 	{
 		if (Input::GetVKey('D') == true && b_t == true && b_skill == 2)
 		{
-			b_time = 0;
 			b_t = false;
 		}
-		else if (Input::GetVKey('D') == false && b_time > 200)
+		else if (Input::GetVKey('D') == false && b_time > 300)
 		{
 			b_t = true;
 		}
@@ -61,19 +57,19 @@ void CObjBarrier::Draw()
 	RECT_F dst; //描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top    = 256.0f;
-	src.m_left   = 128.0f;
-	src.m_right  = 192.0f;
-	src.m_bottom = 320.0f;
+	src.m_top    = 0.0f;
+	src.m_left   = 0.0f;
+	src.m_right  = 64.0f;
+	src.m_bottom = 640.0f;
 
 	//表示位置の設定
-	dst.m_top    = mb_y - 384.0f;
+	dst.m_top    = -2.0f;
 	dst.m_left   = mb_x + 0.0f;
 	dst.m_right  = mb_x + 32.0f;
-	dst.m_bottom = mb_y + 224.0f;
+	dst.m_bottom = 602.0f;
 
 	//描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(5, &src, &dst, c, 0.0f);
 }
 float CObjBarrier::GetBX()
 {

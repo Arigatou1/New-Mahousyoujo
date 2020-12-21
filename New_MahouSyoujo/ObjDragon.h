@@ -41,6 +41,9 @@ private:
 
 	bool fireBressOn;
 	bool attack_now;
+	//‘S‘ÌUŒ‚“–‚½‚Á‚½‚©Šm”F
+	bool AllBullet_Hit;
+
 	int b_posture;
 
 };

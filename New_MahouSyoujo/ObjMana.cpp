@@ -5,6 +5,7 @@
 #include "ObjMana.h"
 #include "GameHead.h"
 #include "GameL\UserData.h"
+#include "GameL/Audio.h"
 //#include "ObjGaugeBaseMana.h"
 
 //テスト用
@@ -55,7 +56,7 @@ void CObjMana::Action()
 	hit->SetPos(Mana_x,Mana_y);
 
 	//当たり判定を行うオブジェクト情報部
-	int database[7] =
+	int database[8] =
 	{
 		OBJ_ENEMY,
 		OBJ_ENEMY2,
@@ -64,27 +65,31 @@ void CObjMana::Action()
 		OBJ_SMALLSLIM,
 		OBJ_SHOCKWAVE,
 		OBJ_FIREBALL,
+		OBJ_SLIMEBALL,
 	};
 
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		//敵の攻撃力
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
+			Audio::Start(25);
 			if (i == 0)
-				MANA_damege = 0.40 + mana_damege * 0.20;
+				MANA_damege = 2.0 + mana_damege * 0.20;
 			else if (i == 1)
-				MANA_damege = 0.80 + mana_damege * 0.20;
+				MANA_damege = 4.0 + mana_damege * 0.20;
 			else if (i == 2)
 				MANA_damege = 0.5;
 			else if (i == 3)
 				MANA_damege = 0.5;
 			else if (i == 4)
-				MANA_damege = 0.20 + mana_damege * 0.20;
+				MANA_damege = 1.0 + mana_damege * 0.20;
 			else if (i == 5)
 				MANA_damege = 2.0 + mana_damege * 0.10;
 			else if (i == 6)
-				MANA_damege = 0.10 + mana_damege * 0.10;
+				MANA_damege = 0.1 + mana_damege * 0.10;
+			else if (i == 7)
+				MANA_damege = 0.1 + mana_damege * 0.20;
 
 			Mana_HP -= MANA_damege;
 
@@ -93,7 +98,7 @@ void CObjMana::Action()
 		if (hit->CheckObjNameHit(database[i]) != nullptr)
 		{
 			//ダメージ表記作成
-			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x, Mana_y, 0, MANA_damege);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x+13+32, Mana_y-32, MANA_damege,1);
 			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 		}
 	}
@@ -106,6 +111,11 @@ void CObjMana::Action()
 		//HPがゼロになったら、待機時間を増価させる。
 		shootDownTime++;
 		((UserData*)Save::GetData())->HPZeroCheck = true;
+
+		if (shootDownTime == 50)
+		{
+			Audio::Start(20);
+		}
 
 		if (shootDownTime == 200)
 		{

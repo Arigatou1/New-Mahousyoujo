@@ -22,8 +22,8 @@ public :
 	float SetY(float y) { return m_py=y; };
 	float SetVY(float vy) { return m_vy = vy; };
 	float SetVX(float vx) { return m_vx = vx; };
-	int GetHP();
-	int GetMAXHP();
+	int GetHP() { return m_hp; };
+	int GetMAXHP() { return max_hp; };
 	int GetMP();
 
 	void SetUp(bool b) { m_hit_up = b; }
@@ -69,6 +69,7 @@ private:
 	int Weapon;//主人公の武器
 	float damage;//主人公が受けるダメージ
 	float AllDamage;//主人公が受けたダメージ
+	float HeroDamage;
 
 	int shootDownTime;
 //	bool HPZeroCheck;
