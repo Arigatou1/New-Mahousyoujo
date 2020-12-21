@@ -37,6 +37,9 @@ void CObjDragon::Init()
 	maxhp = 1800;
 	e_hp = maxhp;
 
+	//全体攻撃一回だけダメージ与える　　与えない＝false   与える＝true
+	AllBullet_Hit = true;
+
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 256, 256, ELEMENT_ENEMY, OBJ_DRAGON, 10);
 
@@ -245,11 +248,14 @@ void CObjDragon::Action()
 		CObjBullet* obj_bullet = (CObjBullet*)Objs::GetObj(OBJ_BULLET);
 		e_hp -= obj_bullet->GetAttackPower();
 	}
-	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr && AllBullet_Hit == true)
 	{
 		CObjAllBullet* obj_all = (CObjAllBullet*)Objs::GetObj(OBJ_ALLBULLET);
 		e_hp -= obj_all->GetZ_ATK();
+		AllBullet_Hit = false;
 	}
+	else if (hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
+		AllBullet_Hit = true;
 
 	//hpが0になると消滅
 	if (e_hp <= 0)

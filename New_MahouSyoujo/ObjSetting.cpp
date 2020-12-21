@@ -163,6 +163,8 @@ void CObjSetting::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;//•`‰æŒ³Ø‚èŽæ‚èˆÊ’u
 	RECT_F dst;//•`‰ææ•\Ž¦ˆÊ’u
+	
+
 
 	Font::StrDraw(L"GAME Setting", 2, 2, 32, c);
 
@@ -209,7 +211,7 @@ void CObjSetting::Draw()
 	swprintf_s(str1, L"‰¹—Ê:%d%%", ((UserData*)Save::GetData())->masterVolume);
 	Font::StrDraw(str1, 48, 80 + 112*2, 64, c);
 
-
+	
 }
 
 void CObjSetting::cursorUp()
