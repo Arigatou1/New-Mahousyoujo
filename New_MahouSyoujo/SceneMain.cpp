@@ -100,6 +100,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Hero.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
 
 	//îwåiì«Ç›çûÇ›
 	for (int i = 1; i <= 10; i++)
@@ -154,6 +155,7 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
+	
 
 	//É^ÉCÉÄèâä˙âª
 	m_time = 0;

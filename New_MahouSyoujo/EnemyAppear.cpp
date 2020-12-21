@@ -817,6 +817,10 @@ void EnemyAppear::Action()
 					}
 					else if (m_time == 770)
 					{
+						//íçà”
+						CObjCaution* obj_caution = new CObjCaution();
+						Objs::InsertObj(obj_caution, OBJ_CAUTION, 150);
+
 						Audio::Stop(15);
 						Audio::Start(16);
 						CObjBoss1* obj = new CObjBoss1(576, 256);
@@ -1641,6 +1645,9 @@ void EnemyAppear::Action()
 	{
 		if (m_time == 100)
 		{
+			//íçà”
+			CObjCaution* obj_caution = new CObjCaution();
+			Objs::InsertObj(obj_caution, OBJ_CAUTION, 150);
 
 			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
