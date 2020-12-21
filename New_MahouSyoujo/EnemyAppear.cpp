@@ -819,7 +819,7 @@ void EnemyAppear::Action()
 					{
 						Audio::Stop(15);
 						Audio::Start(16);
-						CObjBoss1* obj = new CObjBoss1(576, 192);
+						CObjBoss1* obj = new CObjBoss1(576, 256);
 						Objs::InsertObj(obj, OBJ_BOSS1, 49);
 
 					}
