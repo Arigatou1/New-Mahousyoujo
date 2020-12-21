@@ -285,8 +285,8 @@ void CObjDragon::Draw()
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 128.0f;
-	src.m_bottom = 128.0f;
+	src.m_right = 256.0f;
+	src.m_bottom = 256.0f;
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = m_ey;
 	dst.m_left = m_ex+(256.0f*b_posture);

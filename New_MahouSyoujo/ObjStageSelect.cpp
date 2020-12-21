@@ -40,8 +40,8 @@ void CObjStageSelect::Action()
 	//今いるカーソルの場所から位置を取得し、
 	//ステージIDを計算し設定するには？？
 
-	if(cursor_y<512)
-		((UserData*)Save::GetData())->Stage = ((cursor_y - 32) / 112) +(PageID*4);
+	if(cursor_y<448)
+		((UserData*)Save::GetData())->Stage = ((cursor_y - 32) / 96) +(PageID*4);
 
 	//cursor_y = 16,96,176,256,336,416,496
 	//カーソルの初期位置は16なので、
@@ -63,7 +63,7 @@ void CObjStageSelect::Action()
 				{
 					nowLoading = true;
 				}
-				if (cursor_y >= 512)
+				if (cursor_y >= 448)
 				{
 					this->SetStatus(false);
 					//メニューオブジェクト作成
