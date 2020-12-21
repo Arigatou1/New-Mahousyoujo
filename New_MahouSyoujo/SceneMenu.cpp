@@ -70,7 +70,7 @@ void CSceneMenu::InitScene()
 
 	}
 	
-	CObjBackGround* obj_bg = new CObjBackGround(0,0.5);
+	CObjBackGround* obj_bg = new CObjBackGround(0);
 	Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 	//フェードイン
