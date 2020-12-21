@@ -81,13 +81,7 @@ void CObjSetting::Action()
 					((UserData*)Save::GetData())->DamageDraw = true;
 				break;
 
-			case 2:
-				if (((UserData*)Save::GetData())->masterVolume > 0.0f)
-				((UserData*)Save::GetData())->masterVolume-=0.1f;
-
-				
-
-				break;
+			
 				default:
 
 				break;
@@ -96,6 +90,17 @@ void CObjSetting::Action()
 
 
 			m_key_flag = false;
+		}
+		if (nowSelect == 2)
+		{
+			
+				if (((UserData*)Save::GetData())->masterVolume > 0)
+				{
+					((UserData*)Save::GetData())->masterVolume -= 1;
+					Audio::VolumeMaster(-0.01f);
+				}
+
+				
 		}
 	}
 
@@ -123,11 +128,7 @@ void CObjSetting::Action()
 
 			case 2:
 
-				if(((UserData*)Save::GetData())->masterVolume<10.0f)
-				((UserData*)Save::GetData())->masterVolume += 0.1f;
-
 				
-
 				break;
 			default:
 
@@ -137,13 +138,21 @@ void CObjSetting::Action()
 
 			m_key_flag = false;
 		}
+		if(nowSelect==2)
+		{
+			if (((UserData*)Save::GetData())->masterVolume < 200)
+			{
+				((UserData*)Save::GetData())->masterVolume += 1;
+				Audio::VolumeMaster(0.01f);
+			}
+		}
 	}
 	else
 		m_key_flag = true;
 
 
 
-		Audio::VolumeMaster(((UserData*)Save::GetData())->masterVolume);
+		
 	
 }
 
@@ -193,12 +202,12 @@ void CObjSetting::Draw()
 	
 
 	swprintf_s(str1, L"難易度:%s",Diff);
-	Font::StrDraw(str1, 32, 64, 48, c);
+	Font::StrDraw(str1, 48, 80,64, c);
 
 	swprintf_s(str1, L"ダメージ数値の表記:%s", OnOff);
-	Font::StrDraw(str1, 32, 64+112, 48, c);
-	swprintf_s(str1, L"音量:%.02f", ((UserData*)Save::GetData())->masterVolume);
-	Font::StrDraw(str1, 32, 64 + 112*2, 48, c);
+	Font::StrDraw(str1, 48, 80+112, 64, c);
+	swprintf_s(str1, L"音量:%d%%", ((UserData*)Save::GetData())->masterVolume);
+	Font::StrDraw(str1, 48, 80 + 112*2, 64, c);
 
 
 }
