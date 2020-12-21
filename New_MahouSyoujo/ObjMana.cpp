@@ -75,21 +75,21 @@ void CObjMana::Action()
 		{
 			Audio::Start(25);
 			if (i == 0)
-				MANA_damege = 2.00 + mana_damege * 0.20;
+				MANA_damege = 2.0 + mana_damege * 0.20;
 			else if (i == 1)
-				MANA_damege = 4.00 + mana_damege * 0.20;
+				MANA_damege = 4.0 + mana_damege * 0.20;
 			else if (i == 2)
 				MANA_damege = 0.5;
 			else if (i == 3)
 				MANA_damege = 0.5;
 			else if (i == 4)
-				MANA_damege = 1.00 + mana_damege * 0.20;
+				MANA_damege = 1.0 + mana_damege * 0.20;
 			else if (i == 5)
 				MANA_damege = 2.0 + mana_damege * 0.10;
 			else if (i == 6)
-				MANA_damege = 0.10 + mana_damege * 0.10;
+				MANA_damege = 0.1 + mana_damege * 0.10;
 			else if (i == 7)
-				MANA_damege = 4.00 + mana_damege * 0.20;
+				MANA_damege = 4.0 + mana_damege * 0.20;
 
 			Mana_HP -= MANA_damege;
 

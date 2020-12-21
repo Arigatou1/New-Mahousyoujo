@@ -7,6 +7,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
 #include "GameL/Audio.h"
+#include "UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -69,7 +70,7 @@ void CSceneMenu::InitScene()
 
 	}
 	
-	CObjBackGround* obj_bg = new CObjBackGround(0,0.5);
+	CObjBackGround* obj_bg = new CObjBackGround(0);
 	Objs::InsertObj(obj_bg, OBJ_BG, 1);
 
 	//フェードイン
@@ -86,10 +87,10 @@ void CSceneMenu::InitScene()
 	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(8);
 
-
+	
 }
 //実行中メソッド
 void CSceneMenu::Scene()
 {
-
+	
 }
