@@ -14,8 +14,8 @@ public:
 	void Action();
 	void Draw();
 private:
-	bool cond1;
-	bool cond2;
+	bool cond1;//ğŒ‚P
+	bool cond2;//ğŒ‚Q
 
-	int Order;
+	int Order;//‡”Ô
 };
