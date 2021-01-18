@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\03.シーンメイン\魔法少女関連">
       <UniqueIdentifier>{4d626a3a-caee-4a2e-a4dd-0f3a49fdf1d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\チュートリアル">
+      <UniqueIdentifier>{a73831bb-ac4e-4b41-9c37-b41a430e04bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UtilityModule.cpp">
@@ -222,6 +225,12 @@
     <ClCompile Include="ObjDamegeDisplay.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjCaution.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClCompile>
+    <ClCompile Include="Tutorial.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -394,6 +403,12 @@
     </ClInclude>
     <ClInclude Include="ObjDamegeDisplay.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjCaution.h">
+      <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
+    </ClInclude>
+    <ClInclude Include="Tutorial.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
