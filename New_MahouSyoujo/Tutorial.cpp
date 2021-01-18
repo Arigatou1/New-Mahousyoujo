@@ -97,6 +97,10 @@ void CTutorial::Action()
 			condreset = false;
 		}
 
+		//敵オブジェクト作成
+		CObjEnemy* obj_e = new CObjEnemy(799, 480);
+		Objs::InsertObj(obj_e, OBJ_ENEMY, 60);
+
 		if (Input::GetVKey('F') == true)
 			cond1 = true;
 

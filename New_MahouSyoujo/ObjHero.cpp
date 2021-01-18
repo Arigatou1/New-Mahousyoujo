@@ -507,10 +507,3 @@ void CObjHero::Draw()
 
 
 }
-
-
-
-int CObjHero::GetMP()
-{
-	return m_mp;
-}
