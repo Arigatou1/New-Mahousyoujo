@@ -89,7 +89,7 @@ void CObjMana::Action()
 			else if (i == 6)
 				MANA_damege = 0.1 + mana_damege * 0.10;
 			else if (i == 7)
-				MANA_damege = 4.0 + mana_damege * 0.20;
+				MANA_damege = 0.1 + mana_damege * 0.20;
 
 			Mana_HP -= MANA_damege;
 
