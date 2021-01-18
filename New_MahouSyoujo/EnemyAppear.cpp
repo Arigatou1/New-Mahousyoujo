@@ -32,6 +32,14 @@ void EnemyAppear::Init()
 
 	switch (StageID)
 	{
+	case 0:
+	{
+		//背景オブジェクト作成
+		CObjBackGround* obj_bg = new CObjBackGround(1);
+		Objs::InsertObj(obj_bg, OBJ_BG, 1);
+		((UserData*)Save::GetData())->enemyRemain = 99;
+		break;
+	}
 	case 1:
 	{
 		//バックミュージックスタート

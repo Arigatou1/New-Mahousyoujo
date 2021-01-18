@@ -209,18 +209,18 @@ void CObjHero::Action()
 	}
 	//-------------------------------------
 	//当たり判定を行うオブジェクト情報部
-	int database[] =
+	int database[][2] =
 	{
-		OBJ_ENEMY,
-		OBJ_ENEMY2,
-		OBJ_ENEMY3,
-		OBJ_ENEMY4,
-		OBJ_SMALLSLIM,
-		OBJ_SHOCKWAVE,
-		OBJ_FIREBALL,
-		OBJ_SLIMEBALL,
-		OBJ_BOSS1,
-		OBJ_DRAGON,
+		{ OBJ_ENEMY,	1.0f},
+		{ OBJ_ENEMY2,	1.2f},
+		{ OBJ_ENEMY3,	2.0f},
+		{ OBJ_ENEMY4,	2.3f},
+		{ OBJ_SMALLSLIM,1.0f},
+		{ OBJ_SHOCKWAVE,0.5f},
+		{ OBJ_FIREBALL,	1.0f},
+		{ OBJ_SLIMEBALL,0.5f},
+		{ OBJ_BOSS1,	1.0f},
+		{ OBJ_DRAGON,	1.5f},
 	};
 
 	/*for (int i = 0; i < 8; i++)
@@ -285,93 +285,21 @@ void CObjHero::Action()
 		CHitBox* hit = Hits::GetHitBox(this);
 		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
 
-		if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+		for (int i = 0; i < 8; i++)
 		{
-			//ダメージ
-			Audio::Start(4);
-
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-			
-			AllDamage += 1.0f + damage;
+			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
+			{
+				//ダメージ
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= database[i][1] + damage;//敵の攻撃力
+				AllDamage += database[i][1] + damage;
+				m_vx = 0.0f;
+			}
 		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.2f + damage;//敵の攻撃力
-			AllDamage += 1.2f + damage;
-
-		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 2.0f + damage;//敵の攻撃力
-			AllDamage += 2.0f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 2.3f + damage;//敵の攻撃力
-			AllDamage += 2.3f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_SMALLSLIM))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-		}
-
-		if (hit->CheckObjNameHit(OBJ_SLIMEBALL))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 0.5f + damage;
-			AllDamage += 0.5f + damage;//敵の攻撃力
-		}
-
-
-		if (hit->CheckObjNameHit(OBJ_FIREBALL))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;
-			AllDamage += 1.0f + damage;//敵の攻撃力
-		}
-
-		if (hit->CheckObjNameHit(OBJ_BOSS1) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-			AllDamage += 1.0f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_DRAGON) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.5f + damage;//敵の攻撃力
-			AllDamage += 1.5f + damage;
-		}
-
 	}
 	//無敵がtrueになった時
-	if (m_mtk == true)
+	else if (m_mtk == true)
 	{
 		//HitBoxの内容を更新
 		CHitBox* hit = Hits::GetHitBox(this);
