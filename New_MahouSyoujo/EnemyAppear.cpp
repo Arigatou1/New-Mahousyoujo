@@ -819,7 +819,7 @@ void EnemyAppear::Action()
 					{
 						Audio::Stop(15);
 						Audio::Start(16);
-						CObjBoss1* obj = new CObjBoss1(576, 192);
+						CObjBoss1* obj = new CObjBoss1(576, 256);
 						Objs::InsertObj(obj, OBJ_BOSS1, 49);
 
 					}
@@ -1794,8 +1794,7 @@ void EnemyAppear::Draw()
 	
 	//swprintf_s(str, L"　　　タイム:%d", m_time);//整数を文字列か
 	
-//	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
-
+	swprintf_s(str, L"操作方法:←→移動 ↑↓魔法変更 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
 
 	//Font::StrDraw(str, 2, 120, 24, c);
 	//swprintf_s(str, L"オールタイム:%d", e_time);//整数を文字列か

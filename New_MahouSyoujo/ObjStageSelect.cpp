@@ -47,78 +47,85 @@ void CObjStageSelect::Action()
 	//カーソルの初期位置は16なので、
 	//96から16を引き、80を出し、80で割ることで1が出てくる。
 	//それに1を足す。
+
+	//------------------------------------------------
+	//キー操作
 	if (!nowLoading)
 	{
 
-	if (Input::GetVKey(VK_RETURN) == true)
-	{
-		if (m_key_flag == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Audio::Start(9);
-
-			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+			if (m_key_flag == true)
 			{
-				nowLoading = true;
-			}
-			if (cursor_y >= 512)
-			{
-				this->SetStatus(false);
-				//メニューオブジェクト作成
-				CObjCustomize* obj = new CObjCustomize();
-				Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
-			}
-			m_key_flag = false;
-		}
-	}
-	else if (Input::GetVKey(VK_UP) == true)
-	{
-	
-		cursorUp();
-	}
-	else if (Input::GetVKey(VK_DOWN) == true )
-	{
-		cursorDown();
-	}
-	else if (Input::GetVKey(VK_LEFT) == true)
-	{
-		
-		
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
+				Audio::Start(9);
 
-			if (PageID > 0)
-				PageID -= 1;
-			m_key_flag = false;
-		}
-	}
-
-	else if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		
-	
-		if (m_key_flag == true)
-		{
-			Audio::Start(10);
-
-			if (PageID < MaxPage )
-				PageID += 1;
-
+				if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+				{
+					nowLoading = true;
+				}
+				if (cursor_y >= 512)
+				{
+					this->SetStatus(false);
+					//メニューオブジェクト作成
+					CObjCustomize* obj = new CObjCustomize();
+					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
+				}
 				m_key_flag = false;
 			}
+		}
+		else if (Input::GetVKey(VK_UP) == true)
+		{
+
+			cursorUp();
+		}
+		else if (Input::GetVKey(VK_DOWN) == true)
+		{
+			cursorDown();
+		}
+		else if (Input::GetVKey(VK_LEFT) == true)
+		{
+
+
+			if (m_key_flag == true)
+			{
+				Audio::Start(10);
+
+				if (PageID > 0)
+					PageID -= 1;
+				m_key_flag = false;
+			}
+		}
+
+		else if (Input::GetVKey(VK_RIGHT) == true)
+		{
+
+
+			if (m_key_flag == true)
+			{
+				Audio::Start(10);
+
+				if (PageID < MaxPage)
+					PageID += 1;
+
+				m_key_flag = false;
+
+			}
+
+
+
 		}
 		else if (Input::GetVKey(VK_ESCAPE) == true)
 		{
 
-		if (m_key_flag == true)
-		{
-			Audio::Start(11);
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjModeSelect* obj = new CObjModeSelect();
-			Objs::InsertObj(obj, OBJ_MODESELECT, 2);
-		}
-		m_key_flag = false;
+			if (m_key_flag == true)
+			{
+				Audio::Start(11);
+				this->SetStatus(false);
+				//メニューオブジェクト作成
+				CObjModeSelect* obj = new CObjModeSelect();
+				Objs::InsertObj(obj, OBJ_MODESELECT, 2);
+			}
+			m_key_flag = false;
 
 
 		}
@@ -126,9 +133,7 @@ void CObjStageSelect::Action()
 		{
 			m_key_flag = true;
 		}
-
 	}
-
 	else if (nowLoading == true)
 	{
 		
@@ -152,6 +157,16 @@ void CObjStageSelect::Action()
 		}
 	}
 	
+	//----------------------------------------------
+	//カーソル位置調整
+	if (cursor_y < 512)
+	{
+		cursor_x = 140;
+	}
+	else//カスタマイズに合わせられたとき
+	{
+		cursor_x = 20;
+	}
 
 }
 
@@ -167,7 +182,7 @@ void CObjStageSelect::Draw()
 
 		}
 
-		MenuBlockDraw(140 + menuAllButtonX, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
+		MenuBlockDraw(20 + menuAllButtonX, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
 
 		//カーソル描画
 		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
@@ -192,9 +207,9 @@ void CObjStageSelect::Draw()
 
 		
 
-		Font::StrDraw(L"カスタマイズ", 156 + menuAllButtonX, 512, 80, c);
+		Font::StrDraw(L"カスタマイズ", 36 + menuAllButtonX, 512, 80, c);
 		
-
+		MenuBlockDraw(-32, 0.0f, 864.0f, 56.0f, 0.1f, 0.6f, 0.1f, 0.7f);
 		if (cursor_y < 512)
 		{
 
@@ -202,14 +217,23 @@ void CObjStageSelect::Draw()
 			wchar_t Score[16];
 			swprintf_s(Score, L"ハイスコア:%d", ((UserData*)Save::GetData())->ScoreData[((UserData*)Save::GetData())->Stage]);
 			Font::StrDraw(Score, 2 + menuAllButtonX, 2, 48, c);
+		}
 
 			//遊べるか遊べないかの表示
-			if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+			if(cursor_y==512)
+				Font::StrDraw(L"武器の変更などを行うことができます。", 360, 2, 24, c);
+			else if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 				Font::StrDraw(L"このステージは遊ぶことができます。", 400, 2, 24, c);
 			else
 				Font::StrDraw(L"このステージはまだ遊べません。", 400, 2, 24, c);
 
-		}
+
+			
+
+			MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
+
+			Font::StrDraw(L"↑↓キー:移動  Enter:決定  Esc:戻る", 200, 566, 26, c);
+		
 
 }
 

@@ -39,8 +39,7 @@ void CObjTitle::Init()
 		//プログラムを一回だけ実行する
 		((UserData*)Save::GetData())->Diffculty = 1;
 		((UserData*)Save::GetData())->DamageDraw = true;
-
-
+		
 		//--------------------------------------------------------
 
 		//ロード
@@ -52,6 +51,9 @@ void CObjTitle::Init()
 		((UserData*)Save::GetData())->PauseMenu = false;
 		((UserData*)Save::GetData())->enemyRemain = 1;
 
+
+		((UserData*)Save::GetData())->masterVolume = 100;
+		
 
 		init_stage = true;
 
@@ -66,6 +68,7 @@ void CObjTitle::Init()
 
 	shootDownTime = 0;
 	nowLoading = false;
+	Audio::VolumeMaster(0.0f);
 }
 
 //アクション
@@ -113,6 +116,8 @@ void CObjTitle::Action()
 				((UserData*)Save::GetData())->Diffculty = 1;
 				((UserData*)Save::GetData())->DamageDraw = true;
 
+				((UserData*)Save::GetData())->masterVolume = 100;
+				Audio::VolumeMaster(1.0f-((UserData*)Save::GetData())->masterVolume / 100.0f);
 				Save::Seve();
 
 				m_key_flag = false;
