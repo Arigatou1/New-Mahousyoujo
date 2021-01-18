@@ -3,6 +3,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\SceneManager.h"
 
+#include "GameL\UserData.h"
 #include "GameHead.h"
 #include "Tutorial.h"
 
@@ -46,42 +47,71 @@ void CTutorial::Init()
 	Order = 1;
 	cond1 = false;
 	cond2 = false;
+
+	condreset = false;
 }
 
 //アクション
 void CTutorial::Action()
 {
+	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+	if (obj_magicalgirl != nullptr)
+	{
+		m_skill = obj_magicalgirl->GetSkill();
+	}
+
 	switch (Order)
 	{
-	case 1:
+	case 1://左右移動
 		if (Input::GetVKey(VK_LEFT) == true)
 			cond1 = true;
 		if (Input::GetVKey(VK_RIGHT) == true)
 			cond2 = true;
 
 		if (cond1 == true && cond2 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 2:
-		cond1 = false; cond2 = false;
+	case 2://ジャンプ
+		if (condreset == true)
+		{
+			cond1 = false; cond2 = false;
+			condreset = false;
+		}
 
 		if (Input::GetVKey(' ') == true)
 			cond1 = true;
 
 		if (cond1 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 3:
-		cond1 = false;
+	case 3://攻撃
+		if (condreset == true)
+		{
+			cond1 = false;
+			condreset = false;
+		}
 
 		if (Input::GetVKey('F') == true)
 			cond1 = true;
 
 		if (cond1 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 4:
-		cond1 = false;
+	case 4://スキル変更
+		if (condreset == true)
+		{
+			cond1 = false;
+			condreset = false;
+		}
 
 		if (Input::GetVKey(VK_UP) == true)
 			cond1 = true;
@@ -89,34 +119,58 @@ void CTutorial::Action()
 			cond2 = true;
 
 		if (cond1 == true && cond2 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 5:
-		cond1 = false; cond2 = false;
+	case 5://回復
+		if (condreset == true)
+		{
+			cond1 = false; cond2 = false;
+			condreset = false;
+		}
 
-		if (Input::GetVKey('D') == true)
+		if (Input::GetVKey('D') == true && m_skill == 1)
 			cond1 = true;
 
 		if (cond1 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 6:
-		cond1 = false;
+	case 6://バリア
+		if (condreset == true)
+		{
+			cond1 = false;
+			condreset = false;
+		}
 
-		if (Input::GetVKey('D') == true)
+		if (Input::GetVKey('D') == true && m_skill == 2)
 			cond1 = true;
 
 		if (cond1 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
-	case 7:
-		cond1 = false;
+	case 7://メテオ
+		if (condreset == true)
+		{
+			cond1 = false;
+			condreset = false;
+		}
 
-		if (Input::GetVKey('D') == true)
+		if (Input::GetVKey('D') == true && m_skill == 3)
 			cond1 = true;
 
 		if (cond1 == true)
+		{
 			Order++;
+			condreset = true;
+		}
 		break;
 	default:
 		break;
@@ -126,5 +180,43 @@ void CTutorial::Action()
 //ドロー
 void CTutorial::Draw()
 {
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	wchar_t str[128];
 
+	switch (Order)
+	{
+	case 1:
+		swprintf_s(str, L"条件1");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 2:
+		swprintf_s(str, L"条件2");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 3:
+		swprintf_s(str, L"条件3");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 4:
+		swprintf_s(str, L"条件4");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 5:
+		swprintf_s(str, L"条件5");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 6:
+		swprintf_s(str, L"条件6");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 7:
+		swprintf_s(str, L"条件7");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	case 8:
+		swprintf_s(str, L"終わり");//整数を文字列か
+		Font::StrDraw(str, 150, 336, 36, c);
+		break;
+	}
+	
 }
