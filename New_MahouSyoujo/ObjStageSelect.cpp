@@ -61,6 +61,7 @@ void CObjStageSelect::Action()
 
 				if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 				{
+
 					nowLoading = true;
 				}
 				if (cursor_y >= 448)

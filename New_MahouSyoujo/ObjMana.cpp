@@ -56,51 +56,32 @@ void CObjMana::Action()
 	hit->SetPos(Mana_x,Mana_y);
 
 	//当たり判定を行うオブジェクト情報部
-	int database[8] =
+	int database[][2] =
 	{
-		OBJ_ENEMY,
-		OBJ_ENEMY2,
-		OBJ_ENEMY3,
-		OBJ_ENEMY4,
-		OBJ_SMALLSLIM,
-		OBJ_SHOCKWAVE,
-		OBJ_FIREBALL,
-		OBJ_SLIMEBALL,
+		{OBJ_ENEMY, 2.0f},
+		{OBJ_ENEMY2,4.0f},
+		{OBJ_ENEMY3,0.5f},
+		{OBJ_ENEMY4,0.5f},
+		{OBJ_SMALLSLIM,1.0f},
+		{OBJ_SHOCKWAVE, 2.0f},
+		{OBJ_FIREBALL,0.1f},
+		{OBJ_SLIMEBALL,0.1f},
 	};
 
 	for (int i = 0; i < 8; i++)
 	{
 		//敵の攻撃力
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
+		if (hit->CheckObjNameHit(database[i][0]) != nullptr)
 		{
 			Audio::Start(25);
-			if (i == 0)
-				MANA_damege = 2.0 + mana_damege * 0.20;
-			else if (i == 1)
-				MANA_damege = 4.0 + mana_damege * 0.20;
-			else if (i == 2)
-				MANA_damege = 0.5;
-			else if (i == 3)
-				MANA_damege = 0.5;
-			else if (i == 4)
-				MANA_damege = 1.0 + mana_damege * 0.20;
-			else if (i == 5)
-				MANA_damege = 2.0 + mana_damege * 0.10;
-			else if (i == 6)
-				MANA_damege = 0.1 + mana_damege * 0.10;
-			else if (i == 7)
-				MANA_damege = 0.1 + mana_damege * 0.20;
-
+			MANA_damege = database[i][1] + mana_damege * 0.20;
 			Mana_HP -= MANA_damege;
 
-		}
-
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
 			//ダメージ表記作成
-			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x+13+32, Mana_y-32, MANA_damege,1);
+			CObjDamegeDisplay* obj_dd = new CObjDamegeDisplay(Mana_x + 13 + 32, Mana_y - 32, MANA_damege, 1);
 			Objs::InsertObj(obj_dd, OBJ_DAMEGEDISPLAY, 60);
 		}
+
 	}
 
 	//HP0になったとき

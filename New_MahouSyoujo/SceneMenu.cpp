@@ -34,6 +34,7 @@ void CSceneMenu::InitScene()
 
 	//グラフィックの読み込み
 	Draw::LoadImageW(L"Graphics/Menu.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
 	//背景読み込み
 	for (int i = 0; i <= 10; i++)
 	{

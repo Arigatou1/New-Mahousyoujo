@@ -104,6 +104,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
 
 	//îwåiì«Ç›çûÇ›
 	for (int i = 1; i <= 10; i++)

@@ -32,11 +32,8 @@ void Fadeout::Init()
 //アクション
 void Fadeout::Action()
 {
-
-
 	if (pfadeIn)
 	{
-
 		//フェードイン
 		shootDownTime -= fadeSpeed;
 	}
@@ -49,7 +46,6 @@ void Fadeout::Action()
 
 	if (shootDownTime <= 0)
 	{
-	
 		//フェードインとき、0以下になると削除
 		this->SetStatus(false);
 	}
@@ -67,8 +63,8 @@ void Fadeout::Draw()
 
 		//切り取り位置の設定
 		src.m_top = 0.0f;
-		src.m_left = 192.0f;
-		src.m_right = 192 + 64.0f;
+		src.m_left = 0.0f;
+		src.m_right = 64.0f;
 		src.m_bottom = 64.0f;
 		//表示位置の設定
 		dst.m_top = 0.0f;
@@ -77,7 +73,7 @@ void Fadeout::Draw()
 		dst.m_bottom = 600.0f;
 
 		//描画
-		Draw::Draw(0, &src, &dst, c, 0.0f);
+		Draw::Draw(50, &src, &dst, c, 0.0f);
 	
 }
 
