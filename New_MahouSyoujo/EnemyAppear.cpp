@@ -131,6 +131,7 @@ void EnemyAppear::Init()
 	}
 	case 17:
 	{
+		Audio::Start(30);
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(8);
 		Objs::InsertObj(obj_bg, OBJ_BG, 1);
@@ -817,9 +818,13 @@ void EnemyAppear::Action()
 					}
 					else if (m_time == 770)
 					{
+						//注意
+						CObjCaution* obj_caution = new CObjCaution();
+						Objs::InsertObj(obj_caution, OBJ_CAUTION, 150);
+
 						Audio::Stop(15);
 						Audio::Start(16);
-						CObjBoss1* obj = new CObjBoss1(576, 192);
+						CObjBoss1* obj = new CObjBoss1(576, 256);
 						Objs::InsertObj(obj, OBJ_BOSS1, 49);
 
 					}
@@ -1641,6 +1646,9 @@ void EnemyAppear::Action()
 	{
 		if (m_time == 100)
 		{
+			//注意
+			CObjCaution* obj_caution = new CObjCaution();
+			Objs::InsertObj(obj_caution, OBJ_CAUTION, 150);
 
 			CObjDragon* obj = new CObjDragon(576, 256);
 			Objs::InsertObj(obj, OBJ_DRAGON, 49);
@@ -1794,8 +1802,7 @@ void EnemyAppear::Draw()
 	
 	//swprintf_s(str, L"　　　タイム:%d", m_time);//整数を文字列か
 	
-//	swprintf_s(str, L"操作方法:←→移動 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
-
+	swprintf_s(str, L"操作方法:←→移動 ↑↓魔法変更 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
 
 	//Font::StrDraw(str, 2, 120, 24, c);
 	//swprintf_s(str, L"オールタイム:%d", e_time);//整数を文字列か

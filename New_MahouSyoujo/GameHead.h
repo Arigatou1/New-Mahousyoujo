@@ -47,6 +47,8 @@ enum OBJ_NAME
 	FADEOUT,
 	OBJ_ENDLESSRESULT,
 	OBJ_DAMEGEDISPLAY,
+	OBJ_CAUTION,
+	//OBJ_TUTORIAL,
 };
 //------------------------------------------------
 
@@ -102,7 +104,7 @@ struct UserData
 	int Diffculty;
 
 	bool DamageDraw;
-	float masterVolume;
+	int masterVolume;
 };
 //------------------------------------------------
 
@@ -157,6 +159,7 @@ struct UserData
 #include "ObjDragon.h"
 #include "ObjShockWave.h"
 #include "ClearFadeout.h"
+#include "ObjCaution.h"
 
 #include "ObjDamegeDisplay.h"
 
@@ -168,6 +171,7 @@ struct UserData
 #include "SceneGameOver.h"
 #include "SceneGameClear.h"
 #include "SceneMenu.h"
+//#include "Tutorial.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

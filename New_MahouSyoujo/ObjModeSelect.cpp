@@ -243,5 +243,9 @@ void CObjModeSelect::Draw()
 
 	}
 
-	
+
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
+
+	Font::StrDraw(L"ª«ƒL[:ˆÚ“®  Enter:Œˆ’è  Esc:–ß‚é", 200, 566, 26, c);
+
 }
