@@ -39,7 +39,7 @@ void CObjMana::Init()
 	Objs::InsertObj(obj_manahp, OBJ_MANA_HP, 51);
 
 	//‚ ‚½‚è”»’è—pHitbox‚ðì¬
-	Hits::SetHitBox(this, Mana_x , Mana_y, 64, 64, ELEMENT_WHITE, OBJ_MANA, 1);
+	Hits::SetHitBox(this, Mana_x , Mana_y, 64, 64, ELEMENT_PLAYER, OBJ_MANA, 1);
 
 
 	mana_damege = ((UserData*)Save::GetData())->Diffculty * 0.5;
