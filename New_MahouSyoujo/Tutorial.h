@@ -5,10 +5,10 @@
 //使用するネームスペース
 using namespace GameL;
 
-class CTutorial :public CScene
+class CTutorial :public CObj
 {
 public:
-	CTutorial() {};
+	CTutorial();
 	~CTutorial() {};
 	void Init();
 	void Action();

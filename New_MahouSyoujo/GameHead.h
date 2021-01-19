@@ -48,7 +48,7 @@ enum OBJ_NAME
 	OBJ_ENDLESSRESULT,
 	OBJ_DAMEGEDISPLAY,
 	OBJ_CAUTION,
-	//OBJ_TUTORIAL,
+	OBJ_TUTORIAL,
 };
 //------------------------------------------------
 
@@ -162,6 +162,7 @@ struct UserData
 #include "ObjCaution.h"
 
 #include "ObjDamegeDisplay.h"
+#include "Tutorial.h"
 
 //------------------------------------------------
 
@@ -171,7 +172,6 @@ struct UserData
 #include "SceneGameOver.h"
 #include "SceneGameClear.h"
 #include "SceneMenu.h"
-//#include "Tutorial.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

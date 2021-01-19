@@ -199,7 +199,7 @@
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Tutorial.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
@@ -264,7 +264,7 @@
     <ClInclude Include="SceneMenu.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Tutorial.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="UtilityModule.h" />
   </ItemGroup>

@@ -298,11 +298,11 @@ void CObjMagicalGirl::Draw()
 	}
 	wchar_t str[128];
 	swprintf_s(str, L"スキル:ヒール");//整数を文字列か
-	Font::StrDraw(str, 550, 5, 36, d);
+	Font::StrDraw(str, 550, 65, 36, d);
 	swprintf_s(str, L"スキル:バリア");//整数を文字列か
 	Font::StrDraw(str, 550, 35, 36, d);
 	swprintf_s(str, L"スキル:メテオ");//整数を文字列か
-	Font::StrDraw(str, 550, 65, 36, d);
+	Font::StrDraw(str, 550, 5, 36, d);
 
 	//切り取り位置の設定
 	src.m_top    = 128.0f;

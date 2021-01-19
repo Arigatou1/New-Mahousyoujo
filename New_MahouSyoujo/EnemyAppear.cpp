@@ -170,7 +170,15 @@ void EnemyAppear::Action()
 	
 	switch (StageID)
 	{
-		
+	case 0:
+	{
+		if (m_time == 10)
+		{
+			CTutorial* obj_Tutorial = new CTutorial();
+			Objs::InsertObj(obj_Tutorial, OBJ_TUTORIAL, 50);
+		}
+		break;
+	}
 
 	case 1:
 	{
