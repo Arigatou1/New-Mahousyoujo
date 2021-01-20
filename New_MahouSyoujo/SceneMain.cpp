@@ -104,6 +104,12 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
+	Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
 
 	//背景読み込み
@@ -121,7 +127,10 @@ void CSceneMain::InitScene()
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
 	Objs::InsertObj(obj, OBJ_HERO, 60);
-	
+
+	//魔法少女オブジェクト作成
+	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();
+	Objs::InsertObj(obj_magicalgirl, OBJ_MAGICALGIRL, 61);
 
 	//ゲージオブジェクト作成
 	CObjGaugeBase* obj_gb = new CObjGaugeBase();
@@ -130,21 +139,14 @@ void CSceneMain::InitScene()
 	//HPゲージオブジェクト作成
 	CObjGaugeHP* obj_ghp = new CObjGaugeHP();
 	Objs::InsertObj(obj_ghp, OBJ_GAUGEHP, 51);
-
-	//魔法少女オブジェクト作成
-	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();
-	Objs::InsertObj(obj_magicalgirl, OBJ_MAGICALGIRL, 61);
 	
 	//Blockオブジェクト
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 11);
 
-
-
 	//敵の数オブジェクト作成
 	CObjEnemyAmount* obj_eneamo = new CObjEnemyAmount();
 	Objs::InsertObj(obj_eneamo, OBJ_ENEMYAMOUNT, 51);
-
 
 	//PauseMenuオブジェクト作成
 	CObjPauseMenu* obj_pause = new CObjPauseMenu();
@@ -159,7 +161,17 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
-	
+	//バリアアイコン作成
+	CObjBarrierIcon* obj_bicon = new CObjBarrierIcon();
+	Objs::InsertObj(obj_bicon, OBJ_BARRIERICON, 60);
+
+	//ヒールアイコン作成
+	CObjHeelIcon* obj_hicon = new CObjHeelIcon();
+	Objs::InsertObj(obj_hicon, OBJ_HEELICON, 60);
+
+	//メテオアイコン作成
+	CObjMeteorIcon* obj_micon = new CObjMeteorIcon();
+	Objs::InsertObj(obj_micon, OBJ_METEORICON, 60);
 
 	//タイム初期化
 	m_time = 0;

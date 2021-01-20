@@ -231,6 +231,15 @@
     <ClCompile Include="Tutorial.cpp">
       <Filter>ソース ファイル\チュートリアル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBarrierIcon.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHeelIcon.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteorIcon.cpp">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -409,6 +418,15 @@
     </ClInclude>
     <ClInclude Include="Tutorial.h">
       <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBarrierIcon.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHeelIcon.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteorIcon.h">
+      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
