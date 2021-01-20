@@ -162,47 +162,47 @@ void CTutorial::Action()
 //ドロー
 void CTutorial::Draw()
 {
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
 
 	if (Order == 1)
 	{
-		swprintf_s(str, L"条件1");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「←」・「→」キーで左右に移動できます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
 	}
 	else if(Order == 2)
 	{
-		swprintf_s(str, L"条件2");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「スペース」キーでジャンプできます");//整数を文字列か
+		Font::StrDraw(str, 250, 200, 20, c);
 	}
 	else if (Order == 3)
 	{
-		swprintf_s(str, L"条件3");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「F」キーで攻撃します");//整数を文字列か
+		Font::StrDraw(str, 300, 200, 20, c);
 	}
 	else if (Order == 4)
 	{
-		swprintf_s(str, L"条件4");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
 	}
 	else if (Order == 5)
 	{
-		swprintf_s(str, L"条件5");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「D」キーで魔法ヒール");//整数を文字列か
+		Font::StrDraw(str, 350, 200, 20, c);
 	}
 	else if (Order == 6)
 	{
-		swprintf_s(str, L"条件6");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「D」キーで魔法バリア");//整数を文字列か
+		Font::StrDraw(str, 350, 200, 20, c);
 	}
 	else if (Order == 7)
 	{
-		swprintf_s(str, L"条件7");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		swprintf_s(str, L"「D」キーで魔法メテオ");//整数を文字列か
+		Font::StrDraw(str, 350, 200, 20, c);
 	}
 	else if (Order == 8)
 	{
 		swprintf_s(str, L"終わり");//整数を文字列か
-		Font::StrDraw(str, 350, 336, 36, c);
+		Font::StrDraw(str, 350, 200, 20, c);
 	}
 }
