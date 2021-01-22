@@ -35,6 +35,8 @@ void CObjBoss1::Init()
 
 	maxhp = 800;
 	e_hp = maxhp;
+
+	m_posture = m_ex<400?0:1;
 	
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 250, 250, ELEMENT_ENEMY, OBJ_BOSS1, 10);
@@ -50,13 +52,7 @@ void CObjBoss1::Init()
 void CObjBoss1::Action()
 {
 
-	//hpが0になると消滅
-	if (e_hp <= 0)
-	{
-		((UserData*)Save::GetData())->enemyRemain = 0;
-		return;
-	}
-
+	
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -117,7 +113,20 @@ void CObjBoss1::Action()
 	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
 		allbullet_hit = true;
 
-	
+	//hpが0になると消滅
+	if (e_hp <= 0)
+	{
+		if (((UserData*)Save::GetData())->Stage != 16)
+			((UserData*)Save::GetData())->enemyRemain = 0;
+
+		EnemyAppear* obj_appear = (EnemyAppear*)Objs::GetObj(OBJ_APPEAR);
+
+		obj_appear->BossDisappearnce();
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 }
 
 //ドロー
@@ -131,8 +140,8 @@ void CObjBoss1::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 320.0f;
-	src.m_left = 64.0f;
-	src.m_right = 0.0f;
+	src.m_left = 0.0f+(m_posture*64.0f);
+	src.m_right = 64.0f - (m_posture * 64.0f);
 	src.m_bottom = 384.0f;
 	//表示位置の設定
 	dst.m_top = m_ey;
