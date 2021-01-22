@@ -52,6 +52,7 @@ enum OBJ_NAME
 	OBJ_DAMEGEDISPLAY,
 	OBJ_CAUTION,
 	OBJ_TUTORIAL,
+	OBJ_TUTORIALHERO,
 };
 //------------------------------------------------
 
@@ -169,6 +170,7 @@ struct UserData
 
 #include "ObjDamegeDisplay.h"
 #include "Tutorial.h"
+#include "TutorialHero.h"
 
 //------------------------------------------------
 

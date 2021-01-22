@@ -9,12 +9,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-//コンストラクタ
-CTutorial::CTutorial()
-{
-	
-}
-
 
 //イニシャライズ
 void CTutorial::Init()
@@ -26,6 +20,10 @@ void CTutorial::Init()
 	condreset = false;
 
 	Order = 1;
+
+	//チュートリアる主人公オブジェクト作成
+	TutorialHero* obj = new TutorialHero();
+	Objs::InsertObj(obj, OBJ_TUTORIALHERO, 60);
 }
 
 //アクション
