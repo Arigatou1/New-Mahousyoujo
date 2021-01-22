@@ -45,10 +45,10 @@ void CObjHeelIcon::Draw()
 	src.m_bottom = 200.0f;
 
 	//ï\é¶à íuÇÃê›íË
-	dst.m_top    = 128.0f;
-	dst.m_left   = 736.0f;
-	dst.m_right  = 800.0f;
-	dst.m_bottom = 192.0f;
+	dst.m_top    = 108.0f;
+	dst.m_left   = 716.0f;
+	dst.m_right  = 820.0f;
+	dst.m_bottom = 212.0f;
 
 	//ï`âÊ
 	Draw::Draw(Graphic_Serct, &src, &dst, c, 0.0f);

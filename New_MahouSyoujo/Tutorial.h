@@ -8,11 +8,12 @@ using namespace GameL;
 class CTutorial :public CObj
 {
 public:
-	CTutorial();
+	CTutorial() {};
 	~CTutorial() {};
 	void Init();
 	void Action();
 	void Draw();
+	int GetOrder() { return Order; };
 private:
 	bool cond1;//ğŒ‚P
 	bool cond2;//ğŒ‚Q
