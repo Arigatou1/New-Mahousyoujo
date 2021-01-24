@@ -22,4 +22,5 @@ private:
 
 	int Order;//‡”Ô
 	int m_skill;//–‚–@­—‚ÌƒXƒLƒ‹”»•Ê
+	int Time;
 };

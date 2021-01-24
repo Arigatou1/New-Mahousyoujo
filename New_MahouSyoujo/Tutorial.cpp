@@ -85,7 +85,18 @@ void CTutorial::Action()
 			condreset = true;
 		}
 	}
-	else if (Order == 4)//スキル変更
+	else if (Order == 4)
+	{
+		TutorialHero* obj_tutorialhero = (TutorialHero*)Objs::GetObj(OBJ_TUTORIALHERO);
+		if (obj_tutorialhero != nullptr)
+		{
+			Time = obj_tutorialhero->GetTime();
+		}
+
+		if (Time >= 400)
+			Order++;
+	}
+	else if (Order == 5)//スキル変更
 	{
 		if (condreset == true)
 		{
@@ -104,7 +115,7 @@ void CTutorial::Action()
 			condreset = true;
 		}
 	}
-	else if (Order == 5)//ヒール
+	else if (Order == 6)//ヒール
 	{
 		if (condreset == true)
 		{
@@ -121,7 +132,7 @@ void CTutorial::Action()
 			condreset = true;
 		}
 	}
-	else if (Order == 6)//バリア
+	else if (Order == 7)//バリア
 	{
 		if (condreset == true)
 		{
@@ -138,7 +149,7 @@ void CTutorial::Action()
 			condreset = true;
 		}
 	}
-	else if(Order == 7)//メテオ
+	else if(Order == 8)//メテオ
 	{
 		if (condreset == true)
 		{
@@ -180,25 +191,29 @@ void CTutorial::Draw()
 	}
 	else if (Order == 4)
 	{
+
+	}
+	else if (Order == 5)
+	{
 		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
 		Font::StrDraw(str, 200, 200, 20, c);
 	}
-	else if (Order == 5)
+	else if (Order == 6)
 	{
 		swprintf_s(str, L"「D」キーで魔法ヒール");//整数を文字列か
 		Font::StrDraw(str, 350, 200, 20, c);
 	}
-	else if (Order == 6)
+	else if (Order == 7)
 	{
 		swprintf_s(str, L"「D」キーで魔法バリア");//整数を文字列か
 		Font::StrDraw(str, 350, 200, 20, c);
 	}
-	else if (Order == 7)
+	else if (Order == 8)
 	{
 		swprintf_s(str, L"「D」キーで魔法メテオ");//整数を文字列か
 		Font::StrDraw(str, 350, 200, 20, c);
 	}
-	else if (Order == 8)
+	else if (Order == 9)
 	{
 		swprintf_s(str, L"終わり");//整数を文字列か
 		Font::StrDraw(str, 350, 200, 20, c);

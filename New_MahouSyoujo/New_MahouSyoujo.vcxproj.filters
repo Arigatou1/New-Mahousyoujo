@@ -243,6 +243,12 @@
     <ClCompile Include="TutorialHero.cpp">
       <Filter>ソース ファイル\チュートリアル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjPhoto.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjIcon.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -432,6 +438,12 @@
       <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
     </ClInclude>
     <ClInclude Include="TutorialHero.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPhoto.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjIcon.h">
       <Filter>ソース ファイル\チュートリアル</Filter>
     </ClInclude>
   </ItemGroup>

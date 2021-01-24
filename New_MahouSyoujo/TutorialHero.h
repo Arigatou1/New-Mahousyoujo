@@ -13,6 +13,8 @@ public:
 	void Init();
 	void Action();
 	void Draw();
+	int GetSkill() { return m_skill; };
+	int GetTime() { return m_time; };
 private:
 	float m_px;		//プレイヤーの座標X
 	float m_py;		//プレイヤーの座標Y
@@ -26,6 +28,8 @@ private:
 	int m_order;//チュートリアルの順番
 	int m_time;//チュートリアルの時間
 	int m_num;//ループする時間
+	int m_skill;//アイコンのスキル
+	bool icon;//アイコンの表示
 
 	int m_anime;	//歩くアニメーション
 	int m_anitime;	//歩くアニメーションの間隔

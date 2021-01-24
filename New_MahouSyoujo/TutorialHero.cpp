@@ -22,10 +22,10 @@ TutorialHero::~TutorialHero()
 //イニシャライズ
 void TutorialHero::Init()
 {
-	m_px = 200;
-	m_py = 200;
-	m_vx = 0;
-	m_vy = 0;
+	m_px = 200.0f;
+	m_py = 200.0f;
+	m_vx = 0.0f;
+	m_vy = 0.0f;
 	m_posture = 1;
 	m_anime = 0;
 	m_anitime = 0;
@@ -35,7 +35,9 @@ void TutorialHero::Init()
 
 	m_time = 0;
 	m_num = 100;
-	
+	m_skill = 1;
+	icon = true;
+
 	m_f = true;
 	isJump = true;
 	//最大HP
@@ -106,7 +108,6 @@ void TutorialHero::Action()
 		else if (m_order == 2)
 		{
 			m_num = 180;
-			m_vx = m_vx * 0.9;
 
 			m_posture = 1;
 			m_anime = 1;
@@ -121,38 +122,104 @@ void TutorialHero::Action()
 			else if (m_time == 100)
 				Weapon = 2;
 			else
-			{
-				Weapon = 0;
+			Weapon = 0;
+
+			if (50 <= m_time && m_time <= 55)
+				atk_anime = 2;
+			else if (100 <= m_time && m_time <= 105)
+				atk_anime = 1;
+			else
 				atk_anime = 0;
-			}
 
 			if (Weapon == 1)
 			{
-				atk_anime = 2;
-
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, false);
 				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
 			}
 			else if(Weapon == 2)
 			{
-				atk_anime = 1;
-
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, false);
 				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
 			}
 		}
-
-		
-		//回復
-		if (Input::GetVKey('D') == true)
+		else if (m_order == 4)
 		{
-			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
-			if (obj_magicalgirl != nullptr)
-			{
-				m_hp = obj_magicalgirl->GetHP();
-			}
+			m_num = 501;
+			m_px = 200.0f;
+			m_py = 350.0f;
+			m_vy = 0.0f;
+			//マナ作成
+			CObjPhoto* obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 52.0f, 52.0f, 362.0f, 264.0f, 0, 4);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+			//敵
+			obj_photo = new CObjPhoto(320.0f, 0.0f, 64.0f, 384.0f, -64.0f, 64.0f, 360.0f, 400.0f, 0, 4);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
 		}
+		else if (m_order == 5)//スキルの上下
+		{
+			m_num = 240;
+			if (icon == true)
+			{
+				//ヒールアイコン作成
+				CObjIcon* obj_micon = new CObjIcon(64, 350.0f, 300.0f, 12, true);
+				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
+				//バリアアイコン作成
+				obj_micon = new CObjIcon(64, 350.0f, 260.0f, 10, true);
+				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
+				//メテオアイコン作成
+				obj_micon = new CObjIcon(64, 350.0f, 220.0f, 14, true);
+				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 
+				icon = false;
+			}
+			
+			if (m_time == 0)
+				m_skill = 1;
+			else if (m_time == 30)
+				m_skill = 2;
+			else if (m_time == 60)
+				m_skill = 3;
+			else if (m_time == 90)
+				m_skill = 1;
+			else if (m_time == 120)
+				m_skill = 2;
+			else if (m_time == 150)
+				m_skill = 1;
+			else if (m_time == 180)
+				m_skill = 3;
+			else if (m_time == 210)
+				m_skill = 2;
+		}
+		else if (m_order == 6)//ヒール
+		{
+			m_skill = 1;
+			m_px = 200.0f;
+			m_py = 350.0f;
+			m_vy = 0.0f;
+		}
+		else if (m_order == 7)//バリア
+		{
+			m_skill = 2;
+			//バリア作成
+			CObjPhoto* obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 516.0f, 5, 7);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+					   obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 452.0f, 5, 7);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+			//マナ作成
+					   obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 48.0f, 48.0f, 352.0f, 468.0f, 0 ,7);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+		}
+		else if (m_order == 8)//メテオ
+		{
+			m_skill = 3;
+			//メテオ作成
+			CObjPhoto* obj_photo = new CObjPhoto(192.0f, 64.0f, 128.0f, 255.0f, 64.0f, 128.0f, 250.0f, 450.0f, 0, 8);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+		}
+		
+
+		if(m_order != 1)
+			m_vx = m_vx * 0.9;
 	}
 	//キー入力
 	//--------------------------------------------------
@@ -182,12 +249,12 @@ void TutorialHero::Action()
 		m_px = 200;
 		m_vx = 0;
 	}
-	if (m_py > 400)
+	if (m_py > 350)
 	{
-		m_py = 400;
+		m_py = 350;
 		m_vy = 0;
 	}
-	else if (m_py < 200)
+	else if (m_py < 100)
 	{
 		m_py = 200;
 		m_vy = 0;

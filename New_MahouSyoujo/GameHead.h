@@ -53,6 +53,8 @@ enum OBJ_NAME
 	OBJ_CAUTION,
 	OBJ_TUTORIAL,
 	OBJ_TUTORIALHERO,
+	OBJ_ICON,
+	OBJ_PHOTO,
 };
 //------------------------------------------------
 
@@ -171,6 +173,8 @@ struct UserData
 #include "ObjDamegeDisplay.h"
 #include "Tutorial.h"
 #include "TutorialHero.h"
+#include "ObjIcon.h"
+#include "ObjPhoto.h"
 
 //------------------------------------------------
 
