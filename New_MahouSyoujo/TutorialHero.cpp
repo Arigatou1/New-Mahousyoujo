@@ -142,7 +142,20 @@ void TutorialHero::Action()
 				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
 			}
 		}
-		else if (m_order == 4)//スキルの上下
+		else if (m_order == 4)
+		{
+			m_num = 501;
+			m_px = 200.0f;
+			m_py = 350.0f;
+			m_vy = 0.0f;
+			//マナ作成
+			CObjPhoto* obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 52.0f, 52.0f, 362.0f, 264.0f, 0, 4);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+			//敵
+			obj_photo = new CObjPhoto(320.0f, 0.0f, 64.0f, 384.0f, -64.0f, 64.0f, 360.0f, 400.0f, 0, 4);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+		}
+		else if (m_order == 5)//スキルの上下
 		{
 			m_num = 240;
 			if (icon == true)
@@ -177,32 +190,33 @@ void TutorialHero::Action()
 			else if (m_time == 210)
 				m_skill = 2;
 		}
-		else if (m_order == 5)//ヒール
+		else if (m_order == 6)//ヒール
 		{
 			m_skill = 1;
 			m_px = 200.0f;
 			m_py = 350.0f;
 			m_vy = 0.0f;
 		}
-		else if (m_order == 6)//バリア
+		else if (m_order == 7)//バリア
 		{
 			m_skill = 2;
 			//バリア作成
-			CObjPhoto* obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 516.0f, 5, 6);
+			CObjPhoto* obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 516.0f, 5, 7);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
-					   obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 452.0f, 5, 6);
+					   obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 452.0f, 5, 7);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
 			//マナ作成
-					   obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 48.0f, 48.0f, 352.0f, 468.0f, 0 ,6);
+					   obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 48.0f, 48.0f, 352.0f, 468.0f, 0 ,7);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
 		}
-		else if (m_order == 7)//メテオ
+		else if (m_order == 8)//メテオ
 		{
 			m_skill = 3;
 			//メテオ作成
-			CObjPhoto* obj_photo = new CObjPhoto(192.0f, 64.0f, 128.0f, 255.0f, 64.0f, 128.0f, 250.0f, 450.0f, 0, 7);
+			CObjPhoto* obj_photo = new CObjPhoto(192.0f, 64.0f, 128.0f, 255.0f, 64.0f, 128.0f, 250.0f, 450.0f, 0, 8);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
 		}
+		
 
 		if(m_order != 1)
 			m_vx = m_vx * 0.9;

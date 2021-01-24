@@ -101,23 +101,23 @@ void CObjIcon::Action()
 		}
 	}
 
-	if (i_order == 5 && Graphic_Serct == 13)
+	if (i_order == 6 && Graphic_Serct == 13)
 	{
-		//順番5だったときヒールのアイコンを真ん中に大きく出す
+		//順番6だったときヒールのアイコンを真ん中に大きく出す
 		icon_size = 120;
 		i_x = 250.0f;
 		i_y = 250.0f;
 	}
-	else if (i_order == 6 && Graphic_Serct == 11)
+	else if (i_order == 7 && Graphic_Serct == 11)
 	{
-		//順番6だったときバリアのアイコンを真ん中に大きく出す
+		//順番7だったときバリアのアイコンを真ん中に大きく出す
 		icon_size = 120;
 		i_x = 250.0f;
 		i_y = 250.0f;
 	}
-	else if (i_order == 7 && Graphic_Serct == 15)
+	else if (i_order == 8 && Graphic_Serct == 15)
 	{
-		//順番7だったときメテオのアイコンを真ん中に大きく出す
+		//順番8だったときメテオのアイコンを真ん中に大きく出す
 		icon_size = 120;
 		i_x = 250.0f;
 		i_y = 250.0f;

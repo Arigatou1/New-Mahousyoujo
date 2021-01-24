@@ -26,6 +26,7 @@ CObjPhoto::CObjPhoto(float src_top, float src_left, float src_right, float src_b
 //イニシャライズ
 void CObjPhoto::Init()
 {
+	p_order = 0;
 }
 
 //アクション

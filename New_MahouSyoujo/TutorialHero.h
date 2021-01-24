@@ -14,6 +14,7 @@ public:
 	void Action();
 	void Draw();
 	int GetSkill() { return m_skill; };
+	int GetTime() { return m_time; };
 private:
 	float m_px;		//プレイヤーの座標X
 	float m_py;		//プレイヤーの座標Y
