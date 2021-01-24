@@ -223,60 +223,6 @@ void CObjHero::Action()
 		{ OBJ_DRAGON,	1.5f},
 	};
 
-	/*for (int i = 0; i < 8; i++)
-	{
-		//“G‚ÌUŒ‚—Í
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			Audio::Start(25);
-			if (i == 0)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.20;
-			}
-
-			else if (i == 1)
-			{
-				MANA_damege = 4.0 + mana_damege * 0.20;
-			}
-			else if (i == 2)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 3)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 4)
-			{
-				MANA_damege = 1.0 + mana_damege * 0.20;
-			}
-			else if (i == 5)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.10;
-
-			}
-			else if (i == 6)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.10;
-			}
-			else if (i == 7)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.20;
-			}
-			Mana_HP -= MANA_damege;
-
-		}
-
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			
-			//ƒ_ƒ[ƒW
-			Audio::Start(4);
-
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//“G‚ÌUŒ‚—Í
-		}
-	}*/
 
 	//–³“GŠÔ‚ª–³Œø‚É‚È‚Á‚½ “G‚Æ‚Ì‚ ‚½‚è”»’è‚ğs‚¤
 	if (m_mtk == false)

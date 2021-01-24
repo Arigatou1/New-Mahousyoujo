@@ -40,4 +40,6 @@ private:
 
 	float e_hp;
 	float maxhp;
+
+	int m_posture;
 };
