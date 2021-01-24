@@ -50,17 +50,34 @@ void CObjMagicalGirl::Action()
 		h_hp = obj_hero->GetHP();
 	}
 	
-	//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
-	if (m_mp < 100)
+	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
+	if (obj_tutorial != nullptr)
 	{
-
-		if (m_mtime % 60 == 0)
+		//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
+		if (m_mp < 100)
 		{
-			m_mp++;
-			m_mtime = 0;
+
+			if (m_mtime % 60 == 0)
+			{
+				m_mp += 10;
+				m_mtime = 0;
+			}
 		}
 	}
+	else
+	{
+		//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
+		if (m_mp < 100)
+		{
 
+			if (m_mtime % 60 == 0)
+			{
+				m_mp++;
+				m_mtime = 0;
+			}
+		}
+	}
+	
 	//ƒL[‚ð‰Ÿ‚·‚ÆŒü‚«•ÏX
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
