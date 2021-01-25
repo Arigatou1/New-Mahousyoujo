@@ -5,6 +5,7 @@
 #include "GameL\UserData.h"
 #include "GameHead.h"
 #include "Tutorial.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -24,6 +25,8 @@ void CTutorial::Init()
 	//チュートリアる主人公オブジェクト作成
 	TutorialHero* obj = new TutorialHero();
 	Objs::InsertObj(obj, OBJ_TUTORIALHERO, 60);
+
+	shootDownTime = 0;
 }
 
 //アクション
@@ -165,6 +168,31 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
+	}
+	else if (Order == 9)
+	{
+	((UserData*)Save::GetData())->tutorialDone = true;
+	Save::Seve();
+	//HPがゼロになったら、待機時間を増価させる。
+	shootDownTime++;
+
+	if (shootDownTime == 1)
+	{
+		
+		Audio::Start(13);
+		
+	}
+	else if (shootDownTime == 200)
+	{
+		//EnemyAppear
+		Fadeout* obj_Fadeout = new Fadeout();
+		Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+	}
+
+	else if (shootDownTime == 300)
+	{
+		Scene::SetScene(new CSceneMenu());
+	}
 	}
 }
 

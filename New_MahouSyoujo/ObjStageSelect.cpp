@@ -31,6 +31,7 @@ void CObjStageSelect::Init()
 	nowLoading=false;
 	menuAllButtonX = 0.0f;
 	waitTime = 0;
+	tutorialStart = false;
 }
 
 //アクション
@@ -40,7 +41,7 @@ void CObjStageSelect::Action()
 	//今いるカーソルの場所から位置を取得し、
 	//ステージIDを計算し設定するには？？
 
-	if(cursor_y<448)
+	if(cursor_y<448 && nowLoading==false)
 		((UserData*)Save::GetData())->Stage = ((cursor_y - 32) / 96) +(PageID*4);
 
 	//cursor_y = 16,96,176,256,336,416,496
@@ -59,19 +60,37 @@ void CObjStageSelect::Action()
 			{
 				Audio::Start(9);
 
-				if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+				if (tutorialStart == true)
+				{
+					nowLoading = true;
+					((UserData*)Save::GetData())->Stage = -1;
+				}
+
+				else if(((UserData*)Save::GetData())->tutorialDone == false)
+				{
+					tutorialStart = true;
+				}
+
+				else if (((UserData*)Save::GetData())->tutorialDone == true)
 				{
 
-					nowLoading = true;
-				}
-				if (cursor_y >= 448)
-				{
-					this->SetStatus(false);
-					//メニューオブジェクト作成
-					CObjCustomize* obj = new CObjCustomize();
-					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
+
+					if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+					{
+						nowLoading = true;
+					}
+					if (cursor_y >= 448)
+					{
+						this->SetStatus(false);
+						//メニューオブジェクト作成
+						CObjCustomize* obj = new CObjCustomize();
+						Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
+					}
+					
+
 				}
 				m_key_flag = false;
+
 			}
 		}
 		else if (Input::GetVKey(VK_UP) == true)
@@ -134,10 +153,11 @@ void CObjStageSelect::Action()
 		{
 			m_key_flag = true;
 		}
+	
 	}
 	else if (nowLoading == true)
 	{
-		
+
 		waitTime++;
 
 		if (waitTime == 30)
@@ -149,14 +169,15 @@ void CObjStageSelect::Action()
 		else if (waitTime > 30)
 		{
 			menuAllButtonX += 16;
-			
+
 			if (menuAllButtonX > 800)
 			{
 				Scene::SetScene(new CSceneMain());
-			
+
 			}
 		}
 	}
+	
 	
 	//----------------------------------------------
 	//カーソル位置調整
@@ -235,7 +256,11 @@ void CObjStageSelect::Draw()
 
 			Font::StrDraw(L"↑↓キー:移動  Enter:決定  Esc:戻る", 200, 566, 26, c);
 		
-
+			if (tutorialStart == true)
+			{
+				MenuBlockDraw(100, 100.0f,600.0f, 400.0f, 1.1f, 0.1f, 0.1f, 0.9f);
+				Font::StrDraw(L"チュートリアルを開始します。", 200, 300, 26, c);
+			}
 }
 
 

@@ -100,8 +100,8 @@ void CObjGaugeBoss::Draw()
 	src.m_right = GaugePercent + 27.0f;
 	src.m_bottom = 216.0f;
 	//ï\é¶à íuÇÃê›íË
-	dst.m_top = 552.0f;
-	dst.m_left = 481.0f;
+	dst.m_top = 480.0f;
+	dst.m_left = 552.0f;
 	dst.m_right = dst.m_left+ GaugePercent;
 	dst.m_bottom = dst.m_top+24.0f;
 
