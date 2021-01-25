@@ -161,13 +161,13 @@ void TutorialHero::Action()
 			if (icon == true)
 			{
 				//ヒールアイコン作成
-				CObjIcon* obj_micon = new CObjIcon(64, 350.0f, 300.0f, 12, true);
+				CObjIcon* obj_micon = new CObjIcon(64, 650.0f, 200.0f, 12, true);
 				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 				//バリアアイコン作成
-				obj_micon = new CObjIcon(64, 350.0f, 260.0f, 10, true);
+				obj_micon = new CObjIcon(64, 650.0f, 160.0f, 10, true);
 				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 				//メテオアイコン作成
-				obj_micon = new CObjIcon(64, 350.0f, 220.0f, 14, true);
+				obj_micon = new CObjIcon(64, 650.0f, 120.0f, 14, true);
 				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 
 				icon = false;
@@ -201,9 +201,9 @@ void TutorialHero::Action()
 		{
 			m_skill = 2;
 			//バリア作成
-			CObjPhoto* obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 516.0f, 5, 7);
+			CObjPhoto* obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 125.0f, 275.0f, 516.0f, 5, 7);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
-					   obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 150.0f, 250.0f, 452.0f, 5, 7);
+					   obj_photo = new CObjPhoto(0.0f, 0.0f, 64.0f, 640.0f, 16.0f, 125.0f, 275.0f, 452.0f, 5, 7);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
 			//マナ作成
 					   obj_photo = new CObjPhoto(192.0f, 0.0f, 64.0f, 256.0f, 48.0f, 48.0f, 352.0f, 468.0f, 0 ,7);
