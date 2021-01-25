@@ -29,6 +29,7 @@ private:
 	float menuAllButtonX;
 
 	int waitTime;
+	bool tutorialStart;
 
 
 	void cursorUp();

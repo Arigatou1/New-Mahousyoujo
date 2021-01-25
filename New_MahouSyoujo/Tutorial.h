@@ -19,6 +19,7 @@ private:
 	bool cond2;//条件２
 
 	bool condreset;//条件リセット
+	int shootDownTime;
 
 	int Order;//順番
 	int m_skill;//魔法少女のスキル判別

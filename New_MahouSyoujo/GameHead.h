@@ -81,25 +81,24 @@ enum HIT_ELEMENTS
 //セーブ＆ロードとシーン間のやり取りするデータ
 struct UserData
 {
+
+	//設定で変更できないデータ------------------------
 	int mSeveData;	//サンプルセーブデータ
 	//ステージIDを取得する
 	int Stage;
-
-
 	//ステージのスコアデータ
 	int ScoreData[20];
 	//最大ステージ数は20だが、２０のクリア判定をつけるため
 	bool Clear_Flag[21];
 	//ポーズメニュー用変数
 	bool PauseMenu;
-	
-	
 	//スコアの計算するためのもの
 	float HeroHP;
 	float ManaHP;
 	//残り敵の数の表示
 	int enemyRemain;
 	bool HPZeroCheck;
+	bool tutorialDone;
 
 	//---------------------------------------------
 	//設定で変更できるデータ
@@ -175,6 +174,7 @@ struct UserData
 #include "TutorialHero.h"
 #include "ObjIcon.h"
 #include "ObjPhoto.h"
+
 
 //------------------------------------------------
 
