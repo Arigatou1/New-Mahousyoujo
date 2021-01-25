@@ -240,7 +240,7 @@ void CTutorial::Draw()
 	else if (Order == 4)
 	{
 		swprintf_s(str, L"主人公やマナは敵に当たったり攻撃を受けるとダメージを受けます");//整数を文字列か
-		Font::StrDraw(str, 200, 200, 20, c);
+		Font::StrDraw(str, 150, 200, 20, c);
 	}
 	else if (Order == 5)
 	{
