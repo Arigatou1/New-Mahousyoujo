@@ -199,8 +199,28 @@ void CTutorial::Action()
 //ÉhÉçÅ[
 void CTutorial::Draw()
 {
-	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float c[4] = { 0.0f,0.0f,0.0f,0.9f };
+
+	RECT_F src;
+	RECT_F dst;
+	src.m_top = 0;
+	src.m_left = 192;
+	src.m_right = 256;
+	src.m_bottom = 64;
+
+	dst.m_top = 100;
+	dst.m_left = 100;
+	dst.m_right = 700;
+	dst.m_bottom = 300;
+
+	Draw::Draw(0, &src, &dst, c, 0.0f);
+
 	wchar_t str[128];
+
+	for (int i = 0; i < 4; i++)
+	{
+		c[i] = 1.0f;
+	}
 
 	if (Order == 1)
 	{

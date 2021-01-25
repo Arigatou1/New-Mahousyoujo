@@ -154,7 +154,7 @@ void CObjHero::Action()
 				Audio::Start(0);
 
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
 			}
 
 
