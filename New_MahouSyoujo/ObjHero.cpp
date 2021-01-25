@@ -177,19 +177,7 @@ void CObjHero::Action()
 		}
 	}
 
-	//-------------------------------------------------
-	CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
-	if (obj_boss != nullptr)
-	{
-		b_x = obj_boss->GetX();
-		if (b_x <= m_px)
-		{
-			m_px = b_x - 0.0f;
-		}
-	}
-
 	
-
 	//ƒL[“ü—Í
 	//--------------------------------------------------
 	
@@ -245,7 +233,7 @@ void CObjHero::Action()
 		CHitBox* hit = Hits::GetHitBox(this);
 		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
 
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
 			{
@@ -255,7 +243,54 @@ void CObjHero::Action()
 				m_hp -= database[i][1] + damage;//“G‚ÌUŒ‚—Í
 				AllDamage += database[i][1] + damage;
 				m_vx = 0.0f;
+				if (i == 8)
+				{
+					CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
+					if (obj_boss != nullptr)
+					{
+						b_x = obj_boss->GetX();
+						b_p = obj_boss->GetPosture();
+						if (b_p == 1)
+						{
+							if (b_x <= m_px)
+							{
+								m_px = b_x - 64.0f;
+							}
+						}
+						else if (b_p == 0)
+						{
+							if (b_x > m_px)
+							{
+								m_px = b_x + 250.0f;
+							}
+						}
+					}
+				}
 			}
+			else if (i == 9)
+			{
+				CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
+				if (obj_dragon != nullptr)
+				{
+					b_x = obj_dragon->GetX();
+					b_p = obj_dragon->GetPosture();
+					if (b_p == 1)
+					{
+						if (b_x <= m_px)
+						{
+							m_px = b_x - 0.0f;
+						}
+					}
+					else if (b_p == -1)
+					{
+						if (b_x >= m_px)
+						{
+							m_px = b_x - 0.0f;
+						}
+					}
+				}
+			}
+			
 		}
 	}
 	//–³“G‚ªtrue‚É‚È‚Á‚½Žž

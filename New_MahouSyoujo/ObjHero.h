@@ -76,4 +76,5 @@ private:
 	bool clear_check;
 
 	int b_x;//ƒ{ƒX‚ÌXÀ•W
+	int b_p;
 };
