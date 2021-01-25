@@ -51,7 +51,7 @@ void CObjHero::Init()
 
 
 	//‚ ‚½‚è”»’è—pHitbox‚ðì¬
-	Hits::SetHitBox(this, m_px+8, m_py+8, 56, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_px+18, m_py+12, 28, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
 
 	Weapon = ((UserData*)Save::GetData())->weapon;
 	damage = ((UserData*)Save::GetData())->Diffculty * 0.5;
@@ -231,7 +231,7 @@ void CObjHero::Action()
 	{
 		//HitBox‚Ì“à—e‚ðŒ³‚É–ß‚·
 		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
+		hit->SetPos(m_px + 18.0f, m_py + 126.0f);
 
 		for (int i = 0; i < 10; i++)
 		{
@@ -249,47 +249,37 @@ void CObjHero::Action()
 					if (obj_boss != nullptr)
 					{
 						b_x = obj_boss->GetX();
-						b_p = obj_boss->GetPosture();
-						if (b_p == 1)
+						
+						if (obj_boss->GetPosture() == 1)
 						{
-							if (b_x <= m_px)
-							{
 								m_px = b_x - 64.0f;
-							}
 						}
-						else if (b_p == 0)
+						else 
 						{
-							if (b_x > m_px)
-							{
 								m_px = b_x + 250.0f;
-							}
 						}
 					}
+					
 				}
-			}
-			else if (i == 9)
-			{
-				CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
-				if (obj_dragon != nullptr)
+				if (i == 9)
 				{
-					b_x = obj_dragon->GetX();
-					b_p = obj_dragon->GetPosture();
-					if (b_p == 1)
+					CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
+					if (obj_dragon != nullptr)
 					{
-						if (b_x <= m_px)
+						b_x = obj_dragon->GetX();
+
+						if (obj_dragon->GetPosture() == 0)
 						{
-							m_px = b_x - 0.0f;
+							m_px = b_x - 64.0f;
 						}
-					}
-					else if (b_p == -1)
-					{
-						if (b_x >= m_px)
+						else
 						{
-							m_px = b_x - 0.0f;
+							m_px = b_x + 250.0f;
 						}
 					}
 				}
 			}
+			
 			
 		}
 	}

@@ -60,7 +60,7 @@ void CObjGaugeBoss::Action()
 		}
 	}
 	
-	if (GaugePercent == 0.0f)
+	if (GaugePercent <= 0.0f)
 	{
 		this->SetStatus(false);
 	}
