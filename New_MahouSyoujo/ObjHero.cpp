@@ -233,7 +233,7 @@ void CObjHero::Action()
 		CHitBox* hit = Hits::GetHitBox(this);
 		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
 
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 11; i++)
 		{
 			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
 			{
@@ -266,31 +266,31 @@ void CObjHero::Action()
 						}
 					}
 				}
-			}
-			else if (i == 9)
-			{
-				CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
-				if (obj_dragon != nullptr)
+				else if (i == 9)
 				{
-					b_x = obj_dragon->GetX();
-					b_p = obj_dragon->GetPosture();
-					if (b_p == 1)
+					CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
+					if (obj_dragon != nullptr)
 					{
-						if (b_x <= m_px)
+						b_x = obj_dragon->GetX();
+						b_p = obj_dragon->GetPosture();
+						if (b_p == 1)
 						{
-							m_px = b_x - 0.0f;
+							if (b_x <= m_px)
+							{
+								m_px = b_x + 256.0f;
+							}
 						}
-					}
-					else if (b_p == -1)
-					{
-						if (b_x >= m_px)
+						else if (b_p == 0)
 						{
-							m_px = b_x - 0.0f;
+							if (b_x >= m_px)
+							{
+								m_px = b_x -16.0f;
+							}
 						}
 					}
 				}
 			}
-			
+	
 		}
 	}
 	//–³“G‚ªtrue‚É‚È‚Á‚½Žž
