@@ -245,6 +245,9 @@ void CObjSetting::Draw()
 
 		Font::StrDraw(str1, 48 + menuAllButtonX, 80 + 112*i, 64, c);
 	}
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
+
+	Font::StrDraw(L"↑↓キー:移動  ←→キー:値の変更　Enter:決定  ", 200, 566, 26, c);
 
 }
 
