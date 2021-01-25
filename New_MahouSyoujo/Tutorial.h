@@ -5,7 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-class CTutorial :public CScene
+class CTutorial :public CObj
 {
 public:
 	CTutorial() {};
@@ -13,6 +13,7 @@ public:
 	void Init();
 	void Action();
 	void Draw();
+	int GetOrder() { return Order; };
 private:
 	bool cond1;//条件１
 	bool cond2;//条件２
@@ -21,4 +22,5 @@ private:
 
 	int Order;//順番
 	int m_skill;//魔法少女のスキル判別
+	int Time;
 };

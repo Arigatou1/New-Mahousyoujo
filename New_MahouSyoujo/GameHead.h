@@ -31,6 +31,9 @@ enum OBJ_NAME
 	OBJ_BULLET,
 	OBJ_MODESELECT,
 	OBJ_BARRIER,
+	OBJ_BARRIERICON,
+	OBJ_HEELICON,
+	OBJ_METEORICON,
 	OBJ_CUSTOMIZE,
 	OBJ_SMALLSLIM,
 	OBJ_PAUSEMENU,
@@ -48,7 +51,10 @@ enum OBJ_NAME
 	OBJ_ENDLESSRESULT,
 	OBJ_DAMEGEDISPLAY,
 	OBJ_CAUTION,
-	//OBJ_TUTORIAL,
+	OBJ_TUTORIAL,
+	OBJ_TUTORIALHERO,
+	OBJ_ICON,
+	OBJ_PHOTO,
 };
 //------------------------------------------------
 
@@ -143,6 +149,9 @@ struct UserData
 #include "ObjBullet.h"
 #include "ObjModeSelect.h"
 #include "Objbarrier.h"
+#include "ObjBarrierIcon.h"
+#include "ObjHeelIcon.h"
+#include "ObjMeteorIcon.h"
 #include "ObjCustomize.h"
 #include "ObjSmallSlim.h"
 #include "ObjPauseMenu.h"
@@ -162,6 +171,10 @@ struct UserData
 #include "ObjCaution.h"
 
 #include "ObjDamegeDisplay.h"
+#include "Tutorial.h"
+#include "TutorialHero.h"
+#include "ObjIcon.h"
+#include "ObjPhoto.h"
 
 //------------------------------------------------
 
@@ -171,7 +184,6 @@ struct UserData
 #include "SceneGameOver.h"
 #include "SceneGameClear.h"
 #include "SceneMenu.h"
-//#include "Tutorial.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

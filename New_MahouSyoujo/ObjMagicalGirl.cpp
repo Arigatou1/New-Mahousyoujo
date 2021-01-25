@@ -50,17 +50,34 @@ void CObjMagicalGirl::Action()
 		h_hp = obj_hero->GetHP();
 	}
 	
-	//(おそらく1秒に1)MP回復
-	if (m_mp < 100)
+	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
+	if (obj_tutorial != nullptr)
 	{
-
-		if (m_mtime % 60 == 0)
+		//(おそらく1秒に1)MP回復
+		if (m_mp < 100)
 		{
-			m_mp++;
-			m_mtime = 0;
+
+			if (m_mtime % 60 == 0)
+			{
+				m_mp += 10;
+				m_mtime = 0;
+			}
 		}
 	}
+	else
+	{
+		//(おそらく1秒に1)MP回復
+		if (m_mp < 100)
+		{
 
+			if (m_mtime % 60 == 0)
+			{
+				m_mp++;
+				m_mtime = 0;
+			}
+		}
+	}
+	
 	//キーを押すと向き変更
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
@@ -96,54 +113,6 @@ void CObjMagicalGirl::Action()
 	{
 		s_t = true;
 	}
-
-	
-	//魔法少女の通常攻撃
-
-	/*if (m_mp >= 5)
-	{
-		if (Input::GetVKey('H') == true && m_t == true)
-		{
-			m_atk_animation = 3;//杖持った姿になる
-
-				//魔法攻撃SE
-			Audio::Start(1);
-
-			if (m_postrue == 0.0f)
-			{
-				m_t = false;
-				//魔法少女魔法玉作成
-				CObjHomingBullet* obj_homingbullet = new CObjHomingBullet(m_gx - 25.0f, m_gy, m_postrue);//ホーミング弾作成
-				Objs::InsertObj(obj_homingbullet, OBJ_HOMINGBULLET, 60);//オブジェクトマネーに登録
-
-				m_mp -= 5;
-
-				if (m_mp < 0)
-				{
-					m_mp = 0;
-				}
-			}
-			else if (m_postrue == 1.0f)
-			{
-				m_t = false;
-				//魔法少女魔法玉作成
-				CObjHomingBullet* obj_homingbullet = new CObjHomingBullet(m_gx + 25.0f, m_gy, m_postrue);//ホーミング弾作成
-				Objs::InsertObj(obj_homingbullet, OBJ_HOMINGBULLET, 60);//オブジェクトマネーに登録
-
-				m_mp -= 5;
-
-				if (m_mp < 5)
-				{
-					m_mp = 0;
-				}
-			}
-		}
-		else if (Input::GetVKey('H') == false)
-		{
-			m_atk_animation = 0;//棒立ちの姿になる
-			m_t = true;
-		}
-	}*/
 	
 	//魔法少女の回復魔法
 	if (0 < h_hp && h_hp < 20)
@@ -283,26 +252,6 @@ void CObjMagicalGirl::Draw()
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
-
-	if (m_skill == 1)
-	{
-		
-	}
-	else if (m_skill == 2)
-	{
-
-	}
-	else if (m_skill == 3)
-	{
-
-	}
-	wchar_t str[128];
-	swprintf_s(str, L"スキル:ヒール");//整数を文字列か
-	Font::StrDraw(str, 550, 5, 36, d);
-	swprintf_s(str, L"スキル:バリア");//整数を文字列か
-	Font::StrDraw(str, 550, 35, 36, d);
-	swprintf_s(str, L"スキル:メテオ");//整数を文字列か
-	Font::StrDraw(str, 550, 65, 36, d);
 
 	//切り取り位置の設定
 	src.m_top    = 128.0f;

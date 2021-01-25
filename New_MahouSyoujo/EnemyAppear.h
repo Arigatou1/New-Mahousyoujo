@@ -15,6 +15,8 @@ public:
 	void Action();
 	void Draw();
 	//int GetNUM();
+	void BossDisappearnce();
+
 private:
 	int EnemyAmount;
 	int StageID;
@@ -26,4 +28,9 @@ private:
 	bool m_key_flag;
 	int randomAppearTime;
 	float appearEnemyX;
+
+	//ƒ{ƒX“oê’†
+	bool BossAppearRing;
+	int enemyCount;
+
 };

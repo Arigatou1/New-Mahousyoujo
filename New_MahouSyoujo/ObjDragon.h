@@ -16,6 +16,10 @@ public:
 	int GetMAXHP();
 	int GetHP();
 	void FireBress();
+	int GetPosture() { return b_posture; }
+	float GetX() { return m_ex; }
+
+
 private:
 	float m_ex;
 	float m_ey;

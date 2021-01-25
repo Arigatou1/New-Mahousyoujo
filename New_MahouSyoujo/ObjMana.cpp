@@ -65,7 +65,7 @@ void CObjMana::Action()
 		{OBJ_SMALLSLIM,1.0f},
 		{OBJ_SHOCKWAVE, 2.0f},
 		{OBJ_FIREBALL,0.1f},
-		{OBJ_SLIMEBALL,0.1f},
+		{OBJ_SLIMEBALL,1.0f},
 	};
 
 	for (int i = 0; i < 8; i++)

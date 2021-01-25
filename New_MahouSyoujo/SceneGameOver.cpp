@@ -32,6 +32,7 @@ void CSceneGameOver::InitScene()
 	//出力させる文字のグラフィックを作成
 
 	Draw::LoadImageW(L"Graphics/GameOver.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/GameOver11.png", 1, TEX_SIZE_512);
 
 
 
