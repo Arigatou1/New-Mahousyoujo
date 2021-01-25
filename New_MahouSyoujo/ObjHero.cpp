@@ -176,6 +176,20 @@ void CObjHero::Action()
 			}
 		}
 	}
+
+	//-------------------------------------------------
+	CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
+	if (obj_boss != nullptr)
+	{
+		b_x = obj_boss->GetX();
+		if (b_x <= m_px)
+		{
+			m_px = b_x - 0.0f;
+		}
+	}
+
+	
+
 	//ƒL[“ü—Í
 	//--------------------------------------------------
 	

@@ -74,4 +74,6 @@ private:
 //	bool HPZeroCheck;
 
 	bool clear_check;
+
+	int b_x;//É{ÉXÇÃXç¿ïW
 };

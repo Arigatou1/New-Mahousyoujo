@@ -191,7 +191,8 @@ void CTutorial::Draw()
 	}
 	else if (Order == 4)
 	{
-
+		swprintf_s(str, L"[?]");//®”‚ğ•¶š—ñ‚©
+		Font::StrDraw(str, 300, 200, 20, c);
 	}
 	else if (Order == 5)
 	{
