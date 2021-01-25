@@ -231,7 +231,7 @@ void CObjHero::Action()
 	{
 		//HitBox‚Ì“à—e‚ðŒ³‚É–ß‚·
 		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_px + 18.0f, m_py + 126.0f);
+		hit->SetPos(m_px + 18.0f, m_py + 12.0f);
 
 		for (int i = 0; i < 10; i++)
 		{
