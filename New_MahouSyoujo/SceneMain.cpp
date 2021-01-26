@@ -161,17 +161,19 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
+	//メテオアイコン作成
+	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	
 	//バリアアイコン作成
-	CObjBarrierIcon* obj_bicon = new CObjBarrierIcon();
-	Objs::InsertObj(obj_bicon, OBJ_BARRIERICON, 60);
+	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 	//ヒールアイコン作成
-	CObjHeelIcon* obj_hicon = new CObjHeelIcon();
-	Objs::InsertObj(obj_hicon, OBJ_HEELICON, 60);
+	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
-	//メテオアイコン作成
-	CObjMeteorIcon* obj_micon = new CObjMeteorIcon();
-	Objs::InsertObj(obj_micon, OBJ_METEORICON, 60);
+
 
 	//タイム初期化
 	m_time = 0;

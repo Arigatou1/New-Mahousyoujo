@@ -31,9 +31,6 @@ enum OBJ_NAME
 	OBJ_BULLET,
 	OBJ_MODESELECT,
 	OBJ_BARRIER,
-	OBJ_BARRIERICON,
-	OBJ_HEELICON,
-	OBJ_METEORICON,
 	OBJ_CUSTOMIZE,
 	OBJ_SMALLSLIM,
 	OBJ_PAUSEMENU,
@@ -148,9 +145,6 @@ struct UserData
 #include "ObjBullet.h"
 #include "ObjModeSelect.h"
 #include "Objbarrier.h"
-#include "ObjBarrierIcon.h"
-#include "ObjHeelIcon.h"
-#include "ObjMeteorIcon.h"
 #include "ObjCustomize.h"
 #include "ObjSmallSlim.h"
 #include "ObjPauseMenu.h"

@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="ClearFadeout.cpp" />
     <ClCompile Include="CObjHomingBullet.cpp" />
-    <ClCompile Include="ObjBarrierIcon.cpp" />
     <ClCompile Include="ObjCaution.cpp" />
     <ClCompile Include="ObjDamegeDisplay.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -181,13 +180,11 @@
     <ClCompile Include="ObjGaugeBoss.cpp" />
     <ClCompile Include="ObjGaugeHP.cpp" />
     <ClCompile Include="ObjGaugeMana.cpp" />
-    <ClCompile Include="ObjHeelIcon.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjIcon.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
     <ClCompile Include="ObjMenuEndless.cpp" />
-    <ClCompile Include="ObjMeteorIcon.cpp" />
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
     <ClCompile Include="ObjPhoto.cpp" />
@@ -212,7 +209,6 @@
   <ItemGroup>
     <ClInclude Include="ClearFadeout.h" />
     <ClInclude Include="CObjHomingBullet.h" />
-    <ClInclude Include="ObjBarrierIcon.h" />
     <ClInclude Include="ObjCaution.h" />
     <ClInclude Include="ObjDamegeDisplay.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -252,13 +248,11 @@
     <ClInclude Include="ObjGaugeBoss.h" />
     <ClInclude Include="ObjGaugeHP.h" />
     <ClInclude Include="ObjGaugeMana.h" />
-    <ClInclude Include="ObjHeelIcon.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjIcon.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />
     <ClInclude Include="ObjMenuEndless.h" />
-    <ClInclude Include="ObjMeteorIcon.h" />
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
     <ClInclude Include="ObjPhoto.h" />
