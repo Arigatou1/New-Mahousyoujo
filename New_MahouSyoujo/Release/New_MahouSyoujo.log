@@ -4,7 +4,215 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): wa
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\CObjHomingBullet.cpp(129,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ClearFadeout.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  EnemyAppear.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1693,24): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1703,37): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1773,42): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1838,10): warning C4101: 'str': ローカル変数は 1 度も使われていません。
+  GameL_Main.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\GameL_Main.cpp(159,4): warning C4060: switch ステートメントに 'case' または 'default' ラベルがありません。
+  SceneManager.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjAllBullet.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjAllBullet.cpp(75,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjBackGround.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjBarrier.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjBlock.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(45,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(157,16): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(160,14): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(336,17): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(336,9): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBlock.cpp(343,15): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  ObjBoss1.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.cpp(57,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObjBullet.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBullet.cpp(27,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBullet.cpp(67,62): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjCaution.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjCaution.cpp(62,10): warning C4101: 'str': ローカル変数は 1 度も使われていません。
+  ObjCustomize.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjCustomize.cpp(31,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjDamegeDisplay.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDamegeDisplay.cpp(14,13): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  ObjDragon.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(218,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(302,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjDragon.cpp(307,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEndlessResult.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEndlessResult.cpp(34,49): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEnemy.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(130,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(159,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy.cpp(164,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEnemy2.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy2.cpp(124,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy2.cpp(164,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy2.cpp(172,40): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEnemy3.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(76,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(158,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEnemy3.cpp(166,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjEnemy4.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コンパイル中...
   ObjEnemyAmount.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjFireBall.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjGameClear.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGameClear.cpp(54,54): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjGameOver.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjGaugeBoss.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeBoss.cpp(36,19): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeBoss.cpp(37,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeBoss.cpp(53,19): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeBoss.cpp(54,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  ObjGaugeHP.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(28,18): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(29,24): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(44,30): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeHP.cpp(45,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  ObjGaugeMana.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjGaugeMana.cpp(47,31): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  ObjHero.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(57,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(99,15): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(105,15): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(114,16): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(136,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(145,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(204,16): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(204,16): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(205,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(205,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(206,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(206,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(207,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(207,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(208,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(208,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(209,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(209,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(210,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(210,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(211,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(211,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(212,16): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(212,16): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(213,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(213,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(241,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(260,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(357,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(373,39): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.cpp(373,39): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+  ObjIcon.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -14,8 +222,8 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): wa
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(148,70): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(328,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(150,70): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMagicalGirl.cpp(327,9): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
   ObjMana.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -40,8 +248,154 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(68,18): 
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(68,18): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(77,33): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjMana.cpp(81,85): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjMenuEndless.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjModeSelect.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjModeSelect.cpp(196,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjModeSelect.cpp(202,70): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+  ObjPauseMenu.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjPhoto.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjSetting.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(34,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(251,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(191,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(190,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+  ObjShockWave.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjShockWave.cpp(42,11): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjShockWave.cpp(49,12): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjShockWave.cpp(51,9): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjShockWave.cpp(148,28): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  ObjSlimeBall.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSlimeBall.cpp(45,11): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSlimeBall.cpp(52,12): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSlimeBall.cpp(54,9): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  ObjSmallSlim.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSmallSlim.cpp(141,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObjStageSelect.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(45,64): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjStageSelect.cpp(224,59): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  コンパイル中...
+  ObjSword.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSword.cpp(31,17): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSword.cpp(68,86): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ObjTitle.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneGameClear.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneGameClear.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneGameClear.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneGameOver.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneGameOver.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneGameOver.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneMain.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(2): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(3): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(74,37): warning C4474: 'swprintf_s': 書式文字列に渡された引数の数が多すぎます
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(74,37): message : プレースホルダーとそのパラメーターには 0 の可変個引数が必要ですが、1 が指定されています。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(161,36): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(165,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMain.cpp(169,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneMenu.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMenu.cpp(3): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneMenu.cpp(4): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneTitle.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\SceneTitle.cpp(3): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Tutorial.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  TutorialHero.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(55,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(105,17): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(136,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(141,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(222,16): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(306,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(322,40): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\TutorialHero.cpp(322,40): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+  UtilityModule.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\UtilityModule.cpp(32,10): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
-  12 of 1093 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+  4 of 1093 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。

@@ -23,7 +23,7 @@ void CObjMagicalGirl::Init()
 	m_atk_animation = 0;//0=棒立ちの画像
 
 	m_mtime = 1;
-	m_btime = 0;	
+	
 	m_skill = 1;//1なら回復 2ならバリア 3なら全体
 
 	m_key_flag = false;
@@ -33,7 +33,7 @@ void CObjMagicalGirl::Init()
 void CObjMagicalGirl::Action()
 {
 	m_mtime++;
-	m_btime++;
+	
 	//主人公のHPとマックスHPとってくる
 	CObjHero* obj_hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
@@ -96,7 +96,9 @@ void CObjMagicalGirl::Action()
 		s_t = true;
 	}
 	
+	
 	// 2021 01 28 舟瀬 変更----------------------------------
+	m_atk_animation = 0;//棒立ちの姿になる
 
 	if (Input::GetVKey('D') == true)
 	{
@@ -276,10 +278,7 @@ void CObjMagicalGirl::Action()
 	//	}
 	//
 
-	if (Input::GetVKey('D') == false)
-	{
-		m_atk_animation = 0;//棒立ちの姿になる
-	}
+		
 }
 
 //ドロー
@@ -326,9 +325,4 @@ int CObjMagicalGirl::GetSkill()
 int CObjMagicalGirl::GetHP()
 {
 	return h_hp;
-}
-
-int CObjMagicalGirl::GetBTime()
-{
-	return m_btime;
 }

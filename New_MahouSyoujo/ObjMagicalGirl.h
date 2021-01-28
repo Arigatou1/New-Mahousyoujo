@@ -33,7 +33,7 @@ class CObjMagicalGirl : public CObj
 		int m_skill;//スキル選択
 		
 		int m_mtime;//MP回復用時間
-		int m_btime;//ホーミング弾用時間
+		
 		bool s_t;//スキル選択間隔
 		////bool m_t;//攻撃間隔
 		//bool h_t;//回復間隔
