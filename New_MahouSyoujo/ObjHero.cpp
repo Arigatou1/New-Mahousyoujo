@@ -85,6 +85,7 @@ void CObjHero::Action()
 			m_vy = -15;
 			isJump = false;
 		}
+		//一度キーを離すまでは再入力できない。
 		else if (Input::GetVKey(' ') == false)
 		{
 			isJump = true;
@@ -97,23 +98,17 @@ void CObjHero::Action()
 		{
 			m_vx -= 0.1;
 			m_posture = -1;
-
 			m_anitime += 1;
-
 		}
 		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 			m_vx += 0.1;
 			m_posture = 1;
-
 			m_anitime += 1;
-
-
 		}
 		//どちらも押していない場合は減速させる。
 		else
 		{
-
 			m_anime = 1;
 			m_anitime = 0;
 			m_vx = m_vx * 0.9;

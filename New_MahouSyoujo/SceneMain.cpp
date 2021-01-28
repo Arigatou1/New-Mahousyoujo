@@ -110,7 +110,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
+	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 
 	//背景読み込み
 	for (int i = 1; i <= 10; i++)

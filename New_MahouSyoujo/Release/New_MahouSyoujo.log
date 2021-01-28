@@ -1,15 +1,22 @@
-﻿  ObjSetting.cpp
+﻿  ObjModeSelect.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjModeSelect.cpp(196,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjModeSelect.cpp(202,70): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+  ObjSetting.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(34,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(246,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(191,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
-C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(190,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(242,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(182,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(181,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
   コード生成しています。
-  1 of 1117 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  3 of 1119 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    6 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   New_MahouSyoujo.vcxproj -> C:\Users\rimin\source\repos\New-Mahousyoujo\Release\New_MahouSyoujo.exe
