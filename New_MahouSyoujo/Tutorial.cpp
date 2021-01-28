@@ -199,8 +199,28 @@ void CTutorial::Action()
 //ドロー
 void CTutorial::Draw()
 {
-	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float c[4] = { 0.0f,0.0f,0.0f,0.9f };
+
+	RECT_F src;
+	RECT_F dst;
+	src.m_top = 0;
+	src.m_left = 192;
+	src.m_right = 256;
+	src.m_bottom = 64;
+
+	dst.m_top = 100;
+	dst.m_left = 100;
+	dst.m_right = 700;
+	dst.m_bottom = 300;
+
+	Draw::Draw(0, &src, &dst, c, 0.0f);
+
 	wchar_t str[128];
+
+	for (int i = 0; i < 4; i++)
+	{
+		c[i] = 1.0f;
+	}
 
 	if (Order == 1)
 	{
@@ -219,7 +239,8 @@ void CTutorial::Draw()
 	}
 	else if (Order == 4)
 	{
-
+		swprintf_s(str, L"主人公やマナは敵に当たったり攻撃を受けるとダメージを受けます");//整数を文字列か
+		Font::StrDraw(str, 150, 200, 20, c);
 	}
 	else if (Order == 5)
 	{
@@ -228,18 +249,30 @@ void CTutorial::Draw()
 	}
 	else if (Order == 6)
 	{
-		swprintf_s(str, L"「D」キーで魔法ヒール");//整数を文字列か
-		Font::StrDraw(str, 350, 200, 20, c);
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはヒール　主人公の体力を回復します");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
 	}
 	else if (Order == 7)
 	{
-		swprintf_s(str, L"「D」キーで魔法バリア");//整数を文字列か
-		Font::StrDraw(str, 350, 200, 20, c);
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはバリア　マナの周りに展開して敵の攻撃を防ぎます");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
 	}
 	else if (Order == 8)
 	{
-		swprintf_s(str, L"「D」キーで魔法メテオ");//整数を文字列か
-		Font::StrDraw(str, 350, 200, 20, c);
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはメテオ　全体に強力な攻撃をします");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
 	}
 	else if (Order == 9)
 	{

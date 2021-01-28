@@ -115,8 +115,7 @@ void CObjMagicalGirl::Action()
 	}
 	
 	//魔法少女の回復魔法
-	if (0 < h_hp && h_hp < 20)
-	{
+	
 		if (m_mp >= 20)
 		{
 			if (Input::GetVKey('D') == true && h_t == true && m_skill == 1)
@@ -126,8 +125,6 @@ void CObjMagicalGirl::Action()
 
 				h_t = false;
 				m_mp -= 20;
-				//主人公HP回復
-				h_hp += 3;
 				if (h_hp > 20)
 					h_hp = 20;
 			}
@@ -136,7 +133,7 @@ void CObjMagicalGirl::Action()
 				h_t = true;
 			}
 		}
-	}
+	
 	
 	//魔法少女のバリア
 	if (m_mp >= 30)
