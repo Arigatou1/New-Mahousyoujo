@@ -132,10 +132,6 @@ void CSceneMain::InitScene()
 	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();
 	Objs::InsertObj(obj_magicalgirl, OBJ_MAGICALGIRL, 61);
 
-	//ゲージオブジェクト作成
-	CObjGaugeBase* obj_gb = new CObjGaugeBase();
-	Objs::InsertObj(obj_gb, OBJ_GAUGEBASE, 50);
-
 	//HPゲージオブジェクト作成
 	CObjGaugeHP* obj_ghp = new CObjGaugeHP();
 	Objs::InsertObj(obj_ghp, OBJ_GAUGEHP, 51);

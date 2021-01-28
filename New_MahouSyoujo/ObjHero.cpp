@@ -114,20 +114,18 @@ void CObjHero::Action()
 			m_vx = m_vx * 0.9;
 		}
 		//回復
-		if (Input::GetVKey('D') == true)
+	/*	if (Input::GetVKey('D') == true)
 		{
 			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 			if (obj_magicalgirl != nullptr)
 			{
 				m_hp = obj_magicalgirl->GetHP();
 			}
-		}
+		}*/
 
 		//攻撃用
 		if (Input::GetVKey('F') == true && m_f == true)
 		{
-
-
 			if (Weapon == 1)
 			{
 				m_f = false;
@@ -138,21 +136,15 @@ void CObjHero::Action()
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
 				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
 			}
-
 			else
 			{
 				m_f = false;
 				atk_anime = 1;
-
-
 				//剣を振る音
 				Audio::Start(0);
-
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
 				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
 			}
-
-
 		}
 
 		if (m_f == false)
@@ -206,6 +198,7 @@ void CObjHero::Action()
 	}
 	//-------------------------------------
 	//当たり判定を行うオブジェクト情報部
+	//敵の名前, ダメージ量
 	int database[][2] =
 	{
 		{ OBJ_ENEMY,	1.0f},
@@ -221,13 +214,14 @@ void CObjHero::Action()
 	};
 
 
-	//無敵時間が無効になった時 敵とのあたり判定を行う
+	//無敵時間が無効になった時
 	if (m_mtk == false)
 	{
 		//HitBoxの内容を元に戻す
 		CHitBox* hit = Hits::GetHitBox(this);
 		hit->SetPos(m_px + 18.0f, m_py + 12.0f);
 
+		//敵とのあたり判定を行う
 		for (int i = 0; i < 11; i++)
 		{
 			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
@@ -238,6 +232,7 @@ void CObjHero::Action()
 				m_hp -= database[i][1] + damage;//敵の攻撃力
 				AllDamage += database[i][1] + damage;
 				m_vx = 0.0f;
+				//ボススライムに当たった場合のみ
 				if (i == 8)
 				{
 					CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
@@ -256,6 +251,7 @@ void CObjHero::Action()
 					}
 					
 				}
+				//ドラゴンに当たった場合のみ
 				if (i == 9)
 				{
 					CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
@@ -413,4 +409,9 @@ void CObjHero::Draw()
 	}
 
 
+}
+
+void CObjHero::AddHP(int add) 
+{
+	m_hp += add;
 }
