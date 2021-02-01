@@ -138,11 +138,11 @@ void CObjCustomize::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	Font::StrDraw(L"GAME Customize", 2, 2, 32, c);
+	Font::StrDraw(L"GAME Customize   武器の切り替え「←」「→」", 2, 2, 32, c);
 
 	MenuBlockDraw(32, 64.0f, 728.0f, 96.0f, 1.0f, 0.0f, 0.0f, 1.0f);
 
-	MenuBlockDraw(cursor_x, cursor_y, 728.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
+	//MenuBlockDraw(cursor_x, cursor_y, 728.0f, 96.0f, 1.0f, 0.8f, 0.0f, 1.0f);
 
 	wchar_t str1[128];
 	wchar_t weap[16];
@@ -160,7 +160,7 @@ void CObjCustomize::Draw()
 	}
 
 	swprintf_s(str1, L"主人公の武器:%s", weap);
-	Font::StrDraw(str1, 32, 64, 64, c);
+	Font::StrDraw(str1, 130, 80, 64, c);
 
 
 	
@@ -177,8 +177,8 @@ void CObjCustomize::Draw()
 	dst.m_bottom = 64.0f;
 
 	//描画
-	for(int i=0;i<4;i++)
-	Draw::Draw(0, &src, &dst, c, i*90.0f);
+	//for(int i=0;i<4;i++)
+	//Draw::Draw(0, &src, &dst, c, i*90.0f);
 }
 
 
