@@ -46,4 +46,5 @@ private:
 	float e1_ysize;
 	float e_hp;
 	float damage;
+	int m_posture;
 };

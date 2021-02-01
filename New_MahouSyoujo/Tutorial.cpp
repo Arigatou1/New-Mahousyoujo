@@ -208,12 +208,13 @@ void CTutorial::Draw()
 	src.m_right = 256;
 	src.m_bottom = 64;
 
-	dst.m_top = 100;
-	dst.m_left = 100;
-	dst.m_right = 700;
-	dst.m_bottom = 300;
+	dst.m_top    = 100;
+	dst.m_left   = 100;
+	dst.m_right  = 700;
+	dst.m_bottom = 430;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+
 
 	wchar_t str[128];
 
@@ -281,4 +282,25 @@ void CTutorial::Draw()
 		swprintf_s(str, L"これでチュートリアルは終わりです");//整数を文字列か
 		Font::StrDraw(str, 200, 200, 20, c);
 	}
+}
+
+void CTutorial::SkillIconsDraw(int id)
+{
+	RECT_F src;
+	RECT_F dst;
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//切り取り位置の設定
+	src.m_top = (id*128.0f);
+	src.m_left = 0.0f;
+	src.m_right = 128.0f;
+	src.m_bottom = src.m_top+128.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 100.0f;
+	dst.m_right = dst.m_left + 96.0f;
+	dst.m_bottom = dst.m_top + 96.0f;
+
+	//描画
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 }

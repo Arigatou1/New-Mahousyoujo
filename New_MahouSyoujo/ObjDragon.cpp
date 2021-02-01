@@ -46,7 +46,7 @@ void CObjDragon::Init()
 
 
 	//ゲージオブジェクト作成
-	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
+	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss(m_ex - 25, m_ey+272);
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
 	//ランダム
@@ -260,6 +260,7 @@ void CObjDragon::Action()
 	//hpが0になると消滅
 	if (e_hp <= 0)
 	{
+		Audio::Start(26);
 		((UserData*)Save::GetData())->enemyRemain = 0;
 
 		this->SetStatus(false);

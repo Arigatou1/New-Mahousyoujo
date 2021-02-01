@@ -36,7 +36,7 @@ void CSceneMain::InitScene()
 
 	//音楽読み込み
 	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
-	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
+	Audio::LoadAudio(1, L"Sounds/girlsentakuSE.wav", EFFECT);
 	Audio::LoadAudio(2, L"Sounds/bakuhatuSE.wav", EFFECT);
 	Audio::LoadAudio(3, L"Sounds/menuSE.wav", EFFECT);
 	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
@@ -54,11 +54,12 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
 	Audio::LoadAudio(23, L"Sounds/bariaSE.wav", EFFECT);
 	Audio::LoadAudio(25, L"Sounds/manadamageSE.wav", EFFECT);
-	Audio::LoadAudio(26, L"Sounds/dragonjampSE.wav", EFFECT);
+	Audio::LoadAudio(26, L"Sounds/dragondownSE.wav", EFFECT);
 	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
 	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
 	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
 	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
+	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
 	
 	//外部データの読み込み
 
@@ -104,12 +105,13 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
-	Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/skill_icons.png", 10, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 
 	//背景読み込み
@@ -157,16 +159,20 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
-	//メテオアイコン作成
-	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
-	
-	//バリアアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	////メテオアイコン作成
+	//CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	//
+	////バリアアイコン作成
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
-	//ヒールアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	////ヒールアイコン作成
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+
+	//アイコン作成
+	CObjIcon* obj_icon = new CObjIcon();
 	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 

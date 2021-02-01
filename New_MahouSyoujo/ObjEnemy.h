@@ -42,4 +42,6 @@ private:
 
 	bool e_delete;//“G”š”­
 	int delete_time;
+
+	int m_posture;
 };
