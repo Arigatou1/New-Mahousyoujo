@@ -150,9 +150,6 @@
     <ClCompile Include="ObjEnemy4.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGaugeBase.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjGaugeBoss.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
@@ -229,6 +226,15 @@
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClCompile>
     <ClCompile Include="Tutorial.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
+    <ClCompile Include="TutorialHero.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPhoto.cpp">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjIcon.cpp">
       <Filter>ソース ファイル\チュートリアル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -329,9 +335,6 @@
     <ClInclude Include="ObjEnemy4.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGaugeBase.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
     <ClInclude Include="ObjGaugeBoss.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
@@ -408,6 +411,15 @@
       <Filter>ソース ファイル\03.シーンメイン\ステージ装飾グラフィック関連</Filter>
     </ClInclude>
     <ClInclude Include="Tutorial.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="TutorialHero.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPhoto.h">
+      <Filter>ソース ファイル\チュートリアル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjIcon.h">
       <Filter>ソース ファイル\チュートリアル</Filter>
     </ClInclude>
   </ItemGroup>

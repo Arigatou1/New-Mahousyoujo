@@ -78,9 +78,8 @@ void CObjEndlessResult::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 	//•`‰æ
-	Draw::Draw(0, &src, &dst, c, 0.0f);
-	Draw::LoadImageW(L"Graphics/GameOver11.png", 0, TEX_SIZE_512);
-
+	Draw::Draw(1, &src, &dst, c, 0.0f);
+	
 	wchar_t str[128];
 
 	swprintf_s(str, L"ƒXƒRƒA:%.0f", Score);//®”‚ğ•¶š—ñ‚©

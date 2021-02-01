@@ -16,13 +16,13 @@ CObjBarrier::CObjBarrier(float x)
 //イニシャライズ
 void CObjBarrier::Init()
 {
-	b_t = true;
+	b_time = 0;
 }
 
 //アクション
 void CObjBarrier::Action()
 {
-	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+	/*CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 	if (obj_magicalgirl != nullptr)
 	{
 		b_skill = obj_magicalgirl->GetSkill();
@@ -40,7 +40,10 @@ void CObjBarrier::Action()
 		{
 			b_t = true;
 		}
-	}
+	}*/
+
+	// 2021 01 28 舟瀬 変更
+	b_time++;
 
 	if (b_time >= 300)
 	{

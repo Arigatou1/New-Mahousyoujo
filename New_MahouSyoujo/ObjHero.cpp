@@ -51,7 +51,7 @@ void CObjHero::Init()
 
 
 	//あたり判定用Hitboxを作成
-	Hits::SetHitBox(this, m_px+8, m_py+8, 56, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_px+18, m_py+12, 28, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
 
 	Weapon = ((UserData*)Save::GetData())->weapon;
 	damage = ((UserData*)Save::GetData())->Diffculty * 0.5;
@@ -85,6 +85,7 @@ void CObjHero::Action()
 			m_vy = -15;
 			isJump = false;
 		}
+		//一度キーを離すまでは再入力できない。
 		else if (Input::GetVKey(' ') == false)
 		{
 			isJump = true;
@@ -97,42 +98,34 @@ void CObjHero::Action()
 		{
 			m_vx -= 0.1;
 			m_posture = -1;
-
 			m_anitime += 1;
-
 		}
 		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 			m_vx += 0.1;
 			m_posture = 1;
-
 			m_anitime += 1;
-
-
 		}
 		//どちらも押していない場合は減速させる。
 		else
 		{
-
 			m_anime = 1;
 			m_anitime = 0;
 			m_vx = m_vx * 0.9;
 		}
 		//回復
-		if (Input::GetVKey('D') == true)
+	/*	if (Input::GetVKey('D') == true)
 		{
 			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 			if (obj_magicalgirl != nullptr)
 			{
 				m_hp = obj_magicalgirl->GetHP();
 			}
-		}
+		}*/
 
 		//攻撃用
 		if (Input::GetVKey('F') == true && m_f == true)
 		{
-
-
 			if (Weapon == 1)
 			{
 				m_f = false;
@@ -143,21 +136,15 @@ void CObjHero::Action()
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
 				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
 			}
-
 			else
 			{
 				m_f = false;
 				atk_anime = 1;
-
-
 				//剣を振る音
 				Audio::Start(0);
-
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
 			}
-
-
 		}
 
 		if (m_f == false)
@@ -176,6 +163,8 @@ void CObjHero::Action()
 			}
 		}
 	}
+
+	
 	//キー入力
 	//--------------------------------------------------
 	
@@ -209,169 +198,83 @@ void CObjHero::Action()
 	}
 	//-------------------------------------
 	//当たり判定を行うオブジェクト情報部
-	int database[] =
+	//敵の名前, ダメージ量
+	int database[][2] =
 	{
-		OBJ_ENEMY,
-		OBJ_ENEMY2,
-		OBJ_ENEMY3,
-		OBJ_ENEMY4,
-		OBJ_SMALLSLIM,
-		OBJ_SHOCKWAVE,
-		OBJ_FIREBALL,
-		OBJ_SLIMEBALL,
-		OBJ_BOSS1,
-		OBJ_DRAGON,
+		{ OBJ_ENEMY,	1.0f},
+		{ OBJ_ENEMY2,	1.2f},
+		{ OBJ_ENEMY3,	2.0f},
+		{ OBJ_ENEMY4,	2.3f},
+		{ OBJ_SMALLSLIM,1.0f},
+		{ OBJ_SHOCKWAVE,0.5f},
+		{ OBJ_FIREBALL,	1.0f},
+		{ OBJ_SLIMEBALL,0.5f},
+		{ OBJ_BOSS1,	1.0f},
+		{ OBJ_DRAGON,	1.5f},
 	};
 
-	/*for (int i = 0; i < 8; i++)
-	{
-		//敵の攻撃力
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			Audio::Start(25);
-			if (i == 0)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.20;
-			}
 
-			else if (i == 1)
-			{
-				MANA_damege = 4.0 + mana_damege * 0.20;
-			}
-			else if (i == 2)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 3)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 4)
-			{
-				MANA_damege = 1.0 + mana_damege * 0.20;
-			}
-			else if (i == 5)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.10;
-
-			}
-			else if (i == 6)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.10;
-			}
-			else if (i == 7)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.20;
-			}
-			Mana_HP -= MANA_damege;
-
-		}
-
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			
-			//ダメージ
-			Audio::Start(4);
-
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-		}
-	}*/
-
-	//無敵時間が無効になった時 敵とのあたり判定を行う
+	//無敵時間が無効になった時
 	if (m_mtk == false)
 	{
 		//HitBoxの内容を元に戻す
 		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
+		hit->SetPos(m_px + 18.0f, m_py + 12.0f);
 
-		if (hit->CheckObjNameHit(OBJ_ENEMY) != nullptr)
+		//敵とのあたり判定を行う
+		for (int i = 0; i < 11; i++)
 		{
-			//ダメージ
-			Audio::Start(4);
+			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
+			{
+				//ダメージ
+				Audio::Start(4);
+				m_mtk = true;
+				m_hp -= database[i][1] + damage;//敵の攻撃力
+				AllDamage += database[i][1] + damage;
+				m_vx = 0.0f;
+				//ボススライムに当たった場合のみ
+				if (i == 8)
+				{
+					CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
+					if (obj_boss != nullptr)
+					{
+						b_x = obj_boss->GetX();
+						
+						if (obj_boss->GetPosture() == 1)
+						{
+								m_px = b_x - 64.0f;
+						}
+						else 
+						{
+								m_px = b_x + 250.0f;
+						}
+					}
+					
+				}
+				//ドラゴンに当たった場合のみ
+				if (i == 9)
+				{
+					CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
+					if (obj_dragon != nullptr)
+					{
+						b_x = obj_dragon->GetX();
 
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
+						if (obj_dragon->GetPosture() == 0)
+						{
+							m_px = b_x - 64.0f;
+						}
+						else
+						{
+							m_px = b_x + 250.0f;
+						}
+					}
+				}
+			}
 			
-			AllDamage += 1.0f + damage;
 		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY2) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.2f + damage;//敵の攻撃力
-			AllDamage += 1.2f + damage;
-
-		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY3) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 2.0f + damage;//敵の攻撃力
-			AllDamage += 2.0f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_ENEMY4) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 2.3f + damage;//敵の攻撃力
-			AllDamage += 2.3f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_SMALLSLIM))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-		}
-
-		if (hit->CheckObjNameHit(OBJ_SLIMEBALL))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 0.5f + damage;
-			AllDamage += 0.5f + damage;//敵の攻撃力
-		}
-
-
-		if (hit->CheckObjNameHit(OBJ_FIREBALL))
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;
-			AllDamage += 1.0f + damage;//敵の攻撃力
-		}
-
-		if (hit->CheckObjNameHit(OBJ_BOSS1) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//敵の攻撃力
-			AllDamage += 1.0f + damage;
-		}
-
-		if (hit->CheckObjNameHit(OBJ_DRAGON) != nullptr)
-		{
-			//ダメージ
-			Audio::Start(4);
-			m_mtk = true;
-			m_hp -= 1.5f + damage;//敵の攻撃力
-			AllDamage += 1.5f + damage;
-		}
-
 	}
 	//無敵がtrueになった時
-	if (m_mtk == true)
+	else if (m_mtk == true)
 	{
 		//HitBoxの内容を更新
 		CHitBox* hit = Hits::GetHitBox(this);
@@ -508,9 +411,7 @@ void CObjHero::Draw()
 
 }
 
-
-
-int CObjHero::GetMP()
+void CObjHero::AddHP(int add) 
 {
-	return m_mp;
+	m_hp += add;
 }

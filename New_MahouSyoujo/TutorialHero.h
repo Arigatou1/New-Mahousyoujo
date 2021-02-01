@@ -5,32 +5,16 @@
 using namespace GameL;
 
 //オブジェクト主人公
-class CObjHero :public CObj
+class TutorialHero :public CObj
 {
-public :
-	CObjHero() {};
-	~CObjHero() ;
+public:
+	TutorialHero() {};
+	~TutorialHero();
 	void Init();
 	void Action();
 	void Draw();
-	float GetX() { return m_px; };
-	float GetY() { return m_py; };
-	float GetVY() { return m_vy; };
-	float GetVX() { return m_vx; };
-
-	float SetX(float x) { return m_px=x; };
-	float SetY(float y) { return m_py=y; };
-	float SetVY(float vy) { return m_vy = vy; };
-	float SetVX(float vx) { return m_vx = vx; };
-	int GetHP() { return m_hp; };
-	int GetMAXHP() { return max_hp; };
-	//魔法少女回復用　HP加算させる関数
-	void AddHP(int add);
-
-	void SetUp(bool b) { m_hit_up = b; }
-	void SetDown(bool b) { m_hit_down = b; }
-	void SetLeft(bool b) { m_hit_left = b; }
-	void SetRight(bool b) { m_hit_right = b; }
+	int GetSkill() { return m_skill; };
+	int GetTime() { return m_time; };
 private:
 	float m_px;		//プレイヤーの座標X
 	float m_py;		//プレイヤーの座標Y
@@ -41,6 +25,11 @@ private:
 	int m_mp;   //現在のMP
 	int m_Skill;//魔法少女のスキル選択
 
+	int m_order;//チュートリアルの順番
+	int m_time;//チュートリアルの時間
+	int m_num;//ループする時間
+	int m_skill;//アイコンのスキル
+	bool icon;//アイコンの表示
 
 	int m_anime;	//歩くアニメーション
 	int m_anitime;	//歩くアニメーションの間隔
@@ -64,8 +53,6 @@ private:
 	bool m_hit_left;
 	bool m_hit_right;
 
-	float h_xsize;
-	float h_ysize;
 
 	int Weapon;//主人公の武器
 	float damage;//主人公が受けるダメージ
@@ -73,10 +60,7 @@ private:
 	float HeroDamage;
 
 	int shootDownTime;
-//	bool HPZeroCheck;
+	//	bool HPZeroCheck;
 
 	bool clear_check;
-
-	int b_x;//ボスのX座標
-	int b_p;
 };
