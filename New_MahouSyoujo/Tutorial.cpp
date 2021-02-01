@@ -208,12 +208,13 @@ void CTutorial::Draw()
 	src.m_right = 256;
 	src.m_bottom = 64;
 
-	dst.m_top = 100;
-	dst.m_left = 100;
-	dst.m_right = 700;
-	dst.m_bottom = 300;
+	dst.m_top    = 100;
+	dst.m_left   = 100;
+	dst.m_right  = 700;
+	dst.m_bottom = 430;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+
 
 	wchar_t str[128];
 

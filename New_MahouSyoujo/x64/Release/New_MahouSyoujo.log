@@ -1,37 +1,11 @@
-﻿  ClearFadeout.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjEnemy2.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(124,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(155,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy2.cpp(163,40): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjEnemy3.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(76,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(148,38): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjEnemy3.cpp(156,39): warning C4244: '-=': 'float' から 'int' への変換です。データが失われる可能性があります。
-  ObjFireBall.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  Tutorial.cpp
+﻿  Tutorial.cpp
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
   コード生成しています。
-  90 of 1087 functions ( 8.3%) were compiled, the rest were copied from previous compilation.
+  1 of 1087 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    23 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Release\New_MahouSyoujo.exe
