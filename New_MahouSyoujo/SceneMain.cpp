@@ -110,7 +110,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
 	Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
+	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 
 	//背景読み込み
 	for (int i = 1; i <= 10; i++)
@@ -131,10 +131,6 @@ void CSceneMain::InitScene()
 	//魔法少女オブジェクト作成
 	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();
 	Objs::InsertObj(obj_magicalgirl, OBJ_MAGICALGIRL, 61);
-
-	//ゲージオブジェクト作成
-	CObjGaugeBase* obj_gb = new CObjGaugeBase();
-	Objs::InsertObj(obj_gb, OBJ_GAUGEBASE, 50);
 
 	//HPゲージオブジェクト作成
 	CObjGaugeHP* obj_ghp = new CObjGaugeHP();
@@ -161,17 +157,19 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
+	//メテオアイコン作成
+	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	
 	//バリアアイコン作成
-	CObjBarrierIcon* obj_bicon = new CObjBarrierIcon();
-	Objs::InsertObj(obj_bicon, OBJ_BARRIERICON, 60);
+	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 	//ヒールアイコン作成
-	CObjHeelIcon* obj_hicon = new CObjHeelIcon();
-	Objs::InsertObj(obj_hicon, OBJ_HEELICON, 60);
+	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
-	//メテオアイコン作成
-	CObjMeteorIcon* obj_micon = new CObjMeteorIcon();
-	Objs::InsertObj(obj_micon, OBJ_METEORICON, 60);
+
 
 	//タイム初期化
 	m_time = 0;

@@ -14,6 +14,7 @@ public:
 	void Action();
 	void Draw();
 	int GetStageID();
+	
 private:
 	bool m_key_flag;//キーフラグ
 	float cursor_x;
@@ -34,4 +35,5 @@ private:
 
 	void cursorUp();
 	void cursorDown();
+	void StageStart();
 };

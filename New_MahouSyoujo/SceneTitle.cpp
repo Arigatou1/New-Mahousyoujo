@@ -36,7 +36,7 @@ void CSceneTitle::InitScene()
 	Objs::InsertObj(obj, OBJ_TITLE, 0);
 
 	Draw::LoadImageW(L"Graphics/logo.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
+	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 
     //âπäyèÓïÒÇÃì«Ç›çûÇ›
 	Audio::LoadAudio(7, L"Sounds/gametitleBGM.wav", SOUND_TYPE::BACK_MUSIC);

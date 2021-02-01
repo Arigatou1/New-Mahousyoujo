@@ -24,6 +24,8 @@ public :
 	float SetVX(float vx) { return m_vx = vx; };
 	int GetHP() { return m_hp; };
 	int GetMAXHP() { return max_hp; };
+	//–‚–@­—‰ñ•œ—p@HP‰ÁZ‚³‚¹‚éŠÖ”
+	void AddHP(int add);
 
 	void SetUp(bool b) { m_hit_up = b; }
 	void SetDown(bool b) { m_hit_down = b; }
