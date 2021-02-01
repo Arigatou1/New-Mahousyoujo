@@ -160,15 +160,15 @@ void TutorialHero::Action()
 			m_num = 240;
 			if (icon == true)
 			{
-				//ヒールアイコン作成
-				CObjIcon* obj_micon = new CObjIcon(64, 650.0f, 200.0f, 12, true);
-				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
-				//バリアアイコン作成
-				obj_micon = new CObjIcon(64, 650.0f, 160.0f, 10, true);
-				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
-				//メテオアイコン作成
-				obj_micon = new CObjIcon(64, 650.0f, 120.0f, 14, true);
-				Objs::InsertObj(obj_micon, OBJ_ICON, 60);
+				////ヒールアイコン作成
+				//CObjIcon* obj_micon = new CObjIcon(64, 650.0f, 200.0f, 12, true);
+				//Objs::InsertObj(obj_micon, OBJ_ICON, 60);
+				////バリアアイコン作成
+				//obj_micon = new CObjIcon(64, 650.0f, 160.0f, 10, true);
+				//Objs::InsertObj(obj_micon, OBJ_ICON, 60);
+				////メテオアイコン作成
+				//obj_micon = new CObjIcon(64, 650.0f, 120.0f, 14, true);
+				//Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 
 				icon = false;
 			}

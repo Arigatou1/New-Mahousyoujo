@@ -104,12 +104,13 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
-	Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
+	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
+	Draw::LoadImageW(L"Graphics/skill_icons.png", 10, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 
 	//背景読み込み
@@ -157,16 +158,20 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
-	//メテオアイコン作成
-	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
-	
-	//バリアアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	////メテオアイコン作成
+	//CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	//
+	////バリアアイコン作成
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
-	//ヒールアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	////ヒールアイコン作成
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+
+	//アイコン作成
+	CObjIcon* obj_icon = new CObjIcon();
 	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 
