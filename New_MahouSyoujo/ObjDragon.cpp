@@ -260,6 +260,7 @@ void CObjDragon::Action()
 	//hp‚ª0‚É‚È‚é‚ÆÁ–Å
 	if (e_hp <= 0)
 	{
+		Audio::Start(26);
 		((UserData*)Save::GetData())->enemyRemain = 0;
 
 		this->SetStatus(false);

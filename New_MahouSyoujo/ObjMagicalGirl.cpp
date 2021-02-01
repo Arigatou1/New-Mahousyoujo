@@ -73,6 +73,8 @@ void CObjMagicalGirl::Action()
 	//上下キーを押すとスキル変更
 	if (Input::GetVKey(VK_UP) == true && s_t == true)
 	{
+		Audio::Start(1);
+	
 		m_skill += 1;
 		s_t = false;
 
@@ -83,6 +85,8 @@ void CObjMagicalGirl::Action()
 	}
 	else if (Input::GetVKey(VK_DOWN) == true && s_t == true)
 	{
+		Audio::Start(1);
+
 		m_skill -= 1;
 		s_t = false;
 
