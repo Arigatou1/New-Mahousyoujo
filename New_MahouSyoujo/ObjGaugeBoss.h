@@ -9,18 +9,20 @@ using namespace GameL;
 class CObjGaugeBoss :public CObj
 {
 public:
-	CObjGaugeBoss() {};
+	CObjGaugeBoss(float x,float y) ;
 
 	~CObjGaugeBoss() {};
 	void Init();
 	void Action();
 	void Draw();
 	int GetPercent();
+	void GaugePosTweak();
 private:
 	float HP;
 	float MAXHP;
 	float GaugePercent;
 
-
+	float pos_x;
+	float pos_y;
 };
 

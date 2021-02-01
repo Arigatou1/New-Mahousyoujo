@@ -36,7 +36,7 @@ void CObjEnemy::Init()
 	e1_hit_down = false;
 	e1_hit_left = false;
 	e1_hit_right = false;
-
+	m_posture = 0;
 	e1_t = true;
 
 	//“–‚½‚è”»’è—p‚ÌHITBOX‚ðì¬
@@ -54,13 +54,31 @@ void CObjEnemy::Action()
 	if (obj != nullptr)
 	{
 		float m_mx = obj->GetX();
+
+		if (m_mx + 65.0f <= m_ex)
+		{
+			m_posture = 1;
+			
+		}
+		else if (m_mx - 52.0f >= m_ex)
+		{
+			m_posture = 0;
+			
+		}
 		if (e1_hit_down == true)
 		{
 
 			if (m_mx + 65.0f <= m_ex)
+			{
+				
 				m_vx = -1.5f;
+			}
 			else if (m_mx - 52.0f >= m_ex)
+			{
+				
 				m_vx = 1.5f;
+			}
+
 			else
 			{
 				if (e1_time % 120 >= 100 || e1_time % 120 <= 20)
@@ -193,9 +211,10 @@ void CObjEnemy::Draw()
 	src.m_right  = e1_anime * 64.0f;
 	src.m_bottom = 384.0f;
 	//•\Ž¦ˆÊ’u‚ÌÝ’è
+
 	dst.m_top    = m_ey+14;
-	dst.m_left	 = m_ex+50.0f;
-	dst.m_right  = m_ex + 0.0f;
+	dst.m_left	 = m_ex+(m_posture *50.0f);
+	dst.m_right  = m_ex +50.0f- (m_posture * 50.0f);
 	dst.m_bottom = m_ey + 64.0f;
 
 	//•`‰æ
