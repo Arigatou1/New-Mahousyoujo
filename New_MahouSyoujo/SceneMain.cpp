@@ -36,7 +36,7 @@ void CSceneMain::InitScene()
 
 	//音楽読み込み
 	Audio::LoadAudio(0, L"Sounds/swordSE.wav", EFFECT);
-	Audio::LoadAudio(1, L"Sounds/girlSE.wav", EFFECT);
+	Audio::LoadAudio(1, L"Sounds/girlsentakuSE.wav", EFFECT);
 	Audio::LoadAudio(2, L"Sounds/bakuhatuSE.wav", EFFECT);
 	Audio::LoadAudio(3, L"Sounds/menuSE.wav", EFFECT);
 	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
@@ -54,11 +54,12 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
 	Audio::LoadAudio(23, L"Sounds/bariaSE.wav", EFFECT);
 	Audio::LoadAudio(25, L"Sounds/manadamageSE.wav", EFFECT);
-	Audio::LoadAudio(26, L"Sounds/dragonjampSE.wav", EFFECT);
+	Audio::LoadAudio(26, L"Sounds/dragondownSE.wav", EFFECT);
 	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
 	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
 	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
 	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
+	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
 	
 	//外部データの読み込み
 

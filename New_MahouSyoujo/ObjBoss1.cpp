@@ -116,6 +116,8 @@ void CObjBoss1::Action()
 	//hp‚ª0‚É‚È‚é‚ÆÁ–Å
 	if (e_hp <= 0)
 	{
+		Audio::Start(31);
+
 		if (((UserData*)Save::GetData())->Stage != 16)
 			((UserData*)Save::GetData())->enemyRemain = 0;
 

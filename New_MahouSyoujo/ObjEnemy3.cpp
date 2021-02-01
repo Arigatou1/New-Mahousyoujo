@@ -141,16 +141,6 @@ void CObjEnemy3::Action()
 		e_damege = obj_all->GetZ_ATK();
 	}
 
-	//’e‚É“–‚½‚ê‚ÎÁ–Å
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		e_hp -= 4;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_damege = obj_homing->GetM_ATK();
-
-		//Amount++;
-	}
-
 	//Œ•‚É“–‚½‚ê‚ÎŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{
