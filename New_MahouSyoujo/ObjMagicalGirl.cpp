@@ -44,19 +44,19 @@ void CObjMagicalGirl::Action()
 		m_gy = obj_mana->GetY();
 	}
 
+	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
 	
-	
-	if(true)
+	//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
+	if (m_mp < 100)
 	{
-		//(‚¨‚»‚ç‚­1•b‚É1)MP‰ñ•œ
-		if (m_mp < 100)
-		{
 
-			if (m_mtime % 60 == 0)
-			{
+		if (m_mtime % 60 == 0)
+		{
+			if (obj_tutorial != nullptr)
+				m_mp += 10;
+			else
 				m_mp++;
-				m_mtime = 0;
-			}
+			m_mtime = 0;
 		}
 	}
 	
