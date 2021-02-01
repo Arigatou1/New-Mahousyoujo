@@ -52,9 +52,10 @@ void CObjMagicalGirl::Action()
 
 		if (m_mtime % 60 == 0)
 		{
+			//チュートリアルの時
 			if (obj_tutorial != nullptr)
 				m_mp += 10;
-			else
+			else                          //チュートリアル以外
 				m_mp++;
 			m_mtime = 0;
 		}

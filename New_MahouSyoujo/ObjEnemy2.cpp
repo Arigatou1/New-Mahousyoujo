@@ -139,15 +139,6 @@ void CObjEnemy2::Action()
 		&e2_hit_up, &e2_hit_down, &e2_hit_left, &e2_hit_right,
 		&m_vx, &m_vy);
 
-	//–‚–@­—‚Ì’e‚É“–‚½‚ê‚ÎÁ–Å
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		e2_hp -= 3;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e2_damege = obj_homing->GetM_ATK();
-
-	}
-
 	//‘S‘ÌUŒ‚‚Ì–‚–@‚É“–‚½‚ê‚ÎÁ–Å
 	if (hit->CheckObjNameHit(OBJ_ALLBULLET) != nullptr)
 	{

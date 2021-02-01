@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClearFadeout.cpp" />
-    <ClCompile Include="CObjHomingBullet.cpp" />
     <ClCompile Include="ObjCaution.cpp" />
     <ClCompile Include="ObjDamegeDisplay.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -207,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClearFadeout.h" />
-    <ClInclude Include="CObjHomingBullet.h" />
     <ClInclude Include="ObjCaution.h" />
     <ClInclude Include="ObjDamegeDisplay.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
