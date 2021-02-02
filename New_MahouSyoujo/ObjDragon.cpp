@@ -46,7 +46,7 @@ void CObjDragon::Init()
 
 
 	//ゲージオブジェクト作成
-	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
+	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss(m_ex - 25, m_ey+272);
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
 	//ランダム

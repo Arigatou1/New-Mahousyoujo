@@ -34,7 +34,7 @@ void CObjEnemy2::Init()
 	e2_hit_down = false;
 	e2_hit_left = false;
 	e2_hit_right = false;
-
+	m_posture = 0;
 	e2_t = true;
 	e2_anime = 1;
 	//当たり判定用のHITBOXを作成
@@ -48,17 +48,37 @@ void CObjEnemy2::Action()
 {
 	e2_time++;
 
+
 	//マナの位置で停止
 	CObjMana* obj = (CObjMana*)Objs::GetObj(OBJ_MANA);
 	if (obj != nullptr)
 	{
+
+
 		float m_mx = obj->GetX();
+
+		if (m_mx + 65.0f <= m_ex)
+		{
+			m_posture = 1;
+			
+		}
+		else if (m_mx - 52.0f >= m_ex)
+		{
+			m_posture = 0;
+			
+		}
 		if (e2_hit_down == true)
 		{
 			if (m_mx + 65.0f <= m_ex)
+			{
+				
 				m_vx = -1.5f;
+			}
 			else if (m_mx - 52.0f >= m_ex)
+			{
+				
 				m_vx = 1.5f;
+			}
 			else
 			{
 				if (e2_time % 120 >= 100 || e2_time % 120 <= 20)
@@ -193,8 +213,8 @@ void CObjEnemy2::Draw()
 	src.m_bottom = 384.0f;
 	//表示位置の設定
 	dst.m_top = m_ey+14;
-	dst.m_left = m_ex+50.0f;
-	dst.m_right = m_ex + 0.0f;
+	dst.m_left = m_ex + (m_posture * 50.0f);
+	dst.m_right = m_ex + 50.0f - (m_posture * 50.0f);
 	dst.m_bottom = m_ey + 64.0f;
 
 	//描画
