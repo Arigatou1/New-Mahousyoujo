@@ -197,7 +197,10 @@ void CObjStageSelect::Draw()
 		//ステージセレクト
 		for (int i = 0; i < 4; i++)
 		{
+			if(((UserData*)Save::GetData())->Clear_Flag[ i +  (PageID * 4)])
 			MenuBlockDraw(140+ menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+			else
+				MenuBlockDraw(140 + menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 0.4f, 0.4f, 0.4f, 1.0f);
 
 		}
 
@@ -208,8 +211,9 @@ void CObjStageSelect::Draw()
 
 		//矢印ボタン
 		for (int i = 0; i < 2; i++)
+		{
 			MenuBlockDraw(16 + i * 674.0f + menuAllButtonX, 156.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-
+		}
 
 		Font::StrDraw(L"←", 40 + menuAllButtonX, 240, 48, c);
 		Font::StrDraw(L"→", 712 + menuAllButtonX, 240, 48, c);
