@@ -186,20 +186,20 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
 	//メテオアイコン作成
-	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	//CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 	
 	//バリアアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 	//ヒールアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	//obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
+	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 	//アイコン作成
-	//CObjIcon* obj_icon = new CObjIcon();
-	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	CObjIcon* obj_icon = new CObjIcon(736.0f,0.0f,1.0f, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 
 

@@ -1,11 +1,17 @@
-﻿  Tutorial.cpp
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\GA1B\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+﻿  SceneMain.cpp
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(4,1): warning C4005: '_SECURE_SCL': マクロが再定義されました。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneMain.cpp(2): message : '_SECURE_SCL' の以前の定義を確認してください
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\GameL\SceneObjManager.h(5,1): warning C4005: '_HAS_ITERATOR_DEBUGGING': マクロが再定義されました。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneMain.cpp(3): message : '_HAS_ITERATOR_DEBUGGING' の以前の定義を確認してください
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneMain.cpp(68,37): warning C4474: 'swprintf_s': 書式文字列に渡された引数の数が多すぎます
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\SceneMain.cpp(68,37): message : プレースホルダーとそのパラメーターには 0 の可変個引数が必要ですが、1 が指定されています。
   コード生成しています。
-  1 of 1087 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  1 of 1089 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
-  New_MahouSyoujo.vcxproj -> C:\Users\GA1B\Desktop\新しいフォルダー (2)\x64\Release\New_MahouSyoujo.exe
+  New_MahouSyoujo.vcxproj -> C:\Users\User\Desktop\新しいフォルダー (2)\x64\Release\New_MahouSyoujo.exe
