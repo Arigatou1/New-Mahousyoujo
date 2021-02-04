@@ -44,19 +44,20 @@ void CObjMagicalGirl::Action()
 		m_gy = obj_mana->GetY();
 	}
 
+	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
 	
-	
-	if(true)
+	//(おそらく1秒に1)MP回復
+	if (m_mp < 100)
 	{
-		//(おそらく1秒に1)MP回復
-		if (m_mp < 100)
-		{
 
-			if (m_mtime % 60 == 0)
-			{
+		if (m_mtime % 60 == 0)
+		{
+			//チュートリアルの時
+			if (obj_tutorial != nullptr)
+				m_mp += 10;
+			else                          //チュートリアル以外
 				m_mp++;
-				m_mtime = 0;
-			}
+			m_mtime = 0;
 		}
 	}
 	
@@ -73,22 +74,27 @@ void CObjMagicalGirl::Action()
 	//上下キーを押すとスキル変更
 	if (Input::GetVKey(VK_UP) == true && s_t == true)
 	{
+		m_skill -= 1;
+		Audio::Start(1);
+	
+		
+		s_t = false;
+
+		if (m_skill == 0)
+			{
+				m_skill = 3;
+			}
+	}
+	else if (Input::GetVKey(VK_DOWN) == true && s_t == true)
+	{
+		Audio::Start(1);
+
 		m_skill += 1;
 		s_t = false;
 
 		if (m_skill == 4)
 			{
 				m_skill = 1;
-			}
-	}
-	else if (Input::GetVKey(VK_DOWN) == true && s_t == true)
-	{
-		m_skill -= 1;
-		s_t = false;
-
-		if (m_skill == 0)
-			{
-				m_skill = 3;
 			}
 	}
 	else if(Input::GetVKey(VK_UP) == false && Input::GetVKey(VK_DOWN) == false)

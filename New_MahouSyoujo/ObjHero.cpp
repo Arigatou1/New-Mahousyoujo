@@ -414,4 +414,6 @@ void CObjHero::Draw()
 void CObjHero::AddHP(int add) 
 {
 	m_hp += add;
+	if (m_hp >= max_hp)
+		m_hp = max_hp;
 }

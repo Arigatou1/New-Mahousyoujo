@@ -42,7 +42,7 @@ void CObjBoss1::Init()
 	Hits::SetHitBox(this, m_ex, m_ey, 250, 250, ELEMENT_ENEMY, OBJ_BOSS1, 10);
 
 	//ゲージオブジェクト作成
-	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
+	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss(m_ex-25,m_ey+272);
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
 
@@ -73,7 +73,7 @@ void CObjBoss1::Action()
 	{
 		Audio::Start(28);
 
-		CObjSlimeBall* obj = new CObjSlimeBall(m_ex, m_ey + 50.0f,-15.0f,4.0f);
+		CObjSlimeBall* obj = new CObjSlimeBall(m_posture == 1?m_ex:m_ex+186, m_ey + 50.0f,-15.0f,4.0f);
 		Objs::InsertObj(obj, OBJ_SLIMEBALL, 49);
 		
 
@@ -84,10 +84,10 @@ void CObjBoss1::Action()
 	{
 		Audio::Start(29);
 		//場所と発射速度を設定できるようにした。
-		CObjEnemy* obj = new CObjEnemy(m_ex,m_ey+50,-5,-10);
+		CObjEnemy* obj = new CObjEnemy(m_posture == 1 ? m_ex : m_ex + 186,m_ey+50, m_posture == 1 ? -5:+5,-10);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
 
-		obj = new CObjEnemy(m_ex, m_ey + 50, -5,0);
+		obj = new CObjEnemy(m_posture == 1 ? m_ex : m_ex + 186, m_ey + 50, m_posture == 1 ? -5 : 5,0);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
 
 		
@@ -116,6 +116,8 @@ void CObjBoss1::Action()
 	//hpが0になると消滅
 	if (e_hp <= 0)
 	{
+		Audio::Start(31);
+
 		if (((UserData*)Save::GetData())->Stage != 16)
 			((UserData*)Save::GetData())->enemyRemain = 0;
 

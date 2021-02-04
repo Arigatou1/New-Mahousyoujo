@@ -17,7 +17,6 @@ class CObjMagicalGirl : public CObj
 		int GetMaxMP();
 		int GetSkill();
 		int GetHP();
-		int GetBTime();
 	private:
 		float m_gx;//xŽ²‚ÌˆÊ’u
 		float m_gy;//yŽ²‚ÌˆÊ’u

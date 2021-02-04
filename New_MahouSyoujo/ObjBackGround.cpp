@@ -20,7 +20,11 @@ CObjBackGround::CObjBackGround(int id)
 //イニシャライズ
 void CObjBackGround::Init()
 {
-	
+	wchar_t bgid[128];
+
+	swprintf_s(bgid, L"BackGrounds/bg_%02d.png", BackGroundID);
+
+	Draw::LoadImageW(bgid, BackGroundID + 50, TEX_SIZE_512);
 }
 
 //アクション
