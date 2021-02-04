@@ -92,16 +92,10 @@ void CObjTitle::Action()
 
 			}
 		}
-		
 		else
 		{
 			m_key_flag = true;
 		}
-
-
-
-
-
 		//----------------------------------
 		//デバッグ用の機能
 

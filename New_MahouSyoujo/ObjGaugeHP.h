@@ -10,16 +10,14 @@ class CObjGaugeHP :public CObj
 {
 public:
 	CObjGaugeHP() {};
-
 	~CObjGaugeHP() {};
 	void Init();
 	void Action();
 	void Draw();
-	int GetPercent();
 private:
 	float HP;
 	float MAXHP;
-	float GaugePercent[2];
+	float GaugePercent[2];//GaugePercent{ HP‚ÌŠ„‡, MP‚ÌŠ„‡};
 	float MP;
 	float MaxMP;
 

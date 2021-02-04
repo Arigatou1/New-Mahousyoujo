@@ -34,16 +34,10 @@ void CSceneMenu::InitScene()
 
 	//グラフィックの読み込み
 	Draw::LoadImageW(L"Graphics/Menu.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"Graphics/block.png", 50, TEX_SIZE_64);
+	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
 	//背景読み込み
-	for (int i = 0; i <= 10; i++)
-	{
-		wchar_t bgid[128];
-
-		swprintf_s(bgid, L"BackGrounds/bg_%02d.png", i);
-
-		Draw::LoadImageW(bgid, i + 50, TEX_SIZE_512);
-	}
+	Draw::LoadImageW(L"BackGrounds/bg_00.png", 50, TEX_SIZE_512);
+	
 	
 	switch (loadMode)
 	{
@@ -85,7 +79,6 @@ void CSceneMenu::InitScene()
 	Audio::LoadAudio(11, L"Sounds/cancelSE.wav", EFFECT);
 
 	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(0);
 	Audio::Start(8);
 
 	

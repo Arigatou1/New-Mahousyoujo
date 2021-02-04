@@ -60,12 +60,13 @@ void CObjStageSelect::Action()
 			{
 				Audio::Start(9);
 
+				//チュートリアル開始します。表示してると気
 				if (tutorialStart == true)
 				{
 					nowLoading = true;
 					((UserData*)Save::GetData())->Stage = -1;
 				}
-
+				//チュートリアルまだやってない時
 				else if(((UserData*)Save::GetData())->tutorialDone == false)
 				{
 					tutorialStart = true;
@@ -73,12 +74,11 @@ void CObjStageSelect::Action()
 
 				else if (((UserData*)Save::GetData())->tutorialDone == true)
 				{
-
-
-					if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+					if (cursor_y < 448)
 					{
-						nowLoading = true;
+						StageStart();
 					}
+
 					if (cursor_y >= 448)
 					{
 						this->SetStatus(false);
@@ -86,8 +86,6 @@ void CObjStageSelect::Action()
 						CObjCustomize* obj = new CObjCustomize();
 						Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 					}
-					
-
 				}
 				m_key_flag = false;
 
@@ -95,7 +93,6 @@ void CObjStageSelect::Action()
 		}
 		else if (Input::GetVKey(VK_UP) == true)
 		{
-
 			cursorUp();
 		}
 		else if (Input::GetVKey(VK_DOWN) == true)
@@ -160,13 +157,13 @@ void CObjStageSelect::Action()
 
 		waitTime++;
 
-		if (waitTime == 30)
+		if (waitTime == 20)
 		{
 			//EnemyAppear
 			Fadeout* obj_Fadeout = new Fadeout(8);
 			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 		}
-		else if (waitTime > 30)
+		else if (waitTime > 20)
 		{
 			menuAllButtonX += 16;
 
@@ -200,7 +197,10 @@ void CObjStageSelect::Draw()
 		//ステージセレクト
 		for (int i = 0; i < 4; i++)
 		{
+			if(((UserData*)Save::GetData())->Clear_Flag[ i +  (PageID * 4)])
 			MenuBlockDraw(140+ menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+			else
+				MenuBlockDraw(140 + menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 0.4f, 0.4f, 0.4f, 1.0f);
 
 		}
 
@@ -211,8 +211,9 @@ void CObjStageSelect::Draw()
 
 		//矢印ボタン
 		for (int i = 0; i < 2; i++)
+		{
 			MenuBlockDraw(16 + i * 674.0f + menuAllButtonX, 156.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-
+		}
 
 		Font::StrDraw(L"←", 40 + menuAllButtonX, 240, 48, c);
 		Font::StrDraw(L"→", 712 + menuAllButtonX, 240, 48, c);
@@ -299,4 +300,13 @@ void CObjStageSelect::cursorDown()
 	if (cursor_y > 448)
 		cursor_y = 64;
 
+}
+
+void CObjStageSelect::StageStart()
+{
+	//そのステージが解放されているかをチェックする。
+	if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
+	{
+		nowLoading = true;
+	}
 }

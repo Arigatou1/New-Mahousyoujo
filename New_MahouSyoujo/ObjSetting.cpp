@@ -219,12 +219,17 @@ void CObjSetting::Draw()
 		swprintf_s(Diff, L"HARD");
 		break;
 	}
-
-	if (((UserData*)Save::GetData())->DamageDraw)
+	switch (((UserData*)Save::GetData())->DamageDraw)
+	{
+	case true:
 		swprintf_s(OnOff, L"ON");
-	else
+		break;
+	case false:
 		swprintf_s(OnOff, L"OFF");
+		break;
 
+	}
+	
 	for (int i = 0; i < 4; i++)
 	{
 		switch (i)

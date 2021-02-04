@@ -18,8 +18,8 @@ private:
 	float mb_x;
 	float b_time;//バリアの出てる時間
 
-	int b_skill;//魔法少女のスキル選択
-	int b_mp;
+	//int b_skill;//魔法少女のスキル選択
+	//int b_mp;
 
-	bool b_t;//バリアの間隔(仮)
+	//bool b_t;//バリアの間隔(仮)
 };

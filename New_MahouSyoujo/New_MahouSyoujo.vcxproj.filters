@@ -150,9 +150,6 @@
     <ClCompile Include="ObjEnemy4.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGaugeBase.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClCompile>
     <ClCompile Include="ObjGaugeBoss.cpp">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClCompile>
@@ -200,9 +197,6 @@
     </ClCompile>
     <ClCompile Include="ObjShockWave.cpp">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjHomingBullet.cpp">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
     </ClCompile>
     <ClCompile Include="ObjAllBullet.cpp">
       <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
@@ -338,9 +332,6 @@
     <ClInclude Include="ObjEnemy4.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGaugeBase.h">
-      <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
-    </ClInclude>
     <ClInclude Include="ObjGaugeBoss.h">
       <Filter>ソース ファイル\03.シーンメイン\ゲージオブジェクト表示関連</Filter>
     </ClInclude>
@@ -388,9 +379,6 @@
     </ClInclude>
     <ClInclude Include="ObjShockWave.h">
       <Filter>ソース ファイル\03.シーンメイン\敵オブジェクト</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjHomingBullet.h">
-      <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
     </ClInclude>
     <ClInclude Include="ObjAllBullet.h">
       <Filter>ソース ファイル\03.シーンメイン\魔法少女関連</Filter>
