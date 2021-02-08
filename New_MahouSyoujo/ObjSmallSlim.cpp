@@ -49,6 +49,8 @@ void CObjSmallSlim::Init()
 
 	m_posture = 0;
 
+	m_posture = 0;
+
 }
 
 //ƒAƒNƒVƒ‡ƒ“

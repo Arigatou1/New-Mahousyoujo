@@ -54,6 +54,9 @@ void CObjTitle::Init()
 		((UserData*)Save::GetData())->masterVolume = 100;
 		
 
+		((UserData*)Save::GetData())->masterVolume = 100;
+		
+
 		init_stage = true;
 
 	}
