@@ -38,7 +38,7 @@ void CTutorial::Action()
 		m_skill = obj_magicalgirl->GetSkill();
 	}
 
-	if (Order == 1)//左右移動
+	if      (Order == 1)//左右移動
 	{
 		
 		if (Input::GetVKey(VK_LEFT) == true)
@@ -152,7 +152,7 @@ void CTutorial::Action()
 			condreset = true;
 		}
 	}
-	else if(Order == 8)//メテオ
+	else if (Order == 8)//メテオ
 	{
 		if (condreset == true)
 		{
@@ -203,10 +203,10 @@ void CTutorial::Draw()
 
 	RECT_F src;
 	RECT_F dst;
-	src.m_top = 0;
-	src.m_left = 192;
-	src.m_right = 256;
-	src.m_bottom = 64;
+	src.m_top    =   0;
+	src.m_left   = 192;
+	src.m_right  = 256;
+	src.m_bottom =  64;
 
 	dst.m_top    = 100;
 	dst.m_left   = 100;

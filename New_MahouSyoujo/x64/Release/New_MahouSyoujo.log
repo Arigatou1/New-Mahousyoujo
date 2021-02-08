@@ -1,16 +1,39 @@
-﻿  TutorialHero.cpp
+﻿  ObjHero.cpp
 C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(55,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(105,17): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(136,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(141,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(229,16): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(313,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(329,40): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
-C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\TutorialHero.cpp(329,40): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(57,51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(99,15): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(105,15): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(114,16): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(136,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(145,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(204,16): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(204,16): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(205,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(205,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(206,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(206,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(207,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(207,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(208,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(208,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(209,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(209,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(210,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(210,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(211,19): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(211,19): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(212,16): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(212,16): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(213,17): warning C4838: 'float' から 'int' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(213,17): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(241,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(260,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(357,23): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(373,39): warning C4838: 'int' から 'float' への変換には縮小変換が必要です
+C:\Users\User\Desktop\新しいフォルダー (2)\New_MahouSyoujo\ObjHero.cpp(373,39): warning C4244: '初期化中': 'int' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
   1 of 1088 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
