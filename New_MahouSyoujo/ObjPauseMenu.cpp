@@ -34,7 +34,7 @@ void CObjPauseMenu::Action()
 void CObjPauseMenu::Draw()
 {
 	//描画カラー情報
-	float c[4] = { 0.5f,0.5f,0.5f,0.5f };
+	float c[4] = { 0.0f,0.0f,0.0f,0.5f };
 
 	RECT_F src;
 	RECT_F dst;
@@ -44,21 +44,19 @@ void CObjPauseMenu::Draw()
 
 		src.m_top = 0;
 		src.m_left = 0;
-		src.m_right = 1;
-		src.m_bottom = 1;
+		src.m_right = 64;
+		src.m_bottom = 64;
 
 		dst.m_top = 0;
 		dst.m_left = 0;
 		dst.m_right = 800;
 		dst.m_bottom = 600;
 
-		Draw::Draw(0, &src, &dst, c, 0.0f);
+		Draw::Draw(63, &src, &dst, c, 0.0f);
+
 
 		for (int i = 0; i < 4; i++)
 			c[i] = 1.0f;
-		
-
-
 		Font::StrDraw(L"PAUSE", 336, 268, 64, c);
 
 		Font::StrDraw(L"[Esc]:モードセレクト", 236, 368, 32, c);
@@ -66,5 +64,3 @@ void CObjPauseMenu::Draw()
 	
 	}
 }
-
-//MenuBlockDraw関数

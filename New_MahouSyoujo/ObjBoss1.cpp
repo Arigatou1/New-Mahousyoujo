@@ -2,6 +2,7 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL/Audio.h"
 
 #include "ObjBoss1.h"
 #include "GameL\UserData.h"
@@ -34,12 +35,14 @@ void CObjBoss1::Init()
 
 	maxhp = 800;
 	e_hp = maxhp;
+
+	m_posture = m_ex<400?0:1;
 	
 	//当たり判定用のHITBOXを作成
 	Hits::SetHitBox(this, m_ex, m_ey, 250, 250, ELEMENT_ENEMY, OBJ_BOSS1, 10);
 
 	//ゲージオブジェクト作成
-	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss();
+	CObjGaugeBoss* obj_gboss = new CObjGaugeBoss(m_ex-25,m_ey+272);
 	Objs::InsertObj(obj_gboss, OBJ_GAUGEBOSS, 51);
 
 
@@ -49,13 +52,7 @@ void CObjBoss1::Init()
 void CObjBoss1::Action()
 {
 
-	//hpが0になると消滅
-	if (e_hp <= 0)
-	{
-		((UserData*)Save::GetData())->enemyRemain = 0;
-		return;
-	}
-
+	
 	//重力
 	m_vy += 9.8 / (16.0f);
 
@@ -74,8 +71,9 @@ void CObjBoss1::Action()
 	a_time++;	
 	if (a_time % 100 == 0)
 	{
-		
-		CObjSlimeBall* obj = new CObjSlimeBall(m_ex, m_ey + 50.0f,-15.0f,4.0f);
+		Audio::Start(28);
+
+		CObjSlimeBall* obj = new CObjSlimeBall(m_posture == 1?m_ex:m_ex+186, m_ey + 50.0f,-15.0f,4.0f);
 		Objs::InsertObj(obj, OBJ_SLIMEBALL, 49);
 		
 
@@ -84,11 +82,12 @@ void CObjBoss1::Action()
 
 	if (a_time % 500 == 0)
 	{
+		Audio::Start(29);
 		//場所と発射速度を設定できるようにした。
-		CObjEnemy* obj = new CObjEnemy(m_ex,m_ey+50,-5,-10);
+		CObjEnemy* obj = new CObjEnemy(m_posture == 1 ? m_ex : m_ex + 186,m_ey+50, m_posture == 1 ? -5:+5,-10);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
 
-		obj = new CObjEnemy(m_ex, m_ey + 50, -5,0);
+		obj = new CObjEnemy(m_posture == 1 ? m_ex : m_ex + 186, m_ey + 50, m_posture == 1 ? -5 : 5,0);
 		Objs::InsertObj(obj, OBJ_ENEMY, 49);
 
 		
@@ -114,7 +113,22 @@ void CObjBoss1::Action()
 	else if(hit->CheckObjNameHit(OBJ_ALLBULLET) == nullptr)
 		allbullet_hit = true;
 
-	
+	//hpが0になると消滅
+	if (e_hp <= 0)
+	{
+		Audio::Start(31);
+
+		if (((UserData*)Save::GetData())->Stage != 16)
+			((UserData*)Save::GetData())->enemyRemain = 0;
+
+		EnemyAppear* obj_appear = (EnemyAppear*)Objs::GetObj(OBJ_APPEAR);
+
+		obj_appear->BossDisappearnce();
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 }
 
 //ドロー
@@ -128,8 +142,8 @@ void CObjBoss1::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 320.0f;
-	src.m_left = 64.0f;
-	src.m_right = 0.0f;
+	src.m_left = 0.0f+(m_posture*64.0f);
+	src.m_right = 64.0f - (m_posture * 64.0f);
 	src.m_bottom = 384.0f;
 	//表示位置の設定
 	dst.m_top = m_ey;

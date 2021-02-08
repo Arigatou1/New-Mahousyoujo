@@ -30,16 +30,7 @@ void CObjModeSelect::Init()
 //アクション
 void CObjModeSelect::Action()
 {
-	//モード選択画面
-	//今いるカーソルの場所から位置を取得し、
-	//モード設定する
 
-	//nowSelect = ((cursor_x - 40) / 400) ;
-
-	//cursor_x = 40,440
-	//カーソルの初期位置は40なので、
-	//440から40を引き、400を出し、400で割ることで1が出てくる。
-	
 
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
@@ -244,9 +235,8 @@ void CObjModeSelect::Draw()
 	}
 
 
-	MenuBlockDraw(536, 512.0f, 264.0f, 96.0f, 0.1f, 0.1f, 0.1f, 1.0f);
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
 
-	Font::StrDraw(L"↑↓キー:移動", 540, 530, 26, c);
-	Font::StrDraw(L"Enter:決定  Esc:戻る", 540, 560, 26, c);
+	Font::StrDraw(L"↑↓キー:移動  Enter:決定  Esc:戻る", 200, 566, 26, c);
 
 }

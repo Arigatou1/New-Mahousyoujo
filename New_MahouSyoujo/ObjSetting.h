@@ -21,6 +21,14 @@ private:
 	int nowSelect;
 	float moveCursor;
 
+
+	bool nowLoading;
+	//メニューボタン全移動
+	float menuAllButtonX;
+
+	int waitTime;
+
+
 	void cursorUp();
 	void cursorDown();
 };

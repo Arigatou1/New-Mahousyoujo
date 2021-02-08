@@ -24,7 +24,8 @@ public :
 	float SetVX(float vx) { return m_vx = vx; };
 	int GetHP() { return m_hp; };
 	int GetMAXHP() { return max_hp; };
-	int GetMP();
+	//魔法少女回復用　HP加算させる関数
+	void AddHP(int add);
 
 	void SetUp(bool b) { m_hit_up = b; }
 	void SetDown(bool b) { m_hit_down = b; }
@@ -69,9 +70,13 @@ private:
 	int Weapon;//主人公の武器
 	float damage;//主人公が受けるダメージ
 	float AllDamage;//主人公が受けたダメージ
+	float HeroDamage;
 
 	int shootDownTime;
 //	bool HPZeroCheck;
 
 	bool clear_check;
+
+	int b_x;//ボスのX座標
+	int b_p;
 };

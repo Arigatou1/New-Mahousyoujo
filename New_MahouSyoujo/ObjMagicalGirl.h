@@ -17,12 +17,10 @@ class CObjMagicalGirl : public CObj
 		int GetMaxMP();
 		int GetSkill();
 		int GetHP();
-		int GetBTime();
 	private:
 		float m_gx;//x軸の位置
 		float m_gy;//y軸の位置
-		float z_x;//all弾の位置x
-		float z_y;//all弾の位置y
+		
 		float m_postrue;//姿勢
 
 		float h_hp;//主人公HP
@@ -34,10 +32,11 @@ class CObjMagicalGirl : public CObj
 		int m_skill;//スキル選択
 		
 		int m_mtime;//MP回復用時間
-		int m_btime;//ホーミング弾用時間
+		
 		bool s_t;//スキル選択間隔
-		//bool m_t;//攻撃間隔
-		bool h_t;//回復間隔
-		bool b_t;//バリア間隔
-		bool z_t;//全体攻撃間隔
+		////bool m_t;//攻撃間隔
+		//bool h_t;//回復間隔
+		//bool b_t;//バリア間隔
+		//bool z_t;//全体攻撃間隔
+		bool m_key_flag;
 };

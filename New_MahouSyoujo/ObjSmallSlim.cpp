@@ -5,6 +5,7 @@
 
 #include "ObjSmallSlim.h"
 #include "GameL\UserData.h"
+#include "GameL\Audio.h"
 
 
 //使用するネームベース
@@ -44,7 +45,9 @@ void CObjSmallSlim::Init()
 	ss_t = true;
 	ss_anime = 1;
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ex, m_ey, 32, 32, ELEMENT_ENEMY, OBJ_SMALLSLIM, 10);
+	Hits::SetHitBox(this, m_ex, m_ey, 24, 16, ELEMENT_ENEMY, OBJ_SMALLSLIM, 10);
+
+	m_posture = 0;
 
 }
 
@@ -59,6 +62,11 @@ void CObjSmallSlim::Action()
 	if (obj != nullptr)
 	{
 		float m_mx = obj->GetX();
+
+		if (m_mx + 50.0f <= m_ex)
+			m_posture = 1;
+		else if (m_mx - 52.0f >= m_ex)
+			m_posture = 0;
 
 		if (m_mx + 50.0f <= m_ex)
 			m_vx = -2.0f;
@@ -130,7 +138,7 @@ void CObjSmallSlim::Action()
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex + 16.0f, m_ey + 32.0f);
+	hit->SetPos(m_ex + 16.0f, m_ey +47.0f);
 
 	CObjBlock* obj_block1 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	obj_block1->BlockHit(&m_ex, &m_ey,
@@ -169,6 +177,8 @@ void CObjSmallSlim::Action()
 	//HP０になったとき
 	if (e_hp <= 0)
 	{
+		Audio::Start(2);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;
@@ -191,8 +201,8 @@ void CObjSmallSlim::Draw()
 	src.m_bottom = 384.0f;
 	//表示位置の設定
 	dst.m_top    = m_ey + 32.0f;
-	dst.m_left   = m_ex + 16.0f;
-	dst.m_right  = m_ex + 48.0f;
+	dst.m_left   = m_ex + 16.0f + (m_posture * 32.0f);
+	dst.m_right  = m_ex + 48.0f - (m_posture * 32.0f);
 	dst.m_bottom = m_ey + 64.0f;
 
 	//描画

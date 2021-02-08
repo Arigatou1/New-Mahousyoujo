@@ -24,7 +24,7 @@ void CObjBullet::Init()
 {
 	Hits::SetHitBox(this, px, py+24, 64, 16, ELEMENT_PLAYER, OBJ_BULLET, 1);
 	
-	atk_power = 5 - ((UserData*)Save::GetData())->Diffculty;
+	atk_power = 4 - ((UserData*)Save::GetData())->Diffculty;
 
 	hitCheck = false;
 

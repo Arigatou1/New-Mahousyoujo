@@ -17,7 +17,7 @@ void CObjTitle::Init()
 {
 
 	//----------------------------------------------------------
-	//セーブデータ関連
+	//セーブデータ関連 初期化
 
 	m_key_flag = false;//キーフラグ
 
@@ -39,8 +39,8 @@ void CObjTitle::Init()
 		//プログラムを一回だけ実行する
 		((UserData*)Save::GetData())->Diffculty = 1;
 		((UserData*)Save::GetData())->DamageDraw = true;
-
-
+		((UserData*)Save::GetData())->tutorialDone = false;
+		
 		//--------------------------------------------------------
 
 		//ロード
@@ -51,7 +51,8 @@ void CObjTitle::Init()
 		//影響を受けない。
 		((UserData*)Save::GetData())->PauseMenu = false;
 		((UserData*)Save::GetData())->enemyRemain = 1;
-
+		((UserData*)Save::GetData())->masterVolume = 100;
+		
 
 		init_stage = true;
 
@@ -66,6 +67,7 @@ void CObjTitle::Init()
 
 	shootDownTime = 0;
 	nowLoading = false;
+	Audio::VolumeMaster(0.0f);
 }
 
 //アクション
@@ -81,20 +83,17 @@ void CObjTitle::Action()
 		{
 			if (m_key_flag == true)
 			{
+
 				Audio::Start(9);
 				nowLoading = true;
 				m_key_flag = false;
+
 			}
 		}
 		else
 		{
 			m_key_flag = true;
 		}
-
-
-
-
-
 		//----------------------------------
 		//デバッグ用の機能
 
@@ -113,6 +112,9 @@ void CObjTitle::Action()
 				((UserData*)Save::GetData())->Diffculty = 1;
 				((UserData*)Save::GetData())->DamageDraw = true;
 
+				((UserData*)Save::GetData())->masterVolume = 100;
+				Audio::VolumeMaster(1.0f-((UserData*)Save::GetData())->masterVolume / 100.0f);
+				((UserData*)Save::GetData())->tutorialDone = false;
 				Save::Seve();
 
 				m_key_flag = false;
