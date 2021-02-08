@@ -1,54 +1,32 @@
 //使用するヘッダーファイル
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
-#include "GameL\SceneManager.h"
 
 #include "GameL\UserData.h"
 #include "GameHead.h"
 #include "Tutorial.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
 
+
 //イニシャライズ
 void CTutorial::Init()
 {
-	
-	//外部データの読み込み
-	unique_ptr<wchar_t>p;//ステージ情報ポインター
-	/*int size;
-	int StageID = ((UserData*)Save::GetData())->Stage + 1;
 
-	//マップデータを読み込む。
-	wchar_t s[128];
-
-	if (StageID >= 9 && StageID != 17)
-		swprintf_s(s, L"Stage/Stage8.csv", StageID);
-
-	else
-		swprintf_s(s, L"Stage/Stage%d.csv", StageID);
-
-	p = Save::ExternalDataOpen(s, &size);//外部データ読み込み
-	*/
-	int map[10][13];
-	int count = 1;
-	for (int i = 0; i < 10; i++)
-	{
-		for (int j = 0; j < 13; j++)
-		{
-			int w = 0;
-			swscanf_s(&p.get()[count], L"%d", &w);
-
-			map[i][j] = w;
-			count += 2;
-		}
-	}
-
-	Order = 1;
 	cond1 = false;
 	cond2 = false;
 
 	condreset = false;
+
+	Order = 1;
+
+	//チュートリアる主人公オブジェクト作成
+	TutorialHero* obj = new TutorialHero();
+	Objs::InsertObj(obj, OBJ_TUTORIALHERO, 60);
+
+	shootDownTime = 0;
 }
 
 //アクション
@@ -60,9 +38,9 @@ void CTutorial::Action()
 		m_skill = obj_magicalgirl->GetSkill();
 	}
 
-	switch (Order)
+	if (Order == 1)//左右移動
 	{
-	case 1://左右移動
+		
 		if (Input::GetVKey(VK_LEFT) == true)
 			cond1 = true;
 		if (Input::GetVKey(VK_RIGHT) == true)
@@ -73,8 +51,9 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 2://ジャンプ
+	}
+	else if (Order == 2)//ジャンプ
+	{
 		if (condreset == true)
 		{
 			cond1 = false; cond2 = false;
@@ -89,12 +68,15 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 3://攻撃
+	}
+	else if (Order == 3)//攻撃
+	{
 		if (condreset == true)
 		{
 			cond1 = false;
 			condreset = false;
+			CObjEnemy* obj = new CObjEnemy(799, 480);
+			Objs::InsertObj(obj, OBJ_ENEMY, 49);
 		}
 
 		if (Input::GetVKey('F') == true)
@@ -105,8 +87,20 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 4://スキル変更
+	}
+	else if (Order == 4)
+	{
+		TutorialHero* obj_tutorialhero = (TutorialHero*)Objs::GetObj(OBJ_TUTORIALHERO);
+		if (obj_tutorialhero != nullptr)
+		{
+			Time = obj_tutorialhero->GetTime();
+		}
+
+		if (Time >= 400)
+			Order++;
+	}
+	else if (Order == 5)//スキル変更
+	{
 		if (condreset == true)
 		{
 			cond1 = false;
@@ -123,8 +117,9 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 5://回復
+	}
+	else if (Order == 6)//ヒール
+	{
 		if (condreset == true)
 		{
 			cond1 = false; cond2 = false;
@@ -139,8 +134,9 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 6://バリア
+	}
+	else if (Order == 7)//バリア
+	{
 		if (condreset == true)
 		{
 			cond1 = false;
@@ -155,8 +151,9 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	case 7://メテオ
+	}
+	else if(Order == 8)//メテオ
+	{
 		if (condreset == true)
 		{
 			cond1 = false;
@@ -171,52 +168,140 @@ void CTutorial::Action()
 			Order++;
 			condreset = true;
 		}
-		break;
-	default:
-		break;
+	}
+	else if (Order == 9)
+	{
+	((UserData*)Save::GetData())->tutorialDone = true;
+	Save::Seve();
+	//HPがゼロになったら、待機時間を増価させる。
+	shootDownTime++;
+
+	if (shootDownTime == 1)
+	{
+		
+		Audio::Start(13);
+		
+	}
+	else if (shootDownTime == 200)
+	{
+		//EnemyAppear
+		Fadeout* obj_Fadeout = new Fadeout();
+		Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+	}
+
+	else if (shootDownTime == 300)
+	{
+		Scene::SetScene(new CSceneMenu());
+	}
 	}
 }
 
 //ドロー
 void CTutorial::Draw()
 {
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float c[4] = { 0.0f,0.0f,0.0f,0.9f };
+
+	RECT_F src;
+	RECT_F dst;
+	src.m_top = 0;
+	src.m_left = 192;
+	src.m_right = 256;
+	src.m_bottom = 64;
+
+	dst.m_top    = 100;
+	dst.m_left   = 100;
+	dst.m_right  = 700;
+	dst.m_bottom = 430;
+
+	Draw::Draw(0, &src, &dst, c, 0.0f);
+
+
 	wchar_t str[128];
 
-	switch (Order)
+	for (int i = 0; i < 4; i++)
 	{
-	case 1:
-		swprintf_s(str, L"条件1");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 2:
-		swprintf_s(str, L"条件2");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 3:
-		swprintf_s(str, L"条件3");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 4:
-		swprintf_s(str, L"条件4");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 5:
-		swprintf_s(str, L"条件5");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 6:
-		swprintf_s(str, L"条件6");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 7:
-		swprintf_s(str, L"条件7");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
-	case 8:
-		swprintf_s(str, L"終わり");//整数を文字列か
-		Font::StrDraw(str, 150, 336, 36, c);
-		break;
+		c[i] = 1.0f;
 	}
-	
+
+	if (Order == 1)
+	{
+		swprintf_s(str, L"「←」・「→」キーで左右に移動できます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+	}
+	else if(Order == 2)
+	{
+		swprintf_s(str, L"「スペース」キーでジャンプできます");//整数を文字列か
+		Font::StrDraw(str, 250, 200, 20, c);
+	}
+	else if (Order == 3)
+	{
+		swprintf_s(str, L"「F」キーで攻撃します");//整数を文字列か
+		Font::StrDraw(str, 300, 200, 20, c);
+	}
+	else if (Order == 4)
+	{
+		swprintf_s(str, L"主人公やマナは敵に当たったり攻撃を受けるとダメージを受けます");//整数を文字列か
+		Font::StrDraw(str, 150, 200, 20, c);
+	}
+	else if (Order == 5)
+	{
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+	}
+	else if (Order == 6)
+	{
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはヒール　主人公の体力を回復します");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
+		SkillIconsDraw(0);
+	}
+	else if (Order == 7)
+	{
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはバリア　マナの周りに展開して敵の攻撃を防ぎます");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
+		SkillIconsDraw(1);
+	}
+	else if (Order == 8)
+	{
+		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
+		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		Font::StrDraw(str, 350, 220, 20, c);
+		swprintf_s(str, L"これはメテオ　全体に強力な攻撃をします");//整数を文字列か
+		Font::StrDraw(str, 200, 240, 20, c);
+		SkillIconsDraw(2);
+	}
+	else if (Order == 9)
+	{
+		swprintf_s(str, L"終わり");//整数を文字列か
+		Font::StrDraw(str, 350, 200, 20, c);
+	}
+}
+
+void CTutorial::SkillIconsDraw(int id)
+{
+	RECT_F src;
+	RECT_F dst;
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//切り取り位置の設定
+	src.m_top = (id*128.0f);
+	src.m_left = 0.0f;
+	src.m_right = 128.0f;
+	src.m_bottom = src.m_top+128.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 100.0f;
+	dst.m_right = dst.m_left + 96.0f;
+	dst.m_bottom = dst.m_top + 96.0f;
+
+	//描画
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 }

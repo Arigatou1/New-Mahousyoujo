@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClearFadeout.cpp" />
-    <ClCompile Include="CObjHomingBullet.cpp" />
     <ClCompile Include="ObjCaution.cpp" />
     <ClCompile Include="ObjDamegeDisplay.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -176,16 +175,17 @@
     <ClCompile Include="ObjFireBall.cpp" />
     <ClCompile Include="ObjGameClear.cpp" />
     <ClCompile Include="ObjGameOver.cpp" />
-    <ClCompile Include="ObjGaugeBase.cpp" />
     <ClCompile Include="ObjGaugeBoss.cpp" />
     <ClCompile Include="ObjGaugeHP.cpp" />
     <ClCompile Include="ObjGaugeMana.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjIcon.cpp" />
     <ClCompile Include="ObjMagicalGirl.cpp" />
     <ClCompile Include="ObjMana.cpp" />
     <ClCompile Include="ObjMenuEndless.cpp" />
     <ClCompile Include="ObjModeSelect.cpp" />
     <ClCompile Include="ObjPauseMenu.cpp" />
+    <ClCompile Include="ObjPhoto.cpp" />
     <ClCompile Include="ObjSetting.cpp" />
     <ClCompile Include="ObjShockWave.cpp" />
     <ClCompile Include="ObjSlimeBall.cpp" />
@@ -199,13 +199,13 @@
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Tutorial.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="TutorialHero.cpp" />
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClearFadeout.h" />
-    <ClInclude Include="CObjHomingBullet.h" />
     <ClInclude Include="ObjCaution.h" />
     <ClInclude Include="ObjDamegeDisplay.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -241,16 +241,17 @@
     <ClInclude Include="ObjFireBall.h" />
     <ClInclude Include="ObjGameClear.h" />
     <ClInclude Include="ObjGameOver.h" />
-    <ClInclude Include="ObjGaugeBase.h" />
     <ClInclude Include="ObjGaugeBoss.h" />
     <ClInclude Include="ObjGaugeHP.h" />
     <ClInclude Include="ObjGaugeMana.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjIcon.h" />
     <ClInclude Include="ObjMagicalGirl.h" />
     <ClInclude Include="ObjMana.h" />
     <ClInclude Include="ObjMenuEndless.h" />
     <ClInclude Include="ObjModeSelect.h" />
     <ClInclude Include="ObjPauseMenu.h" />
+    <ClInclude Include="ObjPhoto.h" />
     <ClInclude Include="ObjSetting.h" />
     <ClInclude Include="ObjShockWave.h" />
     <ClInclude Include="ObjSlimeBall.h" />
@@ -264,8 +265,9 @@
     <ClInclude Include="SceneMenu.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Tutorial.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="TutorialHero.h" />
     <ClInclude Include="UtilityModule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

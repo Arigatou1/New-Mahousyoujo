@@ -219,12 +219,17 @@ void CObjSetting::Draw()
 		swprintf_s(Diff, L"HARD");
 		break;
 	}
-
-	if (((UserData*)Save::GetData())->DamageDraw)
+	switch (((UserData*)Save::GetData())->DamageDraw)
+	{
+	case true:
 		swprintf_s(OnOff, L"ON");
-	else
+		break;
+	case false:
 		swprintf_s(OnOff, L"OFF");
+		break;
 
+	}
+	
 	for (int i = 0; i < 4; i++)
 	{
 		switch (i)
@@ -245,6 +250,9 @@ void CObjSetting::Draw()
 
 		Font::StrDraw(str1, 48 + menuAllButtonX, 80 + 112*i, 64, c);
 	}
+	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
+
+	Font::StrDraw(L"↑↓キー:移動  ←→キー:値の変更　Enter:決定  ", 200, 566, 26, c);
 
 }
 

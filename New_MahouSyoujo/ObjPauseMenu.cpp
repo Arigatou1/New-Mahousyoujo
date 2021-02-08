@@ -52,7 +52,7 @@ void CObjPauseMenu::Draw()
 		dst.m_right = 800;
 		dst.m_bottom = 600;
 
-		Draw::Draw(50, &src, &dst, c, 0.0f);
+		Draw::Draw(63, &src, &dst, c, 0.0f);
 
 
 		for (int i = 0; i < 4; i++)
@@ -64,5 +64,3 @@ void CObjPauseMenu::Draw()
 	
 	}
 }
-
-//MenuBlockDrawŠÖ”

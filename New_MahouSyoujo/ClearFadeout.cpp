@@ -73,7 +73,7 @@ void Fadeout::Draw()
 		dst.m_bottom = 600.0f;
 
 		//•`‰æ
-		Draw::Draw(50, &src, &dst, c, 0.0f);
+		Draw::Draw(63, &src, &dst, c, 0.0f);
 	
 }
 

@@ -28,13 +28,37 @@ void CObjEnemyAmount::Action()
 	
 		if (shootDownTime == 1)
 		{
-			Audio::Stop(14);
-			Audio::Stop(15);
+			/// <summary>
+			///		シーンメインのロードを早く終わらせるために変えた処理。
+			/// こうするしかなかったんだ__________
+			/// </summary>
+			switch (((UserData*)Save::GetData())->Stage + 1)
+			{
+			case 1:
+				Audio::Stop(14);
+				break;
+			case 2:
+			case 3:
+			case 4:
+				Audio::Stop(15);
+				break;
+			case 5:
+			case 6:
+				Audio::Stop(17);
+				break;
+			case 7:
+				Audio::Stop(18);
+				break;
+			case 8:
+				Audio::Stop(19);
+				break;
+			default:
+				break;
+			}
 			Audio::Stop(16);
-			Audio::Stop(17);
 			Audio::Start(13);
-			Audio::Stop(19);
-			Audio::Stop(18);
+			
+			
 		}
 	    else if (shootDownTime == 200)
 		{
@@ -57,6 +81,10 @@ void CObjEnemyAmount::Draw()
 {
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
+
+
+
+
 	swprintf_s(str, L"残り敵の数:%d", ((UserData*)Save::GetData())->enemyRemain);//整数を文字列か
 	
 	//swprintf_s(str, L"スコア:%d", ((UserData*)Save::GetData())->Score);//整数を文字列か
@@ -66,8 +94,26 @@ void CObjEnemyAmount::Draw()
 	Font::StrDraw(str, 2, 96, 24, c);
 
 
+	RECT_F src;
+	RECT_F dst;
+	src.m_top = 0;
+	src.m_left = 192;
+	src.m_right =256;
+	src.m_bottom =64;
 
-	swprintf_s(str, L"操作方法:←→移動↑↓魔法切り替え Spaceジャンプ F攻撃 D魔法");//整数を文字列か
-	Font::StrDraw(str, 2, 72, 24, c);
+	dst.m_top = 560;
+	dst.m_left = 0;
+	dst.m_right = 800;
+	dst.m_bottom = 600;
+
+	Draw::Draw(0, &src, &dst, c, 0.0f);
+
+	for (int i = 0; i < 3; i++)
+	{
+		c[i] = 1.0f;
+	}
+
+	swprintf_s(str, L"操作方法:←→移動　↑↓魔法切り替え 　Space:ジャンプ  F攻撃  D魔法");//整数を文字列か
+	Font::StrDraw(str, 2, 566, 24, c);
 
 }

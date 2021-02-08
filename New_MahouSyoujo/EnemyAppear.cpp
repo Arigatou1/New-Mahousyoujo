@@ -23,6 +23,10 @@ void EnemyAppear::Init()
 	e_time = 0;
 	//e_num = 0;
 	StageID = ((UserData*)Save::GetData())->Stage + 1;
+
+	BossAppearRing = false;
+
+	enemyCount = 0;
 	
 	unsigned int now = (unsigned int)time(0);
 
@@ -170,7 +174,15 @@ void EnemyAppear::Action()
 	
 	switch (StageID)
 	{
-		
+	case 0:
+	{
+		if (m_time == 10)
+		{
+			CTutorial* obj_Tutorial = new CTutorial();
+			Objs::InsertObj(obj_Tutorial, OBJ_TUTORIAL, 50);
+		}
+		break;
+	}
 
 	case 1:
 	{
@@ -1667,77 +1679,94 @@ void EnemyAppear::Action()
 	//エンドレスモード値
 	case 17:
 	{
-		if (((UserData*)Save::GetData())->HPZeroCheck == false)
-		e_time++;
-
+		if (((UserData*)Save::GetData())->HPZeroCheck == false && BossAppearRing ==false)
+		{
+			e_time++;
+		}
 		if (m_time >= randomAppearTime)
 		{
-			rand(); rand();
+			rand(); rand(); rand(); rand();
 			int EnemyType = rand()% 5;
-			appearEnemyX = rand() % 2 * 864 - 63;
+			
+			if (enemyCount % 50 == 0 && enemyCount>0)
+			{
+				appearEnemyX = -32 + (rand() % 2) * 608;
 
-			switch (EnemyType)
-			{
-			case 1:
-			{
-				CObjEnemy* obj = new CObjEnemy(appearEnemyX, 350);
-				Objs::InsertObj(obj, OBJ_ENEMY, 49);
-				break;
-			}
-			case 2:
-			{
-				CObjEnemy2* obj2 = new CObjEnemy2(appearEnemyX, 350);
-				Objs::InsertObj(obj2, OBJ_ENEMY2, 49);
-				break;
-			}
-			case 3:
-			{
-				CObjEnemy3* obj3 = new CObjEnemy3(appearEnemyX, 350);
-				Objs::InsertObj(obj3, OBJ_ENEMY3, 49);
-				break;
-			}
-			case 4:
-			{
-				CObjEnemy4* obj4 = new CObjEnemy4(appearEnemyX, 350);
-				Objs::InsertObj(obj4, OBJ_ENEMY4, 49);
-				break;
-			}
-			case 0:
-			{
-				CObjSmallSlim* obj5 = new CObjSmallSlim(appearEnemyX, 350);
-				Objs::InsertObj(obj5, OBJ_SMALLSLIM, 49);
-				break;
-			}
-			}
-			if (randomAppearTime > 160)
-			{
-				randomAppearTime -= 4;
-				e_time += 10;
-			}
-			else if (randomAppearTime > 120)
-			{
-				randomAppearTime -= 3;
-				e_time += 50;
-			}
+				CObjBoss1* obj = new CObjBoss1(appearEnemyX, 256);
+				Objs::InsertObj(obj, OBJ_BOSS1, 49);
 
-			else if (randomAppearTime > 80)
-			{
-				randomAppearTime -= 2;
-				e_time += 100;
+				BossAppearRing=true;
+					
 			}
+			else if(BossAppearRing==false)
+			{
+				appearEnemyX = rand() % 2 * 864 - 63;
 
-			else if (randomAppearTime > 20)
-			{
-				randomAppearTime -= 1;
-				e_time += 500;
-			}
-			else
-			{
-				e_time += 1000;
-			}
+				switch (EnemyType)
+				{
+				case 1:
+				{
+					CObjEnemy* obj = new CObjEnemy(appearEnemyX, 350);
+					Objs::InsertObj(obj, OBJ_ENEMY, 49);
+					break;
+				}
+				case 2:
+				{
+					CObjEnemy2* obj2 = new CObjEnemy2(appearEnemyX, 350);
+					Objs::InsertObj(obj2, OBJ_ENEMY2, 49);
+					break;
+				}
+				case 3:
+				{
+					CObjEnemy3* obj3 = new CObjEnemy3(appearEnemyX, 350);
+					Objs::InsertObj(obj3, OBJ_ENEMY3, 49);
+					break;
+				}
+				case 4:
+				{
+					CObjEnemy4* obj4 = new CObjEnemy4(appearEnemyX, 350);
+					Objs::InsertObj(obj4, OBJ_ENEMY4, 49);
+					break;
+				}
+				case 0:
+				{
+					CObjSmallSlim* obj5 = new CObjSmallSlim(appearEnemyX, 350);
+					Objs::InsertObj(obj5, OBJ_SMALLSLIM, 49);
+					break;
+				}
+				}
+
+				if (randomAppearTime > 160)
+				{
+					randomAppearTime -= 4;
+					e_time += 10;
+				}
+				else if (randomAppearTime > 120)
+				{
+					randomAppearTime -= 3;
+					e_time += 50;
+				}
+
+				else if (randomAppearTime > 80)
+				{
+					randomAppearTime -= 2;
+					e_time += 100;
+				}
+
+				else if (randomAppearTime > 20)
+				{
+					randomAppearTime -= 1;
+					e_time += 500;
+				}
+				else
+				{
+					e_time += 1000;
+				}
+
 				
+			}
 			m_time = 0;
-
+			enemyCount++;
 
 		}
 
@@ -1809,10 +1838,18 @@ void EnemyAppear::Draw()
 	wchar_t str[128];
 	
 	//swprintf_s(str, L"　　　タイム:%d", m_time);//整数を文字列か
-	
-	swprintf_s(str, L"操作方法:←→移動 ↑↓魔法変更 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
+	//Font::StrDraw(str, 2, 120, 24, c);
+	//swprintf_s(str, L"操作方法:←→移動 ↑↓魔法変更 Spaceジャンプ F攻撃 D魔法");//整数を文字列か
 
 	//Font::StrDraw(str, 2, 120, 24, c);
 	//swprintf_s(str, L"オールタイム:%d", e_time);//整数を文字列か
-	//::StrDraw(str, 2, 144, 24, c);
+	//Font::StrDraw(str, 2, 144,24, c);
 }
+
+
+void EnemyAppear::BossDisappearnce()
+{
+	this->BossAppearRing = false;
+	
+
+};

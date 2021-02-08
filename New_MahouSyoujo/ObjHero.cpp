@@ -51,7 +51,7 @@ void CObjHero::Init()
 
 
 	//Ç†ÇΩÇËîªíËópHitboxÇçÏê¨
-	Hits::SetHitBox(this, m_px+8, m_py+8, 56, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_px+18, m_py+12, 28, 56, ELEMENT_PLAYER, OBJ_HERO, 1);
 
 	Weapon = ((UserData*)Save::GetData())->weapon;
 	damage = ((UserData*)Save::GetData())->Diffculty * 0.5;
@@ -85,6 +85,7 @@ void CObjHero::Action()
 			m_vy = -15;
 			isJump = false;
 		}
+		//àÍìxÉLÅ[Çó£Ç∑Ç‹Ç≈ÇÕçƒì¸óÕÇ≈Ç´Ç»Ç¢ÅB
 		else if (Input::GetVKey(' ') == false)
 		{
 			isJump = true;
@@ -97,42 +98,34 @@ void CObjHero::Action()
 		{
 			m_vx -= 0.1;
 			m_posture = -1;
-
 			m_anitime += 1;
-
 		}
 		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 			m_vx += 0.1;
 			m_posture = 1;
-
 			m_anitime += 1;
-
-
 		}
 		//Ç«ÇøÇÁÇ‡âüÇµÇƒÇ¢Ç»Ç¢èÍçáÇÕå∏ë¨Ç≥ÇπÇÈÅB
 		else
 		{
-
 			m_anime = 1;
 			m_anitime = 0;
 			m_vx = m_vx * 0.9;
 		}
 		//âÒïú
-		if (Input::GetVKey('D') == true)
+	/*	if (Input::GetVKey('D') == true)
 		{
 			CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
 			if (obj_magicalgirl != nullptr)
 			{
 				m_hp = obj_magicalgirl->GetHP();
 			}
-		}
+		}*/
 
 		//çUåÇóp
 		if (Input::GetVKey('F') == true && m_f == true)
 		{
-
-
 			if (Weapon == 1)
 			{
 				m_f = false;
@@ -143,21 +136,15 @@ void CObjHero::Action()
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
 				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
 			}
-
 			else
 			{
 				m_f = false;
 				atk_anime = 1;
-
-
 				//åïÇêUÇÈâπ
 				Audio::Start(0);
-
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_b, OBJ_SWORD, 51);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
 			}
-
-
 		}
 
 		if (m_f == false)
@@ -176,6 +163,8 @@ void CObjHero::Action()
 			}
 		}
 	}
+
+	
 	//ÉLÅ[ì¸óÕ
 	//--------------------------------------------------
 	
@@ -224,69 +213,16 @@ void CObjHero::Action()
 		{ OBJ_DRAGON,	1.5f},
 	};
 
-	/*for (int i = 0; i < 8; i++)
-	{
-		//ìGÇÃçUåÇóÕ
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			Audio::Start(25);
-			if (i == 0)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.20;
-			}
 
-			else if (i == 1)
-			{
-				MANA_damege = 4.0 + mana_damege * 0.20;
-			}
-			else if (i == 2)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 3)
-			{
-				MANA_damege = 0.5;
-			}
-			else if (i == 4)
-			{
-				MANA_damege = 1.0 + mana_damege * 0.20;
-			}
-			else if (i == 5)
-			{
-				MANA_damege = 2.0 + mana_damege * 0.10;
-
-			}
-			else if (i == 6)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.10;
-			}
-			else if (i == 7)
-			{
-				MANA_damege = 0.1 + mana_damege * 0.20;
-			}
-			Mana_HP -= MANA_damege;
-
-		}
-
-		if (hit->CheckObjNameHit(database[i]) != nullptr)
-		{
-			
-			//É_ÉÅÅ[ÉW
-			Audio::Start(4);
-
-			m_mtk = true;
-			m_hp -= 1.0f + damage;//ìGÇÃçUåÇóÕ
-		}
-	}*/
-
-	//ñ≥ìGéûä‘Ç™ñ≥å¯Ç…Ç»Ç¡ÇΩéû ìGÇ∆ÇÃÇ†ÇΩÇËîªíËÇçsÇ§
+	//ñ≥ìGéûä‘Ç™ñ≥å¯Ç…Ç»Ç¡ÇΩéû
 	if (m_mtk == false)
 	{
 		//HitBoxÇÃì‡óeÇå≥Ç…ñﬂÇ∑
 		CHitBox* hit = Hits::GetHitBox(this);
-		hit->SetPos(m_px + 4.0f, m_py + 4.0f);
+		hit->SetPos(m_px + 18.0f, m_py + 12.0f);
 
-		for (int i = 0; i < 8; i++)
+		//ìGÇ∆ÇÃÇ†ÇΩÇËîªíËÇçsÇ§
+		for (int i = 0; i < 11; i++)
 		{
 			if (hit->CheckObjNameHit(database[i][0]) != nullptr)
 			{
@@ -296,7 +232,45 @@ void CObjHero::Action()
 				m_hp -= database[i][1] + damage;//ìGÇÃçUåÇóÕ
 				AllDamage += database[i][1] + damage;
 				m_vx = 0.0f;
+				//É{ÉXÉXÉâÉCÉÄÇ…ìñÇΩÇ¡ÇΩèÍçáÇÃÇ›
+				if (i == 8)
+				{
+					CObjBoss1* obj_boss = (CObjBoss1*)Objs::GetObj(OBJ_BOSS1);
+					if (obj_boss != nullptr)
+					{
+						b_x = obj_boss->GetX();
+						
+						if (obj_boss->GetPosture() == 1)
+						{
+								m_px = b_x - 64.0f;
+						}
+						else 
+						{
+								m_px = b_x + 250.0f;
+						}
+					}
+					
+				}
+				//ÉhÉâÉSÉìÇ…ìñÇΩÇ¡ÇΩèÍçáÇÃÇ›
+				if (i == 9)
+				{
+					CObjDragon* obj_dragon = (CObjDragon*)Objs::GetObj(OBJ_DRAGON);
+					if (obj_dragon != nullptr)
+					{
+						b_x = obj_dragon->GetX();
+
+						if (obj_dragon->GetPosture() == 0)
+						{
+							m_px = b_x - 64.0f;
+						}
+						else
+						{
+							m_px = b_x + 250.0f;
+						}
+					}
+				}
 			}
+			
 		}
 	}
 	//ñ≥ìGÇ™trueÇ…Ç»Ç¡ÇΩéû
@@ -437,9 +411,9 @@ void CObjHero::Draw()
 
 }
 
-
-
-int CObjHero::GetMP()
+void CObjHero::AddHP(int add) 
 {
-	return m_mp;
+	m_hp += add;
+	if (m_hp >= max_hp)
+		m_hp = max_hp;
 }

@@ -14,6 +14,7 @@ public:
 	void Action();
 	void Draw();
 	int GetStageID();
+	
 private:
 	bool m_key_flag;//キーフラグ
 	float cursor_x;
@@ -29,8 +30,10 @@ private:
 	float menuAllButtonX;
 
 	int waitTime;
+	bool tutorialStart;
 
 
 	void cursorUp();
 	void cursorDown();
+	void StageStart();
 };

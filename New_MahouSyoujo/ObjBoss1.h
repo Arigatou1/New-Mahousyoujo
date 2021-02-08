@@ -15,7 +15,8 @@ public:
 	void Draw();
 	int GetMAXHP() { return maxhp; };
 	int GetHP() {return e_hp;};
-
+	int GetPosture() { return m_posture; };
+	float GetX() { return m_ex; }
 	
 private:
 	float m_ex;
@@ -40,4 +41,6 @@ private:
 
 	float e_hp;
 	float maxhp;
+
+	int m_posture;
 };

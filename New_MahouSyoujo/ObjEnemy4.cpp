@@ -101,16 +101,6 @@ void CObjEnemy4::Action()
 
 	}
 
-	//’e‚É“–‚½‚ê‚ÎÁ–Å
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		e_hp -= 10;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e4_damege = obj_homing->GetM_ATK();
-
-
-	}
-
 	//Œ•‚É“–‚½‚ê‚ÎŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{

@@ -8,7 +8,6 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_MAGICALGIRL,
-	OBJ_HOMINGBULLET,
 	OBJ_ALLBULLET,
 	OBJ_SWORD,
 	OBJ_ENEMY,
@@ -48,7 +47,10 @@ enum OBJ_NAME
 	OBJ_ENDLESSRESULT,
 	OBJ_DAMEGEDISPLAY,
 	OBJ_CAUTION,
-	//OBJ_TUTORIAL,
+	OBJ_TUTORIAL,
+	OBJ_TUTORIALHERO,
+	OBJ_ICON,
+	OBJ_PHOTO,
 };
 //------------------------------------------------
 
@@ -75,25 +77,24 @@ enum HIT_ELEMENTS
 //セーブ＆ロードとシーン間のやり取りするデータ
 struct UserData
 {
+
+	//設定で変更できないデータ------------------------
 	int mSeveData;	//サンプルセーブデータ
 	//ステージIDを取得する
 	int Stage;
-
-
 	//ステージのスコアデータ
 	int ScoreData[20];
 	//最大ステージ数は20だが、２０のクリア判定をつけるため
 	bool Clear_Flag[21];
 	//ポーズメニュー用変数
 	bool PauseMenu;
-	
-	
 	//スコアの計算するためのもの
 	float HeroHP;
 	float ManaHP;
 	//残り敵の数の表示
 	int enemyRemain;
 	bool HPZeroCheck;
+	bool tutorialDone;
 
 	//---------------------------------------------
 	//設定で変更できるデータ
@@ -122,18 +123,15 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ-----------------
 #include "ObjHero.h"
 #include "ObjMagicalGirl.h"
-#include "CObjHomingBullet.h"
 #include "ObjAllBullet.h"
 #include "ObjEnemy.h"
 #include "ObjEnemy2.h"
 #include "ObjEnemy3.h"
 #include "ObjEnemy4.h"
-#include "ObjGaugeBase.h"
 #include "ObjBlock.h"
 #include "ObjGaugeHP.h"
 #include "ObjGaugeMana.h"
 #include "ObjMana.h"
-//#include "ObjGaugeBaseMana.h"
 #include "ObjTitle.h"
 #include "ObjGameOver.h"
 #include "ObjBackGround.h"
@@ -162,6 +160,11 @@ struct UserData
 #include "ObjCaution.h"
 
 #include "ObjDamegeDisplay.h"
+#include "Tutorial.h"
+#include "TutorialHero.h"
+#include "ObjIcon.h"
+#include "ObjPhoto.h"
+
 
 //------------------------------------------------
 
@@ -171,7 +174,6 @@ struct UserData
 #include "SceneGameOver.h"
 #include "SceneGameClear.h"
 #include "SceneMenu.h"
-//#include "Tutorial.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

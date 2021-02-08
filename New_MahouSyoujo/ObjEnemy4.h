@@ -35,4 +35,5 @@ private:
 	float e_hp;
 	float damage;
 	int a_time;
+	
 };
