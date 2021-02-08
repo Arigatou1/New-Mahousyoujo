@@ -28,105 +28,105 @@ void CObjIcon::Action()
 
 	//--------ここまで--------------------
 
-	//if (serect == false)
-	//{
-	//	CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
-	//	if (obj_magicalgirl != nullptr)
-	//	{
-	//		b_skill = obj_magicalgirl->GetSkill();
-	//	}
-	//}
-	//else if(serect == true)
-	//{
-	//	TutorialHero* obj_tutorialhero = (TutorialHero*)Objs::GetObj(OBJ_TUTORIALHERO);
-	//	if (obj_tutorialhero != nullptr)
-	//	{
-	//		b_skill = obj_tutorialhero->GetSkill();
-	//	}
-	//	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
-	//	if (obj_tutorial != nullptr)
-	//	{
-	//		i_order = obj_tutorial->GetOrder();
-	//	}
-	//}
+	if (serect == false)
+	{
+		CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+		if (obj_magicalgirl != nullptr)
+		{
+			b_skill = obj_magicalgirl->GetSkill();
+		}
+	}
+	else if(serect == true)
+	{
+		TutorialHero* obj_tutorialhero = (TutorialHero*)Objs::GetObj(OBJ_TUTORIALHERO);
+		if (obj_tutorialhero != nullptr)
+		{
+			b_skill = obj_tutorialhero->GetSkill();
+		}
+		CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
+		if (obj_tutorial != nullptr)
+		{
+ 			i_order = obj_tutorial->GetOrder();
+		}
+	}
 
-	////ヒール
-	//if (Graphic_Serct == 12)
-	//{
-	//	if (b_skill == 1 )
-	//	{
-	//		Graphic_Serct = 13;
-	//	}
-	//}
-	//else if (Graphic_Serct == 13)
-	//{
-	//	if (b_skill != 1)
-	//	{
-	//		Graphic_Serct = 12;
-	//	}
-	//}
+	//ヒール
+	if (Graphic_Serct == 12)
+	{
+		if (b_skill == 1 )
+		{
+			Graphic_Serct = 13;
+		}
+	}
+	else if (Graphic_Serct == 13)
+	{
+		if (b_skill != 1)
+		{
+			Graphic_Serct = 12;
+		}
+	}
 
 	////バリア
-	//if (Graphic_Serct == 10)
-	//{
-	//	if (b_skill == 2)
-	//	{
-	//		Graphic_Serct = 11;
-	//	}
+	if (Graphic_Serct == 10)
+	{
+		if (b_skill == 2)
+		{
+			Graphic_Serct = 11;
+		}
 
-	//}
-	//else if (Graphic_Serct == 11)
-	//{
-	//	if (b_skill != 2)
-	//	{
-	//		Graphic_Serct = 10;
-	//	}
-	//}
+	}
+	else if (Graphic_Serct == 11)
+	{
+		if (b_skill != 2)
+		{
+			Graphic_Serct = 10;
+		}
+	}
 
 	////メテオ
-	//if (Graphic_Serct == 14)
-	//{
-	//	if (b_skill == 3)
-	//	{
-	//		Graphic_Serct = 15;
-	//	}
+	if (Graphic_Serct == 14)
+	{
+		if (b_skill == 3)
+		{
+			Graphic_Serct = 15;
+		}
 
-	//}
-	//else if (Graphic_Serct == 15)
-	//{
-	//	if (b_skill != 3)
-	//	{
-	//		Graphic_Serct = 14;
-	//	}
-	//}
+	}
+	else if (Graphic_Serct == 15)
+	{
+		if (b_skill != 3)
+		{
+			Graphic_Serct = 14;
+		}
+	}
 
-	//if (i_order == 6 && Graphic_Serct == 13)
-	//{
-	//	//順番6だったときヒールのアイコンを真ん中に大きく出す
-	//	icon_size = 120;
-	//	i_x = 250.0f;
-	//	i_y = 250.0f;
-	//}
-	//else if (i_order == 7 && Graphic_Serct == 11)
-	//{
+	if (i_order == 6 && Graphic_Serct == 13)
+	{
+		//順番6だったときヒールのアイコンを真ん中に大きく出す
+		icon_size = 120;
+		i_x = 250.0f;
+		i_y = 250.0f;
+	}
+	else if (i_order == 7 && Graphic_Serct == 11)
+	{
 	//	//順番7だったときバリアのアイコンを真ん中に大きく出す
-	//	icon_size = 120;
-	//	i_x = 250.0f;
-	//	i_y = 250.0f;
-	//}
-	//else if (i_order == 8 && Graphic_Serct == 15)
-	//{
+		icon_size = 120;
+		i_x = 250.0f;
+		i_y = 250.0f;
+	}
+	else if (i_order == 8 && Graphic_Serct == 15)
+	{
 	//	//順番8だったときメテオのアイコンを真ん中に大きく出す
-	//	icon_size = 120;
-	//	i_x = 250.0f;
-	//	i_y = 250.0f;
-	//}
-	//else
-	//{
-	//	icon_size = size_spare;
-	//	i_x = x_spare;
-	//	i_y = y_spare;
-	//}
+	icon_size = 120;
+		i_x = 250.0f;
+		i_y = 250.0f;
+	}
+	else
+	{
+		icon_size = size_spare;
+		i_x = x_spare;
+		i_y = y_spare;
+	}
 }
 //ドロー
 void CObjIcon::Draw()
