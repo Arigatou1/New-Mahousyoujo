@@ -51,8 +51,6 @@ void CObjTitle::Init()
 		//‰e‹¿‚ðŽó‚¯‚È‚¢B
 		((UserData*)Save::GetData())->PauseMenu = false;
 		((UserData*)Save::GetData())->enemyRemain = 1;
-
-
 		((UserData*)Save::GetData())->masterVolume = 100;
 		
 
