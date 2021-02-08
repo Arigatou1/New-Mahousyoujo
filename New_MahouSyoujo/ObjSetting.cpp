@@ -222,10 +222,10 @@ void CObjSetting::Draw()
 	switch (((UserData*)Save::GetData())->DamageDraw)
 	{
 	case true:
-		swprintf_s(OnOff, L"ON");
+		swprintf_s(OnOff, L"あり");
 		break;
 	case false:
-		swprintf_s(OnOff, L"OFF");
+		swprintf_s(OnOff, L"なし");
 		break;
 
 	}
@@ -238,7 +238,7 @@ void CObjSetting::Draw()
 			swprintf_s(str1, L"難易度:%s", Diff);
 			break;
 		case 1:
-			swprintf_s(str1, L"ダメージ数値の表記:%s", OnOff);
+			swprintf_s(str1, L"ダメージの表記:%s", OnOff);
 			break;
 		case 2:
 			swprintf_s(str1, L"音量:%d%%", ((UserData*)Save::GetData())->masterVolume);
@@ -248,7 +248,7 @@ void CObjSetting::Draw()
 			break;
 		}
 
-		Font::StrDraw(str1, 48 + menuAllButtonX, 80 + 112*i, 64, c);
+		Font::StrDraw(str1, 80 + menuAllButtonX, 80 + 112*i, 60, c);
 	}
 	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
 
