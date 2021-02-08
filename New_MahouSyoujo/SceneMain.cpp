@@ -154,7 +154,7 @@ void CSceneMain::InitScene()
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
-	Objs::InsertObj(obj, OBJ_HERO, 60);
+	Objs::InsertObj(obj, OBJ_HERO,150);
 
 	//魔法少女オブジェクト作成
 	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();

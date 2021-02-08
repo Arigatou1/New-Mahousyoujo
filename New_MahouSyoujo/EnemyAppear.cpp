@@ -1696,7 +1696,7 @@ void EnemyAppear::Action()
 			
 			if (enemyCount % 50 == 0 && enemyCount>0)
 			{
-				appearEnemyX = -32 + (rand() % 2) * 608;
+				appearEnemyX = -96 + (rand() % 2) * 766;
 
 				CObjBoss1* obj = new CObjBoss1(appearEnemyX, 256);
 				Objs::InsertObj(obj, OBJ_BOSS1, 49);
