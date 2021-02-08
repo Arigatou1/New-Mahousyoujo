@@ -30,16 +30,7 @@ void CObjModeSelect::Init()
 //アクション
 void CObjModeSelect::Action()
 {
-	//モード選択画面
-	//今いるカーソルの場所から位置を取得し、
-	//モード設定する
 
-	//nowSelect = ((cursor_x - 40) / 400) ;
-
-	//cursor_x = 40,440
-	//カーソルの初期位置は40なので、
-	//440から40を引き、400を出し、400で割ることで1が出てくる。
-	
 
 	if (Input::GetVKey(VK_RETURN) == true)
 	{

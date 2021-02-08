@@ -5,6 +5,7 @@
 
 #include "ObjSmallSlim.h"
 #include "GameL\UserData.h"
+#include "GameL\Audio.h"
 
 
 //使用するネームベース
@@ -44,7 +45,7 @@ void CObjSmallSlim::Init()
 	ss_t = true;
 	ss_anime = 1;
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ex, m_ey, 32, 32, ELEMENT_ENEMY, OBJ_SMALLSLIM, 10);
+	Hits::SetHitBox(this, m_ex, m_ey, 24, 16, ELEMENT_ENEMY, OBJ_SMALLSLIM, 10);
 
 	m_posture = 0;
 
@@ -137,7 +138,7 @@ void CObjSmallSlim::Action()
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex + 16.0f, m_ey + 32.0f);
+	hit->SetPos(m_ex + 16.0f, m_ey +47.0f);
 
 	CObjBlock* obj_block1 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	obj_block1->BlockHit(&m_ex, &m_ey,
@@ -176,6 +177,8 @@ void CObjSmallSlim::Action()
 	//HP０になったとき
 	if (e_hp <= 0)
 	{
+		Audio::Start(2);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;

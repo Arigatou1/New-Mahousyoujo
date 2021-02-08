@@ -134,7 +134,7 @@ void CObjHero::Action()
 				Audio::Start(5);
 
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
+				Objs::InsertObj(obj_bullet, OBJ_BULLET, 70);
 			}
 			else
 			{
@@ -143,7 +143,7 @@ void CObjHero::Action()
 				//åïÇêUÇÈâπ
 				Audio::Start(0);
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 70);
 			}
 		}
 

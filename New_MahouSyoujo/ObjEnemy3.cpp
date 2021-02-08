@@ -4,6 +4,7 @@
 #include "GameL\HitBoxManager.h"
 #include "GameL\UserData.h"
 #include"ObjEnemy3.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -159,6 +160,8 @@ void CObjEnemy3::Action()
 	//hpが0になると消滅
 	if (e_hp <= 0)
 	{
+		Audio::Start(2);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;
