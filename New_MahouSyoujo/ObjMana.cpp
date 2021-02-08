@@ -1,3 +1,4 @@
+
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\SceneManager.h"
@@ -58,14 +59,14 @@ void CObjMana::Action()
 	//当たり判定を行うオブジェクト情報部
 	int database[][2] =
 	{
-		{OBJ_ENEMY, 2.0f},
-		{OBJ_ENEMY2,4.0f},
-		{OBJ_ENEMY3,0.5f},
-		{OBJ_ENEMY4,0.5f},
-		{OBJ_SMALLSLIM,1.0f},
-		{OBJ_SHOCKWAVE, 2.0f},
-		{OBJ_FIREBALL,0.1f},
-		{OBJ_SLIMEBALL,1.0f},
+		{OBJ_ENEMY,     3.0f},
+		{OBJ_ENEMY2,    6.0f},
+		{OBJ_ENEMY3,    1.25f},
+		{OBJ_ENEMY4,    1.25f},
+		{OBJ_SMALLSLIM, 1.5f},
+		{OBJ_SHOCKWAVE, 3.0f},
+		{OBJ_FIREBALL,  0.1f},
+		{OBJ_SLIMEBALL, 1.0f},
 	};
 
 	for (int i = 0; i < 8; i++)

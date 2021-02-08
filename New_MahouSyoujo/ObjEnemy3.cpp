@@ -4,6 +4,7 @@
 #include "GameL\HitBoxManager.h"
 #include "GameL\UserData.h"
 #include"ObjEnemy3.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -141,16 +142,6 @@ void CObjEnemy3::Action()
 		e_damege = obj_all->GetZ_ATK();
 	}
 
-	//弾に当たれば消滅
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		e_hp -= 4;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e_damege = obj_homing->GetM_ATK();
-
-		//Amount++;
-	}
-
 	//剣に当たれば減らす
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{
@@ -169,6 +160,8 @@ void CObjEnemy3::Action()
 	//hpが0になると消滅
 	if (e_hp <= 0)
 	{
+		Audio::Start(2);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;

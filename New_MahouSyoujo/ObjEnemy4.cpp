@@ -3,7 +3,7 @@
 #include "GameL\HitBoxManager.h"
 #include "GameL\UserData.h"
 #include "ObjEnemy4.h"
-
+#include "GameL\Audio.h"
 
 CObjEnemy4::CObjEnemy4(float x, float y)
 {
@@ -101,16 +101,6 @@ void CObjEnemy4::Action()
 
 	}
 
-	//íeÇ…ìñÇΩÇÍÇŒè¡ñ≈
-	if (hit->CheckObjNameHit(OBJ_HOMINGBULLET) != nullptr)
-	{
-		e_hp -= 10;
-		CObjHomingBullet* obj_homing = (CObjHomingBullet*)Objs::GetObj(OBJ_HOMINGBULLET);
-		e4_damege = obj_homing->GetM_ATK();
-
-
-	}
-
 	//åïÇ…ìñÇΩÇÍÇŒå∏ÇÁÇ∑
 	if (hit->CheckObjNameHit(OBJ_SWORD) != nullptr)
 	{
@@ -129,6 +119,8 @@ void CObjEnemy4::Action()
 	//hpÇ™0Ç…Ç»ÇÈÇ∆è¡ñ≈
 	if (e_hp <= 0)
 	{
+		Audio::Start(2);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		((UserData*)Save::GetData())->enemyRemain -= 1;

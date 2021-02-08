@@ -51,7 +51,8 @@ void CObjTitle::Init()
 		//影響を受けない。
 		((UserData*)Save::GetData())->PauseMenu = false;
 		((UserData*)Save::GetData())->enemyRemain = 1;
-
+		((UserData*)Save::GetData())->masterVolume = 100;
+		
 
 		((UserData*)Save::GetData())->masterVolume = 100;
 		
@@ -92,16 +93,10 @@ void CObjTitle::Action()
 
 			}
 		}
-		
 		else
 		{
 			m_key_flag = true;
 		}
-
-
-
-
-
 		//----------------------------------
 		//デバッグ用の機能
 

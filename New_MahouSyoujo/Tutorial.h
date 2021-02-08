@@ -14,6 +14,7 @@ public:
 	void Action();
 	void Draw();
 	int GetOrder() { return Order; };
+	void SkillIconsDraw(int id);
 private:
 	bool cond1;//ğŒ‚P
 	bool cond2;//ğŒ‚Q

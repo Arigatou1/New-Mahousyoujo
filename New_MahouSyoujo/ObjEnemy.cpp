@@ -36,11 +36,11 @@ void CObjEnemy::Init()
 	e1_hit_down = false;
 	e1_hit_left = false;
 	e1_hit_right = false;
-
+	m_posture = 0;
 	e1_t = true;
 
 	//当たり判定用のHITBOXを作成
-	Hits::SetHitBox(this, m_ex, m_ey, 50, 50, ELEMENT_ENEMY, OBJ_ENEMY, 10);
+	Hits::SetHitBox(this, m_ex+9,m_ey+31, 48, 32, ELEMENT_ENEMY, OBJ_ENEMY, 10);
 
 }
 
@@ -54,13 +54,31 @@ void CObjEnemy::Action()
 	if (obj != nullptr)
 	{
 		float m_mx = obj->GetX();
+
+		if (m_mx + 65.0f <= m_ex)
+		{
+			m_posture = 1;
+			
+		}
+		else if (m_mx - 52.0f >= m_ex)
+		{
+			m_posture = 0;
+			
+		}
 		if (e1_hit_down == true)
 		{
 
 			if (m_mx + 65.0f <= m_ex)
+			{
+				
 				m_vx = -1.5f;
+			}
 			else if (m_mx - 52.0f >= m_ex)
+			{
+				
 				m_vx = 1.5f;
+			}
+
 			else
 			{
 				if (e1_time % 120 >= 100 || e1_time % 120 <= 20)
@@ -135,7 +153,7 @@ void CObjEnemy::Action()
 
 	//HitBOxの内容を変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex, m_ey+14);
+	hit->SetPos(m_ex, m_ey+31);
 
 
 	CObjBlock* obj_block1 = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -193,9 +211,10 @@ void CObjEnemy::Draw()
 	src.m_right  = e1_anime * 64.0f;
 	src.m_bottom = 384.0f;
 	//表示位置の設定
+
 	dst.m_top    = m_ey+14;
-	dst.m_left	 = m_ex+50.0f;
-	dst.m_right  = m_ex + 0.0f;
+	dst.m_left	 = m_ex+(m_posture *50.0f);
+	dst.m_right  = m_ex +50.0f- (m_posture * 50.0f);
 	dst.m_bottom = m_ey + 64.0f;
 
 	//描画

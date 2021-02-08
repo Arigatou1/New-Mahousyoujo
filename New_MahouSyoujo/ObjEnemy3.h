@@ -44,4 +44,5 @@ private:
 	float damage;
 	//UŒ‚ŠÔŠu—p•Ï”
 	int a_time;
+
 };

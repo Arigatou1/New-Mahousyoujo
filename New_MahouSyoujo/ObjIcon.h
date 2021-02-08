@@ -8,7 +8,8 @@ using namespace GameL;
 class CObjIcon : public CObj
 {
 public:
-	CObjIcon(int size , float x , float y,int g, bool s);
+	//CObjIcon(float size, float x, float y, int g, bool s);
+	CObjIcon(float x, float y,float size, bool s);
 	~CObjIcon() {};
 	void Init();   //イニシャライズ
 	void Action(); //アクション
@@ -16,7 +17,7 @@ public:
 private:
 	int b_skill;//魔法少女のスキル選択
 
-	int icon_size;//表示するアイコンの大きさ
+	float icon_size;//表示するアイコンの大きさ
 	float i_x;//表示する画像の左上のX座標
 	float i_y;//表示する画像の左上のY座標
 	int Graphic_Serct;//画像の変更用
@@ -25,7 +26,7 @@ private:
 	bool serect;//true = チュートリアル用 false = メイン
 
 
-	int size_spare;//サイズのバックアップ
+	float size_spare;//サイズのバックアップ
 	float x_spare;// X座標のバックアップ
 	float y_spare;// Y座標のバックアップ
 };

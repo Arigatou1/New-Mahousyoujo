@@ -184,7 +184,7 @@ void CObjStageSelect::Action()
 	}
 	else//カスタマイズに合わせられたとき
 	{
-		cursor_x = 280;
+		cursor_x = 140;
 	}
 
 }
@@ -197,19 +197,23 @@ void CObjStageSelect::Draw()
 		//ステージセレクト
 		for (int i = 0; i < 4; i++)
 		{
+			if(((UserData*)Save::GetData())->Clear_Flag[ i +  (PageID * 4)])
 			MenuBlockDraw(140+ menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+			else
+				MenuBlockDraw(140 + menuAllButtonX, i * 96.0f + 64.0f, 512.0f, 80.0f, 0.4f, 0.4f, 0.4f, 1.0f);
 
 		}
 
-		MenuBlockDraw(280 + menuAllButtonX, 448.0f, 512.0f,80.0f, 1.0f, 0.2f, 1.0f, 1.0f);
+		MenuBlockDraw(140 + menuAllButtonX, 448.0f, 512.0f,80.0f, 1.0f, 0.2f, 1.0f, 1.0f);
 
 		//カーソル描画
 		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 80.0f, 1.0f, 0.8f, 0.0f, 1.0f);
 
 		//矢印ボタン
 		for (int i = 0; i < 2; i++)
+		{
 			MenuBlockDraw(16 + i * 674.0f + menuAllButtonX, 156.0f, 96.0f, 200.0f, 0.0f, 0.0f, 1.0f, 1.0f);
-
+		}
 
 		Font::StrDraw(L"←", 40 + menuAllButtonX, 240, 48, c);
 		Font::StrDraw(L"→", 712 + menuAllButtonX, 240, 48, c);
@@ -221,12 +225,12 @@ void CObjStageSelect::Draw()
 			wchar_t str[128];
 			swprintf_s(str, L"ステージ%d", i + 1 + (PageID * 4));
 
-			Font::StrDraw(str, 196 + menuAllButtonX, 64 + (i * 96) + 8, 72, c);
+			Font::StrDraw(str, 230 + menuAllButtonX, 61 + (i * 96) + 8, 72, c);
 		}
 
 		
 
-		Font::StrDraw(L"カスタマイズ", 320 + menuAllButtonX, 452, 72, c);
+		Font::StrDraw(L"カスタマイズ", 175 + menuAllButtonX, 452, 72, c);
 		
 		MenuBlockDraw(-32, 0.0f, 864.0f, 56.0f, 0.1f, 0.6f, 0.1f, 0.7f);
 		if (cursor_y < 448)

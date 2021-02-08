@@ -134,7 +134,7 @@ void CObjHero::Action()
 				Audio::Start(5);
 
 				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_bullet, OBJ_BULLET, 51);
+				Objs::InsertObj(obj_bullet, OBJ_BULLET, 70);
 			}
 			else
 			{
@@ -143,7 +143,7 @@ void CObjHero::Action()
 				//剣を振る音
 				Audio::Start(0);
 				CObjSword* obj_b = new CObjSword(m_px + (m_posture * 48.0f), m_py, m_posture, m_f);
-				Objs::InsertObj(obj_b, OBJ_SWORD, 56);
+				Objs::InsertObj(obj_b, OBJ_SWORD, 70);
 			}
 		}
 
@@ -198,7 +198,7 @@ void CObjHero::Action()
 	}
 	//-------------------------------------
 	//当たり判定を行うオブジェクト情報部
-	//敵の名前, ダメージ量
+	// database = {オブジェクトの名前,ダメージ}
 	int database[][2] =
 	{
 		{ OBJ_ENEMY,	1.0f},
@@ -414,4 +414,6 @@ void CObjHero::Draw()
 void CObjHero::AddHP(int add) 
 {
 	m_hp += add;
+	if (m_hp >= max_hp)
+		m_hp = max_hp;
 }
