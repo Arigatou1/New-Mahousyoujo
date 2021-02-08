@@ -64,9 +64,9 @@ bool CWinInputs::GetVKeyOnce(int v_key)
 	{
 		if (m_key_flag == true)
 		{
-			m_key_flag = false;
 			return true;
 		}
+		m_key_flag = false;
 	}
 	else
 	{

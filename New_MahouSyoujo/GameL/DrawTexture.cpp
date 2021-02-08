@@ -246,6 +246,86 @@ void CDrawTexture:: Draw(int id,RECT_F* src,RECT_F* dst,float col[4],float r)
 	m_pDeviceContext->DrawIndexed(4, 0, 0);
 
 }
+void CDrawTexture::Draw(int id, float x, float y)
+{
+	if (m_img_max < id) return;
+	if (vec_tex_data[id]->GetTexData() == nullptr) return;
+
+	//２D使用設定
+	Set2DDraw();
+
+	//シェーダデータ輸送
+	D3D11_MAPPED_SUBRESOURCE pData;
+	if (SUCCEEDED(m_pDeviceContext->Map(m_pConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &pData)))
+	{
+		DRAW_2D_TEX  data;
+		for(int i=0;i<4;i++)
+		data.color[i] = 1.0f;
+
+		data.size[0] = (float)vec_tex_data[id]->GetTexSizeW();	data.size[1] = (float)vec_tex_data[id]->GetTexSizeH();
+		data.size[2] = (float)m_width;							data.size[3] = (float)m_height;
+
+		data.rect_out[0] = x;		data.rect_out[1] = y;
+		data.rect_out[2] = x + (float)vec_tex_data[id]->GetTexSizeW();		data.rect_out[3] =y+(float)vec_tex_data[id]->GetTexSizeH();
+
+		data.rect_in[0] =0;		data.rect_in[1] = 0;
+		data.rect_in[2] =(float)vec_tex_data[id]->GetTexSizeW();		data.rect_in[3] = (float)vec_tex_data[id]->GetTexSizeH();
+
+		for (int i = 0; i < 4; i++)
+		data.rotation[i] = 0;		
+
+		memcpy_s(pData.pData, pData.RowPitch, (void*)&data, sizeof(DRAW_2D_TEX));
+
+		m_pDeviceContext->Unmap(m_pConstantBuffer, 0);
+	}
+
+	//テクスチャ設定
+	m_pDeviceContext->PSSetShaderResources(0, 1, vec_tex_data[id].get()->GetTexData());
+
+	//プリミティブをレンダリング
+	m_pDeviceContext->DrawIndexed(4, 0, 0);
+
+}
+void CDrawTexture::Draw(int id, float x, float y,float rct[4])
+{
+	if (m_img_max < id) return;
+	if (vec_tex_data[id]->GetTexData() == nullptr) return;
+
+	//２D使用設定
+	Set2DDraw();
+
+	//シェーダデータ輸送
+	D3D11_MAPPED_SUBRESOURCE pData;
+	if (SUCCEEDED(m_pDeviceContext->Map(m_pConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &pData)))
+	{
+		DRAW_2D_TEX  data;
+		for (int i = 0; i < 4; i++)
+			data.color[i] = 1.0f;
+
+		data.size[0] = (float)vec_tex_data[id]->GetTexSizeW();	data.size[1] = (float)vec_tex_data[id]->GetTexSizeH();
+		data.size[2] = (float)m_width;							data.size[3] = (float)m_height;
+
+		data.rect_out[0] = x;		data.rect_out[1] = y;
+		data.rect_out[2] = x + rct[2];		data.rect_out[3] = y + rct[3];
+
+		data.rect_in[0] = rct[0];		data.rect_in[1] = rct[1];
+		data.rect_in[2] = rct[0]+rct[2];		data.rect_in[3] = rct[1]+rct[3];
+
+		for (int i = 0; i < 4; i++)
+			data.rotation[i] = 0;
+
+		memcpy_s(pData.pData, pData.RowPitch, (void*)&data, sizeof(DRAW_2D_TEX));
+
+		m_pDeviceContext->Unmap(m_pConstantBuffer, 0);
+	}
+
+	//テクスチャ設定
+	m_pDeviceContext->PSSetShaderResources(0, 1, vec_tex_data[id].get()->GetTexData());
+
+	//プリミティブをレンダリング
+	m_pDeviceContext->DrawIndexed(4, 0, 0);
+
+}
 
 
 //描画環境構築する

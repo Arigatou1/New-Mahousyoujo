@@ -8,7 +8,6 @@ using namespace GameL;
 class CObjIcon : public CObj
 {
 public:
-	//CObjIcon(float size, float x, float y, int g, bool s);
 	CObjIcon(float x, float y,float size, bool s);
 	~CObjIcon() {};
 	void Init();   //イニシャライズ
