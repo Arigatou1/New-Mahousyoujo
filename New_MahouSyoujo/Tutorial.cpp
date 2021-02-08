@@ -225,62 +225,92 @@ void CTutorial::Draw()
 
 	if (Order == 1)
 	{
-		swprintf_s(str, L"チュートリアルへようこそ");//整数を文字列か
-		Font::StrDraw(str, 270, 160, 20, c);
+		swprintf_s(str, L"チュートリアルへようこそ!!");//整数を文字列か
+		Font::StrDraw(str, 140, 160, 40, c);
 		swprintf_s(str, L"まずは「←」・「→」キーで左右に移動してみましょう");//整数を文字列か
-		Font::StrDraw(str, 150, 210, 20, c);
+		Font::StrDraw(str, 145, 270, 20, c);
 	}
 	else if(Order == 2)
 	{
 		swprintf_s(str, L"次に「スペース」キーでジャンプできます");//整数を文字列か
-		Font::StrDraw(str, 250, 200, 20, c);
+		Font::StrDraw(str, 120, 200, 30, c);
+		swprintf_s(str, L"ステージの段差や浮いている敵に有効です");//整数を文字列か
+		Font::StrDraw(str, 120, 240, 30, c);
 	}
 	else if (Order == 3)
 	{
 		swprintf_s(str, L"そして「F」キーで攻撃します");//整数を文字列か
-		Font::StrDraw(str, 250, 200, 20, c);
+		Font::StrDraw(str, 120, 200, 30, c);
+		swprintf_s(str, L"うまく間合いを取って敵を倒しましょう");//整数を文字列か
+		Font::StrDraw(str, 120, 240, 30, c);
 	}
 	else if (Order == 4)
 	{
-		swprintf_s(str, L"主人公やマナは敵に当たったり攻撃を受けるとダメージを受けます");//整数を文字列か
-		Font::StrDraw(str, 100, 200, 20, c);
+		swprintf_s(str, L"主人公やマナは敵に当たったり");//整数を文字列か
+		Font::StrDraw(str, 120, 200, 30, c);
+		swprintf_s(str, L"攻撃を受けるとダメージを受けます");//整数を文字列か
+		Font::StrDraw(str, 120, 240, 30, c);
 	}
 	else if (Order == 5)
 	{
-		swprintf_s(str, L"「↑」・「↓」キーで右上の魔法の変更ができます");//整数を文字列か
-		Font::StrDraw(str, 150, 200, 20, c);
+		swprintf_s(str, L"右上の魔法は");//整数を文字列か
+		Font::StrDraw(str, 130, 140, 30, c);
+		swprintf_s(str, L"「↑」・「↓」キーで変更ができます");//整数を文字列か
+		Font::StrDraw(str, 130, 180, 30, c);
+		swprintf_s(str, L"使いたい魔法に黄色の枠を合わせよう");//整数を文字列か
+		Font::StrDraw(str, 130, 250, 30, c);
 	}
 	else if (Order == 6)
 	{
-		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
-		Font::StrDraw(str, 150, 140, 20, c);
-		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
-		Font::StrDraw(str, 150, 180, 20, c);
-		swprintf_s(str, L"一番下はヒール　主人公の体力を回復します");//整数を文字列か
-		Font::StrDraw(str, 150, 220, 20, c);
+		//swprintf_s(str, L"では魔法を使用してみましょう");//整数を文字列か
+		//Font::StrDraw(str, 150, 140, 20, c);
+		//swprintf_s(str, L"魔法は「↑」・「↓」キーで変更ができます");//整数を文字列か
+		//Font::StrDraw(str, 150, 180, 20, c);
+		swprintf_s(str, L"まずは一番上のヒール");//整数を文字列か
+		Font::StrDraw(str, 150, 140, 30, c);
+		swprintf_s(str, L"主人公の体力を3回復します");//整数を文字列か
+		Font::StrDraw(str, 170, 220, 30, c);
+		swprintf_s(str, L"右上の黄色の枠を合わせよう");//整数を文字列か
+		Font::StrDraw(str, 300, 330, 25, c);
+		swprintf_s(str, L"魔法は「D」キーで使用します");//整数を文字列か
+		Font::StrDraw(str, 400, 400, 20, c);
 	}
 	else if (Order == 7)
 	{
-		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
-		Font::StrDraw(str, 150, 140, 20, c);
-		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
-		Font::StrDraw(str, 150, 180, 20, c);
-		swprintf_s(str, L"真ん中はバリア　マナの周りに展開して敵の攻撃を防ぎます");//整数を文字列か
-		Font::StrDraw(str, 130, 220, 20, c);
+		//swprintf_s(str, L"魔法は「↑」・「↓」キーで変更ができます");//整数を文字列か
+		//Font::StrDraw(str, 150, 140, 20, c);
+		//swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		//Font::StrDraw(str, 150, 180, 20, c);
+		swprintf_s(str, L"次に真ん中のバリア");//整数を文字列か
+		Font::StrDraw(str, 150, 140, 30, c);
+		swprintf_s(str, L"マナの周りにシールドを");//整数を文字列か
+		Font::StrDraw(str, 170, 200, 30, c); 
+			swprintf_s(str, L"展開して敵の攻撃を防ぎます");//整数を文字列か
+		Font::StrDraw(str, 170, 240, 30, c); 
+		swprintf_s(str, L"右上の黄色の枠を合わせよう");//整数を文字列か
+		Font::StrDraw(str, 300, 330, 25, c);
+		swprintf_s(str, L"魔法は「D」キーで使用します");//整数を文字列か
+		Font::StrDraw(str, 400, 400, 20, c);
 	}
 	else if (Order == 8)
 	{
-		swprintf_s(str, L"「↑」・「↓」キーで魔法の変更ができます");//整数を文字列か
-		Font::StrDraw(str, 150, 140, 20, c);
-		swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
-		Font::StrDraw(str, 150, 180, 20, c);
-		swprintf_s(str, L"一番上はメテオ　全体に強力な攻撃をします");//整数を文字列か
-		Font::StrDraw(str, 150, 220, 20, c);
+		//swprintf_s(str, L"魔法は「↑」・「↓」キーで変更ができます");//整数を文字列か
+		//Font::StrDraw(str, 150, 140, 20, c);
+		//swprintf_s(str, L"「D」キーで魔法を使用します");//整数を文字列か
+		//Font::StrDraw(str, 150, 180, 20, c);
+		swprintf_s(str, L"最後は一番下のメテオ");//整数を文字列か
+		Font::StrDraw(str, 150, 140, 30, c);
+		swprintf_s(str, L"画面全体に無数の隕石で攻撃します");//整数を文字列か
+		Font::StrDraw(str, 170, 220, 30, c);
+		swprintf_s(str, L"右上の黄色の枠を合わせよう");//整数を文字列か
+		Font::StrDraw(str, 300, 330, 25, c);
+		swprintf_s(str, L"魔法は「D」キーで使用します");//整数を文字列か
+		Font::StrDraw(str, 400, 400, 20, c);
 	}
 	else if (Order == 9)
 	{
-		swprintf_s(str, L"これでチュートリアルは終わりです");//整数を文字列か
-		Font::StrDraw(str, 200, 200, 20, c);
+		swprintf_s(str, L"これでチュートリアルは終了です");//整数を文字列か
+		Font::StrDraw(str, 160, 240, 30, c);
 	}
 }
 
