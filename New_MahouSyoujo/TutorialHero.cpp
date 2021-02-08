@@ -174,7 +174,7 @@ void TutorialHero::Action()
 				//Objs::InsertObj(obj_micon, OBJ_ICON, 60);
 				
 				//(x座標,y座標,サイズの倍率×（６４）チュートリアルかどうか)
-				CObjIcon* obj_icon = new CObjIcon(600.0f,200.0f,0.5f,true);
+				CObjIcon* obj_icon = new CObjIcon(650.0f,180.0f,0.8f,true);
 				Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 				icon = false;

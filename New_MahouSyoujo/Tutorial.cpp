@@ -22,7 +22,7 @@ void CTutorial::Init()
 
 	Order = 1;
 
-	//チュートリアる主人公オブジェクト作成
+	//チュートリア主人公オブジェクト作成
 	TutorialHero* obj = new TutorialHero();
 	Objs::InsertObj(obj, OBJ_TUTORIALHERO, 60);
 
