@@ -170,7 +170,7 @@ void EnemyAppear::Action()
 {
 	//ŽžŠÔŒo‰ß
 	if (((UserData*)Save::GetData())->HPZeroCheck == false)
-	m_time++;
+	m_time+=50;
 	
 	switch (StageID)
 	{
