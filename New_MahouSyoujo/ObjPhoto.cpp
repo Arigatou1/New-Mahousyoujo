@@ -9,7 +9,7 @@ using namespace GameL;
 
 //コンストラクタ
 CObjPhoto::CObjPhoto(float src_top, float src_left, float src_right, float src_bottom,
-					float x_size, float y_size, float dst_top, float dst_left, int g,int n)
+					float x_size, float y_size, float dst_top, float dst_left, int g,int t)
 {
 	size_x = x_size;
 	size_y = y_size;
@@ -20,25 +20,23 @@ CObjPhoto::CObjPhoto(float src_top, float src_left, float src_right, float src_b
 	d_t = dst_top;
 	d_l = dst_left;
 	Graphic_Serct = g;
-	p_num = n;
+	Time = t;
 }
 
 //イニシャライズ
 void CObjPhoto::Init()
 {
-	p_order = 0;
+	p_time = 0;
 }
 
 //アクション
 void CObjPhoto::Action()
 {
-	CTutorial* obj_tutorial = (CTutorial*)Objs::GetObj(OBJ_TUTORIAL);
-	if (obj_tutorial != nullptr)
-	{
-		p_order = obj_tutorial->GetOrder();
-	}
-	if (p_num  == p_order)
+	p_time++;
+
+	if (p_time == Time)
 		this->SetStatus(false);
+	
 }
 
 //ドロー

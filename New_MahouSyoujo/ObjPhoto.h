@@ -9,7 +9,7 @@ class CObjPhoto : public CObj
 {
 public:
 	CObjPhoto(float src_top, float src_left,float src_right,float src_bottom,
-				float x_size, float y_size, float dst_top, float dst_left, int g,int n);
+				float x_size, float y_size, float dst_top, float dst_left, int g,int t);
 	~CObjPhoto() {};
 	void Init();   //イニシャライズ
 	void Action(); //アクション
@@ -25,6 +25,6 @@ private:
 	float d_l;//表示left
 	int Graphic_Serct;//画像の変更用
 
-	int p_num;//現在の番号（？）
-	int p_order;//チュートリアルの順番
+	int Time;
+	int p_time;
 };
