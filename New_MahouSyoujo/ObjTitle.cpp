@@ -108,7 +108,7 @@ void CObjTitle::Action()
 					((UserData*)Save::GetData())->Clear_Flag[i] = false;
 
 				}
-
+				((UserData*)Save::GetData())->weapon = 0;
 				((UserData*)Save::GetData())->Diffculty = 1;
 				((UserData*)Save::GetData())->DamageDraw = true;
 

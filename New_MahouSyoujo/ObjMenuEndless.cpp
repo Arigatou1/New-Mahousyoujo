@@ -52,7 +52,7 @@ void CObjMenuEndless::Action()
 				{
 					this->SetStatus(false);
 					//メニューオブジェクト作成
-					CObjCustomize* obj = new CObjCustomize();
+					CObjCustomize* obj = new CObjCustomize(1);
 					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 				}
 				//	}
