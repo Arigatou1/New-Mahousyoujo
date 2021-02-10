@@ -50,9 +50,7 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
 	Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
 	Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
-	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
-
-	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
+	
 	Audio::LoadAudio(20, L"Sounds/herodownSE.wav", EFFECT);
 	Audio::LoadAudio(21, L"Sounds/girlattackSE.wav", EFFECT);
 	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
@@ -62,7 +60,9 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(27, L"Sounds/firebreathSE.wav", EFFECT);
 	Audio::LoadAudio(28, L"Sounds/bossattackSE2.wav", EFFECT);
 	Audio::LoadAudio(29, L"Sounds/bossskillSE1.wav", EFFECT);
+	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
 
+	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
 	//外部データの読み込み
 
 	unique_ptr<wchar_t>p;//ステージ情報ポインター
