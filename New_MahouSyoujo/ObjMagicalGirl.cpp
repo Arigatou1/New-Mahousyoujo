@@ -118,7 +118,9 @@ void CObjMagicalGirl::Action()
 		/*CObjPhoto* obj_photo = new CObjPhoto((m_skill - 1) * 128.0f, 0.0f, 128.0f, (m_skill) * 128.0f,
 			32.0f, 32.0f, m_gy - 10.0f, m_gx + 64.0f, 10, 20);
 			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);*/
-			//-------------------------------------------------------------------------------------------
+			//-------2021 2 10 èMê£-----------------------------------------------------
+		iconAnime[0] = 0;
+		//--------------------------------------------------------------------------
 	}
 	else if(Input::GetVKey(VK_UP) == false && Input::GetVKey(VK_DOWN) == false)
 	{
