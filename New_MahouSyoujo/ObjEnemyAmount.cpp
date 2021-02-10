@@ -81,8 +81,7 @@ void CObjEnemyAmount::Draw()
 {
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
-
-
+	float Rect[4]={64,64,64,64};
 
 
 	swprintf_s(str, L"残り敵の数:%d", ((UserData*)Save::GetData())->enemyRemain);//整数を文字列か
@@ -108,6 +107,8 @@ void CObjEnemyAmount::Draw()
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
+	Draw::Draw(0, 0, 64, Rect);
+
 	for (int i = 0; i < 3; i++)
 	{
 		c[i] = 1.0f;
@@ -115,5 +116,6 @@ void CObjEnemyAmount::Draw()
 
 	swprintf_s(str, L"操作方法:←→移動　↑↓魔法切り替え 　Space:ジャンプ  F攻撃  D魔法");//整数を文字列か
 	Font::StrDraw(str, 2, 566, 24, c);
+
 
 }

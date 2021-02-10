@@ -8,18 +8,6 @@
 using namespace GameL;
 
 //コンストラクタ
-/*CObjIcon::CObjIcon(float size, float x, float y, int g, bool s)
-{
-	icon_size = size;
-	i_x = x;
-	i_y = y;
-	Graphic_Serct = g;
-	serect = s;
-
-	size_spare = size;
-	x_spare = x;
-	y_spare = y;
-}*/
 CObjIcon::CObjIcon(float x,float y,float size, bool s)
 {
 	i_x = x;
@@ -77,56 +65,6 @@ void CObjIcon::Action()
 		if (obj_tutorial != nullptr)
 		{
 			i_order = obj_tutorial->GetOrder();
-		}
-	}
-
-	//ヒール
-	if (Graphic_Serct == 12)
-	{
-		if (b_skill == 1)
-		{
-			Graphic_Serct = 13;
-		}
-	}
-	else if (Graphic_Serct == 13)
-	{
-		if (b_skill != 1)
-		{
-			Graphic_Serct = 12;
-		}
-	}
-
-	//バリア
-	if (Graphic_Serct == 10)
-	{
-		if (b_skill == 2)
-		{
-			Graphic_Serct = 11;
-		}
-
-	}
-	else if (Graphic_Serct == 11)
-	{
-		if (b_skill != 2)
-		{
-			Graphic_Serct = 10;
-		}
-	}
-
-	//メテオ
-	if (Graphic_Serct == 14)
-	{
-		if (b_skill == 3)
-		{
-			Graphic_Serct = 15;
-		}
-
-	}
-	else if (Graphic_Serct == 15)
-	{
-		if (b_skill != 3)
-		{
-			Graphic_Serct = 14;
 		}
 	}
 
