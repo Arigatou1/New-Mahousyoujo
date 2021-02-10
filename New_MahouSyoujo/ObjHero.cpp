@@ -133,7 +133,7 @@ void CObjHero::Action()
 				//èeê∫
 				Audio::Start(5);
 
-				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py + 8.0f, m_posture, m_f);
+				CObjBullet* obj_bullet = new CObjBullet(m_px + (m_posture * 48), m_py + 12.0f, m_posture, m_f);
 				Objs::InsertObj(obj_bullet, OBJ_BULLET, 70);
 			}
 			else
