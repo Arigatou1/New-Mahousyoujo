@@ -41,29 +41,45 @@ void CObjSetting::Action()
 			{
 				if (nowSelect == 3)
 				{
+					Audio::Start(9);
 					nowLoading = true;
 					((UserData*)Save::GetData())->Stage = -1;
 				}
-				else
-				{
-					Audio::Start(9);
+			}
+		}
+		else if (Input::GetVKey(VK_ESCAPE) == true)
+		{
+			if (m_key_flag == true)
+			{
+				Audio::Start(9);
 
-					Save::Seve();
+				Save::Seve();
 
-					this->SetStatus(false);
-					//メニューオブジェクト作成
-					CObjModeSelect* obj = new CObjModeSelect();
-					Objs::InsertObj(obj, OBJ_MODESELECT, 2);
-				}
+				this->SetStatus(false);
+				//メニューオブジェクト作成
+				CObjModeSelect* obj = new CObjModeSelect();
+				Objs::InsertObj(obj, OBJ_MODESELECT, 2);
 			}
 		}
 		else if (Input::GetVKey(VK_UP) == true)
 		{
-			cursorUp();
+			if (m_key_flag == true)
+			{
+				cursorUp();
+				//音を再生する
+				Audio::Start(10);
+				m_key_flag = false;
+			}
 		}
 		else if (Input::GetVKey(VK_DOWN) == true)
 		{
-			cursorDown();
+			if (m_key_flag == true)
+			{
+				cursorDown();
+				//音を再生する
+				Audio::Start(10);
+				m_key_flag = false;
+			}
 		}
 		else if (Input::GetVKey(VK_LEFT) == true)
 		{
@@ -107,7 +123,6 @@ void CObjSetting::Action()
 
 			}
 		}
-
 		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 
@@ -252,22 +267,19 @@ void CObjSetting::Draw()
 	}
 	MenuBlockDraw(0, 560.0f, 800.0f, 48.0f, 0.1f, 0.1f, 0.1f, 0.7f);
 
-	Font::StrDraw(L"↑↓キー:移動  ←→キー:値の変更　Enter:決定  ", 200, 566, 26, c);
+	if(nowSelect==3)
+		Font::StrDraw(L"↑↓キー:移動  ←→キー:値の変更　Enter:決定  Esc:もどる", 24, 566, 26, c);
+	else
+		Font::StrDraw(L"↑↓キー:移動  ←→キー:値の変更　      　　  Esc:もどる", 24, 566, 26, c);
 
 }
 
 void CObjSetting::cursorUp()
 {
-	if (m_key_flag == true)
-	{
-		//音を再生する
-		Audio::Start(10);
+	
 		//カーソル移動
 		cursor_y -= moveCursor;
 
-		m_key_flag = false;
-	}
-	
 	//カーソルが画面が行かない処理(上)
 	if (cursor_y < 64)
 		cursor_y = 64;
@@ -280,18 +292,11 @@ void CObjSetting::cursorDown()
 	//その数ぶんカーソル移動する。
 	int count=4;
 	
-	if (m_key_flag == true)
-	{
-		//音を再生する
-		Audio::Start(10);
 		//カーソル移動
 		cursor_y += moveCursor;
 
-		m_key_flag = false;
-	}
-
 	//カーソルの移動制限
 	if (cursor_y > 64+((count-1)* moveCursor))
-		cursor_y = 64;
+		cursor_y = 64 + ((count - 1) * moveCursor);
 
 }

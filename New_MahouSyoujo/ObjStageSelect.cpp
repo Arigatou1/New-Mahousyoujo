@@ -60,7 +60,7 @@ void CObjStageSelect::Action()
 			{
 				Audio::Start(9);
 
-				//チュートリアル開始します。表示してると気
+				//チュートリアル開始します。表示してるとき
 				if (tutorialStart == true)
 				{
 					nowLoading = true;
@@ -83,7 +83,7 @@ void CObjStageSelect::Action()
 					{
 						this->SetStatus(false);
 						//メニューオブジェクト作成
-						CObjCustomize* obj = new CObjCustomize();
+						CObjCustomize* obj = new CObjCustomize(0);
 						Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 					}
 				}

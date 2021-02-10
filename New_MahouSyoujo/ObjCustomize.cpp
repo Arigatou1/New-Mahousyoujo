@@ -33,28 +33,12 @@ void CObjCustomize::Action()
 
 
 
-	if (Input::GetVKey(VK_RETURN) == true)
+	if (Input::GetVKey(VK_RETURN)|| Input::GetVKey(VK_ESCAPE))
 	{
 		if (m_key_flag == true)
 		{
+			CustomizeClose();
 			Audio::Start(9);
-			Save::Seve();
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjStageSelect* obj = new CObjStageSelect();
-			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
-		}
-	}
-	else if (Input::GetVKey(VK_ESCAPE) == true)
-	{
-		if (m_key_flag == true)
-		{
-			Audio::Start(11);
-
-			this->SetStatus(false);
-			//メニューオブジェクト作成
-			CObjStageSelect* obj = new CObjStageSelect();
-			Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
 		}
 	}
 
@@ -218,3 +202,22 @@ void CObjCustomize::cursorDown()
 		cursor_y = 176;
 
 }
+
+void CObjCustomize::CustomizeClose()
+{
+	
+	Save::Seve();
+	this->SetStatus(false);
+	if (Mode = 0)
+	{
+		//メニューオブジェクト作成
+		CObjStageSelect* obj = new CObjStageSelect();
+		Objs::InsertObj(obj, OBJ_STAGESELECT, 2);
+	}
+	else
+	{
+		//エンドレスメニューオブジェクト作成
+		CObjMenuEndless* obj2 = new CObjMenuEndless();
+		Objs::InsertObj(obj2, OBJ_STAGEENDLESS, 2);
+	}
+};

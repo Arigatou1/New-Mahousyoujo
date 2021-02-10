@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjCustomize : public CObj
 {
 public:
-	CObjCustomize() {};
+	CObjCustomize(int mode = 0) { Mode = mode; };
 	~CObjCustomize() {};
 	void Init();
 	void Action();
@@ -19,7 +19,9 @@ private:
 	float cursor_x;
 	float cursor_y;
 	int nowSelect;
+	int Mode;
 	
 	void cursorUp();
 	void cursorDown();
+	void CustomizeClose();
 };
