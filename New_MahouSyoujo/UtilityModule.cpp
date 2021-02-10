@@ -5,14 +5,14 @@
 
 //MenuBlockDraw関数
 //表示位置dstの値を受け取って、描画だけできる。
-void MenuBlockDraw(float x, float y, float width, float height, float r, float g, float b, float a)
+void MenuBlockDraw(float x, float y, float width, float height, float r, float g, float b, float a, int type)
 {
 	float c[4] = { r,g,b,a };
 	RECT_F src;
 	RECT_F dst;
 	src.m_top = 0;
-	src.m_left = 0;
-	src.m_right = 64;
+	src.m_left = type*64;
+	src.m_right = src.m_left+ 64;
 	src.m_bottom = 64;
 
 	dst.m_top = y;

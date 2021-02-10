@@ -1,7 +1,8 @@
 .vs/
-KansyaTeamGame2/Debug/
-KansyaTeamGame2/x64/
+New_MahouSyoujo/Debug/
+New_MahouSyoujo/x64/
 *.obj
 *.tlog
 *.idb
 *.pdb
+*user_Data

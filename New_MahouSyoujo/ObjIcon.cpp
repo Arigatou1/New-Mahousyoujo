@@ -8,17 +8,12 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjIcon::CObjIcon(int size, float x, float y, int g, bool s)
+CObjIcon::CObjIcon(float x,float y,float size, bool s)
 {
-	icon_size = size;
 	i_x = x;
 	i_y = y;
-	Graphic_Serct = g;
+	icon_size = size;
 	serect = s;
-
-	size_spare = size;
-	x_spare = x;
-	y_spare = y;
 }
 
 //イニシャライズ
@@ -30,17 +25,27 @@ void CObjIcon::Init()
 void CObjIcon::Action()
 {
 	//-------- 2021 2 1 舟瀬　変更--------
-	/*CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
-	if (obj_magicalgirl != nullptr)
+	if (serect == false)
 	{
-		b_skill = obj_magicalgirl->GetSkill() - 1;
+		CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
+		if (obj_magicalgirl != nullptr)
+		{
+			b_skill = obj_magicalgirl->GetSkill() - 1;
+		}
+	}
+	else if (serect == true)
+	{
+		TutorialHero* obj_tutorialhero = (TutorialHero*)Objs::GetObj(OBJ_TUTORIALHERO);
+		if (obj_tutorialhero != nullptr)
+		{
+			b_skill = obj_tutorialhero->GetSkill() - 1;
+		}
 	}
 
 
 
-	*/
 	//--------ここまで--------------------
-
+	/*
 	if (serect == false)
 	{
 		CObjMagicalGirl* obj_magicalgirl = (CObjMagicalGirl*)Objs::GetObj(OBJ_MAGICALGIRL);
@@ -60,56 +65,6 @@ void CObjIcon::Action()
 		if (obj_tutorial != nullptr)
 		{
 			i_order = obj_tutorial->GetOrder();
-		}
-	}
-
-	//ヒール
-	if (Graphic_Serct == 12)
-	{
-		if (b_skill == 1)
-		{
-			Graphic_Serct = 13;
-		}
-	}
-	else if (Graphic_Serct == 13)
-	{
-		if (b_skill != 1)
-		{
-			Graphic_Serct = 12;
-		}
-	}
-
-	//バリア
-	if (Graphic_Serct == 10)
-	{
-		if (b_skill == 2)
-		{
-			Graphic_Serct = 11;
-		}
-
-	}
-	else if (Graphic_Serct == 11)
-	{
-		if (b_skill != 2)
-		{
-			Graphic_Serct = 10;
-		}
-	}
-
-	//メテオ
-	if (Graphic_Serct == 14)
-	{
-		if (b_skill == 3)
-		{
-			Graphic_Serct = 15;
-		}
-
-	}
-	else if (Graphic_Serct == 15)
-	{
-		if (b_skill != 3)
-		{
-			Graphic_Serct = 14;
 		}
 	}
 
@@ -139,11 +94,12 @@ void CObjIcon::Action()
 		icon_size = size_spare;
 		i_x = x_spare;
 		i_y = y_spare;
-	}
+	}*/
 }
 //ドロー
 void CObjIcon::Draw()
 {
+	/*
 	//描画カラー
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -153,8 +109,8 @@ void CObjIcon::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 200.0f;
-	src.m_bottom = 200.0f;
+	src.m_right = 150.0f;
+	src.m_bottom = 150.0f;
 
 	//表示位置の設定
 	dst.m_top = i_y;
@@ -164,8 +120,8 @@ void CObjIcon::Draw()
 
 	//描画
 	Draw::Draw(Graphic_Serct, &src, &dst, c, 0.0f);
-
-	/*
+	*/
+	
 	//描画カラー
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -179,10 +135,10 @@ void CObjIcon::Draw()
 	src.m_bottom = 384.0f;
 
 	//表示位置の設定
-	dst.m_top = 0.0f;
-	dst.m_left = 736.0f;
-	dst.m_right = dst.m_left + 64.0f;
-	dst.m_bottom = dst.m_top + 192.0f;
+	dst.m_top = i_y;
+	dst.m_left = i_x;
+	dst.m_right = dst.m_left + 64.0f * icon_size;
+	dst.m_bottom = dst.m_top + 192.0f * icon_size;
 
 	//描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
@@ -194,12 +150,11 @@ void CObjIcon::Draw()
 	src.m_bottom = 512.0f;
 
 	//表示位置の設定
-	dst.m_top = (b_skill * 64);
-	dst.m_left = 736.0f;
-	dst.m_right = dst.m_left + 64.0f;
-	dst.m_bottom = dst.m_top + 64.0f;
+	dst.m_top = i_y + (b_skill * 64) * icon_size;
+	dst.m_left = i_x;
+	dst.m_right = dst.m_left + 64.0f * icon_size;
+	dst.m_bottom = dst.m_top + 64.0f * icon_size;
 
 	//描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
-	*/
 }

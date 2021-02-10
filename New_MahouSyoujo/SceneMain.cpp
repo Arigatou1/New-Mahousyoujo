@@ -42,8 +42,17 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(4, L"Sounds/herodamageSE.wav", EFFECT);
 	Audio::LoadAudio(5, L"Sounds/bulletSE.wav", EFFECT);
 	Audio::LoadAudio(6, L"Sounds/herojumpSE.wav", EFFECT);
-	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(13, L"Sounds/gameclearBGM.wav", EFFECT);
+	Audio::LoadAudio(14, L"Sounds/danjonBGM1.wav", BACK_MUSIC);
+	Audio::LoadAudio(15, L"Sounds/danjonBGM2.wav", BACK_MUSIC);
+	Audio::LoadAudio(16, L"Sounds/bossBGM1.wav", BACK_MUSIC); 
 	
+	Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
+	Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
+	Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
+	Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
+
+	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
 	Audio::LoadAudio(20, L"Sounds/herodownSE.wav", EFFECT);
 	Audio::LoadAudio(21, L"Sounds/girlattackSE.wav", EFFECT);
 	Audio::LoadAudio(22, L"Sounds/kaihukuSE.wav", EFFECT);
@@ -69,38 +78,6 @@ void CSceneMain::InitScene()
 
 	else
 		swprintf_s(s, L"Stage/Stage%d.csv", StageID);
-
-	/// <summary>
-			///		シーンメインのロードを早く終わらせるために変えた処理。
-			/// こうするしかなかったんだ__________
-			/// </summary>
-	switch (StageID)
-	{
-	case 1:
-		Audio::LoadAudio(14, L"Sounds/danjonBGM1.wav", BACK_MUSIC);
-		break;
-	case 2:
-	case 3:
-	case 4:
-		Audio::LoadAudio(15, L"Sounds/danjonBGM2.wav", BACK_MUSIC);
-		break;
-	case 5:
-	case 6:
-		Audio::LoadAudio(17, L"Sounds/wahuBGM.wav", BACK_MUSIC);
-		break;
-	case 7:
-		Audio::LoadAudio(18, L"Sounds/danjonBGM3.wav", BACK_MUSIC);
-		break;
-	case 8:
-		Audio::LoadAudio(19, L"Sounds/bossBGM2.wav", BACK_MUSIC);
-		break;
-	default:
-		Audio::LoadAudio(30, L"Sounds/endlessBGM.wav", BACK_MUSIC);
-		break;
-	}
-	Audio::LoadAudio(16, L"Sounds/bossBGM1.wav", BACK_MUSIC);
-	
-	Audio::LoadAudio(31, L"Sounds/bossdownSE.wav", EFFECT);
 
 
 	p = Save::ExternalDataOpen(s, &size);//外部データ読み込み
@@ -131,30 +108,14 @@ void CSceneMain::InitScene()
 	Draw::LoadImageW(L"Graphics/Dragon.png", 4, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Baria.png", 5, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/Caution.png", 6, TEX_SIZE_128);
-	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成.png", 10, TEX_SIZE_512);
-	//Draw::LoadImageW(L"Graphics/1.Bアイコン完成差分.png", 11, TEX_SIZE_512);
-	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成.png", 12, TEX_SIZE_512);
-	//Draw::LoadImageW(L"Graphics/2.Hアイコン完成差分.png", 13, TEX_SIZE_512);
-	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成.png", 14, TEX_SIZE_512);
-	//Draw::LoadImageW(L"Graphics/3.Mアイコン完成差分.png", 15, TEX_SIZE_512);
+
 	Draw::LoadImageW(L"Graphics/skill_icons.png", 10, TEX_SIZE_128);
 	Draw::LoadImageW(L"Graphics/block.png", 63, TEX_SIZE_64);
-
-	//背景読み込み
-	/*for (int i = 1; i <= 10; i++)
-	{
-		wchar_t bgid[128];
-
-		swprintf_s(bgid, L"BackGrounds/bg_%02d.png", i);
-
-		Draw::LoadImageW(bgid, i+50, TEX_SIZE_512);
-	}
-	*/
 
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
-	Objs::InsertObj(obj, OBJ_HERO, 60);
+	Objs::InsertObj(obj, OBJ_HERO,150);
 
 	//魔法少女オブジェクト作成
 	CObjMagicalGirl* obj_magicalgirl = new CObjMagicalGirl();
@@ -185,21 +146,9 @@ void CSceneMain::InitScene()
 	Fadeout* obj_Fadeout = new Fadeout(3,true);
 	Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
 
-	//メテオアイコン作成
-	CObjIcon* obj_icon = new CObjIcon(104.0f, 716.0f, -20.0f, 14, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
-	
-	//バリアアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 44.0f, 10, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
-
-	//ヒールアイコン作成
-	obj_icon = new CObjIcon(104.0f, 716.0f, 108.0f, 12, false);
-	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
-
 	//アイコン作成
-	//CObjIcon* obj_icon = new CObjIcon();
-	//Objs::InsertObj(obj_icon, OBJ_ICON, 60);
+	CObjIcon* obj_icon = new CObjIcon(736.0f,0.0f,1.0f, false);
+	Objs::InsertObj(obj_icon, OBJ_ICON, 60);
 
 
 

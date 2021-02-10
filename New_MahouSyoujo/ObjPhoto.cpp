@@ -37,7 +37,7 @@ void CObjPhoto::Action()
 	{
 		p_order = obj_tutorial->GetOrder();
 	}
-	if (p_num + 1 == p_order)
+	if (p_num  == p_order)
 		this->SetStatus(false);
 }
 
