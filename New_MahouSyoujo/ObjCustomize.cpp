@@ -208,7 +208,7 @@ void CObjCustomize::CustomizeClose()
 	
 	Save::Seve();
 	this->SetStatus(false);
-	if (Mode = 0)
+	if (Mode == 0)
 	{
 		//メニューオブジェクト作成
 		CObjStageSelect* obj = new CObjStageSelect();

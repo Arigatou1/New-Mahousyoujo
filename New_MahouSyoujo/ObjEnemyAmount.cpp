@@ -60,8 +60,6 @@ void CObjEnemyAmount::Draw()
 {
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
-	float Rect[4]={64,64,64,64};
-
 
 	swprintf_s(str, L"c‚è“G‚Ì”:%d", ((UserData*)Save::GetData())->enemyRemain);//®”‚ğ•¶š—ñ‚©
 	
@@ -85,8 +83,6 @@ void CObjEnemyAmount::Draw()
 	dst.m_bottom = 600;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-
-	Draw::Draw(0, 0, 64, Rect);
 
 	for (int i = 0; i < 3; i++)
 	{

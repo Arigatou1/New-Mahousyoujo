@@ -60,33 +60,20 @@ void CObjStageSelect::Action()
 			{
 				Audio::Start(9);
 
-				//チュートリアル開始します。表示してるとき
-				if (tutorialStart == true)
+
+				if (cursor_y < 448)
 				{
-					nowLoading = true;
-					((UserData*)Save::GetData())->Stage = -1;
-				}
-				//チュートリアルまだやってない時
-				else if(((UserData*)Save::GetData())->tutorialDone == false)
-				{
-					tutorialStart = true;
+					StageStart();
 				}
 
-				else if (((UserData*)Save::GetData())->tutorialDone == true)
+				if (cursor_y >= 448)
 				{
-					if (cursor_y < 448)
-					{
-						StageStart();
-					}
-
-					if (cursor_y >= 448)
-					{
-						this->SetStatus(false);
-						//メニューオブジェクト作成
-						CObjCustomize* obj = new CObjCustomize(0);
-						Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
-					}
+					this->SetStatus(false);
+					//メニューオブジェクト作成
+					CObjCustomize* obj = new CObjCustomize(0);
+					Objs::InsertObj(obj, OBJ_CUSTOMIZE, 2);
 				}
+				
 				m_key_flag = false;
 
 			}
@@ -264,7 +251,6 @@ void CObjStageSelect::Draw()
 			}
 }
 
-
 void CObjStageSelect::cursorUp()
 {
 	if (m_key_flag == true)
@@ -304,6 +290,21 @@ void CObjStageSelect::cursorDown()
 
 void CObjStageSelect::StageStart()
 {
+		
+	if (((UserData*)Save::GetData())->tutorialDone == false)
+	{
+		if (tutorialStart == true)
+		{
+			////チュートリアル開始します。表示してるとき
+			nowLoading = true;
+			((UserData*)Save::GetData())->Stage = -1;
+		}
+
+		//してない時、表示させて帰る。
+		tutorialStart = true;
+		return;
+	}
+
 	//そのステージが解放されているかをチェックする。
 	if (((UserData*)Save::GetData())->Clear_Flag[((UserData*)Save::GetData())->Stage] == true)
 	{

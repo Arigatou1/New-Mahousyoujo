@@ -27,12 +27,20 @@ void CObjMagicalGirl::Init()
 	m_skill = 1;//1なら回復 2ならバリア 3なら全体
 
 	m_key_flag = false;
+
+	iconAnime[0] = 40;
+	iconAnime[1] = 40;
 }
 
 //アクション
 void CObjMagicalGirl::Action()
 {
 	m_mtime++;
+	if (iconAnime[0] < iconAnime[1])
+	{
+		//2021 2 10 舟瀬
+		iconAnime[0]++;
+	}
 	
 	//主人公のHPとマックスHPとってくる
 	CObjHero* obj_hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
@@ -85,9 +93,14 @@ void CObjMagicalGirl::Action()
 				m_skill = 3;
 			}
 
-		CObjPhoto* obj_photo = new CObjPhoto((m_skill - 1) * 128.0f, 0.0f, 128.0f, (m_skill) * 128.0f,
+		//----------------------------------------------------------------------------------------------アイコン表示
+		/*CObjPhoto* obj_photo = new CObjPhoto((m_skill - 1) * 128.0f, 0.0f, 128.0f, (m_skill) * 128.0f,
 			32.0f, 32.0f, m_gy - 10.0f, m_gx + 64.0f, 10, 20);
-			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);*/
+			//-------------------------------------------------------------------------------------------
+		//-------2021 2 10 舟瀬-----------------------------------------------------
+		iconAnime[0] = 0;
+		//--------------------------------------------------------------------------
 	}
 	else if (Input::GetVKey(VK_DOWN) == true && s_t == true)
 	{
@@ -101,9 +114,11 @@ void CObjMagicalGirl::Action()
 				m_skill = 1;
 			}
 
-		CObjPhoto* obj_photo = new CObjPhoto((m_skill - 1) * 128.0f, 0.0f, 128.0f, (m_skill) * 128.0f,
+		//----------------------------------------------------------------------------------------------アイコン表示
+		/*CObjPhoto* obj_photo = new CObjPhoto((m_skill - 1) * 128.0f, 0.0f, 128.0f, (m_skill) * 128.0f,
 			32.0f, 32.0f, m_gy - 10.0f, m_gx + 64.0f, 10, 20);
-		Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);
+			Objs::InsertObj(obj_photo, OBJ_PHOTO, 60);*/
+			//-------------------------------------------------------------------------------------------
 	}
 	else if(Input::GetVKey(VK_UP) == false && Input::GetVKey(VK_DOWN) == false)
 	{
@@ -198,7 +213,6 @@ void CObjMagicalGirl::Action()
 	//		{
 	//			h_t = true;
 	//		}
-
 	////魔法少女のバリア
 	//if (Input::GetVKey('D') == true && b_t == true && m_skill == 2)
 	//	{
@@ -222,7 +236,6 @@ void CObjMagicalGirl::Action()
 	//		b_t = true;
 	//	}
 	//
-
 	////魔法少女の全体攻撃
 	//
 	//	if (Input::GetVKey('D') == true && z_t == true && m_skill == 3)
@@ -319,6 +332,27 @@ void CObjMagicalGirl::Draw()
 
 	//描画
 	Draw::Draw(0,&src,&dst,c,0.0f);
+
+	//-------2021 2 10 舟瀬-----------------------------------------------------
+	if (iconAnime[0] < iconAnime[1])
+	{
+		c[3] = iconAnime[0] < 20 ? 1.0f : 1.0f - (iconAnime[0] - 20) * 0.05f;
+
+		//切り取り位置の設定
+		src.m_top = ((m_skill-1) * 128.0f);
+		src.m_left = 0.0f;
+		src.m_right = 128.0f;
+		src.m_bottom = src.m_top + 128.0f;
+
+		//表示位置の設定
+		dst.m_top = m_gy-64.0f;
+		dst.m_left = m_gx;
+		dst.m_right = dst.m_left + 64.0f;
+		dst.m_bottom = dst.m_top + 64.0f;
+
+		//描画
+		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
 }
 
 int CObjMagicalGirl::GetMP()

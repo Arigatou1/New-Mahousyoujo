@@ -34,9 +34,6 @@ class CObjMagicalGirl : public CObj
 		int m_mtime;//MP回復用時間
 		
 		bool s_t;//スキル選択間隔
-		////bool m_t;//攻撃間隔
-		//bool h_t;//回復間隔
-		//bool b_t;//バリア間隔
-		//bool z_t;//全体攻撃間隔
+		int iconAnime[2];//アイコン上に表示させるやつ。
 		bool m_key_flag;
 };
