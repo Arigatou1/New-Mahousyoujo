@@ -38,7 +38,7 @@ void CObjEnemy2::Init()
 	e2_t = true;
 	e2_anime = 1;
 	//“–‚½‚è”»’è—p‚ÌHITBOX‚ðì¬
-	Hits::SetHitBox(this, m_ex, m_ey, 50, 50, ELEMENT_ENEMY, OBJ_ENEMY2, 10);
+	Hits::SetHitBox(this, m_ex + 9, m_ey + 31, 48, 32,  ELEMENT_ENEMY, OBJ_ENEMY2, 10);
 	//Amount = 0;
 
 }
@@ -149,7 +149,7 @@ void CObjEnemy2::Action()
 
 	//HitBOx‚Ì“à—e‚ð•ÏX
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_ex, m_ey + 14);
+	hit->SetPos(m_ex, m_ey + 31);
 
 	
 	

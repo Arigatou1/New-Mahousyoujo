@@ -12,6 +12,7 @@ IXAudio2MasteringVoice*			CAudio::m_pMasteringVoice;	//マスターボリューム
 vector<shared_ptr<AudioData>>	CAudio::m_AudioData;		//サウンドデータ	
 int								CAudio::m_aud_max;			//オーディオ最大数
 float							CAudio::m_volume;			//マスターボリューム値
+bool CAudio::bNowPlaying[16];
 
 //エラーサウンド変数
 bool g_is_error_sound;
@@ -22,6 +23,10 @@ void CAudio::Init(int max_audio)
 	m_aud_max=max_audio;
 	m_volume=1.0f;
 	unsigned XAudio2CreateFlags = 0;
+	for (int i = 0; i < 16; i++)
+	{
+		bNowPlaying[i] = false;
+	}
 	
 
 	XAudio2Create(&m_pXAudio2, XAudio2CreateFlags);
@@ -188,6 +193,7 @@ void CAudio::Start(int id)
 		Stop(id);
 		m_AudioData[id]->m_pSourceVoice[0]->SubmitSourceBuffer(&m_AudioData[id]->m_sound_buffer);
 		m_AudioData[id]->m_pSourceVoice[0]->Start();
+		
 		return ;
 	}
 	else
@@ -208,6 +214,7 @@ void CAudio::Start(int id)
 				//サウンドインターフェースにサウンドを登録してサウンドを鳴らす
 				m_AudioData[id]->m_pSourceVoice[count]->SubmitSourceBuffer(&m_AudioData[id]->m_sound_buffer);
 				m_AudioData[id]->m_pSourceVoice[count]->Start();
+				bNowPlaying[id] = true;
 				return ;
 			}
 		}
@@ -235,6 +242,7 @@ void CAudio::Stop(int id)
 	{
 		m_AudioData[id]->m_pSourceVoice[i]->Stop();
 		m_AudioData[id]->m_pSourceVoice[i]->FlushSourceBuffers();
+		bNowPlaying[id] = false;
 	}
 }
 

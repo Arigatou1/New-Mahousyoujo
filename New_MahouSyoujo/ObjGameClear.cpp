@@ -14,9 +14,7 @@ using namespace GameL;
 //イニシャライズ
 void CObjGameClear::Init()
 {
-	StageID = ((UserData*)Save::GetData())->Stage;
-	((UserData*)Save::GetData())->Clear_Flag[StageID+1] = true;
-
+	StageID = 0;
 	Score = 0;
 	HeroDamage = 0.0f;
 	ManaDamage = 0.0f;
@@ -49,12 +47,15 @@ void CObjGameClear::Action()
 
 	//すこあを保存
 	//ここは問題なさそう。
+	StageID = ((UserData*)Save::GetData())->Stage;
 	if(((UserData*)Save::GetData())->ScoreData[StageID]<Score)
 	{
 		((UserData*)Save::GetData())->ScoreData[StageID] = Score;
 	}
-
 	
+	((UserData*)Save::GetData())->Clear_Flag[StageID + 1] = true;
+
+	Save::Seve();
 					
 
 	//エンターキーを押してシーン:ゲームMenuに移行する

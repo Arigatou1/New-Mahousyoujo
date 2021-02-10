@@ -44,11 +44,11 @@ void CObjMenuEndless::Action()
 				//	if (((UserData*)Save::GetData())->Clear_Flag[7] == true)
 				//	{
 
-				if (cursor_y < 512)
+				if (cursor_y < 470)
 				{
 					nowLoading = true;
 				}
-				if (cursor_y >= 512)
+				if (cursor_y >= 470)
 				{
 					this->SetStatus(false);
 					//メニューオブジェクト作成
@@ -82,7 +82,7 @@ void CObjMenuEndless::Action()
 			if (m_key_flag == true)
 			{
 				Audio::Start(10);
-				cursor_y = 512;
+				cursor_y = 470;
 				cursor_sy = 96.0f;
 			}
 			m_key_flag = false;
@@ -141,16 +141,16 @@ void CObjMenuEndless::Draw()
 			MenuBlockDraw(140 + menuAllButtonX,  64.0f, 512.0f, 384.0f, 1.0f, 0.0f, 0.0f, 1.0f);
 
 
-		MenuBlockDraw(140 + menuAllButtonX, 512.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
+		MenuBlockDraw(140 + menuAllButtonX, 470.0f, 512.0f, 96.0f, 1.0f, 0.2f, 1.0f, 1.0f);
 		//if()
 
 		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, cursor_sy, 1.0f, 0.8f, 0.0f, 1.0f);
 
 
 	
-		Font::StrDraw(L"カスタマイズ", 156 + menuAllButtonX, 512, 80, c);
+		Font::StrDraw(L"カスタマイズ", 175 + menuAllButtonX, 480, 70, c);
 	
-		Font::StrDraw(L"エンドレスモード", 156 + menuAllButtonX, 220, 56, c);
+		Font::StrDraw(L"エンドレスモード", 175 + menuAllButtonX, 220, 56, c);
 
 		wchar_t Score[16];
 
