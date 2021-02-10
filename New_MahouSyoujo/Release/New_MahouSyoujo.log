@@ -12,17 +12,24 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1693
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1703,37): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1773,42): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\EnemyAppear.cpp(1838,10): warning C4101: 'str': ローカル変数は 1 度も使われていません。
+  Audio.cpp
+  DrawFont.cpp
+  DrawTexture.cpp
   GameL_Main.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\GameL_Main.cpp(159,4): warning C4060: switch ステートメントに 'case' または 'default' ラベルがありません。
+  HitBoxManager.cpp
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\HitBoxManager.cpp(349,11): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\GameL\HitBoxManager.cpp(358,15): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
   SceneManager.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+  WinInputs.cpp
   ObjAllBullet.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -97,6 +104,7 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): wa
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjEndlessResult.cpp(34,49): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コンパイル中...
   ObjEnemy.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -131,7 +139,6 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): wa
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
-  コンパイル中...
   ObjFireBall.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -275,6 +282,7 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(34,30
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(251,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(191,9): warning C4101: 'dst': ローカル変数は 1 度も使われていません。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSetting.cpp(190,9): warning C4101: 'src': ローカル変数は 1 度も使われていません。
+  コンパイル中...
   ObjShockWave.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -312,7 +320,6 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): w
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSword.cpp(31,17): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjSword.cpp(68,86): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  コンパイル中...
   ObjTitle.cpp
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(25,23): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjHero.h(26,26): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
@@ -391,8 +398,65 @@ C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(16,26): w
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\ObjBoss1.h(17,22): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\Users\rimin\source\repos\New-Mahousyoujo\New_MahouSyoujo\UtilityModule.cpp(32,10): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
-  10 of 1089 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  136 of 1089 functions (12.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    93 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
+EnemyAppear.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+Audio.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+DirectXDevice.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+Draw2DTex_Source.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+DrawFont.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+DrawTexture.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+GameL_Main.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+HitBoxManager.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+MultiThread.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneManager.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneObjManager.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SetWindow.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+UserData.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+WinInputs.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjAllBullet.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjBackGround.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjBarrier.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjBlock.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjBoss1.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjBullet.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjCustomize.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjDragon.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEndlessResult.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEnemy.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEnemy2.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEnemy3.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEnemy4.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjEnemyAmount.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjFireBall.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjGameClear.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjGameOver.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjGaugeBoss.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjGaugeHP.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjGaugeMana.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjHero.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjIcon.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjMagicalGirl.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjMana.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjMenuEndless.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjModeSelect.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjPauseMenu.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjPhoto.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjSetting.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjShockWave.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjSlimeBall.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjSmallSlim.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjStageSelect.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjSword.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+ObjTitle.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneGameClear.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneGameOver.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneMain.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneMenu.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+SceneTitle.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+Tutorial.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+TutorialHero.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
+UtilityModule.obj : warning LNK4020: 'c:\users\rimin\source\repos\new-mahousyoujo\new_mahousyoujo\release\vc142.pdb' の型レコードは破損しています。一部のシンボルおよび型は、デバッガーからはアクセスできない可能性があります。
   New_MahouSyoujo.vcxproj -> C:\Users\rimin\source\repos\New-Mahousyoujo\Release\New_MahouSyoujo.exe
