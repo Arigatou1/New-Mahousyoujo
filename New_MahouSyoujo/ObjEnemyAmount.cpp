@@ -28,37 +28,16 @@ void CObjEnemyAmount::Action()
 	
 		if (shootDownTime == 1)
 		{
-			/// <summary>
-			///		シーンメインのロードを早く終わらせるために変えた処理。
-			/// こうするしかなかったんだ__________
-			/// </summary>
-			switch (((UserData*)Save::GetData())->Stage + 1)
-			{
-			case 1:
+			
 				Audio::Stop(14);
-				break;
-			case 2:
-			case 3:
-			case 4:
 				Audio::Stop(15);
-				break;
-			case 5:
-			case 6:
 				Audio::Stop(17);
-				break;
-			case 7:
 				Audio::Stop(18);
-				break;
-			case 8:
 				Audio::Stop(19);
-				break;
-			default:
-				break;
-			}
 			Audio::Stop(16);
 			Audio::Start(13);
-			
-			
+
+
 		}
 	    else if (shootDownTime == 200)
 		{
