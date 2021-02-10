@@ -28,16 +28,16 @@ void CObjEnemyAmount::Action()
 	
 		if (shootDownTime == 1)
 		{
-		//	Audio::Stop(14);
-		//	Audio::Stop(15);
-		//	Audio::Stop(16);
-		//	Audio::Stop(17);
-		//	Audio::Stop(18);
-		/*Audio::Stop(19);
-		*/
+			
+				Audio::Stop(14);
+				Audio::Stop(15);
+				Audio::Stop(17);
+				Audio::Stop(18);
+				Audio::Stop(19);
+			Audio::Stop(16);
 			Audio::Start(13);
-			
-			
+
+
 		}
 	    else if (shootDownTime == 200)
 		{
