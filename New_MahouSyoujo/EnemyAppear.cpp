@@ -49,6 +49,7 @@ void EnemyAppear::Init()
 		//バックミュージックスタート
 		float Volume = Audio::VolumeMaster(0);
 		Audio::Start(14);
+	//	Audio::Stop(14);
 
 		//背景オブジェクト作成
 		CObjBackGround* obj_bg = new CObjBackGround(1);
@@ -170,7 +171,7 @@ void EnemyAppear::Action()
 {
 	//時間経過
 	if (((UserData*)Save::GetData())->HPZeroCheck == false)
-	m_time++;
+	m_time+=50;
 	
 	switch (StageID)
 	{
