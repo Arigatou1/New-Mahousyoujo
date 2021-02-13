@@ -1,11 +1,11 @@
 //使用するヘッダーファイル
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
-
+#include "GameL\Audio.h"
 #include "GameL\UserData.h"
 #include "GameHead.h"
 #include "Tutorial.h"
-#include "GameL\Audio.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -171,28 +171,27 @@ void CTutorial::Action()
 	}
 	else if (Order == 9)
 	{
-	((UserData*)Save::GetData())->tutorialDone = true;
-	Save::Seve();
-	//HPがゼロになったら、待機時間を増価させる。
-	shootDownTime++;
+		((UserData*)Save::GetData())->tutorialDone = true;
+		Save::Seve();
+		//HPがゼロになったら、待機時間を増価させる。
+		shootDownTime++;
 
-	if (shootDownTime == 1)
-	{
+		if (shootDownTime == 1)
+		{
 		
-		Audio::Start(13);
+			Audio::Start(13);
 		
-	}
-	else if (shootDownTime == 200)
-	{
-		//EnemyAppear
-		Fadeout* obj_Fadeout = new Fadeout();
-		Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
-	}
-
-	else if (shootDownTime == 300)
-	{
-		Scene::SetScene(new CSceneMenu());
-	}
+		}
+		else if (shootDownTime == 200)
+		{
+			//EnemyAppear
+			Fadeout* obj_Fadeout = new Fadeout();
+			Objs::InsertObj(obj_Fadeout, FADEOUT, 151);
+		}
+		else if (shootDownTime == 300)
+		{
+			Scene::SetScene(new CSceneMenu());
+		}
 	}
 }
 
