@@ -207,7 +207,7 @@ void CObjStageSelect::Draw()
 		MenuBlockDraw(140 + menuAllButtonX, 448.0f, 512.0f,80.0f, 1.0f, 0.2f, 1.0f, 1.0f);
 
 		//カーソル描画
-		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 80.0f, 1.0f, 0.8f, 0.0f, 1.0f);
+		MenuBlockDraw(cursor_x + menuAllButtonX, cursor_y, 512.0f, 80.0f, 1.0f, 1.0f, 0.0f, 1.0f,1);
 
 		//矢印ボタン
 		for (int i = 0; i < 2; i++)

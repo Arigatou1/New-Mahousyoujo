@@ -28,37 +28,16 @@ void CObjEnemyAmount::Action()
 	
 		if (shootDownTime == 1)
 		{
-			/// <summary>
-			///		シーンメインのロードを早く終わらせるために変えた処理。
-			/// こうするしかなかったんだ__________
-			/// </summary>
-			switch (((UserData*)Save::GetData())->Stage + 1)
-			{
-			case 1:
+			
 				Audio::Stop(14);
-				break;
-			case 2:
-			case 3:
-			case 4:
 				Audio::Stop(15);
-				break;
-			case 5:
-			case 6:
 				Audio::Stop(17);
-				break;
-			case 7:
 				Audio::Stop(18);
-				break;
-			case 8:
 				Audio::Stop(19);
-				break;
-			default:
-				break;
-			}
 			Audio::Stop(16);
 			Audio::Start(13);
-			
-			
+
+
 		}
 	    else if (shootDownTime == 200)
 		{
@@ -81,8 +60,7 @@ void CObjEnemyAmount::Draw()
 {
 	float c[4] = { 0.0f,0.0f,0.0f,1.0f };
 	wchar_t str[128];
-
-
+	float Rect[4]={64,64,64,64};
 
 
 	swprintf_s(str, L"残り敵の数:%d", ((UserData*)Save::GetData())->enemyRemain);//整数を文字列か
@@ -108,6 +86,8 @@ void CObjEnemyAmount::Draw()
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
+	Draw::Draw(0, 0, 64, Rect);
+
 	for (int i = 0; i < 3; i++)
 	{
 		c[i] = 1.0f;
@@ -115,5 +95,6 @@ void CObjEnemyAmount::Draw()
 
 	swprintf_s(str, L"操作方法:←→移動　↑↓魔法切り替え 　Space:ジャンプ  F攻撃  D魔法");//整数を文字列か
 	Font::StrDraw(str, 2, 566, 24, c);
+
 
 }

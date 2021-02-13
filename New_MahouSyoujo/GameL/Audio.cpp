@@ -22,7 +22,7 @@ void CAudio::Init(int max_audio)
 	m_aud_max=max_audio;
 	m_volume=1.0f;
 	unsigned XAudio2CreateFlags = 0;
-	
+
 
 	XAudio2Create(&m_pXAudio2, XAudio2CreateFlags);
 
@@ -188,6 +188,7 @@ void CAudio::Start(int id)
 		Stop(id);
 		m_AudioData[id]->m_pSourceVoice[0]->SubmitSourceBuffer(&m_AudioData[id]->m_sound_buffer);
 		m_AudioData[id]->m_pSourceVoice[0]->Start();
+		
 		return ;
 	}
 	else
@@ -208,6 +209,7 @@ void CAudio::Start(int id)
 				//サウンドインターフェースにサウンドを登録してサウンドを鳴らす
 				m_AudioData[id]->m_pSourceVoice[count]->SubmitSourceBuffer(&m_AudioData[id]->m_sound_buffer);
 				m_AudioData[id]->m_pSourceVoice[count]->Start();
+				
 				return ;
 			}
 		}
@@ -235,6 +237,7 @@ void CAudio::Stop(int id)
 	{
 		m_AudioData[id]->m_pSourceVoice[i]->Stop();
 		m_AudioData[id]->m_pSourceVoice[i]->FlushSourceBuffers();
+	
 	}
 }
 

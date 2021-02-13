@@ -29,6 +29,7 @@ namespace GameL
 		unsigned int   Size;					//サウンドサイズ
 		unsigned char* pWave;					//wave先頭アドレスポインタ
 		unsigned char* pData;					//波状情報アドレスポインタ
+		
 		//Audioデータ
 		IXAudio2SourceVoice**	m_pSourceVoice;     //サウンドボイスインターフェース
 		IXAudio2SubmixVoice*	m_pSFXSubmixVoice;  //サブミクスインターフェース
@@ -50,7 +51,7 @@ namespace GameL
 			static void Stop(int id);					//ストップ
 			static float Volume(float t,int id);		//個々のサウンドボリューム変更
 			static float VolumeMaster(float t);			//全体のサウンドボリューム変更
-
+			
 		private:
 			static IXAudio2*						m_pXAudio2;				//XAudio2オブジェクト
 			static IXAudio2MasteringVoice*			m_pMasteringVoice;		//マスターボリューム
